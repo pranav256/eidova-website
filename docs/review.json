@@ -1,0 +1,49 @@
+{
+  "origin": "https://open-design-website.vercel.app",
+  "mcpReviewEndpoint": "https://open-design-mcp-liard.vercel.app/mcp",
+  "serviceEndpoint": "https://open-design-mcp-liard.vercel.app/mcp",
+  "publicAccess": true,
+  "catalogCount": 31,
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "noPageErrors": true,
+  "noPageOverflow": true,
+  "behavior": [
+    "keyboard skip link",
+    "search",
+    "no-match recovery",
+    "clipboard URL",
+    "keyboard configuration copy",
+    "catalog error/retry",
+    "focus return",
+    "reduced motion"
+  ],
+  "spacing": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 1,
+    "total": 1
+  },
+  "comprehensionPanels": 40,
+  "comprehensionFailed": [],
+  "reviewedAt": "2026-11-07T04:41:58.405938+00:00",
+  "deploymentId": "dpl_CCL99Lhf5DqujorKmYJknvzkoM5h",
+  "sourceReview": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 22,
+    "context": "Retained design-system token declarations and explanatory comments"
+  },
+  "spacingException": "At 1728px the centered 1280px container has automatic 224px side margins.",
+  "dependencyAudit": {
+    "vulnerabilities": 0,
+    "vite": "7.3.7"
+  },
+  "limits": [
+    "Automated browser checks and visual inspection; not an accessibility certification or human usability study.",
+    "Provider capacity limits apply."
+  ]
+}
