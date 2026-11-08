@@ -1,0 +1,15 @@
+{
+  "framework": "vite",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "rewrites": [
+    { "source": "/api/catalog", "destination": "https://open-design-mcp-liard.vercel.app/api/catalog" },
+    { "source": "/registry/:path*", "destination": "https://open-design-mcp-liard.vercel.app/registry/:path*" }
+  ],
+  "headers": [
+    { "source": "/(.*)", "headers": [
+      { "key": "X-Content-Type-Options", "value": "nosniff" },
+      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+    ] }
+  ]
+}
