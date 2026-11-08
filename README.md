@@ -3,6 +3,10 @@
 Public theme catalog and connection guide for the independent Open Design MCP.
 The website and MCP service are separate repositories and deployments.
 
+New visits start in dark mode. The header appearance button switches between
+light and dark and preserves the choice in this browser. The token example
+continues to show the actual minimal-light theme values.
+
 Build, public browser, and design checks are documented in
 [docs/REVIEW.md](docs/REVIEW.md).
 

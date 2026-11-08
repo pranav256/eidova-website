@@ -1,7 +1,7 @@
 @import "tailwindcss" source(".");
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:is([data-theme="dark"] *));
 
 :root {
   /* Luxe â€” exact styles from the original site (browser-extracted 2026) */
@@ -49,6 +49,31 @@
   --shadow-md:  0 0.25rem 0.375rem -0.0625rem rgba(0,0,0,0.08), 0 0.125rem 0.25rem -0.125rem rgba(0,0,0,0.06);
   --shadow-lg:  0 0.5rem 1rem -0.125rem rgba(0,0,0,0.08), 0 0 0 0.0625rem rgba(0,0,0,0.04);
   --shadow-xl:  0 1rem 1.5rem -0.25rem rgba(0,0,0,0.1), 0 0 0 0.0625rem rgba(0,0,0,0.04);
+}
+
+:root[data-theme="light"] { color-scheme: light; }
+
+/* The public website starts in dark mode; the existing light tokens above
+   remain available when a visitor explicitly chooses light mode. */
+:root:not([data-theme="light"]) {
+  color-scheme: dark;
+  --background: oklch(0.16 0 0);
+  --foreground: oklch(0.85 0 0);
+  --card: oklch(0.20 0 0);
+  --card-foreground: oklch(0.85 0 0);
+  --popover: oklch(0.20 0 0);
+  --popover-foreground: oklch(0.85 0 0);
+  --primary: oklch(0.9696 0 0);
+  --primary-foreground: oklch(0.16 0 0);
+  --secondary: oklch(0.26 0 0);
+  --secondary-foreground: oklch(0.90 0 0);
+  --muted: oklch(0.22 0 0);
+  --muted-foreground: oklch(0.74 0 0);
+  --accent: oklch(0.30 0 0);
+  --accent-foreground: oklch(0.9696 0 0);
+  --border: oklch(0.50 0 0);
+  --input: oklch(0.22 0 0);
+  --ring: oklch(0.9696 0 0);
 }
 
 @theme inline {

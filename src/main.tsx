@@ -7,5 +7,7 @@ import '@fontsource/geist/700.css';
 import './theme.css';
 import './styles.css';
 import { App } from './App';
+import { applyTheme, readTheme } from './theme';
 
+applyTheme(readTheme());
 createRoot(document.getElementById('root')!).render(<React.StrictMode><App /></React.StrictMode>);
