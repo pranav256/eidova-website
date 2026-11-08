@@ -8,6 +8,13 @@ light and dark and preserves the choice in this browser. The live component
 preview switches among Minimal Light, Linear, and Stripe using registry colors.
 Its form saves only within the preview.
 
+Every catalog card has a live preview at `/?preview=<theme-id>&mode=dark` (or
+`mode=light`). Links carry the website's current appearance. The preview toggle
+updates the page and URL together, so refresh and previous/next navigation
+preserve that appearance. The hero preview also follows the website setting.
+Source palettes are used for their original appearance; missing appearances
+are adapted for the preview and identified beside the sample.
+
 The catalog initially shows six featured systems. Expand to all 31, search by
 name/style/font, or filter by palette appearance. Search and filter choices survive
 reloads through URL parameters. Connection tabs provide a Codex command, JSON
@@ -50,7 +57,10 @@ specimens. From the adjacent MCP checkout, regenerate it with
 `node scripts/sync-website-previews.mjs ./website`. The generator keeps the exact
 source colors and selects readable action token pairs; it uses a secondary
 surface when the primary palette has no suitable small-text pair. It requires
-the service's Playwright dependency and an installed browser.
+the service's Playwright dependency and an installed browser. It exports both
+appearances, preserving supplied dark tokens where available and adapting the
+missing appearance's surfaces and text while retaining the theme's accent and
+corner radius.
 
 ## Configure
 

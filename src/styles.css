@@ -107,13 +107,25 @@ h2 { color: var(--primary); font-weight: 500; font-size: clamp(1.75rem, 3vw, 2.3
 .mini-swatches i { display: block; width: 0.625rem; height: 0.625rem; border-radius: 50%; border: 0.0625rem solid var(--card-foreground); background: var(--background); }
 .mini-swatches i:nth-child(2) { background: var(--primary); }
 .mini-swatches i:nth-child(3) { background: var(--card-foreground); }
-.theme-card-info { position: relative; padding-top: 1rem; padding-right: 6rem; }
+.theme-card-info { padding-top: 1rem; }
 .theme-card-heading { display: flex; gap: 0.75rem; align-items: center; flex-wrap: wrap; }
 .theme-card-heading h3 { color: var(--primary); font-size: 1rem; line-height: 1.5; font-weight: 500; letter-spacing: -0.025em; }
 .scheme-label { color: var(--muted-foreground); font-size: 0.625rem; line-height: 1.7; }
 .theme-card-info > p { margin-top: 0.25rem; font-size: 0.6875rem; line-height: 1.7; color: var(--muted-foreground); overflow-wrap: anywhere; }
 .theme-card-info > p span { margin-inline: 0.25rem; }
-.theme-token-link { position: absolute; right: 0; top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-size: 0.6875rem; color: var(--primary); }
+.theme-card-links { display: flex; justify-content: space-between; gap: 1rem; margin-top: 0.5rem; }
+.theme-live-link, .theme-token-link { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 2.75rem; font-size: 0.75rem; color: var(--primary); }
+.theme-live-link { font-weight: 500; }
+.theme-token-link { color: var(--muted-foreground); }
+.preview-page { max-width: 48rem; padding-block: 2rem 4rem; }
+.preview-back { margin-bottom: 1.5rem; }
+.preview-page-heading { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-bottom: 2rem; }
+.preview-page h1 { font-size: 2.25rem; line-height: 1.2; letter-spacing: -0.045em; }
+.preview-page-heading p { margin-top: 0.5rem; font-size: 0.875rem; line-height: 1.7; }
+.preview-page .playground { width: 100%; }
+.preview-page .specimen { margin-top: 1.25rem; }
+.preview-note { margin-top: 1.5rem; color: var(--muted-foreground); font-size: 0.75rem; line-height: 1.8; }
+.preview-pagination { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 1.5rem; }
 .catalog-more { margin-top: 2rem; text-align: center; }
 .catalog-more .od-button { min-width: 12rem; font-size: 0.75rem; }
 .catalog-note { max-width: 40rem; margin-top: 1.5rem; font-size: 0.6875rem; line-height: 1.8; color: var(--muted-foreground); }
@@ -165,7 +177,7 @@ h2 { color: var(--primary); font-weight: 500; font-size: clamp(1.75rem, 3vw, 2.3
   .od-button[data-variant="default"]:hover { background: color-mix(in oklab, var(--primary) 90%, var(--primary-foreground)); }
   .od-button[data-variant="secondary"]:hover, .od-button[data-variant="outline"]:hover, .od-button[data-variant="ghost"]:not([aria-pressed="true"]):not([aria-selected="true"]):hover { background: var(--accent); color: var(--foreground); }
   .od-input:hover { border-color: var(--foreground); }
-  .site-header nav a:hover, .source-link:hover, .text-link:hover, .site-footer nav a:hover, .theme-token-link:hover { text-decoration: underline; text-underline-offset: 0.25rem; }
+  .site-header nav a:hover, .source-link:hover, .text-link:hover, .site-footer nav a:hover, .theme-token-link:hover, .theme-live-link:hover { text-decoration: underline; text-underline-offset: 0.25rem; }
 }
 @media (max-width: 68.75rem) {
   .site-header, main, .site-footer { width: calc(100% - 5rem); }
@@ -232,6 +244,8 @@ h2 { color: var(--primary); font-weight: 500; font-size: clamp(1.75rem, 3vw, 2.3
   .theme-grid { grid-template-columns: 1fr; gap: 2rem; }
   .palette-preview { min-height: 13rem; padding: 1.5rem; }
   .theme-card-info > p { font-size: 0.6875rem; }
+  .preview-page-heading { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  .preview-page h1 { font-size: 1.875rem; }
   .workflow-grid { grid-template-columns: 1fr; gap: 2rem; }
   .workflow-item h3 { margin-top: 0.75rem; }
   .workflow-item > p { max-width: none; }

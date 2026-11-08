@@ -2,6 +2,21 @@
 
 Reviewed website: https://open-design-website.vercel.app
 
+Every theme now has a shareable live preview. Catalog links carry the current
+dark/light appearance, and the hero follows that appearance as well. The live
+page's toggle updates the URL, so refresh and previous/next navigation retain
+the selected mode. Missing and invalid theme IDs show a recovery link.
+Original source palettes remain available; missing appearances are adapted
+and identified in the preview. The catalog thumbnails keep the source palette.
+
+The preview-specific check covers all 31 themes in both modes at 390px, plus
+three representative themes in both modes at 1440px and 1728px: 74 rendered
+layouts. All 98 preview copy checks pass, text contrast stays at or above
+4.52:1, and spacing has no critical or serious findings. It also verifies live
+pages work when the catalog API is unavailable. Results are recorded in
+[the live-preview review](preview-review.json); rerun with the service's
+`scripts/verify-theme-previews.mjs`.
+
 The redesign keeps the dark-first Geist theme, saved light preference, existing
 Button/Input components, and header/footer links. It adds an interactive token
 preview, six featured palette cards with expansion to all 31 themes, appearance
