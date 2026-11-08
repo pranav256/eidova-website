@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "product": "Open Design website",
+  "features": [
+    {
+      "id": "website",
+      "name": "Website",
+      "description": "Public design-system catalog and agent connection guide",
+      "flows": [
+        {
+          "id": "try-a-theme",
+          "name": "Try a theme",
+          "steps": [
+            {
+              "name": "Theme token preview",
+              "screen": "Homepage",
+              "components": [
+                "src/App.tsx",
+                "src/catalog-previews.json"
+              ],
+              "data": []
+            }
+          ]
+        },
+        {
+          "id": "browse-the-catalog",
+          "name": "Browse the catalog",
+          "steps": [
+            {
+              "name": "Search and filter themes",
+              "screen": "Themes section",
+              "components": [
+                "src/App.tsx"
+              ],
+              "data": [
+                "GET /api/catalog"
+              ]
+            },
+            {
+              "name": "Inspect theme tokens",
+              "action": "Open registry JSON",
+              "components": [],
+              "data": [
+                "GET /registry/:theme/globals.json"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "connect-an-agent",
+          "name": "Connect an agent",
+          "steps": [
+            {
+              "name": "Choose client setup",
+              "screen": "Connection section",
+              "components": [
+                "src/App.tsx"
+              ],
+              "data": []
+            },
+            {
+              "name": "Copy URL or command",
+              "action": "Clipboard",
+              "components": [],
+              "data": []
+            }
+          ]
+        }
+      ],
+      "components": []
+    }
+  ]
+}

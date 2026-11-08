@@ -4,8 +4,14 @@ Public theme catalog and connection guide for the independent Open Design MCP.
 The website and MCP service are separate repositories and deployments.
 
 New visits start in dark mode. The header appearance button switches between
-light and dark and preserves the choice in this browser. The token example
-continues to show the actual minimal-light theme values.
+light and dark and preserves the choice in this browser. The live component
+preview switches among Minimal Light, Linear, and Stripe using registry colors.
+Its form saves only within the preview.
+
+The catalog initially shows six featured systems. Expand to all 31, search by
+name/style/font, or filter by palette appearance. Search and filter choices survive
+reloads through URL parameters. Connection tabs provide a Codex command, JSON
+configuration, and the full server URL, with clipboard feedback and recovery.
 
 Build, public browser, and design checks are documented in
 [docs/REVIEW.md](docs/REVIEW.md).
@@ -35,6 +41,16 @@ npm run preview
 
 `dist/` contains the production website. Vite's preview server serves the
 static output; production API proxying is configured in `vercel.json`.
+
+Button, Input, and Textarea use the retained theme. `components.json` and the
+`@/` alias support adding compatible registry components with shadcn.
+
+`src/catalog-previews.json` contains only the public registry tokens used in the
+specimens. From the adjacent MCP checkout, regenerate it with
+`node scripts/sync-website-previews.mjs ./website`. The generator keeps the exact
+source colors and selects readable action token pairs; it uses a secondary
+surface when the primary palette has no suitable small-text pair. It requires
+the service's Playwright dependency and an installed browser.
 
 ## Configure
 
