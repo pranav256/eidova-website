@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { Button } from './components/ui/button';
 import { Input } from './components/ui/input';
+import { applyTheme, readTheme } from './theme';
 
 type Theme = { id: string; title: string; description: string; primaryColor?: string; font?: string; componentCount: number };
 type CatalogState = { state: 'loading' } | { state: 'error'; message: string } | { state: 'ready'; themes: Theme[] };
@@ -40,6 +41,7 @@ function CopyButton({ value, children }: { value: string; children: string }) {
 }
 
 export function App() {
+  const [theme, setTheme] = useState(readTheme);
   const [catalog, setCatalog] = useState<CatalogState>({ state: 'loading' });
   const [query, setQuery] = useState('');
   const [retry, setRetry] = useState(0);
@@ -68,7 +70,14 @@ export function App() {
     <header className="site-header">
       <a className="wordmark" href="#main" aria-label="Open Design home"><span className="brand-mark" aria-hidden="true"><i /><i /></span>Open Design</a>
       <nav aria-label="Main navigation"><a href="#themes">Themes</a><a href="#tools">Tools</a><a href="#connect">Connect</a></nav>
-      <a className="source-link" href={sourceUrl}>Source code <span aria-hidden="true">↗</span></a>
+      <div className="header-actions">
+        <Button className="theme-toggle" variant="outline" size="sm" onClick={() => {
+          const next = theme === 'dark' ? 'light' : 'dark';
+          applyTheme(next, true);
+          setTheme(next);
+        }} aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</Button>
+        <a className="source-link" href={sourceUrl}>Source code <span aria-hidden="true">↗</span></a>
+      </div>
     </header>
 
     <main id="main">

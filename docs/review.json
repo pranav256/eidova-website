@@ -19,25 +19,26 @@
     "keyboard configuration copy",
     "catalog error/retry",
     "focus return",
-    "reduced motion"
+    "reduced motion",
+    "theme switching and saved preference"
   ],
   "spacing": {
     "critical": 0,
     "serious": 0,
-    "moderate": 1,
-    "total": 1
+    "moderate": 2,
+    "total": 2
   },
-  "comprehensionPanels": 40,
+  "comprehensionPanels": 41,
   "comprehensionFailed": [],
-  "reviewedAt": "2026-11-07T04:41:58.405938+00:00",
-  "deploymentId": "dpl_CCL99Lhf5DqujorKmYJknvzkoM5h",
+  "reviewedAt": "2026-11-07T05:53:12.413714+00:00",
+  "deploymentId": "dpl_6ZaNjfJLStgTiiM2NRvf6kwa6Z4T",
   "sourceReview": {
     "critical": 0,
     "serious": 0,
     "moderate": 22,
     "context": "Retained design-system token declarations and explanatory comments"
   },
-  "spacingException": "At 1728px the centered 1280px container has automatic 224px side margins.",
+  "spacingException": "Automatic margins align the mobile header action and center the desktop content container.",
   "dependencyAudit": {
     "vulnerabilities": 0,
     "vite": "7.3.7"
@@ -45,5 +46,36 @@
   "limits": [
     "Automated browser checks and visual inspection; not an accessibility certification or human usability study.",
     "Provider capacity limits apply."
-  ]
+  ],
+  "defaultTheme": "dark",
+  "savedLightAndDarkPreferences": true,
+  "darkTokenContrast": [
+    {
+      "width": 390,
+      "foreground": 12.350024197095216,
+      "muted": 7.880300762091932,
+      "primary": 17.827000398052718,
+      "border": 3.0121027225263592
+    },
+    {
+      "width": 1440,
+      "foreground": 12.350024197095216,
+      "muted": 7.880300762091932,
+      "primary": 17.827000398052718,
+      "border": 3.0121027225263592
+    },
+    {
+      "width": 1728,
+      "foreground": 12.350024197095216,
+      "muted": 7.880300762091932,
+      "primary": 17.827000398052718,
+      "border": 3.0121027225263592
+    }
+  ],
+  "lightSpacing": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 1,
+    "total": 1
+  }
 }
