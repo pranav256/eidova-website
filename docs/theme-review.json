@@ -76,23 +76,50 @@
     {
       "critical": 0,
       "serious": 0,
-      "moderate": 10,
-      "total": 10
+      "moderate": 14,
+      "total": 14
     },
     {
       "critical": 0,
       "serious": 0,
-      "moderate": 12,
-      "total": 12
+      "moderate": 18,
+      "total": 18
     },
     {
       "critical": 0,
       "serious": 0,
-      "moderate": 4,
-      "total": 4
+      "moderate": 6,
+      "total": 6
     }
   ],
-  "comprehensionChecks": 98,
+  "comprehensionChecks": 3,
   "comprehensionFailures": 0,
-  "pageErrors": []
+  "pageErrors": [],
+  "behavior": [
+    "all 31 Apply buttons in dark and light",
+    "selection label and pressed state",
+    "scroll and keyboard focus preserved",
+    "source background and radius applied",
+    "no page navigation or catalog refetch",
+    "text, input and hover contrast",
+    "visible anchor destinations below sticky controls",
+    "search, filter, setup tab and clipboard feedback preserved",
+    "reload and root revisit persistence",
+    "reset removes overrides and saves default while retaining mode and search",
+    "theme deep links and legacy preview migration",
+    "invalid and prototype IDs recover safely",
+    "browser history restores theme and search",
+    "mode and reset work during catalog outages",
+    "storage-disabled selection, URL persistence and reset"
+  ],
+  "deployment": {
+    "url": "https://open-design-website.vercel.app/",
+    "status": 200,
+    "assets": [
+      "/assets/index-DwcW3S-X.js",
+      "/assets/index-Pa4QxTOy.css"
+    ],
+    "matchesLocalBuild": true,
+    "deployment": "dpl_5DdC6gsMy9HBmQUk6ij7ENhdVbrQ"
+  }
 }

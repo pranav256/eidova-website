@@ -12,19 +12,30 @@
           "name": "Try a theme",
           "steps": [
             {
-              "name": "Open any theme live",
-              "screen": "/?preview=<theme-id>&mode=<appearance>",
-              "components": ["src/App.tsx", "src/theme.ts", "src/catalog-previews.json"],
-              "data": ["Current website appearance carried in the link", "Previous/next preview navigation"]
-            },
-            {
-              "name": "Theme token preview",
-              "screen": "Homepage",
+              "name": "Apply a theme to the entire site",
+              "screen": "/?theme=<theme-id>&mode=<appearance>",
               "components": [
                 "src/App.tsx",
-                "src/catalog-previews.json"
+                "src/theme.ts",
+                "src/catalog-themes.json"
               ],
-              "data": []
+              "data": [
+                "31 bundled theme palettes in light and dark",
+                "Saved theme and mode in localStorage and URL",
+                "Search, filters, scroll, focus and setup state retained"
+              ]
+            },
+            {
+              "name": "Switch appearance or reset theme",
+              "screen": "Sticky site theme controls",
+              "components": [
+                "src/App.tsx",
+                "src/theme.ts"
+              ],
+              "data": [
+                "Light/dark applies to the selected theme",
+                "Reset restores Open Design while retaining appearance"
+              ]
             }
           ]
         },
