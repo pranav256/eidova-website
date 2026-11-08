@@ -2,13 +2,14 @@ import { useEffect, useMemo, useRef, useState, type CSSProperties, type Keyboard
 import { Button } from './components/ui/button';
 import { Input } from './components/ui/input';
 import { Textarea } from './components/ui/textarea';
-import { applyTheme, readTheme } from './theme';
+import { useAppearance, type ThemeMode } from './theme';
 import catalogPreviews from './catalog-previews.json';
 
 type Theme = { id: string; title: string; description: string; primaryColor?: string; font?: string; componentCount: number; personality?: string[] };
 type CatalogState = { state: 'loading' } | { state: 'error'; message: string } | { state: 'ready'; themes: Theme[] };
 type Scheme = 'all' | 'light' | 'dark';
-type Preview = { scheme: 'light' | 'dark'; actionBackgroundToken: string; actionTextToken: string; tokens: Record<string, string> };
+type Palette = { adapted: boolean; actionBackgroundToken: string; actionTextToken: string; tokens: Record<string, string> };
+type Preview = { title: string; scheme: ThemeMode; modes: Record<ThemeMode, Palette> };
 const previews: Record<string, Preview> = catalogPreviews as Record<string, Preview>;
 const featuredIds = ['minimal-light', 'linear', 'stripe', 'vercel', 'notion', 'airbnb'];
 const previewOptions = [['minimal-light', 'Minimal Light'], ['linear', 'Linear'], ['stripe', 'Stripe']];
@@ -34,9 +35,30 @@ function readSearch() {
   const appearance = params.get('appearance');
   return { query: params.get('q') || '', scheme: (appearance === 'light' || appearance === 'dark' ? appearance : 'all') as Scheme };
 }
-function previewStyle(id: string): CSSProperties {
-  const preview = previews[id] || previews['minimal-light'];
-  return { ...previews['minimal-light'].tokens, ...preview.tokens, '--preview-action-background': 'var(' + preview.actionBackgroundToken + ')', '--preview-action-text': 'var(' + preview.actionTextToken + ')', colorScheme: preview.scheme } as CSSProperties;
+function previewStyle(id: string, mode: ThemeMode): CSSProperties {
+  const preview = (previews[id] || previews['minimal-light']).modes[mode];
+  return { ...previews['minimal-light'].modes[mode].tokens, ...preview.tokens, '--preview-action-background': 'var(' + preview.actionBackgroundToken + ')', '--preview-action-text': 'var(' + preview.actionTextToken + ')', colorScheme: mode } as CSSProperties;
+}
+function previewHref(id: string, mode: ThemeMode) {
+  const params = new URLSearchParams(window.location.search);
+  params.set('preview', id); params.set('mode', mode);
+  return '/?' + params;
+}
+function homeHref(mode: ThemeMode, hash = 'themes') {
+  const params = new URLSearchParams(window.location.search);
+  if (!params.has('preview')) return '#' + hash;
+  params.delete('preview'); params.set('mode', mode);
+  return '/?' + params + '#' + hash;
+}
+function SiteHeader({ theme, onToggle }: { theme: ThemeMode; onToggle: () => void }) {
+  return <header className="site-header">
+    <a className="wordmark" href={homeHref(theme, 'main')} aria-label="Open Design home"><span className="brand-mark" aria-hidden="true"><i /><i /></span>Open Design</a>
+    <nav aria-label="Main navigation"><a href={homeHref(theme)}>Themes</a><a href={homeHref(theme, 'tools')}>Tools</a><a href={homeHref(theme, 'connect')}>Connect</a></nav>
+    <div className="header-actions"><Button className="theme-toggle" variant="outline" size="sm" onClick={onToggle} aria-label={'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode'}>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</Button><a className="source-link" href={sourceUrl}>Source code <span aria-hidden="true">↗</span></a></div>
+  </header>;
+}
+function SiteFooter({ theme }: { theme: ThemeMode }) {
+  return <footer className="site-footer"><a className="wordmark" href={homeHref(theme, 'main')}><span className="brand-mark" aria-hidden="true"><i /><i /></span>Open Design</a><p>Independent. Open source. Built for your agent.</p><nav aria-label="Footer navigation"><a href={homeHref(theme, 'connect')}>Connect</a><a href={sourceUrl}>Source</a><a href={sourceUrl + '/blob/main/LICENSE'}>License</a></nav></footer>;
 }
 function fontLabel(value?: string) {
   const family = value?.split(',')[0].replace(/["']/g, '').trim();
@@ -65,17 +87,17 @@ function CopyButton({ value, children }: { value: string; children: string }) {
   </div>;
 }
 
-function TokenPlayground() {
-  const [selected, setSelected] = useState('minimal-light');
+function TokenPlayground({ mode, initialId = 'minimal-light', showPicker = true }: { mode: ThemeMode; initialId?: string; showPicker?: boolean }) {
+  const [selected, setSelected] = useState(initialId);
   const [projectName, setProjectName] = useState('Sunday studio');
   const [saved, setSaved] = useState(false);
-  const preview = previews[selected];
+  const preview = previews[selected].modes[mode];
   return <figure className="playground" aria-labelledby="playground-title">
     <div className="playground-heading"><div className="playground-title-group"><span className="window-dots" aria-hidden="true"><i /><i /><i /></span><span id="playground-title">Live token preview</span></div><span className="preview-language">React</span></div>
-    <div className="preview-picker" role="group" aria-label="Preview palette">
-      {previewOptions.map(([id, title]) => <Button key={id} variant="ghost" aria-pressed={selected === id} onClick={() => { setSelected(id); setSaved(false); }}><span className="palette-dot" style={{ background: previews[id].tokens['--primary'] }} aria-hidden="true" />{title}</Button>)}
-    </div>
-    <div className="specimen" style={previewStyle(selected)} data-preview-theme={selected}>
+    {showPicker && <div className="preview-picker" role="group" aria-label="Preview palette">
+      {previewOptions.map(([id, title]) => <Button key={id} variant="ghost" aria-pressed={selected === id} onClick={() => { setSelected(id); setSaved(false); }}><span className="palette-dot" style={{ background: previews[id].modes[mode].tokens['--primary'] }} aria-hidden="true" />{title}</Button>)}
+    </div>}
+    <div className="specimen" style={previewStyle(selected, mode)} data-preview-theme={selected} data-preview-mode={mode}>
       <div className="specimen-top"><div className="specimen-title-group"><span className="specimen-symbol" aria-hidden="true">✳</span><span>Workspace settings</span></div><span className="specimen-example">Example</span></div>
       <div className="specimen-body">
         <h2>Make space for your ideas.</h2>
@@ -86,14 +108,44 @@ function TokenPlayground() {
           <div className="specimen-form-footer"><span className="specimen-status" role="status">{saved ? 'Saved in this preview.' : 'Try the components.'}</span><Button type="submit">{saved ? 'Saved' : 'Save changes'}<span aria-hidden="true">{saved ? '✓' : '→'}</span></Button></div>
         </form>
       </div>
-      <div className="specimen-tokens"><div className="specimen-token-group"><div className="token-dots" aria-hidden="true"><i /><i /><i /></div><span>Actual registry tokens</span></div><code>{preview.tokens['--radius']} radius</code></div>
+      <div className="specimen-tokens"><div className="specimen-token-group"><div className="token-dots" aria-hidden="true"><i /><i /><i /></div><span>{preview.adapted ? 'Adapted ' + mode + ' palette' : 'Original registry palette'}</span></div><code>{preview.tokens['--radius']} radius</code></div>
     </div>
-    <figcaption><span>One component set. Three palettes.</span><span>Click a theme to try it <span aria-hidden="true">↑</span></span></figcaption>
+    <figcaption><span>{showPicker ? 'One component set. Three palettes.' : 'Changes stay inside this preview.'}</span><span>{showPicker ? 'Click a theme to try it ↑' : mode === 'dark' ? 'Dark appearance' : 'Light appearance'}</span></figcaption>
   </figure>;
 }
 
+function ThemePreviewPage({ id }: { id: string }) {
+  const { theme, toggleTheme } = useAppearance();
+  const preview = Object.hasOwn(previews, id) ? previews[id] : undefined;
+  const ids = Object.keys(previews);
+  const index = ids.indexOf(id);
+  useEffect(() => { document.title = preview ? preview.title + ' live preview — Open Design' : 'Theme not found — Open Design'; }, [preview]);
+  return <>
+    <a className="skip-link" href="#main">Skip to content</a>
+    <SiteHeader theme={theme} onToggle={toggleTheme} />
+    <main id="main" className="preview-page">
+      <a className="text-link preview-back" href={homeHref(theme)}><span aria-hidden="true">←</span>All themes</a>
+      <div className="preview-page-heading"><div><h1>{preview ? preview.title : 'Theme not found'}</h1><p>{preview ? 'Try the components in ' + theme + ' mode.' : 'Choose a theme from the catalog.'}</p></div>{preview && <a className="text-link" href={registryOrigin + '/registry/' + encodeURIComponent(id) + '/globals.json'}>View original tokens <span aria-hidden="true">↗</span></a>}</div>
+      {preview && <>
+        <TokenPlayground mode={theme} initialId={id} showPicker={false} />
+        <p className="preview-note">{preview.modes[theme].adapted ? 'This alternate appearance keeps the theme’s accent and corners. Original tokens are available above.' : 'This appearance uses the original registry palette, with readable action labels.'}</p>
+        <nav className="preview-pagination" aria-label="Browse theme previews">
+          <a className="text-link" href={previewHref(ids[(index + ids.length - 1) % ids.length], theme)}><span aria-hidden="true">←</span>Previous theme</a>
+          <a className="text-link" href={previewHref(ids[(index + 1) % ids.length], theme)}>Next theme<span aria-hidden="true">→</span></a>
+        </nav>
+      </>}
+    </main>
+    <SiteFooter theme={theme} />
+  </>;
+}
+
 export function App() {
-  const [theme, setTheme] = useState(readTheme);
+  const id = new URLSearchParams(window.location.search).get('preview');
+  return id ? <ThemePreviewPage id={id} /> : <Website />;
+}
+
+function Website() {
+  const { theme, toggleTheme } = useAppearance();
   const [catalog, setCatalog] = useState<CatalogState>({ state: 'loading' });
   const [query, setQuery] = useState(() => readSearch().query);
   const [scheme, setScheme] = useState<Scheme>(() => readSearch().scheme);
@@ -150,11 +202,7 @@ export function App() {
 
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
-    <header className="site-header">
-      <a className="wordmark" href="#main" aria-label="Open Design home"><span className="brand-mark" aria-hidden="true"><i /><i /></span>Open Design</a>
-      <nav aria-label="Main navigation"><a href="#themes">Themes</a><a href="#tools">Tools</a><a href="#connect">Connect</a></nav>
-      <div className="header-actions"><Button className="theme-toggle" variant="outline" size="sm" onClick={() => { const next = theme === 'dark' ? 'light' : 'dark'; applyTheme(next, true); setTheme(next); }} aria-label={'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode'}>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</Button><a className="source-link" href={sourceUrl}>Source code <span aria-hidden="true">↗</span></a></div>
-    </header>
+    <SiteHeader theme={theme} onToggle={toggleTheme} />
 
     <main id="main">
       <section className="hero" aria-labelledby="hero-title">
@@ -164,7 +212,7 @@ export function App() {
           <div className="hero-actions"><Button asChild size="lg"><a href="#connect">Connect your agent <span aria-hidden="true">↗</span></a></Button><a className="text-link" href="#themes">Browse the themes <span aria-hidden="true">↓</span></a></div>
           <p className="hero-note">Free public access <span aria-hidden="true">·</span> No account required</p>
         </div>
-        <TokenPlayground />
+        <TokenPlayground mode={theme} />
       </section>
 
       <div className="platform-strip"><span>Built for the tools you already use.</span><div><span>Codex</span><span>Cursor</span><span>Claude Code</span><span className="platform-more">and other MCP clients</span></div></div>
@@ -180,8 +228,8 @@ export function App() {
         {catalog.state === 'error' && <div className="catalog-message" role="alert"><h3>The catalog could not load.</h3><p>{catalog.message}</p><Button variant="outline" onClick={() => { setRetry(value => value + 1); searchInput.current?.focus(); }}>Retry loading themes</Button></div>}
         {catalog.state === 'ready' && filtered.length === 0 && <div className="catalog-message"><h3>{query ? 'No themes match “' + query + '”.' : 'No themes match this filter.'}</h3><p>Try another name, or clear the search and appearance filter.</p><Button variant="outline" onClick={resetSearch}>Clear search and filters</Button></div>}
         {catalog.state === 'ready' && visible.length > 0 && <div className="theme-grid">{visible.map(item => <article key={item.id} className="theme-card">
-          <div className="palette-preview" style={previewStyle(item.id)} aria-hidden="true"><div className="mini-sheet"><div className="mini-sheet-top"><div className="mini-title-group"><span className="mini-symbol">✳</span><div className="mini-lines"><i /><i /></div></div><span className="mini-dots">···</span></div><div className="mini-type">Make it yours.</div><div className="mini-controls"><span className="mini-button">Button <span>→</span></span><div className="mini-swatches"><i /><i /><i /></div></div></div></div>
-          <div className="theme-card-info"><div className="theme-card-heading"><h3>{item.title}</h3><span className="scheme-label">{previews[item.id]?.scheme === 'dark' ? 'Dark' : 'Light'}</span></div><p>{item.componentCount} components <span aria-hidden="true">·</span> {fontLabel(item.font)}</p><a className="theme-token-link" href={registryOrigin + '/registry/' + encodeURIComponent(item.id) + '/globals.json'} aria-label={'View ' + item.title + ' theme tokens'}>View tokens <span aria-hidden="true">↗</span></a></div>
+          <div className="palette-preview" style={previewStyle(item.id, previews[item.id]?.scheme || theme)} aria-hidden="true"><div className="mini-sheet"><div className="mini-sheet-top"><div className="mini-title-group"><span className="mini-symbol">✳</span><div className="mini-lines"><i /><i /></div></div><span className="mini-dots">···</span></div><div className="mini-type">Make it yours.</div><div className="mini-controls"><span className="mini-button">Button <span>→</span></span><div className="mini-swatches"><i /><i /><i /></div></div></div></div>
+          <div className="theme-card-info"><div className="theme-card-heading"><h3>{item.title}</h3><span className="scheme-label">{previews[item.id]?.scheme === 'dark' ? 'Dark' : 'Light'}</span></div><p>{item.componentCount} components <span aria-hidden="true">·</span> {fontLabel(item.font)}</p><div className="theme-card-links"><a className="theme-live-link" href={previewHref(item.id, theme)} aria-label={'Open ' + item.title + ' live preview'}>Live preview <span aria-hidden="true">↗</span></a><a className="theme-token-link" href={registryOrigin + '/registry/' + encodeURIComponent(item.id) + '/globals.json'} aria-label={'View ' + item.title + ' theme tokens'}>View tokens <span aria-hidden="true">↗</span></a></div></div>
         </article>)}</div>}
         {catalog.state === 'ready' && !query.trim() && scheme === 'all' && filtered.length > 6 && <div className="catalog-more"><Button variant="outline" onClick={() => { setShowAll(value => !value); if (showAll) document.getElementById('themes')?.scrollIntoView(); }}>{showAll ? 'Show fewer themes' : 'Show all ' + filtered.length + ' themes'}<span aria-hidden="true">{showAll ? '↑' : '↓'}</span></Button></div>}
         <p className="catalog-note">Tokens from the MIT-licensed Better Design repository. Preview layouts are examples, not the original products.</p>
@@ -207,6 +255,6 @@ export function App() {
 
       <section className="ownership section" aria-labelledby="ownership-title"><div><h2 id="ownership-title">Open source.<br />On your terms.</h2></div><div><p>Run it on your machine or self-host. Read the source, adapt the registry, and edit the guidance.</p><p>Public access depends on hosting capacity. Hosted AI generation and vendor account services are outside this project.</p><a className="text-link" href={serviceSourceUrl}>Read the setup guide <span aria-hidden="true">↗</span></a></div></section>
     </main>
-    <footer className="site-footer"><a className="wordmark" href="#main"><span className="brand-mark" aria-hidden="true"><i /><i /></span>Open Design</a><p>Independent. Open source. Built for your agent.</p><nav aria-label="Footer navigation"><a href="#connect">Connect</a><a href={sourceUrl}>Source</a><a href={sourceUrl + '/blob/main/LICENSE'}>License</a></nav></footer>
+    <SiteFooter theme={theme} />
   </>;
 }

@@ -12,6 +12,12 @@
           "name": "Try a theme",
           "steps": [
             {
+              "name": "Open any theme live",
+              "screen": "/?preview=<theme-id>&mode=<appearance>",
+              "components": ["src/App.tsx", "src/theme.ts", "src/catalog-previews.json"],
+              "data": ["Current website appearance carried in the link", "Previous/next preview navigation"]
+            },
+            {
               "name": "Theme token preview",
               "screen": "Homepage",
               "components": [

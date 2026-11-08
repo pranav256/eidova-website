@@ -1,0 +1,98 @@
+{
+  "origin": "https://open-design-website.vercel.app",
+  "themeCount": 31,
+  "checkedLayouts": 74,
+  "modes": [
+    "dark",
+    "light"
+  ],
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "minimumContrast": 4.524656162902132,
+  "spacing": [
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 6,
+      "total": 6
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 6,
+      "total": 6
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 6,
+      "total": 6
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 6,
+      "total": 6
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 6,
+      "total": 6
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 6,
+      "total": 6
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 6,
+      "total": 6
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 6,
+      "total": 6
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 6,
+      "total": 6
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 6,
+      "total": 6
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 10,
+      "total": 10
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 12,
+      "total": 12
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 4,
+      "total": 4
+    }
+  ],
+  "comprehensionChecks": 98,
+  "comprehensionFailures": 0,
+  "pageErrors": []
+}
