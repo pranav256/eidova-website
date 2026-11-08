@@ -13,14 +13,14 @@
   "spacing": {
     "critical": 0,
     "serious": 0,
-    "moderate": 6,
-    "total": 6
+    "moderate": 14,
+    "total": 14
   },
   "expandedSpacing": {
     "critical": 0,
     "serious": 0,
-    "moderate": 6,
-    "total": 6
+    "moderate": 14,
+    "total": 14
   },
   "setupSpacing": {
     "critical": 0,
@@ -28,7 +28,7 @@
     "moderate": 3,
     "total": 3
   },
-  "comprehensionPanels": 43,
+  "comprehensionPanels": 42,
   "comprehensionFailures": 0,
   "contrasts": [
     {
@@ -86,11 +86,8 @@
       }
     }
   ],
-  "minimumSpecimenContrast": 4.524656162902132,
   "pageErrors": [],
   "behavior": [
-    "palette changes",
-    "preview save/edit",
     "search and URL persistence",
     "multiword search",
     "no-match recovery",

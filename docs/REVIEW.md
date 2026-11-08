@@ -1,57 +1,53 @@
-# Website release review — 2026-11-07
+# Website release review ? 2026-11-07
 
 Reviewed website: https://open-design-website.vercel.app
 
-Every theme now has a shareable live preview. Catalog links carry the current
-dark/light appearance, and the hero follows that appearance as well. The live
-page's toggle updates the URL, so refresh and previous/next navigation retain
-the selected mode. Missing and invalid theme IDs show a recovery link.
-Original source palettes remain available; missing appearances are adapted
-and identified in the preview. The catalog thumbnails keep the source palette.
+Each catalog card now applies its theme to the entire website. All 31 systems
+support light and dark appearances. A sticky control shows the current theme,
+switches appearance, and resets to Open Design. The playground, specimen form,
+and separate preview pages are removed. Palette strips identify each choice;
+the website itself shows its surfaces, colors, actions and corner radius.
+The Geist typeface, layout, header/footer links and connection tools are retained.
 
-The preview-specific check covers all 31 themes in both modes at 390px, plus
-three representative themes in both modes at 1440px and 1728px: 74 rendered
-layouts. All 98 preview copy checks pass, text contrast stays at or above
-4.52:1, and spacing has no critical or serious findings. It also verifies live
-pages work when the catalog API is unavailable. Results are recorded in
-[the live-preview review](preview-review.json); rerun with the service's
-`scripts/verify-theme-previews.mjs`.
+Theme changes preserve search, filters, scroll, keyboard focus, setup tabs and
+clipboard feedback. Theme and appearance are saved in browser storage and
+shareable URLs such as `/?theme=linear&mode=dark`. Legacy preview links migrate
+to this format. Reset clears theme overrides while keeping the current mode.
+The controls also work when storage is disabled or the catalog fails to load.
 
-The redesign keeps the dark-first Geist theme, saved light preference, existing
-Button/Input components, and header/footer links. It adds an interactive token
-preview, six featured palette cards with expansion to all 31 themes, appearance
-filters and search saved in the URL, and keyboard-accessible Codex/JSON/server
-URL setup tabs. The installed registry Textarea lets the entire URL wrap on a
-phone. The preview form saves only inside the example.
+Our private local Open Design MCP supplied design discovery, UI/UX principles,
+review rules, source analysis, comprehension checks and rendered spacing
+inspection. No vendor service was called. The site's original design and
+components are retained; private captured assets and guidance are not shipped.
 
-Our private local Open Design MCP supplied design discovery, extracted theme,
-UI/UX principles, registry kit, review rules, source analysis, comprehension
-checks, and rendered spacing inspection. No vendor service was called. Private
-archive assets and guidance are absent from the website.
+TypeScript and production builds pass. Edge/Playwright checks cover every theme
+in both modes at 390px, plus Linear, Stripe and Airbnb in both modes at 1440px
+and 1728px: **74 theme layouts**. The baseline checks cover the default site
+at all three widths in both modes, including its full 31-card catalog and setup
+panels. Mobile and desktop screenshots were visually inspected.
 
-TypeScript and production builds pass. Dependency audit reports zero
-advisories. Edge/Playwright checks cover 390, 1440, and 1728 pixels in dark and
-light appearances, including all 31 expanded cards. There are no page errors
-or horizontal page overflow. All 43 copy panels pass comprehension. Source and
-rendered spacing reviews have zero critical or serious findings. Remaining
-moderate spacing flags concern responsive automatic margins and one retained
-28px text gap. Mobile and desktop screenshots were inspected.
+Rendered text, input and action/hover checks pass with a minimum measured text
+contrast of **4.52:1**. The generator preserves the original registry and exports
+readable site-specific supporting text and action pairs. Missing source
+appearances adapt surfaces and text while retaining the accent and radius.
+These checks cover this website, not every upstream registry component.
 
-Browser checks exercise palette changes, preview save/edit, multiword search,
-URL and appearance persistence, clear/reset, expansion/collapse, keyboard tabs,
-clipboard success and denial, registry links, catalog failure/invalid response,
-retry, the 15-second timeout, reduced motion, and keyboard skip navigation.
-Geist is loaded and used by the rendered heading.
+Source and rendered spacing reviews have **zero critical or serious findings**.
+All **42 baseline copy panels** and **3 theme-control/intro/attribution panels**
+pass comprehension. The copy review treats controls in their actual location;
+?Apply theme? and its ?Applied? state are mutually exclusive labels. Remaining
+moderate spacing findings concern responsive automatic margins and a retained
+28px gap. There are no browser page errors or horizontal page overflow.
 
-Rendered main text, muted text, and action pairs exceed 4.5:1 in both
-appearances. Preview/card titles and action labels are measured against their
-composited surfaces, including transparent cards; the minimum is 4.52:1.
-The generator keeps original token colors and chooses readable action pairs,
-falling back to a secondary surface when required. These checks cover this
-site's examples, not every component in every upstream system.
+Browser checks also exercise multiword search, clear/reset, appearance filters,
+expansion/collapse, saved URL state, history restoration, keyboard setup tabs,
+clipboard success/denial, registry links, catalog failures, invalid responses,
+retry, timeout, reduced motion, and skip navigation. Anchors leave headings
+visible below the sticky theme controls.
 
-The [review summary](review.json) records the machine result. Raw screenshots,
-DOM measurements and tool responses stay in the adjacent service checkout's
-ignored `.work/website-design/` directory. The reusable browser review and
-palette generator are in the service repository's
-[scripts](https://github.com/pranav256/open-design-mcp/tree/main/scripts).
+The [baseline summary](review.json) and [theme summary](theme-review.json)
+record the public browser results. Raw screenshots, rendered DOM measurements
+and tool responses stay in the service checkout's ignored `.work/website-design/`
+directory. Rerun with `scripts/verify-website.mjs` and
+`scripts/verify-website-themes.mjs` from that repository. Regenerate public
+palettes with `scripts/sync-website-themes.mjs`.

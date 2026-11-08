@@ -3,17 +3,17 @@
 Public theme catalog and connection guide for the independent Open Design MCP.
 The website and MCP service are separate repositories and deployments.
 
-New visits start in dark mode. The header appearance button switches between
-light and dark and preserves the choice in this browser. The live component
-preview switches among Minimal Light, Linear, and Stripe using registry colors.
-Its form saves only within the preview.
+Choose **Apply theme** on any of the 31 catalog cards to change the entire
+website's palette, surfaces, borders, and corner radius. The sticky controls
+show the current theme, switch light/dark mode, and reset to Open Design.
+Switching themes keeps search, filters, scroll position and connection state.
+Geist typography and the site's layout remain consistent.
 
-Every catalog card has a live preview at `/?preview=<theme-id>&mode=dark` (or
-`mode=light`). Links carry the website's current appearance. The preview toggle
-updates the page and URL together, so refresh and previous/next navigation
-preserve that appearance. The hero preview also follows the website setting.
-Source palettes are used for their original appearance; missing appearances
-are adapted for the preview and identified beside the sample.
+New visits start in dark mode. Theme and appearance choices are saved in this
+browser and in shareable URLs such as `/?theme=linear&mode=dark`. Old
+`?preview=<theme-id>` links now apply that theme to the whole site. There is no
+separate playground or preview page. Source palettes are used where available;
+missing light/dark appearances are adapted while retaining the accent and radius.
 
 The catalog initially shows six featured systems. Expand to all 31, search by
 name/style/font, or filter by palette appearance. Search and filter choices survive
@@ -52,15 +52,12 @@ static output; production API proxying is configured in `vercel.json`.
 Button, Input, and Textarea use the retained theme. `components.json` and the
 `@/` alias support adding compatible registry components with shadcn.
 
-`src/catalog-previews.json` contains only the public registry tokens used in the
-specimens. From the adjacent MCP checkout, regenerate it with
-`node scripts/sync-website-previews.mjs ./website`. The generator keeps the exact
-source colors and selects readable action token pairs; it uses a secondary
-surface when the primary palette has no suitable small-text pair. It requires
-the service's Playwright dependency and an installed browser. It exports both
-appearances, preserving supplied dark tokens where available and adapting the
-missing appearance's surfaces and text while retaining the theme's accent and
-corner radius.
+`src/catalog-themes.json` contains only public registry tokens and readable
+site-specific foreground/action overrides. From the adjacent MCP checkout,
+regenerate it with `node scripts/sync-website-themes.mjs ./website`. The generator
+uses the service's Playwright dependency and an installed browser. It exports
+both appearances, preferring supplied variants, and checks small-text contrast
+without changing the original registry assets.
 
 ## Configure
 
