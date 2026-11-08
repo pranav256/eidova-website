@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => {
   const service = env.MCP_PROXY_ORIGIN || 'https://open-design-mcp-liard.vercel.app';
   return {
     root,
+    resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
     plugins: [tailwindcss()],
     build: { outDir: 'dist', emptyOutDir: true },
     server: { proxy: { '/api': { target: service, changeOrigin: true }, '/registry': { target: service, changeOrigin: true } } },

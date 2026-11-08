@@ -1,81 +1,106 @@
 {
   "origin": "https://open-design-website.vercel.app",
-  "mcpReviewEndpoint": "https://open-design-mcp-liard.vercel.app/mcp",
-  "serviceEndpoint": "https://open-design-mcp-liard.vercel.app/mcp",
-  "publicAccess": true,
-  "catalogCount": 31,
   "widths": [
     390,
     1440,
     1728
   ],
-  "noPageErrors": true,
-  "noPageOverflow": true,
-  "behavior": [
-    "keyboard skip link",
-    "search",
-    "no-match recovery",
-    "clipboard URL",
-    "keyboard configuration copy",
-    "catalog error/retry",
-    "focus return",
-    "reduced motion",
-    "theme switching and saved preference"
+  "schemes": [
+    "dark",
+    "light"
   ],
+  "sourcePassed": true,
   "spacing": {
     "critical": 0,
     "serious": 0,
-    "moderate": 2,
-    "total": 2
+    "moderate": 6,
+    "total": 6
   },
-  "comprehensionPanels": 41,
-  "comprehensionFailed": [],
-  "reviewedAt": "2026-11-07T05:53:12.413714+00:00",
-  "deploymentId": "dpl_6ZaNjfJLStgTiiM2NRvf6kwa6Z4T",
-  "sourceReview": {
+  "expandedSpacing": {
     "critical": 0,
     "serious": 0,
-    "moderate": 22,
-    "context": "Retained design-system token declarations and explanatory comments"
+    "moderate": 6,
+    "total": 6
   },
-  "spacingException": "Automatic margins align the mobile header action and center the desktop content container.",
-  "dependencyAudit": {
-    "vulnerabilities": 0,
-    "vite": "7.3.7"
+  "setupSpacing": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 3,
+    "total": 3
   },
-  "limits": [
-    "Automated browser checks and visual inspection; not an accessibility certification or human usability study.",
-    "Provider capacity limits apply."
-  ],
-  "defaultTheme": "dark",
-  "savedLightAndDarkPreferences": true,
-  "darkTokenContrast": [
+  "comprehensionPanels": 43,
+  "comprehensionFailures": 0,
+  "contrasts": [
     {
       "width": 390,
-      "foreground": 12.350024197095216,
-      "muted": 7.880300762091932,
-      "primary": 17.827000398052718,
-      "border": 3.0121027225263592
+      "mode": "dark",
+      "pairs": {
+        "foreground": 12.350024197095216,
+        "muted-foreground": 7.880300762091932,
+        "primary-foreground": 17.827000398052718
+      }
+    },
+    {
+      "width": 390,
+      "mode": "light",
+      "pairs": {
+        "foreground": 7.749336504024824,
+        "muted-foreground": 4.622523909345665,
+        "primary-foreground": 21
+      }
     },
     {
       "width": 1440,
-      "foreground": 12.350024197095216,
-      "muted": 7.880300762091932,
-      "primary": 17.827000398052718,
-      "border": 3.0121027225263592
+      "mode": "dark",
+      "pairs": {
+        "foreground": 12.350024197095216,
+        "muted-foreground": 7.880300762091932,
+        "primary-foreground": 17.827000398052718
+      }
+    },
+    {
+      "width": 1440,
+      "mode": "light",
+      "pairs": {
+        "foreground": 7.749336504024824,
+        "muted-foreground": 4.622523909345665,
+        "primary-foreground": 21
+      }
     },
     {
       "width": 1728,
-      "foreground": 12.350024197095216,
-      "muted": 7.880300762091932,
-      "primary": 17.827000398052718,
-      "border": 3.0121027225263592
+      "mode": "dark",
+      "pairs": {
+        "foreground": 12.350024197095216,
+        "muted-foreground": 7.880300762091932,
+        "primary-foreground": 17.827000398052718
+      }
+    },
+    {
+      "width": 1728,
+      "mode": "light",
+      "pairs": {
+        "foreground": 7.749336504024824,
+        "muted-foreground": 4.622523909345665,
+        "primary-foreground": 21
+      }
     }
   ],
-  "lightSpacing": {
-    "critical": 0,
-    "serious": 0,
-    "moderate": 1,
-    "total": 1
-  }
+  "minimumSpecimenContrast": 4.524656162902132,
+  "pageErrors": [],
+  "behavior": [
+    "palette changes",
+    "preview save/edit",
+    "search and URL persistence",
+    "multiword search",
+    "no-match recovery",
+    "appearance filters and persistence",
+    "expand/collapse 31 themes",
+    "keyboard tabs",
+    "clipboard success and denial",
+    "registry link",
+    "catalog failure, invalid response, retry and timeout",
+    "reduced motion",
+    "keyboard skip link"
+  ]
 }
