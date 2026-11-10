@@ -1,0 +1,480 @@
+{
+  "origin": "http://127.0.0.1:5174",
+  "themeCount": 31,
+  "nativeFamilies": 8,
+  "checkedLayouts": 74,
+  "capturedStates": 148,
+  "modes": [
+    "dark",
+    "light"
+  ],
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "minimumSiteContrast": 4.542288769612194,
+  "minimumNativeContrast": 4.542288769612194,
+  "spacing": [
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 3,
+      "total": 3
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 3,
+      "total": 3
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 3,
+      "total": 3
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 3,
+      "total": 3
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 3,
+      "total": 3
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 3,
+      "total": 3
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 5,
+      "total": 5
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 11,
+      "total": 11
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 11,
+      "total": 11
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 8,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 11,
+      "total": 11
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 11,
+      "total": 11
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 8,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 11,
+      "total": 11
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 11,
+      "total": 11
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 8,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 11,
+      "total": 11
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 11,
+      "total": 11
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 8,
+      "total": 8
+    }
+  ],
+  "comprehensionChecks": 31,
+  "comprehensionFailures": 0,
+  "pageErrors": [],
+  "behavior": [
+    "all 31 IDs open isolated family viewers",
+    "site colors, radius and Geist remain fixed",
+    "no initial hero iframe",
+    "keyboard opening and focus return",
+    "scroll and setup tab retained",
+    "no catalog refetch",
+    "preview URL and legacy theme migration",
+    "old saved palette ignored without deleting it",
+    "invalid and prototype IDs recover safely",
+    "browser history restores viewer and search",
+    "storage-disabled previews and light/dark mode"
+  ]
+}

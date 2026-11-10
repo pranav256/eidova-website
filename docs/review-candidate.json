@@ -1,0 +1,110 @@
+{
+  "origin": "http://127.0.0.1:5174",
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "schemes": [
+    "dark",
+    "light"
+  ],
+  "sourcePassed": true,
+  "spacing": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 12,
+    "total": 12
+  },
+  "expandedSpacing": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 12,
+    "total": 12
+  },
+  "setupSpacing": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 0,
+    "total": 0
+  },
+  "comprehensionPanels": 51,
+  "comprehensionFailures": 0,
+  "contrasts": [
+    {
+      "width": 390,
+      "mode": "dark",
+      "pairs": {
+        "foreground": 12.350024197095216,
+        "muted-foreground": 7.880300762091932,
+        "primary-foreground": 17.827000398052718
+      }
+    },
+    {
+      "width": 390,
+      "mode": "light",
+      "pairs": {
+        "foreground": 7.749336504024824,
+        "muted-foreground": 4.622523909345665,
+        "primary-foreground": 21
+      }
+    },
+    {
+      "width": 1440,
+      "mode": "dark",
+      "pairs": {
+        "foreground": 12.350024197095216,
+        "muted-foreground": 7.880300762091932,
+        "primary-foreground": 17.827000398052718
+      }
+    },
+    {
+      "width": 1440,
+      "mode": "light",
+      "pairs": {
+        "foreground": 7.749336504024824,
+        "muted-foreground": 4.622523909345665,
+        "primary-foreground": 21
+      }
+    },
+    {
+      "width": 1728,
+      "mode": "dark",
+      "pairs": {
+        "foreground": 12.350024197095216,
+        "muted-foreground": 7.880300762091932,
+        "primary-foreground": 17.827000398052718
+      }
+    },
+    {
+      "width": 1728,
+      "mode": "light",
+      "pairs": {
+        "foreground": 7.749336504024824,
+        "muted-foreground": 4.622523909345665,
+        "primary-foreground": 21
+      }
+    }
+  ],
+  "galleryCaptures": 8,
+  "galleryImageBytes": 260311,
+  "baselineCopyCompared": true,
+  "pageErrors": [],
+  "behavior": [
+    "installation in the hero with six client formats",
+    "separate modal preview, keyboard Escape, focus return and sample reset",
+    "source-bound gallery images",
+    "search and URL persistence",
+    "multiword search",
+    "no-match recovery",
+    "appearance filters and persistence",
+    "expand/collapse 31 themes",
+    "keyboard tabs",
+    "core/full options",
+    "clipboard success and denial",
+    "registry link",
+    "catalog failure, invalid response, retry and timeout",
+    "reduced motion",
+    "keyboard skip link"
+  ]
+}

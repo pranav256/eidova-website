@@ -6,9 +6,6 @@ type Palette = { adapted: boolean; tokens: Record<string, string>; siteOverrides
 export type CatalogTheme = { title: string; scheme: ThemeMode; modes: Record<ThemeMode, Palette> };
 export const catalogThemes = catalog as Record<string, CatalogTheme>;
 const modeKey = 'open-design-theme';
-const systemKey = 'open-design-system';
-const appliedProperties = new Set<string>();
-const validId = (id: string | null): id is string => !!id && Object.hasOwn(catalogThemes, id);
 
 export function readTheme(): ThemeMode {
   const mode = new URLSearchParams(window.location.search).get('mode');
@@ -17,69 +14,34 @@ export function readTheme(): ThemeMode {
   catch { /* Storage can be disabled; the default appearance remains usable. */ return 'dark'; }
 }
 
-export function readThemeId(): string | null {
-  const params = new URLSearchParams(window.location.search);
-  if (params.has('theme') || params.has('preview')) {
-    const id = params.get('theme') ?? params.get('preview');
-    return validId(id) ? id : null;
-  }
-  try { const id = localStorage.getItem(systemKey); return validId(id) ? id : null; }
-  catch { /* Theme selection works without browser storage. */ return null; }
-}
-
-export function applyTheme(mode: ThemeMode, save = false, themeId: string | null = readThemeId()): void {
+export function applyTheme(mode: ThemeMode, save = false): void {
   const root = document.documentElement;
-  for (const name of appliedProperties) root.style.removeProperty(name);
-  appliedProperties.clear();
-  const id = validId(themeId) ? themeId : null;
-  if (id) {
-    const palette = catalogThemes[id].modes[mode];
-    for (const [name, value] of Object.entries({ ...palette.tokens, ...palette.siteOverrides })) {
-      root.style.setProperty(name, value);
-      appliedProperties.add(name);
-    }
-  }
   root.dataset.theme = mode;
-  root.dataset.designSystem = id || 'default';
+  root.dataset.designSystem = 'default';
   if (save) {
-    try {
-      localStorage.setItem(modeKey, mode);
-      if (id) localStorage.setItem(systemKey, id); else localStorage.removeItem(systemKey);
-    } catch { /* Colors and URL state still work when storage is unavailable. */ }
+    try { localStorage.setItem(modeKey, mode); }
+    catch { /* Appearance and URL state work when storage is unavailable. */ }
   }
-}
-
-function updateUrl(mode: ThemeMode, id: string | null) {
-  const url = new URL(window.location.href);
-  url.searchParams.delete('preview');
-  if (id) url.searchParams.set('theme', id); else url.searchParams.delete('theme');
-  url.searchParams.set('mode', mode);
-  window.history.replaceState(null, '', url);
 }
 
 export function useAppearance() {
-  const [selection, setSelection] = useState(() => ({ mode: readTheme(), id: readThemeId() }));
+  const [theme, setTheme] = useState(readTheme);
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.has('preview') || params.has('theme')) updateUrl(selection.mode, selection.id);
     const restore = () => {
-      const next = { mode: readTheme(), id: readThemeId() };
-      applyTheme(next.mode, false, next.id);
-      setSelection(next);
+      const mode = readTheme();
+      applyTheme(mode);
+      setTheme(mode);
     };
     window.addEventListener('popstate', restore);
     return () => window.removeEventListener('popstate', restore);
   }, []);
-  function change(mode: ThemeMode, id: string | null) {
-    const nextId = validId(id) ? id : null;
-    applyTheme(mode, true, nextId);
-    updateUrl(mode, nextId);
-    setSelection({ mode, id: nextId });
+  function toggleTheme() {
+    const mode = theme === 'dark' ? 'light' : 'dark';
+    applyTheme(mode, true);
+    const url = new URL(window.location.href);
+    url.searchParams.set('mode', mode);
+    window.history.replaceState(null, '', url);
+    setTheme(mode);
   }
-  return {
-    theme: selection.mode,
-    themeId: selection.id,
-    toggleTheme: () => change(selection.mode === 'dark' ? 'light' : 'dark', selection.id),
-    selectTheme: (id: string | null) => change(selection.mode, id),
-  };
+  return { theme, toggleTheme };
 }

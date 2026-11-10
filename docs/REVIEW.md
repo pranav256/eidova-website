@@ -1,53 +1,41 @@
-# Website release review ? 2026-11-07
+# Website candidate review — 2026-11-10
 
-Reviewed website: https://open-design-website.vercel.app
+Reviewed candidate: `http://127.0.0.1:5174`, built against the local MCP 0.2.0 candidate. These results cover the local build; check the pushed commit's CI and hosted versions separately. The older public evidence in `review.json` and `theme-review.json` remains historical.
 
-Each catalog card now applies its theme to the entire website. All 31 systems
-support light and dark appearances. A sticky control shows the current theme,
-switches appearance, and resets to Open Design. The playground, specimen form,
-and separate preview pages are removed. Palette strips identify each choice;
-the website itself shows its surfaces, colors, actions and corner radius.
-The Geist typeface, layout, header/footer links and connection tools are retained.
+The installation guide now sits in the hero, with six client-specific formats and clipboard recovery. Essentials is the default; full tools are available in collapsed Tool options. The website keeps its own Geist design and header light/dark toggle. All 31 compatible theme IDs open a separate modal viewer of actual family components. Variants explicitly identify the representative family preview. Eight native-component images, larger typography, numbered workflow rows and the existing header/footer links remain.
 
-Theme changes preserve search, filters, scroll, keyboard focus, setup tabs and
-clipboard feedback. Theme and appearance are saved in browser storage and
-shareable URLs such as `/?theme=linear&mode=dark`. Legacy preview links migrate
-to this format. Reset clears theme overrides while keeping the current mode.
-The controls also work when storage is disabled or the catalog fails to load.
+The Better Design/Open Design workflow covered discovery, retained kits, UI/UX principles, feature-map reads/updates, source review, comprehension and rendered spacing. Specimens are workspace settings forms and a member list; no dashboard or trusted dashboard receipt was built.
 
-Our private local Open Design MCP supplied design discovery, UI/UX principles,
-review rules, source analysis, comprehension checks and rendered spacing
-inspection. No vendor service was called. The site's original design and
-components are retained; private captured assets and guidance are not shipped.
+## Current local results
 
-TypeScript and production builds pass. Edge/Playwright checks cover every theme
-in both modes at 390px, plus Linear, Stripe and Airbnb in both modes at 1440px
-and 1728px: **74 theme layouts**. The baseline checks cover the default site
-at all three widths in both modes, including its full 31-card catalog and setup
-panels. Mobile and desktop screenshots were visually inspected.
+| Check | Result |
+| --- | --- |
+| Website TypeScript / production build | Passed |
+| Production dependency audit | Zero known vulnerabilities |
+| Main source/comprehension/spacing | No critical/serious findings; all 51 panels passed; setup spacing findings zero |
+| Installation guide | Six formats, keyboard tabs, core/full options, clipboard success/denial and getting-started copy passed |
+| Gallery fidelity and image size | Eight native PNGs; kit/composer/CSS/image hashes verified; built images matched; 260,311 image bytes total |
+| Footer release information | Package version matches; Docs targets the client guide; Status returns candidate `/health` version |
+| Isolated theme viewers | 74 layouts / 148 parent-and-iframe states: all 31 IDs in both site modes at 390px, three representative IDs in both site modes at 1440/1728px |
+| Viewer comprehension/spacing | All 31 copy checks passed; no critical/serious findings or page errors |
+| Viewer/native sampled text contrast | Minimum measured 4.542:1 |
+| Exact-source specimens | Eight copies verified; 96 captured states at 390/1440/1728px |
+| Specimen source/comprehension/spacing | No critical/serious findings; copy checks passed |
+| Specimen text contrast | Minimum measured 4.542:1 |
+| Browser page errors / native Google/Iconify requests | None in the recorded specimen run |
 
-Rendered text, input and action/hover checks pass with a minimum measured text
-contrast of **4.52:1**. The generator preserves the original registry and exports
-readable site-specific supporting text and action pairs. Missing source
-appearances adapt surfaces and text while retaining the accent and radius.
-These checks cover this website, not every upstream registry component.
+Behavior checks cover installation in the hero, decoded gallery images, keyboard viewer opening, focused preview heading, iframe Escape, nested invitation Escape, close focus return, sample reset and standalone links. Viewer selection preserves site colors, radius, Geist, scroll and the setup tab without refetching the catalog. `?preview=<id>` opens the viewer and legacy `?theme=<id>` migrates to it. Old saved palettes are ignored without deletion; invalid/prototype IDs and disabled storage recover safely. Search/filter/history, keyboard client tabs, profile selection, clipboard success/denial, invalid catalog/timeout/retry recovery, reduced motion and skip navigation passed. Native forms verify required names, email validation, save feedback and sample-member addition.
 
-Source and rendered spacing reviews have **zero critical or serious findings**.
-All **42 baseline copy panels** and **3 theme-control/intro/attribution panels**
-pass comprehension. The copy review treats controls in their actual location;
-?Apply theme? and its ?Applied? state are mutually exclusive labels. Remaining
-moderate spacing findings concern responsive automatic margins and a retained
-28px gap. There are no browser page errors or horizontal page overflow.
+All eight matching-width settled desktop specimens were visually inspected. Industrial retains Doto/Space Mono, Editorial serif headings, Glass translucency, Tactile raised/inset depth, Marketplace roomy/open controls, Precision compact edges, Neutral flat outlines and Expressive action elevation. Shared content/layout makes the differences comparable.
 
-Browser checks also exercise multiword search, clear/reset, appearance filters,
-expansion/collapse, saved URL state, history restoration, keyboard setup tabs,
-clipboard success/denial, registry links, catalog failures, invalid responses,
-retry, timeout, reduced motion, and skip navigation. Anchors leave headings
-visible below the sticky theme controls.
+The installation-first page was compared with the preceding site at 390, 1440 and 1728px. Mobile and both desktop hero appearances were visually inspected, along with the Tactile mobile and Editorial desktop viewers. The copy comparison allows the user-requested removal of the hero demo and global palette controls, plus decorative icon normalization and the readable `Inter` font label. The gallery still uses the exact native specimens; no duplicate component library or new dependency was added for this change.
 
-The [baseline summary](review.json) and [theme summary](theme-review.json)
-record the public browser results. Raw screenshots, rendered DOM measurements
-and tool responses stay in the service checkout's ignored `.work/website-design/`
-directory. Rerun with `scripts/verify-website.mjs` and
-`scripts/verify-website-themes.mjs` from that repository. Regenerate public
-palettes with `scripts/sync-website-themes.mjs`.
+## Evidence and reproduction
+
+[review-candidate.json](review-candidate.json), [theme-viewer-review.json](theme-viewer-review.json) and [specimen-review.json](specimen-review.json) contain the local summaries. Current screenshots, DOM measurements and tool responses are in the sibling MCP checkout's ignored `.work/installation-first/after/` and `viewers/` directories; the preceding site is in `.work/installation-first/before/`. Unchanged native evidence remains in `.work/site-elevation/specimens/`. Its [release report](https://github.com/pranav256/open-design-mcp/blob/main/docs/RELEASE-CANDIDATE.md) includes six separate CLI-installed Vite/Next consumers.
+
+From that MCP repository, point `WEBSITE_SOURCE_DIR` at this checkout, `WEBSITE_REVIEW_URL` at the built preview, `WEBSITE_EXPECTED_MCP_URL` at the candidate full endpoint and `MCP_REVIEW_URL` at the review endpoint. Run `verify-website.mjs`, `verify-website-themes.mjs` and `verify-specimens.mjs`. Optional `WEBSITE_BASELINE_DIR` enables the copy comparison. Sync specimens/catalog metadata after changing registry source, run `node scripts/sync-website-gallery.mjs` against the built local preview, then rebuild to copy the captures. Website review scripts submit bounded DOM batches within the existing 4 MiB HTTP request limit.
+
+These are internal source/DOM/behavior checks, not real-user research, named-client walkthroughs or accessibility certification. Contrast composites solid ancestor backgrounds rather than inspecting image/gradient pixels. Moderate findings concern retained component scales, measured density roles, centered margins, source token declarations/comments and font alias evidence. Image bytes are an asset measurement, not a loading-speed or Lighthouse score. The 31 IDs select eight representative native specimens; this does not certify every variant's own native states or an alternate light/dark appearance for each kit.
+
+Named-client host traces, Docker/staging execution, final naming and package/Registry publication remain separate release work. Observe CI and any deployment triggered by the Git push; the hosted API must provide `/mcp/core` before the website's installation guide is usable there.

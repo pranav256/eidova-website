@@ -12,29 +12,33 @@
           "name": "Try a theme",
           "steps": [
             {
-              "name": "Apply a theme to the entire site",
-              "screen": "/?theme=<theme-id>&mode=<appearance>",
+              "name": "Open a theme in a separate viewer",
+              "route": "/?preview=<theme-id>",
+              "screen": "Theme card and modal component viewer",
               "components": [
                 "src/App.tsx",
-                "src/theme.ts",
-                "src/catalog-themes.json"
+                "src/styles.css",
+                "src/previews/Specimen.tsx",
+                "src/previews/kits/*"
               ],
               "data": [
-                "31 bundled theme palettes in light and dark",
-                "Saved theme and mode in localStorage and URL",
-                "Search, filters, scroll, focus and setup state retained"
+                "All 31 IDs map to eight native family specimens",
+                "Website colors, radius and Geist stay fixed; original kit CSS is isolated in an iframe",
+                "Viewer URL supports direct/reloaded links; legacy ?theme= links migrate to ?preview=",
+                "Native dialog keyboard access, Escape, focused heading and focus return; close retains scroll and setup state"
               ]
             },
             {
-              "name": "Switch appearance or reset theme",
-              "screen": "Sticky site theme controls",
+              "name": "Choose the website appearance",
+              "screen": "Header light/dark control",
               "components": [
                 "src/App.tsx",
                 "src/theme.ts"
               ],
               "data": [
-                "Light/dark applies to the selected theme",
-                "Reset restores Open Design while retaining appearance"
+                "Only the Open Design brand light/dark appearance changes",
+                "Old saved design-system selections are ignored without deleting them",
+                "Mode persists in the URL and localStorage; storage-disabled browsers still work"
               ]
             }
           ]
@@ -44,19 +48,45 @@
           "name": "Browse the catalog",
           "steps": [
             {
-              "name": "Search and filter themes",
+              "name": "Compare eight design families",
               "screen": "Themes section",
               "components": [
-                "src/App.tsx"
+                "src/App.tsx",
+                "src/design-families.json",
+                "src/family-preview-manifest.json",
+                "public/family-previews/*.png"
               ],
               "data": [
-                "GET /api/catalog"
+                "GET /api/catalog",
+                "Eight real native component thumbnails; expand to all 31 compatible IDs",
+                "Search, appearance filters and URL persistence",
+                "Native palette strips retain original appearance and never recolor the website",
+                "Kit/composer/CSS/image hashes verify gallery provenance"
+              ]
+            },
+            {
+              "name": "Preview actual installed components",
+              "route": "/?preview=<theme-id>",
+              "screen": "Separate modal viewer and standalone sample workspace",
+              "components": [
+                "src/App.tsx",
+                "src/previews/Specimen.tsx",
+                "src/previews/specimen.css",
+                "src/previews/kits/*"
+              ],
+              "data": [
+                "/?specimen=<representative-id> opens the full native workspace separately",
+                "Variants clearly identify their representative family preview",
+                "Licensed fonts and registry source copies verified by src/previews/manifest.json",
+                "Sample forms/dialog reset when reopened"
               ]
             },
             {
               "name": "Inspect theme tokens",
               "action": "Open registry JSON",
-              "components": [],
+              "components": [
+                "src/App.tsx"
+              ],
               "data": [
                 "GET /registry/:theme/globals.json"
               ]
@@ -68,18 +98,73 @@
           "name": "Connect an agent",
           "steps": [
             {
-              "name": "Choose client setup",
-              "screen": "Connection section",
+              "name": "Install from the front-page guide",
+              "route": "/#connect",
+              "screen": "Hero installation panel beside the product title",
+              "components": [
+                "src/App.tsx",
+                "src/components/ui/button.tsx",
+                "src/components/ui/textarea.tsx"
+              ],
+              "data": [
+                "Six client formats: Codex, Claude Code/Desktop, Cursor, VS Code and server URL",
+                "Exact commands/configuration; keyboard tabs and clipboard success/denial recovery",
+                "Core defaults to /mcp/core with 11 tools; no hero specimen iframe",
+                "No client configuration is changed automatically"
+              ]
+            },
+            {
+              "name": "Choose Essentials or All tools",
+              "screen": "Tool options disclosure in the installation guide",
               "components": [
                 "src/App.tsx"
               ],
-              "data": []
+              "data": [
+                "Full /mcp remains available",
+                "Profile changes reset copy feedback and update the current client format"
+              ]
             },
             {
-              "name": "Copy URL or command",
-              "action": "Clipboard",
-              "components": [],
-              "data": []
+              "name": "Build the first task or run locally",
+              "route": "/#first-task",
+              "screen": "First-task instructions and local setup link",
+              "components": [
+                "src/App.tsx"
+              ],
+              "data": [
+                "Existing two-step instructions and first-task examples retained",
+                "Distinctive-family selection, existing-brand form improvement and copy/source/spacing review",
+                "Local MCP package setup link"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "inspect-version-and-service-information",
+          "name": "Inspect version and service information",
+          "steps": [
+            {
+              "name": "Read the candidate version and open setup documentation",
+              "screen": "Site footer",
+              "components": [
+                "src/App.tsx",
+                "package.json"
+              ],
+              "data": [
+                "Version from website package metadata",
+                "MCP client setup documentation"
+              ]
+            },
+            {
+              "name": "Inspect service health or source/license",
+              "action": "Follow footer links",
+              "components": [
+                "src/App.tsx"
+              ],
+              "data": [
+                "GET /health on the configured registry origin",
+                "Existing repository and license links"
+              ]
             }
           ]
         }
