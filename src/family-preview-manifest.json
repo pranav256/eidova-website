@@ -1,0 +1,61 @@
+{
+  "sourceManifestSha256": "ef039641bc234b9d54285a5a51009b92f1c9370fc14364bed9c7221102ea7b5b",
+  "specimenSha256": "6ffc90923dc22a206a8d4d351ba7388f39bd44e0141cd61ab2cd9788aab74ef8",
+  "specimenCssSha256": "38b91d1f07b97e6b65516e030132bfd3b25844d773ff52b089780eb1c6a0fb21",
+  "viewport": {
+    "width": 448,
+    "height": 1000,
+    "deviceScaleFactor": 2
+  },
+  "scope": "Actual native workspace details cards; source and fonts settled before capture.",
+  "captures": [
+    {
+      "id": "linear",
+      "file": "/family-previews/linear.png",
+      "bytes": 32346,
+      "sha256": "687ee83ffcb26bdc8b3fa3643b4b5caff2ecc4a6ec316888c38ebf6d66ce770b"
+    },
+    {
+      "id": "editorial-dark",
+      "file": "/family-previews/editorial-dark.png",
+      "bytes": 34657,
+      "sha256": "da1f065b4d9e24132aa7cef51bbafb61e832aa53d46eba35b2437d515f91b1db"
+    },
+    {
+      "id": "light-marketplace",
+      "file": "/family-previews/light-marketplace.png",
+      "bytes": 32437,
+      "sha256": "27f9e1ee5aafedf88a35da90e5114c017e21273e5cf0960d41e76b79b6055196"
+    },
+    {
+      "id": "tactile-minimal",
+      "file": "/family-previews/tactile-minimal.png",
+      "bytes": 29046,
+      "sha256": "b2132ce80959abbdbd2b3d5c5c1eef3684204e07b3f52c66bef43650bdad3b3f"
+    },
+    {
+      "id": "monochrome-industrial",
+      "file": "/family-previews/monochrome-industrial.png",
+      "bytes": 23015,
+      "sha256": "670418c143a6488c0d4a8c9ffae6ea3cd949f809d3ad11b13cceba35f8af9d5b"
+    },
+    {
+      "id": "glassmorphic-dark",
+      "file": "/family-previews/glassmorphic-dark.png",
+      "bytes": 35826,
+      "sha256": "54dfd493ed820cf6049e9c842e6610375fe618154c46fefe94e0ce20fe015efd"
+    },
+    {
+      "id": "minimal-light",
+      "file": "/family-previews/minimal-light.png",
+      "bytes": 33631,
+      "sha256": "a474722ac474295d2deacc279ee08de24e2a1f6f1211be0eb4c0c5d646c9218e"
+    },
+    {
+      "id": "vibrant-dark",
+      "file": "/family-previews/vibrant-dark.png",
+      "bytes": 39353,
+      "sha256": "20f1161d8159e3fa39f24f17f5f1bae96720437ec53fb4484025f5a6e322ad43"
+    }
+  ]
+}

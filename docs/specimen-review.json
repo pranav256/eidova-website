@@ -1,0 +1,116 @@
+{
+  "origin": "http://127.0.0.1:5174",
+  "families": 8,
+  "registryCopiesVerified": 8,
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "states": 96,
+  "distinctMaterialSignatures": 8,
+  "spacing": [
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 39,
+      "total": 39
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 51,
+      "total": 51
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 39,
+      "total": 39
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 51,
+      "total": 51
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 27,
+      "total": 27
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 36,
+      "total": 36
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 21,
+      "total": 21
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 27,
+      "total": 27
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 39,
+      "total": 39
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 51,
+      "total": 51
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 39,
+      "total": 39
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 51,
+      "total": 51
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 42,
+      "total": 42
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 56,
+      "total": 56
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 36,
+      "total": 36
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 46,
+      "total": 46
+    }
+  ],
+  "contrastStates": 96,
+  "minimumMeasuredContrast": 4.542288769612194,
+  "comprehensionFailures": 0,
+  "pageErrors": [],
+  "externalFontOrIconRequests": [],
+  "reviewScope": "Internal source/DOM/behavior review of settings specimens; no user study or dashboard receipt."
+}

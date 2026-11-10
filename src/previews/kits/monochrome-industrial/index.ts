@@ -1,0 +1,17 @@
+import '@fontsource/space-grotesk/latin-400.css';
+import '@fontsource/space-grotesk/latin-500.css';
+import '@fontsource/space-mono/latin-400.css';
+import '@fontsource/space-mono/latin-700.css';
+import '@fontsource/doto/latin-400.css';
+import '@fontsource/doto/latin-500.css';
+import '@fontsource/doto/latin-700.css';
+export * from './components/ui/button';
+export * from './components/ui/input';
+export * from './components/ui/card';
+export * from './components/ui/dialog';
+export * from './components/ui/table';
+export * from './components/ui/sidebar';
+import css from './globals.css?inline';
+export { css };
+export const headingFont="var(--font-display)";
+export const sidebarUsesLabel=false;

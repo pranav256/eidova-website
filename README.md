@@ -1,82 +1,56 @@
 # Open Design website
 
-Public theme catalog and connection guide for the independent Open Design MCP.
-The website and MCP service are separate repositories and deployments.
+The public family catalog and connection guide for Open Design MCP. **0.2.0 is a release candidate.** Deploy the matching API with core support before deploying this website, and verify the hosted versions separately from the local review.
 
-Choose **Apply theme** on any of the 31 catalog cards to change the entire
-website's palette, surfaces, borders, and corner radius. The sticky controls
-show the current theme, switch light/dark mode, and reset to Open Design.
-Switching themes keeps search, filters, scroll position and connection state.
-Geist typography and the site's layout remain consistent.
+Eight curated families show actual Button, Input, Card, Dialog, Table and Sidebar source in isolated workspace-settings specimens. **View components** opens a separate modal viewer; `/?specimen=linear` opens the full specimen separately. CSS is isolated from the website shell, fonts load by family, and sample data resets when reopened.
 
-New visits start in dark mode. Theme and appearance choices are saved in this
-browser and in shareable URLs such as `/?theme=linear&mode=dark`. Old
-`?preview=<theme-id>` links now apply that theme to the whole site. There is no
-separate playground or preview page. Source palettes are used where available;
-missing light/dark appearances are adapted while retaining the accent and radius.
+The hero contains the installation guide: choose Codex, Claude Code, Claude Desktop, Cursor, VS Code or a server URL, then copy the command/configuration. Essentials (11 tools) is the default; collapsed **Tool options** exposes the full profile. First-task examples follow the workflow. The catalog shows eight screenshots of real native components. Larger typography and numbered workflow rows retain the site's Geist theme and existing material tokens.
 
-The catalog initially shows six featured systems. Expand to all 31, search by
-name/style/font, or filter by palette appearance. Search and filter choices survive
-reloads through URL parameters. Connection tabs provide a Codex command, JSON
-configuration, and the full server URL, with clipboard feedback and recovery.
+The website keeps its own design, with a light/dark toggle in the header. Theme selection opens an isolated viewer while preserving setup, scroll and focus. All 31 existing IDs remain available; expand the eight representatives to see the variants. Variant viewers explicitly show their representative family's components, with exact tokens linked separately.
 
-Build, public browser, and design checks are documented in
-[docs/REVIEW.md](docs/REVIEW.md).
+Preview, mode, search and filters persist through URL/browser state. `?preview=<id>` opens the viewer; legacy `?theme=<id>` links migrate to it. Previously saved palette choices are ignored without deleting them. Escape works inside the preview and returns focus on close; nested dialogs close first. Copy failure has a manual recovery path. No client configuration is changed automatically.
 
-- Website: <https://open-design-website.vercel.app>
-- MCP endpoint: <https://open-design-mcp-liard.vercel.app/mcp>
-- MCP source and self-hosting guide: <https://github.com/pranav256/open-design-mcp>
+[Review evidence](docs/REVIEW.md) records local checks and their scope. The MCP repository's [family recipes](https://github.com/pranav256/open-design-mcp/blob/main/docs/DESIGN-FAMILIES.md) and [client matrix](https://github.com/pranav256/open-design-mcp/blob/main/docs/CLIENTS.md) explain installation and verification boundaries.
 
-## Develop
+## Develop and build
 
-Requires Node.js 22 or newer.
+Requires Node **22.12+**:
 
 ```sh
 npm ci
 npm run dev
-```
-
-The development server proxies `/api/catalog` to the public MCP service. To use
-your own server, copy `.env.example` to `.env.local` and set `MCP_PROXY_ORIGIN`,
-`VITE_MCP_URL`, and `VITE_REGISTRY_ORIGIN` to its addresses.
-
-```sh
 npm run check
 npm run build
 npm run preview
 ```
 
-`dist/` contains the production website. Vite's preview server serves the
-static output; production API proxying is configured in `vercel.json`.
+Copy `.env.example` to a local environment file when changing the backend. For the local candidate use `MCP_PROXY_ORIGIN=http://localhost:3000`, `VITE_MCP_URL=http://localhost:3000/mcp` and `VITE_REGISTRY_ORIGIN=http://localhost:3000`. These are public build settings, not secrets.
 
-Button, Input, and Textarea use the retained theme. `components.json` and the
-`@/` alias support adding compatible registry components with shadcn.
+The development server proxies catalog/registry requests. Vite preview serves `dist`; deployment API destinations are in `vercel.json`. The connection UI derives core from the configured full endpoint. The previous hosted API cannot satisfy core until upgraded.
 
-`src/catalog-themes.json` contains only public registry tokens and readable
-site-specific foreground/action overrides. From the adjacent MCP checkout,
-regenerate it with `node scripts/sync-website-themes.mjs ./website`. The generator
-uses the service's Playwright dependency and an installed browser. It exports
-both appearances, preferring supplied variants, and checks small-text contrast
-without changing the original registry assets.
+## Maintain and deploy
 
-## Configure
+From the sibling MCP checkout:
 
-The defaults connect to `https://open-design-mcp-liard.vercel.app/mcp`, request the
-catalog through `/api/catalog`, and link theme tokens on the MCP registry.
-Public `VITE_*` build settings and the development proxy setting are documented
-in `.env.example`. A custom production backend also requires updating the
-rewrite destinations in `vercel.json`.
+```sh
+npm run sync:previews
+node scripts/sync-website-themes.mjs ../open-design-website
+```
 
-## Deploy
+Specimens are generated from real registry files, not maintained as a second component library. `src/previews/manifest.json` records source hashes. The small Vite font adapter replaces the Industrial Google font import with the same locally bundled licensed Doto font, retaining the registry source copy. Catalog generation preserves all IDs, source tokens and appearance metadata; theme selection does not apply those tokens to the website.
 
-Import this repository into a Vercel project using the Vite framework preset.
-The included configuration runs `npm run build`, publishes `dist`, and proxies
-the catalog to the MCP deployment. The website has no server-side secrets or
-account database.
+After building and serving the website against the local candidate API, capture the native gallery from the MCP checkout:
 
-## License and attribution
+```powershell
+$env:WEBSITE_SOURCE_DIR='../open-design-website'
+$env:WEBSITE_REVIEW_URL='http://127.0.0.1:5174'
+node scripts/sync-website-gallery.mjs
+```
 
-MIT. See [NOTICE.md](NOTICE.md) for the retained Better Design component/theme
-notice and the Geist font license. The public MCP provides original guidance
-and local algorithms; this site does not promise unlimited hosting capacity or
-access to Better Design's private backend.
+The generator accepts only a local preview, settles fonts, checks native sources and records kit/composer/CSS/image hashes in `src/family-preview-manifest.json`. Rebuild the website after capture to copy the images into `dist`. The eight PNGs total 260,311 bytes (about 254 KiB); image loading is lazy, with explicit dimensions and async decoding. Regenerate after specimen source or styles change.
+
+Use the Vite Vercel preset, `npm run build` and output `dist`. Coordinate `VITE_MCP_URL`, `VITE_REGISTRY_ORIGIN`, catalog/registry rewrites and the API's `OPEN_DESIGN_WEBSITE_URL`. Follow the MCP [release and rollback sequence](https://github.com/pranav256/open-design-mcp/blob/main/docs/DEPLOYMENT.md). A Git push can trigger the existing deployment integration; confirm its result and hosted core support before declaring the site released.
+
+## License
+
+MIT. [NOTICE.md](NOTICE.md) lists the retained Better Design registry, embedded Tabler SVG and five font notices. Served copies are under `public/licenses`. This independent project is unaffiliated with Better Design; hosted generation, vendor accounts and proprietary inspiration are outside its scope.
