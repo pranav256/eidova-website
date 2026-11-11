@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "product": "Open Design website",
+  "product": "Eidova website",
   "features": [
     {
       "id": "website",
@@ -36,7 +36,7 @@
                 "src/theme.ts"
               ],
               "data": [
-                "Only the Open Design brand light/dark appearance changes",
+                "Only the Eidova brand light/dark appearance changes",
                 "Old saved design-system selections are ignored without deleting them",
                 "Mode persists in the URL and localStorage; storage-disabled browsers still work"
               ]
@@ -164,6 +164,240 @@
               "data": [
                 "GET /health on the configured registry origin",
                 "Existing repository and license links"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "use-a-theme-in-your-project",
+          "name": "Use a theme in your project",
+          "description": "Carry the selected system from preview into an agent session and a portable design document.",
+          "steps": [
+            {
+              "name": "Compare family fit and tradeoff",
+              "route": "/?preview=<theme-id>",
+              "screen": "Theme viewer",
+              "components": [
+                "src/App.tsx",
+                "src/styles.css"
+              ],
+              "data": [
+                "src/design-families.json",
+                "Exact variant name remains separate from the representative specimen"
+              ]
+            },
+            {
+              "name": "Copy the selected theme prompt",
+              "screen": "Theme handoff",
+              "components": [
+                "src/App.tsx"
+              ],
+              "data": [
+                "design://systems/<id>/design.md",
+                "Prompt preserves existing DESIGN.md and brand decisions",
+                "Copy feedback and manual recovery through Project instructions"
+              ]
+            },
+            {
+              "name": "Download project design instructions",
+              "screen": "Project instructions disclosure",
+              "components": [
+                "src/App.tsx"
+              ],
+              "data": [
+                "GET /api/design-systems/:id/design.md",
+                "Same-origin proxy",
+                "Exact tokens, CSS hash, component inventory and review workflow"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "browse-opendesign-resources",
+          "name": "Browse OpenDesign resources",
+          "steps": [
+            {
+              "name": "Search bundled design references and skills",
+              "route": "/#resources",
+              "screen": "Resource library",
+              "components": [
+                "src/ResourceLibrary.tsx",
+                "src/styles.css"
+              ],
+              "data": [
+                "src/resource-catalog.json",
+                "152 design packages and 169 skill entries",
+                "Search, type filters, pagination and empty-result recovery"
+              ]
+            },
+            {
+              "name": "Read and download any bundled file",
+              "screen": "Resource reader dialog",
+              "components": [
+                "src/ResourceLibrary.tsx",
+                "src/styles.css"
+              ],
+              "data": [
+                "GET /api/resources/:kind/:id returns the file manifest",
+                "GET /api/resources/:kind/:id/file?path=<relative-path> returns the original attachment",
+                "Read text literally, preview PNGs, select companions and retry failed requests",
+                "Keyboard focus, Escape, focus return and stale-request cancellation",
+                "GET /api/resources/license; package license overrides remain in the file picker"
+              ]
+            },
+            {
+              "name": "Carry the resource into an agent session",
+              "screen": "Resource agent instructions",
+              "components": [
+                "src/ResourceLibrary.tsx",
+                "src/components/CopyButton.tsx"
+              ],
+              "data": [
+                "Copy agent prompt with manual copy fallback",
+                "search-resources returns a read-resource next call",
+                "read-resource reads manifests, companion files and licenses in core and full profiles",
+                "Unicode character pagination and original binary download links",
+                "Preserve project rules and license notices; reference packages remain separate from installable React kits"
+              ]
+            }
+          ]
+        }
+      ],
+      "components": []
+    },
+    {
+      "id": "team-workspace",
+      "name": "Team workspace",
+      "description": "Own-backend project files and feedback; native Studio engine integration remains incomplete.",
+      "flows": [
+        {
+          "id": "connect-and-collaborate",
+          "name": "Connect and collaborate",
+          "steps": [
+            {
+              "name": "Create, join or reconnect a workspace",
+              "route": "/studio",
+              "screen": "Team workspace connection",
+              "components": [
+                "src/TeamStudio.tsx",
+                "src/main.tsx",
+                "src/styles.css"
+              ],
+              "data": [
+                "VITE_STUDIO_API_URL; development /api/studio proxy",
+                "Private capability in sessionStorage; no model keys"
+              ]
+            },
+            {
+              "name": "Edit shared files and resolve conflicts",
+              "route": "/studio",
+              "screen": "Project file editor",
+              "components": [
+                "src/TeamStudio.tsx",
+                "src/components/CopyButton.tsx"
+              ],
+              "data": [
+                "Authenticated files API with expected project version",
+                "Exact downloads, literal UTF-8 editing, unsaved guards and conflict recovery"
+              ]
+            },
+            {
+              "name": "Review a native project as its creator or a teammate",
+              "route": "/studio",
+              "screen": "Native project files and team visibility",
+              "components": [
+                "src/TeamStudio.tsx",
+                "src/StudioCollaboration.tsx"
+              ],
+              "data": [
+                "Native projects are private by default; creators control visibility and file edits",
+                "Teammates can read shared files and leave feedback; every backend route enforces creator-only editing",
+                "Changing visibility to private removes teammate reads and revokes existing revision links"
+              ]
+            },
+            {
+              "name": "Share feedback and manage access",
+              "route": "/studio",
+              "screen": "Feedback and Workspace access",
+              "components": [
+                "src/TeamStudio.tsx"
+              ],
+              "data": [
+                "Comments and author/owner resolution",
+                "Single-use invitations, owner-only member revocation"
+              ]
+            },
+            {
+              "name": "Connect a coding agent",
+              "route": "/studio",
+              "screen": "Use with a coding agent",
+              "components": [
+                "src/TeamStudio.tsx"
+              ],
+              "data": [
+                "Private stdio --studio: fourteen team tools alongside the design tools",
+                "Explicit transfer and watched three-way file sync; native membership/catalog/content/comment/presence adapters are wired in source and tested against the real backend",
+                "Native Studio launcher requires pinned dependencies, private backend connection and an explicit OD_DATA_DIR; native runtime is not yet verified"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "history-sharing-and-recovery",
+          "name": "History sharing and recovery",
+          "steps": [
+            {
+              "name": "Review and restore a revision",
+              "route": "/studio",
+              "screen": "Revision history",
+              "components": [
+                "src/StudioCollaboration.tsx",
+                "src/TeamStudio.tsx"
+              ],
+              "data": [
+                "Immutable file/metadata snapshots; restore requires expectedVersion",
+                "Paginated history, literal previews and exact JSON downloads"
+              ]
+            },
+            {
+              "name": "Share and revoke a fixed revision",
+              "route": "/studio#share=<capability>",
+              "screen": "Share controls and public revision viewer",
+              "components": [
+                "src/StudioCollaboration.tsx",
+                "src/SharedStudio.tsx",
+                "src/main.tsx"
+              ],
+              "data": [
+                "Owner-only link creation; 24-hour UI expiry",
+                "Capability stays in fragment; Share authorization header; hashes at rest",
+                "Files and metadata are literal data; no HTML execution"
+              ]
+            },
+            {
+              "name": "Recover or rotate access",
+              "route": "/studio",
+              "screen": "Workspace access and recovery form",
+              "components": [
+                "src/StudioCollaboration.tsx",
+                "src/TeamStudio.tsx"
+              ],
+              "data": [
+                "One-use recovery capability replaces lost access key",
+                "Rotation invalidates old access key; revoked members cannot recover",
+                "Optional server registration key; no secrets in build settings"
+              ]
+            },
+            {
+              "name": "See recent presence",
+              "route": "/studio",
+              "screen": "Project collaboration",
+              "components": [
+                "src/StudioCollaboration.tsx"
+              ],
+              "data": [
+                "15-second heartbeat; 60-second presence window",
+                "Authenticated project scope; revoked members excluded"
               ]
             }
           ]

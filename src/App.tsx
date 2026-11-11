@@ -4,8 +4,10 @@ import { Input } from './components/ui/input';
 import { Textarea } from './components/ui/textarea';
 import { catalogThemes, useAppearance, type ThemeMode } from './theme';
 import families from './design-families.json';
+import { ResourceLibrary } from './ResourceLibrary';
+import { CopyButton } from './components/CopyButton';
 import { version } from '../package.json';
-import { ArrowDown, ArrowUpRight, Check, Copy, Search } from 'lucide-react';
+import { ArrowDown, ArrowUpRight, Search } from 'lucide-react';
 
 type Theme = { id: string; title: string; description: string; primaryColor?: string; font?: string; componentCount: number; personality?: string[] };
 type CatalogState = { state: 'loading' } | { state: 'error'; message: string } | { state: 'ready'; themes: Theme[] };
@@ -44,13 +46,13 @@ function paletteStyle(id: string, mode: ThemeMode): CSSProperties {
 }
 function SiteHeader({ theme, onToggleTheme }: { theme: ThemeMode; onToggleTheme: () => void }) {
   return <header className="site-header">
-    <a className="wordmark" href="#main" aria-label="Open Design home"><span className="brand-mark" aria-hidden="true"><i /><i /></span>Open Design</a>
-    <nav aria-label="Main navigation"><a href="#themes">Themes</a><a href="#tools">Tools</a><a href="#connect">Connect</a></nav>
+    <a className="wordmark" href="#main" aria-label="Eidova home"><span className="brand-mark" aria-hidden="true"><i /><i /></span>Eidova</a>
+    <nav aria-label="Main navigation"><a href="#themes">Themes</a><a href="#resources">Resources</a><a href="#tools">Tools</a><a href="/studio">Team workspace</a><a href="#connect">Connect</a></nav>
     <div className="header-actions"><a className="source-link" href={sourceUrl}>Source code <ArrowUpRight aria-hidden="true" /></a><Button className="theme-toggle" variant="outline" size="sm" onClick={onToggleTheme} aria-label={'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode'}>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</Button></div>
   </header>;
 }
 function SiteFooter() {
-  return <footer className="site-footer"><a className="wordmark" href="#main"><span className="brand-mark" aria-hidden="true"><i /><i /></span>Open Design</a><p>Independent. Open source. Built for your agent. v{version}</p><nav aria-label="Footer navigation"><a href="#connect">Connect</a><a href={sourceUrl}>Source</a><a href={serviceSourceUrl + '/blob/main/docs/CLIENTS.md'}>Docs</a><a href={registryOrigin + '/health'}>Status</a><a href={sourceUrl + '/blob/main/LICENSE'}>License</a></nav></footer>;
+  return <footer className="site-footer"><a className="wordmark" href="#main"><span className="brand-mark" aria-hidden="true"><i /><i /></span>Eidova</a><p>Independent. Open source. Built for your agent. v{version}</p><nav aria-label="Footer navigation"><a href="#connect">Connect</a><a href={sourceUrl}>Source</a><a href={serviceSourceUrl + '/blob/main/docs/CLIENTS.md'}>Docs</a><a href={registryOrigin + '/health'}>Status</a><a href={sourceUrl + '/blob/main/LICENSE'}>License</a></nav></footer>;
 }
 function fontLabel(value?: string) {
   const family = value?.split(',')[0].replace(/["']/g, '').trim();
@@ -60,24 +62,8 @@ function fontLabel(value?: string) {
   return family.replace(/\s+VF$/, ' Variable');
 }
 
-function CopyButton({ value, children }: { value: string; children: string }) {
-  const [status, setStatus] = useState<'idle' | 'copied' | 'error'>('idle');
-  useEffect(() => {
-    setStatus('idle');
-  }, [value]);
-  useEffect(() => {
-    if (status === 'idle') return;
-    const timer = window.setTimeout(() => setStatus('idle'), 3500);
-    return () => window.clearTimeout(timer);
-  }, [status]);
-  async function copy() {
-    try { await navigator.clipboard.writeText(value); setStatus('copied'); }
-    catch { setStatus('error'); }
-  }
-  return <div className="copy-action">
-    <Button type="button" onClick={copy}>{status === 'copied' ? 'Copied' : children}{status === 'copied' ? <Check aria-hidden="true" /> : <Copy aria-hidden="true" />}</Button>
-    <span role="status" className="copy-feedback">{status === 'error' ? 'Select the text and copy it manually.' : status === 'copied' ? 'Copied to clipboard.' : ''}</span>
-  </div>;
+function designPrompt(id: string) {
+  return `Use Eidova's "${id}" design system for this project. Read design://systems/${id}/design.md and merge its guidance with any existing DESIGN.md. Inspect the project, then call get-design-system-kit with target "react", designSystemId "${id}", and only the components needed. Preserve existing brand decisions. Build with real components and review source, copy and rendered spacing.`;
 }
 
 export function App() {
@@ -96,7 +82,7 @@ export function App() {
   const searchInput = useRef<HTMLInputElement>(null);
   const fullEndpoint=endpoint.replace(/\/core\/?$/,'').replace(/\/$/,'');
   const selectedEndpoint=profile==='core'?fullEndpoint+'/core':fullEndpoint;
-  const setup=client===0?'codex mcp add open-design --url '+selectedEndpoint:client===1?'claude mcp add --transport http open-design '+selectedEndpoint:client===3?JSON.stringify({mcpServers:{'open-design':{url:selectedEndpoint}}},null,2):client===4?JSON.stringify({servers:{'open-design':{type:'http',url:selectedEndpoint}}},null,2):selectedEndpoint;
+  const setup=client===0?'codex mcp add eidova --url '+selectedEndpoint:client===1?'claude mcp add --transport http eidova '+selectedEndpoint:client===3?JSON.stringify({mcpServers:{'eidova':{url:selectedEndpoint}}},null,2):client===4?JSON.stringify({servers:{'eidova':{type:'http',url:selectedEndpoint}}},null,2):selectedEndpoint;
   const setupDescription=client<2?'Run this command in your terminal.':client===3?'Save this in .cursor/mcp.json.':client===4?'Save this in .vscode/mcp.json.':client===2?'In Settings → Connectors, add a custom connector with this URL.':'Choose Streamable HTTP in your MCP client.';
   const copyLabel=client<2?'Copy '+clientOptions[client]+' command':client===3||client===4?'Copy configuration':'Copy server URL';
 
@@ -139,7 +125,7 @@ export function App() {
     const words = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
     return catalog.themes.filter(item => {
       const family=familyFor(item.id);
-      const text = [item.id, item.title, item.description, item.font, family?.title, family?.description, ...(item.personality || [])].join(' ').toLowerCase();
+      const text = [item.id, item.title, item.description, item.font, family?.title, family?.description, ...(family?.useCases || []), ...(item.personality || [])].join(' ').toLowerCase();
       return words.every(word => text.includes(word)) && (scheme === 'all' || catalogThemes[item.id]?.scheme === scheme);
     }).sort((a, b) => {
       const aIndex = featuredIds.indexOf(a.id), bIndex = featuredIds.indexOf(b.id);
@@ -168,7 +154,7 @@ export function App() {
     <a className="skip-link" href="#main">Skip to content</a>
     <SiteHeader theme={theme} onToggleTheme={toggleTheme} />
 
-    <main id="main">
+    <main id="main" tabIndex={-1}>
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
           <h1 id="hero-title">Give your agent<br /><span>a design system.</span></h1>
@@ -177,15 +163,15 @@ export function App() {
           <p className="hero-note">Free public access <span aria-hidden="true">·</span> No account required</p>
         </div>
         <section className="config-panel" id="connect" aria-labelledby="connect-title">
-          <div className="installation-heading"><h2 id="connect-title">Install Open Design</h2><p>Choose your client, copy the setup, and connect.</p></div>
-          <div className="client-tabs" role="tablist" aria-label="Connection format">{clientOptions.map((label, index) => <Button key={label} id={'client-tab-' + index} role="tab" variant="ghost" aria-selected={client === index} aria-controls={'client-panel-' + index} tabIndex={client === index ? 0 : -1} onClick={() => setClient(index)} onKeyDown={event => tabKey(event, index)}>{label}</Button>)}</div>
+          <div className="installation-heading"><h2 id="connect-title">Install Eidova</h2><p>Choose your client, copy the setup, and connect.</p></div>
+          <div className="client-tabs" role="tablist" aria-label="Connection format">{clientOptions.map((label, index) => <Button key={label} id={'client-tab-' + index} role="tab" variant="ghost" aria-selected={client === index} aria-controls={client === index ? 'client-panel-' + index : undefined} tabIndex={client === index ? 0 : -1} onClick={() => setClient(index)} onKeyDown={event => tabKey(event, index)}>{label}</Button>)}</div>
           <div className="client-panel" id={'client-panel-' + client} role="tabpanel" aria-labelledby={'client-tab-' + client} tabIndex={0} key={client}>
             <p className="config-description">{setupDescription}</p>
             {client === 2||client===5 ? <Textarea id="mcp-endpoint" className="endpoint-input" aria-label="MCP server URL" value={selectedEndpoint} rows={2} readOnly spellCheck={false} onFocus={event => event.target.select()} /> : <pre><code>{setup}</code></pre>}
             <CopyButton value={setup}>{copyLabel}</CopyButton>
             <div className="config-footnote"><span aria-hidden="true">↳</span><p>{client<2?'Start a new client session after adding the server.':client===3||client===4?'Save the configuration and reload your client.':'Paste the URL into your client and connect.'}</p></div>
           </div>
-          <details className="tool-options"><summary>Tool options</summary><div className="profile-picker" role="group" aria-label="MCP tool profile"><Button variant="ghost" aria-pressed={profile==='core'} onClick={()=>setProfile('core')}>Essentials · 11 tools</Button><Button variant="ghost" aria-pressed={profile==='full'} onClick={()=>setProfile('full')}>All tools</Button></div><p className="profile-note">Essentials uses less agent context. All tools adds private project rules and specialist guides.</p></details>
+          <details className="tool-options"><summary>Tool options</summary><div className="profile-picker" role="group" aria-label="MCP tool profile"><Button variant="ghost" aria-pressed={profile==='core'} onClick={()=>setProfile('core')}>Essentials · 13 tools</Button><Button variant="ghost" aria-pressed={profile==='full'} onClick={()=>setProfile('full')}>All tools</Button></div><p className="profile-note">Essentials uses less agent context. All tools adds private project rules and specialist guides.</p></details>
         </section>
       </section>
 
@@ -208,13 +194,22 @@ export function App() {
             <div className="theme-card-heading"><h3>{featuredIds.includes(item.id)?familyFor(item.id)?.title:item.title}</h3><span className="scheme-label">{catalogThemes[item.id]?.scheme === 'dark' ? 'Dark base' : 'Light base'}</span></div>
             <p>{item.title} · {item.componentCount} components · {fontLabel(item.font)}</p>
             <p className="family-description">{featuredIds.includes(item.id)?familyFor(item.id)?.description:'Part of the '+familyFor(item.id)?.title+' family.'}</p>
-            <div className="theme-card-links"><Button className="view-components" variant="outline" aria-label={'Preview '+(featuredIds.includes(item.id)?familyFor(item.id)?.title:item.title)+' theme'} aria-haspopup="dialog" aria-expanded={preview===item.id} aria-controls="component-preview" onClick={event=>{previewTrigger.current=event.currentTarget;setPreview(item.id);}}>{featuredIds.includes(item.id)?'View components':'View family'}</Button><a className="theme-token-link" href={registryOrigin + '/registry/' + encodeURIComponent(item.id) + '/globals.json'} aria-label={'View ' + item.title + ' theme tokens'}>View tokens <ArrowUpRight aria-hidden="true" /></a></div>
+            <div className="theme-card-links"><Button className="view-components" variant="outline" aria-label={(featuredIds.includes(item.id)?'View components: ':'View family: ')+(featuredIds.includes(item.id)?familyFor(item.id)?.title:item.title)} aria-haspopup="dialog" aria-expanded={preview===item.id} aria-controls="component-preview" onClick={event=>{previewTrigger.current=event.currentTarget;setPreview(item.id);}}>{featuredIds.includes(item.id)?'View components':'View family'}</Button><a className="theme-token-link" href={registryOrigin + '/registry/' + encodeURIComponent(item.id) + '/globals.json'} aria-label={'View tokens: ' + item.title}>View tokens <ArrowUpRight aria-hidden="true" /></a></div>
           </div>
         </article>)}</div>}
-        <dialog ref={previewDialog} className="component-preview" id="component-preview" aria-labelledby="component-preview-title" onCancel={()=>setPreview(null)} onClose={()=>{setPreview(null);if(previewTrigger.current?.isConnected)previewTrigger.current.focus();else searchInput.current?.focus();}}><div className="section-heading"><div><h2 id="component-preview-title" tabIndex={-1}>{previewFamily?previewFamily.title+' components':'Component preview'}</h2><p>{preview&&previewFamily&&preview!==previewFamily.representative?catalogThemes[preview].title+' is a '+previewFamily.title+' variant. This preview shows the family components.':'Real components in their original appearance. Sample data resets when you reopen.'}</p></div><div className="preview-actions"><a className="text-link" href={'/?specimen='+encodeURIComponent(previewFamily?.representative??'linear')} target="_blank" rel="noreferrer">Open full preview</a><Button variant="outline" onClick={()=>setPreview(null)}>Close preview</Button></div></div>{previewFamily&&<iframe key={preview} title={previewFamily.title+' component preview'} className="specimen-frame" src={'/?specimen='+encodeURIComponent(previewFamily.representative)} onLoad={previewLoaded} />}</dialog>
+        <dialog ref={previewDialog} className="component-preview" id="component-preview" aria-labelledby="component-preview-title" onCancel={()=>setPreview(null)} onClose={()=>{setPreview(null);if(previewTrigger.current?.isConnected)previewTrigger.current.focus();else searchInput.current?.focus();}}><div className="section-heading"><div><h2 id="component-preview-title" tabIndex={-1}>{previewFamily?previewFamily.title+' components':'Component preview'}</h2><p>{preview&&previewFamily&&preview!==previewFamily.representative?catalogThemes[preview].title+' is a '+previewFamily.title+' variant. This preview shows the family components.':'Real components in their original appearance. Sample data resets when you reopen.'}</p></div><div className="preview-actions"><a className="text-link" href={'/?specimen='+encodeURIComponent(previewFamily?.representative??'linear')} target="_blank" rel="noreferrer">Open full preview</a><Button variant="outline" onClick={()=>setPreview(null)}>Close preview</Button></div></div>{previewFamily&&preview&&<div className="preview-workspace">
+          <iframe key={preview} title={previewFamily.title+' component preview'} className="specimen-frame" src={'/?specimen='+encodeURIComponent(previewFamily.representative)} onLoad={previewLoaded} />
+          <section className="theme-handoff" aria-labelledby="theme-handoff-title">
+            <h3 id="theme-handoff-title">Use {catalogThemes[preview].title}</h3>
+            <dl className="theme-suitability"><div><dt>Best for</dt><dd>{previewFamily.useCases.join(', ')}.</dd></div><div><dt>Consider</dt><dd>{previewFamily.tradeoff}</dd></div></dl>
+            <div className="handoff-prompt"><CopyButton value={designPrompt(preview)}>Copy agent prompt</CopyButton><details><summary>Project instructions</summary><Textarea aria-label="Agent prompt" value={designPrompt(preview)} rows={8} readOnly spellCheck={false} onFocus={event=>event.target.select()} /><div className="handoff-download"><a className="text-link" href={'/api/design-systems/'+encodeURIComponent(preview)+'/design.md'} download="DESIGN.md">Download DESIGN.md <ArrowDown aria-hidden="true" /></a><p>Save colors and rules with your project.</p></div></details></div>
+          </section>
+        </div>}</dialog>
         {catalog.state === 'ready' && !query.trim() && scheme === 'all' && filtered.length > featuredIds.length && <div className="catalog-more"><Button variant="outline" onClick={() => { setShowAll(value => !value); if (showAll) document.getElementById('themes')?.scrollIntoView(); }}>{showAll ? 'Show fewer themes' : 'Show all ' + filtered.length + ' themes'}<span aria-hidden="true">{showAll ? '↑' : '↓'}</span></Button></div>}
         <p className="catalog-note">Themes from the MIT-licensed Better Design registry. Component previews open in a separate viewer.</p>
       </section>
+
+      <ResourceLibrary />
 
       <section className="workflow section" id="tools" aria-labelledby="tools-title">
         <div className="section-heading"><div><h2 id="tools-title">From a blank page to a better UI.</h2><p>A small set of tools for the decisions that matter.</p></div><span className="section-aside">Choose. Build. Review.</span></div>
@@ -222,8 +217,8 @@ export function App() {
       </section>
 
       <section className="getting-started section" id="first-task" aria-labelledby="first-task-title">
-        <div className="connect-copy"><h2 id="first-task-title">One connection.<br />Your next starting point.</h2><p>Add Open Design through MCP. No account required.</p><a className="text-link" href={serviceSourceUrl + '#run-locally'}>Prefer to run locally? <span aria-hidden="true">↗</span></a></div>
-        <div><ol className="setup-steps"><li><span>01</span><div><strong>Add the server.</strong><p>Choose your client's setup format.</p></div></li><li><span>02</span><div><strong>Ask your agent to use Open Design.</strong><p>Choose a theme. Build. Review.</p></div></li></ol><details className="first-tasks"><summary>Try a first task</summary><ul><li>Find a distinctive design family for this screen and install only the components it needs.</li><li>Use my existing brand and improve this form.</li><li>Review this screen's copy, code and measured spacing.</li></ul></details></div>
+        <div className="connect-copy"><h2 id="first-task-title">One connection.<br />Your next starting point.</h2><p>Add Eidova through MCP. No account required.</p><a className="text-link" href={serviceSourceUrl + '#run-locally'}>Prefer to run locally? <span aria-hidden="true">↗</span></a></div>
+        <div><ol className="setup-steps"><li><span>01</span><div><strong>Add the server.</strong><p>Choose your client's setup format.</p></div></li><li><span>02</span><div><strong>Ask your agent to use Eidova.</strong><p>Choose a theme. Build. Review.</p></div></li></ol><details className="first-tasks"><summary>Try a first task</summary><ul><li>Find a distinctive design family for this screen and install only the components it needs.</li><li>Use my existing brand and improve this form.</li><li>Review this screen's copy, code and measured spacing.</li></ul></details></div>
       </section>
 
       <section className="ownership section" aria-labelledby="ownership-title"><div><h2 id="ownership-title">Open source.<br />On your terms.</h2></div><div><p>Run it on your machine or self-host. Read the source, adapt the registry, and edit the guidance.</p><p>Public access depends on hosting capacity. Hosted AI generation and vendor account services are outside this project.</p><a className="text-link" href={serviceSourceUrl}>Read the setup guide <span aria-hidden="true">↗</span></a></div></section>

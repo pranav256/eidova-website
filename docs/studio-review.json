@@ -1,0 +1,446 @@
+{
+  "formattingOnlyFollowup": {
+    "date": "2026-11-12",
+    "file": "src/components/CopyButton.tsx",
+    "previousSha256": "d366c37da1527303e26633dec588c316638c88c11c34e5484e1b04b5300565c0",
+    "change": "Removed one blank line at EOF; appending that newline reproduces the reviewed bytes exactly.",
+    "sourceReview": "No findings; behavior and rendered styles are unchanged."
+  },
+  "scope": "Local Team workspace and real SQLite backend; not upstream Studio runtime or deployed hosting.",
+  "states": 41,
+  "sourceSha256": {
+    "TeamStudio.tsx": "9e77d9c30fe2d5169eb534b01d5486fbac707400190f6ea83762f8e3ad527073",
+    "StudioCollaboration.tsx": "a4b5f450186c07948bda4efa7cbe888e7f498ff80d496059486a525d373a0055",
+    "SharedStudio.tsx": "f392cd2c921dc48be740096c9e583ab7e7d6332015afc4f048c5b3f5b847dec9",
+    "App.tsx": "e55a3d0e2e0e2e566e2ceebd1ed69c8c41f0517dc6022b3a5fb0642095c5c620",
+    "styles.css": "9c5ffab89a16c59a1aee123c511ede6ed1c5a65c54c5afe35758be4f88dab652",
+    "theme.css": "4d2b4372753ea2e89701d8943dcc9e0e46538dfcfe7c72ce0d5f6f9d18cb1e89",
+    "main.tsx": "e245f7d497bfaf175009e5df9fd1713acd53ad02630cf82843bbbb0d2e2722fd",
+    "components/CopyButton.tsx": "04a61c7e3f4de9fd2aefd051831dd9c1f8e4ee751d335a7a418af6519280f607"
+  },
+  "errors": [],
+  "contrasts": [
+    {
+      "name": "390 dark connection",
+      "failures": []
+    },
+    {
+      "name": "390 light connection",
+      "failures": []
+    },
+    {
+      "name": "390 dark editor",
+      "failures": []
+    },
+    {
+      "name": "390 light editor",
+      "failures": []
+    },
+    {
+      "name": "390 light conflict",
+      "failures": []
+    },
+    {
+      "name": "390 light invitation",
+      "failures": []
+    },
+    {
+      "name": "390 light agent handoff",
+      "failures": []
+    },
+    {
+      "name": "390 light revision review",
+      "failures": []
+    },
+    {
+      "name": "390 light share controls",
+      "failures": []
+    },
+    {
+      "name": "390 light shared revision",
+      "failures": []
+    },
+    {
+      "name": "390 dark shared revision",
+      "failures": []
+    },
+    {
+      "name": "390 light key recovery",
+      "failures": []
+    },
+    {
+      "name": "1440 dark connection",
+      "failures": []
+    },
+    {
+      "name": "1440 light connection",
+      "failures": []
+    },
+    {
+      "name": "1440 dark editor",
+      "failures": []
+    },
+    {
+      "name": "1440 light editor",
+      "failures": []
+    },
+    {
+      "name": "1440 light revision review",
+      "failures": []
+    },
+    {
+      "name": "1440 light share controls",
+      "failures": []
+    },
+    {
+      "name": "1440 light shared revision",
+      "failures": []
+    },
+    {
+      "name": "1440 dark shared revision",
+      "failures": []
+    },
+    {
+      "name": "1728 dark connection",
+      "failures": []
+    },
+    {
+      "name": "1728 light connection",
+      "failures": []
+    },
+    {
+      "name": "1728 dark editor",
+      "failures": []
+    },
+    {
+      "name": "1728 light editor",
+      "failures": []
+    },
+    {
+      "name": "1728 light revision review",
+      "failures": []
+    },
+    {
+      "name": "1728 light share controls",
+      "failures": []
+    },
+    {
+      "name": "1728 light shared revision",
+      "failures": []
+    },
+    {
+      "name": "1728 dark shared revision",
+      "failures": []
+    },
+    {
+      "name": "390 dark native read only",
+      "failures": []
+    },
+    {
+      "name": "390 light native read only",
+      "failures": []
+    },
+    {
+      "name": "390 dark native creator",
+      "failures": []
+    },
+    {
+      "name": "390 light native creator",
+      "failures": []
+    },
+    {
+      "name": "390 light native access removed",
+      "failures": []
+    },
+    {
+      "name": "1440 dark native read only",
+      "failures": []
+    },
+    {
+      "name": "1440 light native read only",
+      "failures": []
+    },
+    {
+      "name": "1440 dark native creator",
+      "failures": []
+    },
+    {
+      "name": "1440 light native creator",
+      "failures": []
+    },
+    {
+      "name": "1728 dark native read only",
+      "failures": []
+    },
+    {
+      "name": "1728 light native read only",
+      "failures": []
+    },
+    {
+      "name": "1728 dark native creator",
+      "failures": []
+    },
+    {
+      "name": "1728 light native creator",
+      "failures": []
+    }
+  ],
+  "comprehension": [
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 18,
+      "estimatedExplainSeconds": 12,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 5,
+      "estimatedExplainSeconds": 2,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 7,
+      "estimatedExplainSeconds": 2,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 10,
+      "estimatedExplainSeconds": 9,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 4,
+      "estimatedExplainSeconds": 1,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 4,
+      "estimatedExplainSeconds": 4,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 13,
+      "estimatedExplainSeconds": 4,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 24,
+      "estimatedExplainSeconds": 11,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 11,
+      "estimatedExplainSeconds": 4,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 20,
+      "estimatedExplainSeconds": 7,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 17,
+      "estimatedExplainSeconds": 6,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 14,
+      "estimatedExplainSeconds": 5,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 24,
+      "estimatedExplainSeconds": 11,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 18,
+      "estimatedExplainSeconds": 9,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 26,
+      "estimatedExplainSeconds": 12,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 21,
+      "estimatedExplainSeconds": 7,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    }
+  ],
+  "spacing": [
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "total": 0
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "total": 0
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "total": 0
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "total": 0
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "total": 0
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "total": 0
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 4,
+      "total": 4
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 4,
+      "total": 4
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "total": 0
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 0,
+      "total": 0
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 1,
+      "total": 1
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 2,
+      "total": 2
+    },
+    {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 1,
+      "total": 1
+    }
+  ]
+}

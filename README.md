@@ -1,10 +1,16 @@
-# Open Design website
+# Eidova website
 
-The public family catalog and connection guide for Open Design MCP. **0.2.0 is a release candidate.** Deploy the matching API with core support before deploying this website, and verify the hosted versions separately from the local review.
+The public family catalog and connection guide for Eidova MCP. **0.2.0 is a release candidate.** Deploy the matching API with core support before deploying this website, and verify the hosted versions separately from the local review.
+
+`/studio` adds a team file workspace using Eidova's own persistent backend: projects, literal text editing, exact downloads, revision history/restore, expiring share links, recent presence, feedback, invitations, member revocation and one-use key recovery/rotation. It is a separate file collaboration surface; full native OpenDesign runtime integration remains incomplete. Follow the MCP [Studio setup guide](../eidova-mcp/docs/STUDIO.md). Production needs `VITE_STUDIO_API_URL` and a backend allowing the site's exact origin; otherwise the page shows a setup state. Workspace keys stay in this tab's session storage and must never be put in build settings. [Local review evidence](docs/studio-review.json) records the tested scope.
+
+Eidova replaces Open Design. Existing GitHub/Vercel URLs remain active until the coordinated hosted rename is verified. Appearance preferences use `eidova-theme` and still read the previous `open-design-theme` value when no new preference is saved.
 
 Eight curated families show actual Button, Input, Card, Dialog, Table and Sidebar source in isolated workspace-settings specimens. **View components** opens a separate modal viewer; `/?specimen=linear` opens the full specimen separately. CSS is isolated from the website shell, fonts load by family, and sample data resets when reopened.
 
-The hero contains the installation guide: choose Codex, Claude Code, Claude Desktop, Cursor, VS Code or a server URL, then copy the command/configuration. Essentials (11 tools) is the default; collapsed **Tool options** exposes the full profile. First-task examples follow the workflow. The catalog shows eight screenshots of real native components. Larger typography and numbered workflow rows retain the site's Geist theme and existing material tokens.
+The viewer pairs components with **Best for** and **Consider** guidance from the same family catalog used by the MCP. **Copy agent prompt** preserves the selected theme ID and existing project decisions. Expand **Project instructions** to read the prompt or download **DESIGN.md**, which records exact tokens, source CSS hash, component inventory and review steps. A variant downloads its own document while clearly labeling the representative preview. The same-origin download route is proxied in Vite and Vercel; deploy the matching MCP before the site.
+
+The hero contains the installation guide: choose Codex, Claude Code, Claude Desktop, Cursor, VS Code or a server URL, then copy the command/configuration. Essentials (13 tools) is the default; collapsed **Tool options** exposes the full profile. First-task examples follow the workflow. The catalog shows eight screenshots of real native components. Larger typography and numbered workflow rows retain the site's Geist theme and existing material tokens.
 
 The website keeps its own design, with a light/dark toggle in the header. Theme selection opens an isolated viewer while preserving setup, scroll and focus. All 31 existing IDs remain available; expand the eight representatives to see the variants. Variant viewers explicitly show their representative family's components, with exact tokens linked separately.
 
@@ -34,7 +40,7 @@ From the sibling MCP checkout:
 
 ```sh
 npm run sync:previews
-node scripts/sync-website-themes.mjs ../open-design-website
+node scripts/sync-website-themes.mjs ../eidova-website
 ```
 
 Specimens are generated from real registry files, not maintained as a second component library. `src/previews/manifest.json` records source hashes. The small Vite font adapter replaces the Industrial Google font import with the same locally bundled licensed Doto font, retaining the registry source copy. Catalog generation preserves all IDs, source tokens and appearance metadata; theme selection does not apply those tokens to the website.
@@ -42,15 +48,19 @@ Specimens are generated from real registry files, not maintained as a second com
 After building and serving the website against the local candidate API, capture the native gallery from the MCP checkout:
 
 ```powershell
-$env:WEBSITE_SOURCE_DIR='../open-design-website'
+$env:WEBSITE_SOURCE_DIR='../eidova-website'
 $env:WEBSITE_REVIEW_URL='http://127.0.0.1:5174'
 node scripts/sync-website-gallery.mjs
 ```
 
 The generator accepts only a local preview, settles fonts, checks native sources and records kit/composer/CSS/image hashes in `src/family-preview-manifest.json`. Rebuild the website after capture to copy the images into `dist`. The eight PNGs total 260,311 bytes (about 254 KiB); image loading is lazy, with explicit dimensions and async decoding. Regenerate after specimen source or styles change.
 
-Use the Vite Vercel preset, `npm run build` and output `dist`. Coordinate `VITE_MCP_URL`, `VITE_REGISTRY_ORIGIN`, catalog/registry rewrites and the API's `OPEN_DESIGN_WEBSITE_URL`. Follow the MCP [release and rollback sequence](https://github.com/pranav256/open-design-mcp/blob/main/docs/DEPLOYMENT.md). A Git push can trigger the existing deployment integration; confirm its result and hosted core support before declaring the site released.
+Use the Vite Vercel preset, `npm run build` and output `dist`. Coordinate `VITE_MCP_URL`, `VITE_REGISTRY_ORIGIN`, catalog/registry rewrites and the API's `EIDOVA_WEBSITE_URL`. Follow the MCP [release and rollback sequence](https://github.com/pranav256/open-design-mcp/blob/main/docs/DEPLOYMENT.md). A Git push can trigger the existing deployment integration; confirm its result and hosted core support before declaring the site released.
 
 ## License
 
 MIT. [NOTICE.md](NOTICE.md) lists the retained Better Design registry, embedded Tabler SVG and five font notices. Served copies are under `public/licenses`. This independent project is unaffiliated with Better Design; hosted generation, vendor accounts and proprietary inspiration are outside its scope.
+
+The resource library browses 152 design references and 169 skill entries imported from nexu-io/open-design. Expand **View resource**, then **Read files** to inspect the main document, companions, source and licenses in a keyboard-accessible dialog. Text stays literal, PNGs preview locally, and downloads retain original bytes. **Copy agent prompt** connects the selected resource to the MCP's `read-resource` tool; **Agent instructions** offers manual copy. Failed requests preserve selection and offer retry.
+
+The generated index is `src/resource-catalog.json`; regenerate through the MCP repository's `resources:import` command. The reader uses `/api/resources/:kind/:id`, attachment downloads and `/api/resources/license` through the same-origin proxy. Deploy the matching MCP before this website. These references are separate from the React theme registry. [Resource review evidence](docs/resource-library-review.json) records the source hashes, responsive checks and documented rule exceptions.
