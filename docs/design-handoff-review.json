@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-10",
+  "scope": "Local Vite development rendering and matching local MCP; production build checked separately. No deployment.",
+  "referenceCommit": "b4ec310921f49ae512de1f0a1f3a4e7ce3d05f2f",
+  "sourceSha256": {
+    "src/App.tsx": "a072ed57ef3a05830e27ebbf0cb25d2c10862bb2cc1618168d043fb95bd351ee",
+    "src/styles.css": "d7536c69f6cf8c6dbcf8772c91cff7630f6d7e38a68d0ac23d86f405554f7db4",
+    "src/design-families.json": "a2f9a984d23ae232981279085b3c278d652985787498d5fb2ab5e7e2055d1fce",
+    "vercel.json": "3b6c3d8070a5c9997cc65becdea3efd5d9da2705c765a37ff6e683a93f9104d1"
+  },
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "schemes": [
+    "dark",
+    "light"
+  ],
+  "sourcePassed": true,
+  "comprehensionPanels": 61,
+  "comprehensionFailures": 0,
+  "handoffSpacing": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 28,
+    "total": 28
+  },
+  "spacing": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 14,
+    "total": 14
+  },
+  "expandedSpacing": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 14,
+    "total": 14
+  },
+  "setupSpacing": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 6,
+    "total": 6
+  },
+  "pageErrors": [],
+  "behavior": [
+    "installation in the hero with six client formats",
+    "separate modal preview, keyboard Escape, focus return and sample reset",
+    "source-bound gallery images",
+    "search and URL persistence",
+    "multiword search",
+    "no-match recovery",
+    "appearance filters and persistence",
+    "expand/collapse 31 themes",
+    "keyboard tabs",
+    "core/full options",
+    "clipboard success and denial",
+    "registry link",
+    "catalog failure, invalid response, retry and timeout",
+    "reduced motion",
+    "keyboard skip link",
+    "all eight family handoff panels",
+    "exact variant prompt and browser DESIGN.md download"
+  ],
+  "backendTests": 94,
+  "baselineViewerWidths": [
+    390,
+    1440
+  ],
+  "limits": [
+    "Solid-background contrast sampling only",
+    "No reference application runtime or hosted deployment check",
+    "Moderate spacing findings retain existing layout geometry"
+  ]
+}

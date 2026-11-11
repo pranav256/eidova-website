@@ -1,0 +1,192 @@
+{
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "modes": [
+    "dark",
+    "light"
+  ],
+  "states": 24,
+  "sourceExceptions": [
+    {
+      "findings": [
+        "- **serious** `element/select` line 54: Native <select> should be replaced by <Select> from @/components/ui/select."
+      ],
+      "reason": "The suggested house Select component does not exist. The labeled native select uses the site tokens and provides built-in keyboard and mobile picker behavior; no dependency or substitute wrapper is needed."
+    }
+  ],
+  "spacing": [
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 2,
+      "total": 4
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 2,
+      "total": 4
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 2,
+      "total": 4
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 2,
+      "total": 4
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    }
+  ],
+  "spacingBlockers": [],
+  "spacingException": {
+    "count": 24,
+    "element": "#theme-search",
+    "reason": "Existing theme search reserves 40px for its leading Search icon and 64px for its wider trailing Clear button. Intentional asymmetry, permitted by the rule; unrelated to the resource library."
+  },
+  "comprehension": [
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 19,
+      "estimatedExplainSeconds": 9,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 12,
+      "estimatedExplainSeconds": 7,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 12,
+      "estimatedExplainSeconds": 7,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 7,
+      "estimatedExplainSeconds": 5,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 7,
+      "estimatedExplainSeconds": 5,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 18,
+      "estimatedExplainSeconds": 6,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 36,
+      "estimatedExplainSeconds": 12,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 13,
+      "estimatedExplainSeconds": 4,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 8,
+      "estimatedExplainSeconds": 3,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 12,
+      "estimatedExplainSeconds": 4,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    }
+  ],
+  "pageErrors": [],
+  "contrastFailures": [],
+  "sourceSha256": {
+    "App.tsx": "f3f1772cf3c116816eaaa8edb5c1aee652bd156850fc6ebadc8de29246647c8c",
+    "ResourceLibrary.tsx": "a83e12821fe9f5e9054b7b00324b492c63a38d98317965c8ed53c9bf5458d29f",
+    "components/CopyButton.tsx": "39642899d4427b55fecd97b8f2e2709b345959150b32936162fd320512ef34f0",
+    "styles.css": "67175c4de80a52836226d00075e2f0351bb922073c90d76c66e4ad175d603dda",
+    "theme.css": "4d2b4372753ea2e89701d8943dcc9e0e46538dfcfe7c72ce0d5f6f9d18cb1e89",
+    "main.tsx": "a987466b78562870015bf0d63bff758b63a0e63d4edc6b4db7d2542b9a166a8f"
+  }
+}

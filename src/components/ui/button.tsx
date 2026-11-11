@@ -13,10 +13,9 @@ import { cn } from "../../lib/utils"
 
 const buttonVariants = cva(
   [
-    "od-button relative inline-flex items-center justify-center gap-2 whitespace-nowrap",
+    "od-button relative inline-flex items-center justify-center gap-2 whitespace-normal text-center",
     "text-sm font-semibold",
-    "outline-none transition-all duration-200 ease-out",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+    "transition-colors duration-200 ease-out",
     "disabled:pointer-events-none disabled:opacity-40",
   ].join(" "),
   {
@@ -24,16 +23,15 @@ const buttonVariants = cva(
       variant: {
         // Primary: black fill — no shadow (luxeui's clean signature)
         default:
-          "rounded-xl bg-primary text-primary-foreground " +
-          "active:bg-primary/70",
+          "rounded-xl bg-primary text-primary-foreground",
 
         // Secondary: light gray, 0.0625rem border, no shadow
         secondary:
-          "rounded-xl bg-secondary text-secondary-foreground border border-border",
+          "rounded-xl bg-secondary text-secondary-foreground border border-control-border",
 
         // Outline: border only — luxeui's minimal style
         outline:
-          "rounded-xl border border-border bg-transparent text-foreground",
+          "rounded-xl border border-control-border bg-transparent text-foreground",
 
         // Ghost: no border, no shadow
         ghost:
@@ -52,11 +50,11 @@ const buttonVariants = cva(
           "rounded-xl bg-muted text-muted-foreground",
       },
       size: {
-        sm:      "h-8 px-4 text-xs rounded-lg",
-        default: "h-[2.375rem] px-4",
-        lg:      "h-[2.75rem] px-4 text-base",
-        xl:      "h-14 px-10 text-base",
-        icon:    "h-[2.375rem] w-[2.375rem] rounded-xl",
+        sm:      "min-h-[var(--control-height)] px-3 py-2 rounded-lg",
+        default: "min-h-[var(--control-height)] px-4 py-2",
+        lg:      "min-h-12 px-4 py-3 text-base",
+        xl:      "min-h-14 px-10 py-3 text-base",
+        icon:    "min-h-[var(--control-height)] min-w-[var(--control-height)] p-2 rounded-xl",
       },
     },
     defaultVariants: {

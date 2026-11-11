@@ -3,7 +3,11 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
+    { "source": "/studio", "destination": "/index.html" },
+    { "source": "/studio/", "destination": "/index.html" },
     { "source": "/api/catalog", "destination": "https://open-design-mcp-liard.vercel.app/api/catalog" },
+    { "source": "/api/resources/:path*", "destination": "https://open-design-mcp-liard.vercel.app/api/resources/:path*" },
+    { "source": "/api/design-systems/:id/design.md", "destination": "https://open-design-mcp-liard.vercel.app/api/design-systems/:id/design.md" },
     { "source": "/registry/:path*", "destination": "https://open-design-mcp-liard.vercel.app/registry/:path*" }
   ],
   "headers": [
