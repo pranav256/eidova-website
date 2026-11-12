@@ -1,0 +1,201 @@
+{
+  "origin": "https://open-design-website.vercel.app",
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "schemes": [
+    "dark",
+    "light"
+  ],
+  "sourcePassed": true,
+  "handoffSpacing": {
+    "critical": 0,
+    "serious": 12,
+    "moderate": 24,
+    "total": 36
+  },
+  "spacing": {
+    "critical": 0,
+    "serious": 6,
+    "moderate": 12,
+    "total": 18
+  },
+  "expandedSpacing": {
+    "critical": 0,
+    "serious": 6,
+    "moderate": 12,
+    "total": 18
+  },
+  "setupSpacing": {
+    "critical": 0,
+    "serious": 6,
+    "moderate": 0,
+    "total": 6
+  },
+  "comprehensionPanels": 61,
+  "comprehensionFailures": 0,
+  "contrasts": [
+    {
+      "width": 390,
+      "mode": "dark",
+      "pairs": {
+        "foreground": 12.350024197095216,
+        "muted-foreground": 7.880300762091932,
+        "primary-foreground": 17.827000398052718
+      }
+    },
+    {
+      "width": 390,
+      "mode": "light",
+      "pairs": {
+        "foreground": 7.749336504024824,
+        "muted-foreground": 4.622523909345665,
+        "primary-foreground": 21
+      }
+    },
+    {
+      "width": 1440,
+      "mode": "dark",
+      "pairs": {
+        "foreground": 12.350024197095216,
+        "muted-foreground": 7.880300762091932,
+        "primary-foreground": 17.827000398052718
+      }
+    },
+    {
+      "width": 1440,
+      "mode": "light",
+      "pairs": {
+        "foreground": 7.749336504024824,
+        "muted-foreground": 4.622523909345665,
+        "primary-foreground": 21
+      }
+    },
+    {
+      "width": 1728,
+      "mode": "dark",
+      "pairs": {
+        "foreground": 12.350024197095216,
+        "muted-foreground": 7.880300762091932,
+        "primary-foreground": 17.827000398052718
+      }
+    },
+    {
+      "width": 1728,
+      "mode": "light",
+      "pairs": {
+        "foreground": 7.749336504024824,
+        "muted-foreground": 4.622523909345665,
+        "primary-foreground": 21
+      }
+    }
+  ],
+  "galleryCaptures": 8,
+  "galleryImageBytes": 260311,
+  "baselineCopyCompared": false,
+  "pageErrors": [],
+  "behavior": [
+    "exact-theme agent prompt and DESIGN.md browser download",
+    "all eight family handoff panels",
+    "installation in the hero with six client formats",
+    "separate modal preview, keyboard Escape, focus return and sample reset",
+    "source-bound gallery images",
+    "search and URL persistence",
+    "multiword search",
+    "no-match recovery",
+    "appearance filters and persistence",
+    "expand/collapse 31 themes",
+    "keyboard tabs",
+    "core/full options",
+    "clipboard success and denial",
+    "registry link",
+    "catalog failure, invalid response, retry and timeout",
+    "reduced motion",
+    "keyboard skip link"
+  ],
+  "capturedAt": "2026-11-12T09:15:38.826Z",
+  "sourceCommit": "ece4971adf27ba638c71982db67afd7809e2e929",
+  "sourceSha256": {
+    "App.tsx": "47d2bfd062065bba6d1ad240cecdb8a1b521804054c82fdc96a0b21aeab5ff44",
+    "ResourceLibrary.tsx": "a83e12821fe9f5e9054b7b00324b492c63a38d98317965c8ed53c9bf5458d29f",
+    "main.tsx": "e245f7d497bfaf175009e5df9fd1713acd53ad02630cf82843bbbb0d2e2722fd",
+    "theme.ts": "d29e4952dd95f9a13488b7fb420a098bdf1a42dc0a905f10dc07c24c3900b6cb",
+    "theme.css": "4d2b4372753ea2e89701d8943dcc9e0e46538dfcfe7c72ce0d5f6f9d18cb1e89",
+    "styles.css": "9c5ffab89a16c59a1aee123c511ede6ed1c5a65c54c5afe35758be4f88dab652",
+    "components/CopyButton.tsx": "04a61c7e3f4de9fd2aefd051831dd9c1f8e4ee751d335a7a418af6519280f607",
+    "components/ui/button.tsx": "10e836deb659879c6b1b6a1eaf5ef611ac9cc04e60b3ce70523f4ecd70aa301f",
+    "components/ui/input.tsx": "a1bad8ee3139077d7c1b2e83eda6bc7d7707fb46f9941b99f7551d872454836d",
+    "components/ui/textarea.tsx": "2b11b34b597d708cfee601c65fddef6475d11f3a81b0c7f2fc7ee788e7be9859",
+    "previews/Specimen.tsx": "6ffc90923dc22a206a8d4d351ba7388f39bd44e0141cd61ab2cd9788aab74ef8",
+    "previews/specimen.css": "38b91d1f07b97e6b65516e030132bfd3b25844d773ff52b089780eb1c6a0fb21"
+  },
+  "spacingAdjudication": {
+    "spacing": {
+      "blockers": 0,
+      "exception": {
+        "count": 6,
+        "reason": "Theme search reserves 40px for its leading icon and 64px for the wider trailing Clear button."
+      }
+    },
+    "expanded-spacing": {
+      "blockers": 0,
+      "exception": {
+        "count": 6,
+        "reason": "Theme search reserves 40px for its leading icon and 64px for the wider trailing Clear button."
+      }
+    },
+    "setup-spacing": {
+      "blockers": 0,
+      "exception": {
+        "count": 6,
+        "reason": "Theme search reserves 40px for its leading icon and 64px for the wider trailing Clear button."
+      }
+    },
+    "handoff-spacing": {
+      "blockers": 0,
+      "exception": {
+        "count": 12,
+        "reason": "Theme search reserves 40px for its leading icon and 64px for the wider trailing Clear button."
+      }
+    }
+  },
+  "evidence": {
+    "directory": "../eidova-mcp/.work/verification/2026-11-12/website-production-restored",
+    "sha256": {
+      "summary.json": "20e7af0329ecebf6b77c9da3ec5777ba0036b8c8b8f5f43bdf819fef67b80d8d",
+      "source.json": "c8809b7324dc8e84059f930a7c90699ab8c8eaa2e9ad787531af5b95bd0388db",
+      "states.json": "570bf63780df0fc4d3c4e084aba42db929b93f9d41285004d24fef6b4796ae17",
+      "expanded-states.json": "916c4be0f9ac8d979bbb87c1e65beaf66dbdbda833bca2311c5c585baab8f158",
+      "handoff-states.json": "bcf334c97b5ac306b4157e0a7f1c27980dfb5a955be996b314bc357bd301b5a1",
+      "panels.json": "c91b4ccfe3e835dad71055cf19edc5be3a8d4e6645e477edba109aafeeda2e93"
+    }
+  },
+  "additionalSourceReview": {
+    "files": 12,
+    "rawFindings": {
+      "critical": 0,
+      "serious": 1,
+      "moderate": 0
+    },
+    "blockers": 0,
+    "exception": {
+      "ruleId": "element/select",
+      "path": "src/ResourceLibrary.tsx",
+      "line": 54,
+      "reason": "No house Select exists: src/components/ui contains Button, Input and Textarea. The file picker keeps its associated label and native keyboard behavior; the resource-library review records its interaction coverage."
+    }
+  },
+  "accessRestoredChecks": {
+    "windowsAccountLookup": "passed",
+    "hostedMcpSmoke": "passed",
+    "nativeGuard": "passed",
+    "nativeWorkspaceTypecheck": "passed"
+  },
+  "scope": "Fresh production browser/source/DOM review of installation, theme handoffs and recovery using the hosted MCP. The unchanged resource file picker retains its previously documented house-Select exception.",
+  "limits": [
+    "This browser run does not establish named-client host sessions, real-user research or accessibility certification.",
+    "Resource-library and native Studio portal behavior use their earlier scope-specific receipts; persistent Studio hosting, live BYOK/plugin execution, installers and package publication remain separate acceptance work."
+  ]
+}

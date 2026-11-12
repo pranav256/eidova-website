@@ -2,6 +2,12 @@
 
 The public family catalog and connection guide for Eidova MCP. **0.2.0 is a release candidate.** Deploy the matching API with core support before deploying this website, and verify the hosted versions separately from the local review.
 
+The matching API and website were promoted to their existing public Vercel URLs
+on 12 November 2026, and both Vercel projects are connected to their Eidova GitHub
+repositories. The [production review](docs/production-review.json) records the
+installation/theme checks and their limits. Persistent Studio hosting and full
+product acceptance remain separate.
+
 `/studio` adds a team file workspace using Eidova's own persistent backend: projects, literal text editing, exact downloads, revision history/restore, expiring share links, recent presence, feedback, invitations, member revocation and one-use key recovery/rotation. It is a separate file collaboration surface; full native OpenDesign runtime integration remains incomplete. Follow the MCP [Studio setup guide](../eidova-mcp/docs/STUDIO.md). Production needs `VITE_STUDIO_API_URL` and a backend allowing the site's exact origin; otherwise the page shows a setup state. Workspace keys stay in this tab's session storage and must never be put in build settings. [Local review evidence](docs/studio-review.json) records the tested scope.
 
 Eidova replaces Open Design. Existing GitHub/Vercel URLs remain active until the coordinated hosted rename is verified. Appearance preferences use `eidova-theme` and still read the previous `open-design-theme` value when no new preference is saved.
@@ -16,7 +22,7 @@ The website keeps its own design, with a light/dark toggle in the header. Theme 
 
 Preview, mode, search and filters persist through URL/browser state. `?preview=<id>` opens the viewer; legacy `?theme=<id>` links migrate to it. Previously saved palette choices are ignored without deleting them. Escape works inside the preview and returns focus on close; nested dialogs close first. Copy failure has a manual recovery path. No client configuration is changed automatically.
 
-[Review evidence](docs/REVIEW.md) records local checks and their scope. The MCP repository's [family recipes](https://github.com/pranav256/open-design-mcp/blob/main/docs/DESIGN-FAMILIES.md) and [client matrix](https://github.com/pranav256/open-design-mcp/blob/main/docs/CLIENTS.md) explain installation and verification boundaries.
+[Review evidence](docs/REVIEW.md) records local checks and their scope. The MCP repository's [family recipes](https://github.com/pranav256/eidova-mcp/blob/main/docs/DESIGN-FAMILIES.md) and [client matrix](https://github.com/pranav256/eidova-mcp/blob/main/docs/CLIENTS.md) explain installation and verification boundaries.
 
 ## Develop and build
 
@@ -55,7 +61,7 @@ node scripts/sync-website-gallery.mjs
 
 The generator accepts only a local preview, settles fonts, checks native sources and records kit/composer/CSS/image hashes in `src/family-preview-manifest.json`. Rebuild the website after capture to copy the images into `dist`. The eight PNGs total 260,311 bytes (about 254 KiB); image loading is lazy, with explicit dimensions and async decoding. Regenerate after specimen source or styles change.
 
-Use the Vite Vercel preset, `npm run build` and output `dist`. Coordinate `VITE_MCP_URL`, `VITE_REGISTRY_ORIGIN`, catalog/registry rewrites and the API's `EIDOVA_WEBSITE_URL`. Follow the MCP [release and rollback sequence](https://github.com/pranav256/open-design-mcp/blob/main/docs/DEPLOYMENT.md). A Git push can trigger the existing deployment integration; confirm its result and hosted core support before declaring the site released.
+Use the Vite Vercel preset, `npm run build` and output `dist`. Coordinate `VITE_MCP_URL`, `VITE_REGISTRY_ORIGIN`, catalog/registry rewrites and the API's `EIDOVA_WEBSITE_URL`. Follow the MCP [release and rollback sequence](https://github.com/pranav256/eidova-mcp/blob/main/docs/DEPLOYMENT.md). A Git push can trigger the existing deployment integration; confirm its result and hosted core support before declaring the site released.
 
 ## License
 
