@@ -73,3 +73,29 @@ revision review, presence, invitations, rotation and clipboard fallback also pas
 No critical/serious spacing findings, measured contrast failures or browser errors
 remain. The captures cover the website portal and real SQLite backend; the native
 Next/Electron Studio and public HTTPS deployment remain unverified.
+
+## Production follow-up — 2026-11-12
+
+The public installation/theme website was promoted from `ece4971` after the
+matching MCP API. Both Vercel projects are linked to their Eidova GitHub
+repositories. [production-review.json](production-review.json) preserves the
+production browser run at 390, 1440 and 1728px in light/dark modes, source hashes
+and raw-evidence hashes. All 61 copy panels passed, with no page errors; the
+sampled solid-background text ratios were at least 4.622:1. Its recorded behavior
+covers the six installation formats, eight handoffs, exact variant downloads,
+search/filter persistence, keyboard recovery and catalog error/timeout handling.
+
+All raw serious spacing findings concern the existing theme search's intentional
+40px icon and 64px Clear-button reservations. The rule explicitly permits
+documented intentional asymmetry; the receipt retains the raw counts and this
+exception. A broader source rescan also retains the already documented native
+file-picker exception: the product has no house Select, and its native control
+has an associated label. No unresolved blocking findings remain in that scope.
+
+After session access was restored, the complete production browser run was
+repeated against the hosted MCP: all 61 copy panels, recorded behavior and
+adjudicated spacing checks pass again. The receipt now points to these fresh
+captures and their hashes. Native guard and complete workspace typecheck also
+pass; the earlier sandbox account-lookup failure is resolved. The website/MCP
+TypeScript and built stdio checks passed separately. Hosted Studio backend
+acceptance, live agent-host sessions and package publication remain unverified.
