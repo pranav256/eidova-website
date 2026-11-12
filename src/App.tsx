@@ -19,8 +19,8 @@ function readPreview() {
   const id = params.get('preview') ?? params.get('theme');
   return id && familyFor(id) ? id : null;
 }
-const sourceUrl = import.meta.env.VITE_REPOSITORY_URL || 'https://github.com/pranav256/open-design-website';
-const serviceSourceUrl = import.meta.env.VITE_MCP_REPOSITORY_URL || 'https://github.com/pranav256/open-design-mcp';
+const sourceUrl = import.meta.env.VITE_REPOSITORY_URL || 'https://github.com/pranav256/eidova-website';
+const serviceSourceUrl = import.meta.env.VITE_MCP_REPOSITORY_URL || 'https://github.com/pranav256/eidova-mcp';
 const endpoint = import.meta.env.VITE_MCP_URL || 'https://open-design-mcp-liard.vercel.app/mcp';
 const catalogUrl = import.meta.env.VITE_CATALOG_URL || '/api/catalog';
 const registryOrigin = (import.meta.env.VITE_REGISTRY_ORIGIN || 'https://open-design-mcp-liard.vercel.app').replace(/\/$/, '');
