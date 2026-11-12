@@ -8,7 +8,7 @@ import { StudioCollaboration, StudioKeyControls } from './StudioCollaboration';
 
 const api = (import.meta.env.VITE_STUDIO_API_URL || '/api/studio').replace(/\/$/, '');
 const configured = Boolean(import.meta.env.VITE_STUDIO_API_URL) || import.meta.env.DEV;
-const setupDocs = (import.meta.env.VITE_MCP_REPOSITORY_URL || 'https://github.com/pranav256/open-design-mcp') + '/blob/main/docs/STUDIO.md';
+const setupDocs = (import.meta.env.VITE_MCP_REPOSITORY_URL || 'https://github.com/pranav256/eidova-mcp') + '/blob/main/docs/STUDIO.md';
 const nativeStudioUrl = (() => {
   try {
     const url = new URL(import.meta.env.VITE_NATIVE_STUDIO_URL || 'http://127.0.0.1:7457');
