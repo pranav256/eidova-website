@@ -99,3 +99,9 @@ captures and their hashes. Native guard and complete workspace typecheck also
 pass; the earlier sandbox account-lookup failure is resolved. The website/MCP
 TypeScript and built stdio checks passed separately. Hosted Studio backend
 acceptance, live agent-host sessions and package publication remain unverified.
+
+## Complete Eidova library - 13 November 2026
+
+[full-library-review.json](full-library-review.json) records the local production working tree, source hashes and raw evidence hashes. All 920 packages are discoverable, including 118 templates and two source catalogs. The resource browser uses Eidova naming and a labeled type filter; source and license links remain available.
+
+The repeated local browser run passes 36 rendered states at 390, 1440 and 1728 in both appearances and all 12 comprehension panels. It checks exact downloads, literal source, sandbox isolation, large images, local font/video assets, preview retry, stale requests, malformed responses, clipboard denial, focus restoration and Escape dismissal inside a preview. No page errors, sampled text-contrast failures or unresolved critical/serious findings remain. The receipt retains the native-select and intentional theme-search inset adjudications. A separate resource-subtree spacing check found zero critical or serious findings at all three widths. The mobile dark list, desktop light reader and mobile dark template preview were visually inspected. This is a local review; it does not verify a hosted deployment or real-user research. The captured shell includes separate uncommitted showcase work; this receipt covers the resource library.

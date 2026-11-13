@@ -2,6 +2,14 @@
 
 The public family catalog and connection guide for Eidova MCP. **0.2.0 is a release candidate.** Deploy the matching API with core support before deploying this website, and verify the hosted versions separately from the local review.
 
+The Eidova resource library includes all 920 packages from the reviewed source
+snapshot: 152 systems, 115 design templates, 479 official plugin packages, 169
+skills, three framework/live-artifact templates and two source catalogs. The
+resource browser filters systems, templates, plugin designs, skills and source catalogs; it previews
+original HTML/media, reads companion files and downloads exact source bytes. HTML
+previews use an opaque sandbox. Source licenses and external build or generation
+requirements are preserved. See the MCP [library guide](../eidova-mcp/docs/BUNDLED-RESOURCES.md).
+
 The matching API and website were promoted to their existing public Vercel URLs
 on 12 November 2026, and both Vercel projects are connected to their Eidova GitHub
 repositories. The [production review](docs/production-review.json) records the
@@ -67,6 +75,6 @@ Use the Vite Vercel preset, `npm run build` and output `dist`. Coordinate `VITE_
 
 MIT. [NOTICE.md](NOTICE.md) lists the retained Better Design registry, embedded Tabler SVG and five font notices. Served copies are under `public/licenses`. This independent project is unaffiliated with Better Design; hosted generation, vendor accounts and proprietary inspiration are outside its scope.
 
-The resource library browses 152 design references and 169 skill entries imported from nexu-io/open-design. Expand **View resource**, then **Read files** to inspect the main document, companions, source and licenses in a keyboard-accessible dialog. Text stays literal, PNGs preview locally, and downloads retain original bytes. **Copy agent prompt** connects the selected resource to the MCP's `read-resource` tool; **Agent instructions** offers manual copy. Failed requests preserve selection and offer retry.
+The resource library browses all 920 bundled packages. Expand **View resource**, then **Read files** to inspect the main document, companions, source and licenses in a keyboard-accessible dialog. Text stays literal, HTML previews are sandboxed, images/audio/video can be previewed, and downloads retain original bytes. **Copy agent prompt** connects the selected resource to the MCP's `read-resource` tool; **Agent instructions** offers manual copy. Failed requests preserve selection and offer retry.
 
-The generated index is `src/resource-catalog.json`; regenerate through the MCP repository's `resources:import` command. The reader uses `/api/resources/:kind/:id`, attachment downloads and `/api/resources/license` through the same-origin proxy. Deploy the matching MCP before this website. These references are separate from the React theme registry. [Resource review evidence](docs/resource-library-review.json) records the source hashes, responsive checks and documented rule exceptions.
+The generated index is `src/resource-catalog.json`; regenerate through the MCP repository's `resources:import` command. The reader uses `/api/resources/:kind/:id`, attachment downloads and `/api/resources/license` through the same-origin proxy. Deploy the matching MCP before this website. These references are separate from the React theme registry. [Resource review evidence](docs/full-library-review.json) records the source hashes, responsive checks and documented rule adjudications.
