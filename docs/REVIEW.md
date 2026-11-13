@@ -1,6 +1,24 @@
 # Website candidate review — 2026-11-10
 
-## Latest: portable design handoff
+## Approved editorial redesign — 2026-11-13
+
+The current website follows the Form & Field reference: Editorial Dark components and tokens, Georgia headings, bundled Inter, a dark default, paper collage hero, readable muted text and generous spacing. Existing routes, all installation formats, catalog specimens, resource readers and downloads, live copy review and recovery remain available. Explicit light preferences are retained.
+
+Production build and website/reader/showcase browser checks pass at 390, 1440 and 1728 in both appearances. Comprehension checks pass; rendered spacing has no unresolved critical or serious findings. The shell passes nine Axe views, including the website's team workspace setup screen, narrow reflow, 200% text, and default/saved/URL appearance checks. Showcase link names now include all visible text. Original component specimens are isolated from shell styling and its Axe review.
+
+[redesign-1311-review.json](redesign-1311-review.json) records current source hashes, evidence and review limits. [redesign-1311-source.json](redesign-1311-source.json) retains raw source findings: native-select recommendations do not apply because no house Select exists; labeled platform controls retain tested keyboard/mobile behavior. The local MCP stdio workspace has the approved defaults, verified by read-back in [default-theme-receipt.json](default-theme-receipt.json). Workspace defaults are also in the parent AGENTS.md and `redesign 1311.md`.
+
+This review covers local website changes. Hosted endpoint checks, deployment, a fresh dependency install, other browser engines and the separate native Studio application were not performed. Earlier receipts below describe their earlier revisions.
+
+## Latest: interactive showcase — 2026-11-13
+
+The completed `/showcase` keeps Eidova's theme and uses its existing controls, real family specimens, licensed icon source, platform guidance and the full 920-resource library. Main and footer navigation and the homepage link to it. All nine chapter links reach their sections; the skip link moves keyboard focus into the main content.
+
+The local production build passed 30 rendered states and 18 comprehension panels at 390, 1440 and 1728px in both appearances, with no unresolved critical/serious spacing findings, sampled text-contrast failures or page errors. The checks cover component editing, palette/SVG copying, form validation and recovery, live copy review and malformed/stale replies, reduced motion, guide/tool filtering and return paths. Additional widths from 320 to 1280px and 200% text at 390/768/1440px reflow correctly. The homepage also passed normal/enlarged-text reflow and its round trip through the showcase to installation. Screenshots were visually inspected. Labeled native selects retain the product's tokens and browser behavior; this product has no house Select component.
+
+[showcase-review.json](showcase-review.json) records the reviewed source and limitations. Reproduce from the sibling MCP checkout with `WEBSITE_REVIEW_URL` pointing at the built site's Vite preview, `MCP_REVIEW_URL` at the matching local MCP, and `node scripts/verify-showcase.mjs`. The preview inherits the configured API proxy. The website build and diff whitespace check pass. Existing kit directive/sourcemap and bundle-size warnings remain. GitHub and Vercel network probes were blocked in this session, so these changes were not pushed or deployed. This is a marketing showcase; no dashboard receipt or full Native Studio acceptance is claimed.
+
+## Earlier: portable design handoff
 
 The OpenDesign reference study added family suitability, a selected-theme agent prompt, and a DESIGN.md download to the existing component viewer. The site retains its Geist theme, original header/footer links and actual registry specimens. The download preserves the exact variant ID; family guidance is editorial advice, not user research.
 

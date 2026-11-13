@@ -1,5 +1,9 @@
 # Eidova website
 
+The 13 November redesign uses the approved Form & Field theme: Editorial Dark, Georgia headings, bundled Inter, quiet white controls, generous spacing and a paper collage hero. Dark is the default; explicit saved and URL appearance choices remain available. [DESIGN.md](DESIGN.md) and [redesign 1311.md](<redesign 1311.md>) record the theme and future MCP build defaults. These preferences are saved in AGENTS.md and the original local MCP stdio workspace; hosted account settings are separate.
+
+The [MCP showcase website plan](docs/MCP-SHOWCASE-PLAN.md) records the verified capabilities, visitor journey, implementation scope and review criteria. The homepage introduces the full design toolkit; `/showcase` connects six capability summaries to the existing working demonstrations and team workspace.
+
 The public family catalog and connection guide for Eidova MCP. **0.2.0 is a release candidate.** Deploy the matching API with core support before deploying this website, and verify the hosted versions separately from the local review.
 
 The Eidova resource library includes all 920 packages from the reviewed source
@@ -18,15 +22,17 @@ product acceptance remain separate.
 
 `/studio` adds a team file workspace using Eidova's own persistent backend: projects, literal text editing, exact downloads, revision history/restore, expiring share links, recent presence, feedback, invitations, member revocation and one-use key recovery/rotation. It is a separate file collaboration surface; full native OpenDesign runtime integration remains incomplete. Follow the MCP [Studio setup guide](../eidova-mcp/docs/STUDIO.md). Production needs `VITE_STUDIO_API_URL` and a backend allowing the site's exact origin; otherwise the page shows a setup state. Workspace keys stay in this tab's session storage and must never be put in build settings. [Local review evidence](docs/studio-review.json) records the tested scope.
 
-Eidova replaces Open Design. Existing GitHub/Vercel URLs remain active until the coordinated hosted rename is verified. Appearance preferences use `eidova-theme` and still read the previous `open-design-theme` value when no new preference is saved.
+Existing hosted URLs remain active. Appearance preferences use `eidova-theme` and still read the previous `open-design-theme` value when no new preference is saved.
+
+`/showcase` brings the design tools into one interactive page: eight real component specimens, exact palette exports, licensed Lucide icons, validation and motion examples, a live copy review, platform guidance, all 920 resources and the public tool directory. The homepage, header and footer link to it. The examples keep the site's existing theme; component specimens retain their own appearance. Copy review uses the same-origin `/api/showcase/mcp` proxy and preserves drafts when a request fails. Demo invitations are never sent. See the [showcase review](docs/showcase-review.json) for local production-build checks and deployment limits.
 
 Eight curated families show actual Button, Input, Card, Dialog, Table and Sidebar source in isolated workspace-settings specimens. **View components** opens a separate modal viewer; `/?specimen=linear` opens the full specimen separately. CSS is isolated from the website shell, fonts load by family, and sample data resets when reopened.
 
 The viewer pairs components with **Best for** and **Consider** guidance from the same family catalog used by the MCP. **Copy agent prompt** preserves the selected theme ID and existing project decisions. Expand **Project instructions** to read the prompt or download **DESIGN.md**, which records exact tokens, source CSS hash, component inventory and review steps. A variant downloads its own document while clearly labeling the representative preview. The same-origin download route is proxied in Vite and Vercel; deploy the matching MCP before the site.
 
-The hero contains the installation guide: choose Codex, Claude Code, Claude Desktop, Cursor, VS Code or a server URL, then copy the command/configuration. Essentials (13 tools) is the default; collapsed **Tool options** exposes the full profile. First-task examples follow the workflow. The catalog shows eight screenshots of real native components. Larger typography and numbered workflow rows retain the site's Geist theme and existing material tokens.
+The installation section follows the editorial hero: choose Codex, Claude Code, Claude Desktop, Cursor, VS Code or a server URL, then copy the command/configuration. Essentials (13 tools) is the default; collapsed **Tool options** exposes the full profile. First-task examples follow the workflow. The catalog shows eight screenshots of real native components, retaining their original themes inside the editorial website.
 
-The website keeps its own design, with a light/dark toggle in the header. Theme selection opens an isolated viewer while preserving setup, scroll and focus. All 31 existing IDs remain available; expand the eight representatives to see the variants. Variant viewers explicitly show their representative family's components, with exact tokens linked separately.
+The website uses the approved editorial design, with a light/dark toggle in the header. Theme selection opens an isolated viewer while preserving setup, scroll and focus. All 31 existing IDs remain available; expand the eight representatives to see the variants. Variant viewers explicitly show their representative family's components, with exact tokens linked separately.
 
 Preview, mode, search and filters persist through URL/browser state. `?preview=<id>` opens the viewer; legacy `?theme=<id>` links migrate to it. Previously saved palette choices are ignored without deleting them. Escape works inside the preview and returns focus on close; nested dialogs close first. Copy failure has a manual recovery path. No client configuration is changed automatically.
 
@@ -40,11 +46,14 @@ Requires Node **22.12+**:
 npm ci
 npm run dev
 npm run check
+npm run test:redesign
 npm run build
 npm run preview
 ```
 
 Copy `.env.example` to a local environment file when changing the backend. For the local candidate use `MCP_PROXY_ORIGIN=http://localhost:3000`, `VITE_MCP_URL=http://localhost:3000/mcp` and `VITE_REGISTRY_ORIGIN=http://localhost:3000`. These are public build settings, not secrets.
+
+`npm run test:redesign` needs the built website preview (default `http://127.0.0.1:5512`, overridden by `REVIEW_URL`), with its catalog/MCP proxies configured. It checks the dark default, saved/URL preferences, typography, image loading, reflow, 200% text and Axe accessibility in nine website views, including the website's team workspace setup screen. Original embedded component specimens are excluded from the shell's Axe check. Broader installation, reader, download and showcase checks run from the sibling MCP scripts; [docs/redesign-1311-review.json](docs/redesign-1311-review.json) records the review scope.
 
 The development server proxies catalog/registry requests. Vite preview serves `dist`; deployment API destinations are in `vercel.json`. The connection UI derives core from the configured full endpoint. The previous hosted API cannot satisfy core until upgraded.
 

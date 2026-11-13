@@ -16,4 +16,8 @@ Font files are supplied by Fontsource under SIL Open Font License 1.1. The origi
 
 The same notices are served under `/licenses/`. The source-sync script copies them from the registry and installed font packages. Private captured assets/guidance are not included.
 
+The showcase's icon SVGs are supplied through Eidova's Lucide tools. Their exported source and copies under `public/showcase/icons/` retain the Lucide ISC and applicable Feather MIT notices. The full companion notice is served at `/showcase/icons/LICENSE.txt`.
+
+The editorial hero collage is the original OpenDesign landing artwork, served as an optimized WebP derivative from the Form & Field reference website. It is illustrative artwork; provenance and the source revision are in `/licenses/artwork.txt`.
+
 Resource discovery metadata in `src/resource-catalog.json` is derived from nexu-io/open-design, commit b4ec310921f49ae512de1f0a1f3a4e7ce3d05f2f. Copyright 2026 Open Design contributors. Apache-2.0; the complete license is in `licenses/open-design-Apache-2.0.txt`. Original resources and package license overrides are distributed by the companion MCP repository.

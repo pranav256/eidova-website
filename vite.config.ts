@@ -18,6 +18,6 @@ export default defineConfig(({ mode }) => {
       },
     },tailwindcss()],
     build: { outDir: 'dist', emptyOutDir: true },
-    server: { proxy: { '/api/studio': { target: env.STUDIO_PROXY_ORIGIN || 'http://127.0.0.1:3210', changeOrigin: true, rewrite: url => url.replace(/^\/api\/studio/, '') }, '/api': { target: service, changeOrigin: true }, '/registry': { target: service, changeOrigin: true } } },
+    server: { proxy: { '/api/showcase/mcp': { target: service, changeOrigin: true, rewrite: () => '/mcp' }, '/api/studio': { target: env.STUDIO_PROXY_ORIGIN || 'http://127.0.0.1:3210', changeOrigin: true, rewrite: url => url.replace(/^\/api\/studio/, '') }, '/api': { target: service, changeOrigin: true }, '/registry': { target: service, changeOrigin: true } } },
   };
 });
