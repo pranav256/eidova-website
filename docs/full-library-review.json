@@ -1,0 +1,501 @@
+{
+  "date": "2026-11-13",
+  "scope": "Local production working tree; complete Eidova resource library",
+  "website": "http://127.0.0.1:5411",
+  "mcp": "http://127.0.0.1:3411/mcp",
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "modes": [
+    "dark",
+    "light"
+  ],
+  "states": 36,
+  "sourceExceptions": [
+    {
+      "findings": [
+        "- **serious** `element/select` line 86: Native <select> should be replaced by <Select> from @/components/ui/select.",
+        "- **serious** `element/select` line 120: Native <select> should be replaced by <Select> from @/components/ui/select."
+      ],
+      "reason": "The suggested house Select component does not exist. The labeled native select uses the site tokens and provides built-in keyboard and mobile picker behavior; no dependency or substitute wrapper is needed."
+    }
+  ],
+  "spacing": [
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 2,
+      "total": 4
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 2,
+      "total": 4
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 2,
+      "total": 4
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 2,
+      "total": 4
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 2,
+      "total": 4
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 2,
+      "total": 4
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    },
+    {
+      "critical": 0,
+      "serious": 2,
+      "moderate": 6,
+      "total": 8
+    }
+  ],
+  "spacingBlockers": [],
+  "spacingException": {
+    "count": 36,
+    "element": "#theme-search",
+    "reason": "Existing theme search reserves 40px for its leading Search icon and 64px for its wider trailing Clear button. Intentional asymmetry, permitted by the rule; unrelated to the resource library."
+  },
+  "comprehension": [
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 15,
+      "surface": "screen",
+      "budgetWords": 15,
+      "estimatedExplainSeconds": 5,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 12,
+      "surface": "screen",
+      "budgetWords": 12,
+      "estimatedExplainSeconds": 7,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 11,
+      "surface": "screen",
+      "budgetWords": 11,
+      "estimatedExplainSeconds": 7,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 7,
+      "surface": "screen",
+      "budgetWords": 7,
+      "estimatedExplainSeconds": 5,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 7,
+      "surface": "screen",
+      "budgetWords": 7,
+      "estimatedExplainSeconds": 5,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 18,
+      "surface": "screen",
+      "budgetWords": 18,
+      "estimatedExplainSeconds": 6,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 33,
+      "surface": "screen",
+      "budgetWords": 33,
+      "estimatedExplainSeconds": 11,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 13,
+      "surface": "screen",
+      "budgetWords": 13,
+      "estimatedExplainSeconds": 4,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 13,
+      "surface": "screen",
+      "budgetWords": 13,
+      "estimatedExplainSeconds": 4,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 8,
+      "surface": "screen",
+      "budgetWords": 8,
+      "estimatedExplainSeconds": 3,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 12,
+      "surface": "screen",
+      "budgetWords": 12,
+      "estimatedExplainSeconds": 4,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 18,
+      "surface": "screen",
+      "budgetWords": 18,
+      "estimatedExplainSeconds": 9,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    }
+  ],
+  "pageErrors": [],
+  "contrastFailures": [],
+  "sourceSha256": {
+    "App.tsx": "2d88c016f6063833484e9d17ddd20692791a54ddd53e5cdab3bad535bcf17dd1",
+    "ResourceLibrary.tsx": "0244a339fa66a58762cfc8eeaf992b19115a940ac7828dbefb72dd90fa548c61",
+    "components/CopyButton.tsx": "04a61c7e3f4de9fd2aefd051831dd9c1f8e4ee751d335a7a418af6519280f607",
+    "styles.css": "efb61070514ef8892daf33bd6f0ca74075a19c38d9d52cb4dc0a9752f67db7b9",
+    "theme.css": "4d2b4372753ea2e89701d8943dcc9e0e46538dfcfe7c72ce0d5f6f9d18cb1e89",
+    "main.tsx": "69ac97c124293025168b4e81979f52b7e114cb231059f452a0e25e14a162f554"
+  },
+  "rawEvidence": ".work/verification/2026-11-13/library-resume/browser",
+  "evidenceSha256": {
+    "source.json": "5fa27d09637785fa289bb6280d241ed6f0dd4df470d0be53e0966f7bf17ffd56",
+    "states.json": "04755549e52cff3353b69a80567a023fa7a7ee6d3e35fd9eb3ddb5be5847de69",
+    "spacing.json": "62b685dba25a185c01d2695d37624806dadc30babc76ce2995d576b6a19c06a0",
+    "comprehension.json": "f5cfe22b3d0ab728a3082ab38c2a9878042dd01d34adeb3baf5644d8a0652576",
+    "contrasts.json": "46f21946c71f0cd6b8765b89cdc24d40314fb4d86222d462156f127a2eb12bbe",
+    "summary.json": "5c0d11b28a0232f6727df607f7323c37d5320fa442d1576653d71d7e4445cbd2",
+    "direct-spacing.json": "6a0c30307350c4d1f16c68618a097a5641fa111dabf036941046756b1796738c",
+    "390-dark-list.png": "0f3fe21552e9a468c1c7004da6e4588f760de5a4f73d62bb19f039558f9e410f",
+    "1440-light-reader.png": "ab6681244e373b88523a08e178d7791833d5b80b18e62598001b3d6c9777635c",
+    "390-dark-template-preview.png": "cbdb2f1ca17a154824978f8a8bc8217dbea4fff94d8a0098b527f708b0eb71d2"
+  },
+  "directSpacing": {
+    "scope": "#resources and rendered descendants",
+    "status": "completed",
+    "capturedWidths": [
+      390,
+      1440,
+      1728
+    ],
+    "summary": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 3,
+      "total": 3
+    },
+    "findings": [
+      {
+        "ruleId": "spacing/off-scale-value",
+        "state": "390 dark resource list",
+        "severity": "moderate",
+        "message": "390 dark resource list uses 1 off-scale spacing value across 8 elements: 20px.",
+        "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+        "elementIds": [
+          "li:nth-of-type(1)@259",
+          "li:nth-of-type(2)@265",
+          "li:nth-of-type(3)@271",
+          "li:nth-of-type(4)@277",
+          "li:nth-of-type(5)@283",
+          "li:nth-of-type(6)@289",
+          "li:nth-of-type(7)@295",
+          "li:nth-of-type(8)@301"
+        ],
+        "evidence": [
+          {
+            "label": "li:nth-of-type(1)@259 padding top",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(1)@259 padding bottom",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(2)@265 padding top",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(2)@265 padding bottom",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(3)@271 padding top",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(3)@271 padding bottom",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(4)@277 padding top",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(4)@277 padding bottom",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(5)@283 padding top",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(5)@283 padding bottom",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(6)@289 padding top",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(6)@289 padding bottom",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(7)@295 padding top",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(7)@295 padding bottom",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(8)@301 padding top",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(8)@301 padding bottom",
+            "value": 20,
+            "unit": "px"
+          }
+        ],
+        "id": "spacing-1"
+      },
+      {
+        "ruleId": "spacing/off-scale-value",
+        "state": "1440 light resource reader",
+        "severity": "moderate",
+        "message": "1440 light resource reader uses 3 off-scale spacing values across 2 elements: 20px, 68px, 200.5px.",
+        "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+        "elementIds": [
+          "li:nth-of-type(1)@263",
+          "dialog:nth-of-type(1)@285"
+        ],
+        "evidence": [
+          {
+            "label": "li:nth-of-type(1)@263 padding top",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(1)@263 padding bottom",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "dialog:nth-of-type(1)@285 margin top",
+            "value": 68,
+            "unit": "px"
+          },
+          {
+            "label": "dialog:nth-of-type(1)@285 margin right",
+            "value": 200.5,
+            "unit": "px"
+          },
+          {
+            "label": "dialog:nth-of-type(1)@285 margin bottom",
+            "value": 68,
+            "unit": "px"
+          },
+          {
+            "label": "dialog:nth-of-type(1)@285 margin left",
+            "value": 200.5,
+            "unit": "px"
+          }
+        ],
+        "id": "spacing-2"
+      },
+      {
+        "ruleId": "spacing/off-scale-value",
+        "state": "1728 dark template preview",
+        "severity": "moderate",
+        "message": "1728 dark template preview uses 3 off-scale spacing values across 2 elements: 20px, 68px, 344.5px.",
+        "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+        "elementIds": [
+          "li:nth-of-type(1)@263",
+          "dialog:nth-of-type(1)@277"
+        ],
+        "evidence": [
+          {
+            "label": "li:nth-of-type(1)@263 padding top",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "li:nth-of-type(1)@263 padding bottom",
+            "value": 20,
+            "unit": "px"
+          },
+          {
+            "label": "dialog:nth-of-type(1)@277 margin top",
+            "value": 68,
+            "unit": "px"
+          },
+          {
+            "label": "dialog:nth-of-type(1)@277 margin right",
+            "value": 344.5,
+            "unit": "px"
+          },
+          {
+            "label": "dialog:nth-of-type(1)@277 margin bottom",
+            "value": 68,
+            "unit": "px"
+          },
+          {
+            "label": "dialog:nth-of-type(1)@277 margin left",
+            "value": 344.5,
+            "unit": "px"
+          }
+        ],
+        "id": "spacing-3"
+      }
+    ]
+  },
+  "visuallyInspected": [
+    "390-dark-list.png",
+    "1440-light-reader.png",
+    "390-dark-template-preview.png"
+  ],
+  "limits": [
+    "Internal source, copy, rendered DOM and browser checks; no real-user research or accessibility certification.",
+    "The captured App/main shell includes separate uncommitted showcase edits. This receipt reviews the resource library.",
+    "Full native Studio, hosted deployment and named-client walkthroughs were not repeated."
+  ]
+}

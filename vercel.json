@@ -6,7 +6,8 @@
     { "source": "/studio", "destination": "/index.html" },
     { "source": "/studio/", "destination": "/index.html" },
     { "source": "/api/catalog", "destination": "https://open-design-mcp-liard.vercel.app/api/catalog" },
-    { "source": "/api/resources/:path*", "destination": "https://open-design-mcp-liard.vercel.app/api/resources/:path*" },
+    { "source": "/api/resources/:resourceRoute*", "destination": "https://open-design-mcp-liard.vercel.app/api/resources/:resourceRoute*" },
+    { "source": "/api/resource-previews/:previewRoute*", "destination": "https://open-design-mcp-liard.vercel.app/api/resource-previews/:previewRoute*" },
     { "source": "/api/design-systems/:id/design.md", "destination": "https://open-design-mcp-liard.vercel.app/api/design-systems/:id/design.md" },
     { "source": "/registry/:path*", "destination": "https://open-design-mcp-liard.vercel.app/registry/:path*" }
   ],
