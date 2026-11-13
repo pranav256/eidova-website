@@ -1,0 +1,866 @@
+{
+  "date": "2026-11-13",
+  "designSystemId": "minimal-light",
+  "appearance": "light default; saved and URL choices preserved",
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "build": "pass",
+  "website": {
+    "origin": "http://127.0.0.1:5512",
+    "widths": [
+      390,
+      1440,
+      1728
+    ],
+    "schemes": [
+      "dark",
+      "light"
+    ],
+    "sourcePassed": true,
+    "handoffSpacing": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 33,
+      "total": 33
+    },
+    "spacing": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 11,
+      "total": 11
+    },
+    "expandedSpacing": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 11,
+      "total": 11
+    },
+    "setupSpacing": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 6,
+      "total": 6
+    },
+    "comprehensionPanels": 62,
+    "comprehensionFailures": 0,
+    "contrasts": [
+      {
+        "width": 390,
+        "mode": "light",
+        "pairs": {
+          "foreground": 7.749336504024824,
+          "muted-foreground": 4.622523909345665,
+          "primary-foreground": 21
+        }
+      },
+      {
+        "width": 390,
+        "mode": "dark",
+        "pairs": {
+          "foreground": 12.350024197095216,
+          "muted-foreground": 7.880300762091932,
+          "primary-foreground": 17.827000398052718
+        }
+      },
+      {
+        "width": 1440,
+        "mode": "light",
+        "pairs": {
+          "foreground": 7.749336504024824,
+          "muted-foreground": 4.622523909345665,
+          "primary-foreground": 21
+        }
+      },
+      {
+        "width": 1440,
+        "mode": "dark",
+        "pairs": {
+          "foreground": 12.350024197095216,
+          "muted-foreground": 7.880300762091932,
+          "primary-foreground": 17.827000398052718
+        }
+      },
+      {
+        "width": 1728,
+        "mode": "light",
+        "pairs": {
+          "foreground": 7.749336504024824,
+          "muted-foreground": 4.622523909345665,
+          "primary-foreground": 21
+        }
+      },
+      {
+        "width": 1728,
+        "mode": "dark",
+        "pairs": {
+          "foreground": 12.350024197095216,
+          "muted-foreground": 7.880300762091932,
+          "primary-foreground": 17.827000398052718
+        }
+      }
+    ],
+    "galleryCaptures": 8,
+    "galleryImageBytes": 260311,
+    "baselineCopyCompared": false,
+    "pageErrors": [],
+    "behavior": [
+      "exact-theme agent prompt and DESIGN.md browser download",
+      "all eight family handoff panels",
+      "installation with six client formats",
+      "separate modal preview, keyboard Escape, focus return and sample reset",
+      "source-bound gallery images",
+      "search and URL persistence",
+      "multiword search",
+      "no-match recovery",
+      "appearance filters and persistence",
+      "expand/collapse 31 themes",
+      "keyboard tabs",
+      "core/full options",
+      "clipboard success and denial",
+      "registry link",
+      "catalog failure, invalid response, retry and timeout",
+      "reduced motion",
+      "keyboard skip link"
+    ]
+  },
+  "showcase": {
+    "date": "2026-11-13",
+    "origin": "http://127.0.0.1:5512",
+    "widths": [
+      390,
+      1440,
+      1728
+    ],
+    "appearances": [
+      "light",
+      "dark"
+    ],
+    "states": 30,
+    "panels": 24,
+    "sourceExceptions": [
+      "- **serious** `element/select` line 54: Native <select> should be replaced by <Select> from @/components/ui/select.",
+      "- **serious** `element/select` line 120: Native <select> should be replaced by <Select> from @/components/ui/select.",
+      "- **serious** `element/select` line 130: Native <select> should be replaced by <Select> from @/components/ui/select.",
+      "- **serious** `element/select` line 142: Native <select> should be replaced by <Select> from @/components/ui/select.",
+      "- **serious** `element/select` line 186: Native <select> should be replaced by <Select> from @/components/ui/select.",
+      "- **serious** `element/select` line 192: Native <select> should be replaced by <Select> from @/components/ui/select.",
+      "- **serious** `element/select` line 192: Native <select> should be replaced by <Select> from @/components/ui/select."
+    ],
+    "comprehension": [
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 29,
+        "surface": "screen",
+        "budgetWords": 29,
+        "estimatedExplainSeconds": 13,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 21,
+        "surface": "screen",
+        "budgetWords": 21,
+        "estimatedExplainSeconds": 7,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 20,
+        "surface": "screen",
+        "budgetWords": 20,
+        "estimatedExplainSeconds": 7,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 19,
+        "surface": "screen",
+        "budgetWords": 19,
+        "estimatedExplainSeconds": 6,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 21,
+        "surface": "screen",
+        "budgetWords": 21,
+        "estimatedExplainSeconds": 7,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 20,
+        "surface": "screen",
+        "budgetWords": 20,
+        "estimatedExplainSeconds": 7,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 1,
+        "findings": [
+          {
+            "test": "mom",
+            "severity": "minor",
+            "problem": "The copy uses words that only make sense inside the team.",
+            "evidence": "workspace",
+            "fix": "Say what the thing does in everyday words, or explain the term on the screen the first time it appears."
+          }
+        ],
+        "words": 21,
+        "surface": "screen",
+        "budgetWords": 21,
+        "estimatedExplainSeconds": 12,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 18,
+        "surface": "screen",
+        "budgetWords": 18,
+        "estimatedExplainSeconds": 6,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 19,
+        "surface": "screen",
+        "budgetWords": 19,
+        "estimatedExplainSeconds": 6,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 18,
+        "surface": "screen",
+        "budgetWords": 18,
+        "estimatedExplainSeconds": 6,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 20,
+        "surface": "screen",
+        "budgetWords": 20,
+        "estimatedExplainSeconds": 7,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 19,
+        "surface": "screen",
+        "budgetWords": 19,
+        "estimatedExplainSeconds": 6,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 15,
+        "surface": "screen",
+        "budgetWords": 15,
+        "estimatedExplainSeconds": 5,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 17,
+        "surface": "screen",
+        "budgetWords": 17,
+        "estimatedExplainSeconds": 6,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 21,
+        "surface": "screen",
+        "budgetWords": 21,
+        "estimatedExplainSeconds": 7,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 23,
+        "surface": "reference",
+        "budgetWords": 2,
+        "estimatedExplainSeconds": 1,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 24,
+        "surface": "reference",
+        "budgetWords": 4,
+        "estimatedExplainSeconds": 1,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 1,
+        "findings": [
+          {
+            "test": "mom",
+            "severity": "minor",
+            "problem": "The copy uses words that only make sense inside the team.",
+            "evidence": "session",
+            "fix": "Say what the thing does in everyday words, or explain the term on the screen the first time it appears."
+          }
+        ],
+        "words": 20,
+        "surface": "reference",
+        "budgetWords": 2,
+        "estimatedExplainSeconds": 1,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 19,
+        "surface": "reference",
+        "budgetWords": 2,
+        "estimatedExplainSeconds": 1,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 22,
+        "surface": "reference",
+        "budgetWords": 4,
+        "estimatedExplainSeconds": 1,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 21,
+        "surface": "reference",
+        "budgetWords": 3,
+        "estimatedExplainSeconds": 1,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 42,
+        "surface": "reference",
+        "budgetWords": 4,
+        "estimatedExplainSeconds": 1,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 42,
+        "surface": "reference",
+        "budgetWords": 4,
+        "estimatedExplainSeconds": 1,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 36,
+        "surface": "reference",
+        "budgetWords": 4,
+        "estimatedExplainSeconds": 1,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      }
+    ],
+    "spacingSummary": [
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 2,
+        "total": 2
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 2,
+        "total": 2
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 2,
+        "total": 2
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 2,
+        "total": 2
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 2,
+        "total": 2
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      }
+    ],
+    "spacingBlockers": [],
+    "pageErrors": [],
+    "contrastFailures": [],
+    "sourceSha256": {
+      "Showcase.tsx": "e9c04c22afe56d0e9802e686c590511d4cdddddf2add45fe31d63121e2d99a17",
+      "showcase.css": "c8fc7025b69cd8008471a83a5e7cc8b0e813586f84f8e9b2b64f329ac60b0e21",
+      "styles.css": "127a7e3a5e93ca5142b767741a8c4d27243b4e26973da029df3d9fd886610302",
+      "clean.css": "d45c7ecfffcfc780deed5e07ab6bdd451954df2c2f438167883a837557ecda6d",
+      "App.tsx": "cc274cf26a2e1620f46fb9d380138f437fbe2aebf093ee4925ad634a434b237b",
+      "main.tsx": "6962bb2bfb83c16613e79824aee8663878359c1eb23d1456e13f84377c9c532a",
+      "components/ui/button.tsx": "b69da247137977478111bee992b8ee425af00f30d6175edfdabb4e17c5b034b5",
+      "components/ui/input.tsx": "8a5f547c5eeedb01c43f7c2c8d3e345bfedd1324795f9e7bc41f79c301362d42",
+      "components/ui/textarea.tsx": "f092fe784f0ac9236667b0b327c308bb66c585531dc58df405dec42ff473370f",
+      "components/CopyButton.tsx": "04a61c7e3f4de9fd2aefd051831dd9c1f8e4ee751d335a7a418af6519280f607"
+    }
+  },
+  "resources": {
+    "widths": [
+      390,
+      1440,
+      1728
+    ],
+    "modes": [
+      "dark",
+      "light"
+    ],
+    "states": 36,
+    "sourceExceptions": [
+      {
+        "findings": [
+          "- **serious** `element/select` line 86: Native <select> should be replaced by <Select> from @/components/ui/select.",
+          "- **serious** `element/select` line 120: Native <select> should be replaced by <Select> from @/components/ui/select."
+        ],
+        "reason": "The suggested house Select component does not exist. The labeled native select uses the site tokens and provides built-in keyboard and mobile picker behavior; no dependency or substitute wrapper is needed."
+      }
+    ],
+    "spacing": [
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 2,
+        "total": 2
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 2,
+        "total": 2
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 2,
+        "total": 2
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 2,
+        "total": 2
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 2,
+        "total": 2
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 2,
+        "total": 2
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      },
+      {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 6,
+        "total": 6
+      }
+    ],
+    "spacingBlockers": [],
+    "spacingException": null,
+    "comprehension": [
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 15,
+        "surface": "screen",
+        "budgetWords": 15,
+        "estimatedExplainSeconds": 5,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 12,
+        "surface": "screen",
+        "budgetWords": 12,
+        "estimatedExplainSeconds": 7,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 11,
+        "surface": "screen",
+        "budgetWords": 11,
+        "estimatedExplainSeconds": 7,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 7,
+        "surface": "screen",
+        "budgetWords": 7,
+        "estimatedExplainSeconds": 5,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 7,
+        "surface": "screen",
+        "budgetWords": 7,
+        "estimatedExplainSeconds": 5,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 18,
+        "surface": "screen",
+        "budgetWords": 18,
+        "estimatedExplainSeconds": 6,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 33,
+        "surface": "screen",
+        "budgetWords": 33,
+        "estimatedExplainSeconds": 11,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 13,
+        "surface": "screen",
+        "budgetWords": 13,
+        "estimatedExplainSeconds": 4,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 13,
+        "surface": "screen",
+        "budgetWords": 13,
+        "estimatedExplainSeconds": 4,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 8,
+        "surface": "screen",
+        "budgetWords": 8,
+        "estimatedExplainSeconds": 3,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 12,
+        "surface": "screen",
+        "budgetWords": 12,
+        "estimatedExplainSeconds": 4,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      },
+      {
+        "verdict": "pass",
+        "findingCount": 0,
+        "findings": [],
+        "words": 18,
+        "surface": "screen",
+        "budgetWords": 18,
+        "estimatedExplainSeconds": 9,
+        "nextStep": "Continue with the interface; this text check does not verify its rendering."
+      }
+    ],
+    "pageErrors": [],
+    "contrastFailures": [],
+    "sourceSha256": {
+      "App.tsx": "cc274cf26a2e1620f46fb9d380138f437fbe2aebf093ee4925ad634a434b237b",
+      "ResourceLibrary.tsx": "0244a339fa66a58762cfc8eeaf992b19115a940ac7828dbefb72dd90fa548c61",
+      "components/CopyButton.tsx": "04a61c7e3f4de9fd2aefd051831dd9c1f8e4ee751d335a7a418af6519280f607",
+      "styles.css": "127a7e3a5e93ca5142b767741a8c4d27243b4e26973da029df3d9fd886610302",
+      "theme.css": "0aa70f50b1bf45ca6340438b670a924a91c07bb5245f22633bd559a7d383b800",
+      "clean.css": "625f01dc925e2e59ca2fa75dffddfe05d765394da738c579810e3d22e2461a47",
+      "main.tsx": "6962bb2bfb83c16613e79824aee8663878359c1eb23d1456e13f84377c9c532a"
+    }
+  },
+  "accessibility": {
+    "origin": "http://127.0.0.1:5512",
+    "views": [
+      {
+        "width": 390,
+        "route": "/",
+        "violations": []
+      },
+      {
+        "width": 390,
+        "route": "/showcase",
+        "violations": []
+      },
+      {
+        "width": 390,
+        "route": "/studio",
+        "violations": []
+      },
+      {
+        "width": 1440,
+        "route": "/",
+        "violations": []
+      },
+      {
+        "width": 1440,
+        "route": "/showcase",
+        "violations": []
+      },
+      {
+        "width": 1440,
+        "route": "/studio",
+        "violations": []
+      },
+      {
+        "width": 1728,
+        "route": "/",
+        "violations": []
+      },
+      {
+        "width": 1728,
+        "route": "/showcase",
+        "violations": []
+      },
+      {
+        "width": 1728,
+        "route": "/studio",
+        "violations": []
+      }
+    ],
+    "errors": [],
+    "defaults": "pass",
+    "reflow": "pass",
+    "textZoom": "pass",
+    "savedAndUrlAppearance": "pass",
+    "excluded": "Original embedded component specimens; their themes are reviewed separately."
+  },
+  "metadata": {
+    "titles": true,
+    "descriptions": true,
+    "canonical": true,
+    "openGraph": true,
+    "twitter": true,
+    "structuredData": true,
+    "logoAndFavicon": true,
+    "socialImage": true,
+    "robots": true,
+    "sitemap": true,
+    "staticRouteMetadata": true
+  },
+  "limits": [
+    "Edge Chromium only; no first-time-user study or search indexing verification.",
+    "Original specimens retain their own systems. Variant screenshots/viewers show the labeled representative family; exact variant tokens and downloads are preserved.",
+    "Resource flow review preceded a preview-only iframe corner correction; resource styling and behavior were unaffected."
+  ],
+  "sourceHashes": {
+    "src/App.tsx": "cc274cf26a2e1620f46fb9d380138f437fbe2aebf093ee4925ad634a434b237b",
+    "src/clean.css": "d45c7ecfffcfc780deed5e07ab6bdd451954df2c2f438167883a837557ecda6d",
+    "src/theme.ts": "ed3bbbc7cc960d31f8058d9fc880925be494759feb08303290412c175d429a91",
+    "src/main.tsx": "6962bb2bfb83c16613e79824aee8663878359c1eb23d1456e13f84377c9c532a",
+    "index.html": "333f03e6742fc39df701190a3645599b35ee71a01455b5404b140bb0a2c50c4a",
+    "scripts/build-metadata.mjs": "8e26435b50a6ae4448cbc2af9856ca2fd10658287a4f5f616f46c3ae4b42c4ff"
+  }
+}

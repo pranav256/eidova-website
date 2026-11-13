@@ -1,6 +1,6 @@
 {
   "scope": "Local MCP stdio workspace and root AGENTS.md",
-  "designSystemId": "editorial-dark",
+  "designSystemId": "minimal-light",
   "readExisting": true,
   "preservedPriorRules": true,
   "saved": true,

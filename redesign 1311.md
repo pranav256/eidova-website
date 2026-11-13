@@ -1,53 +1,44 @@
 # Redesign 1311
 
-Approved reference: Form & Field, `form-and-field`, reviewed on 13 November 2026.
-Use this as the default for this workspace's future MCP website builds.
-
-This version is stored with the website. Paths in the execution record describe the original parent workspace; in this checkout, use `docs/redesign-1311-review.json` and `docs/editorial-dark-DESIGN.md`.
+Updated 13 November 2026: the user rejected the Editorial treatment and requested a clearer, cleaner preview experience. This modern foundation supersedes the earlier Form & Field default.
 
 ## Scope
 
-Redesign Eidova's website pages and shared readers, forms, navigation and footer to match this theme. Keep routes, installation formats, catalog filtering, resource downloads, specimen isolation and recovery behavior. The separate `eidova-studio` application is outside this redesign. Form & Field is the reference website.
+Apply to all Eidova marketing website pages and future MCP website builds in this workspace. Preserve established designs in unrelated products and original catalog specimens. The separate native Studio application is outside this redesign.
 
 ## Default design settings
 
-- Catalog system: `editorial-dark`; family: Editorial; React library: Radix.
-- Appearance: dark by default. Preserve explicit visitor appearance choices; a light option uses the same editorial type and layout.
-- Display type: Georgia, "Times New Roman", serif; weight 400; restrained negative tracking.
-- Body and controls: locally loaded Inter, system-ui, sans-serif. Use monospace for source and configuration.
-- Canvas: `oklch(0.1405 0.0044 285.82)`; foreground and primary: `oklch(0.9696 0 0)`; primary foreground: `oklch(0.1417 0.0044 285.82)`.
-- Card: `oklch(0.1596 0.0047 285.86)`; secondary: `oklch(0.2102 0.006 285.87)`; input: `oklch(0.1763 0.0058 285.79)`; border: `oklch(0.2741 0.0055 286.03)`; focus ring: `oklch(0.8452 0 0)`.
-- Accessible reference refinements: muted text `oklch(0.74 0 0)` and control borders `oklch(0.61 0 0)`; radius `1rem`.
-- Layout: maximum content width 96rem; responsive gutters `clamp(1.5rem, 5.5vw, 6rem)`; generous section gaps; readable body measures; simple dividing rules.
-- Imagery: warm, textured paper collages beside copy. Label illustrative imagery; preserve licenses and originals. Keep real product specimens visually faithful to their own systems.
-- Interactions: real links, visible focus, labeled fields, predictable history and failure recovery. Honor reduced motion and 200% text. Never clear a visitor's draft as a side effect of redesign.
+- Catalog system: `minimal-light`, Neutral family, actual React/Radix Button, Input and Textarea kit.
+- Light by default, retaining visitors' explicit saved and URL appearance preferences and an accessible dark option.
+- Locally loaded Inter throughout; system sans-serif fallback, monospace for code. No editorial serif headings or decorative collage.
+- Neutral kit tokens: near-white canvas, dark gray text, black primary controls, 0.75rem radius. Retain accessible control borders and destructive text contrast.
+- Clear existing Eidova logo in header, footer and favicon. Keep header/footer destinations.
+- Preview-first catalog: all 31 themes visible, larger screenshots, labeled representative family previews for variants. Exact variant tokens and source remain available.
+- Wide component viewer with setup hidden until Use theme. Preserve Escape, nested dialogs, focus return, URL history, search and filters.
+- Content-driven responsive spacing; maximum content width 88rem, 4/8/12/16/24/32/48/64px scale. Real sample content and readable prose.
+- SEO: meaningful titles/descriptions, canonical URLs, Open Graph/Twitter image, structured data, robots and sitemap. Private team routes remain noindex.
 
 ## Future MCP workflow
 
-1. Read local AGENTS.md, this file and the product's DESIGN.md. Preserve another product's established brand unless replacement is explicitly requested; use this default when no other brand is supplied.
-2. Start with `find-design-system`, stating the approved Editorial Dark default. Request `get-design-system-kit` with `designSystemId: "editorial-dark"`, `target: "react"`, `library: "radix"`, and only the needed components. Use HTML kits in inline hosts.
-3. Load `get-ui-principle` before styling and `get-ux-principle` before behavior. Load relevant widget or platform guidance when required.
-4. Build with actual kit components, keeping the Form & Field typography, tokens and accessible refinements.
-5. Run `get-review-rules`, `review-ui-code`, `check-comprehension` and `inspect-spacing` with rendered DOM at 390, 1440 and 1728. Fix critical and serious findings. Visually inspect the result and exercise affected flows.
+1. Read AGENTS.md, this file and the product's DESIGN.md. Keep another product's own brand unless replacement is requested.
+2. Start with find-design-system and retrieve get-design-system-kit for minimal-light, target react, library radix, requesting only needed components. Use HTML kits in inline hosts.
+3. Load get-ui-principle before styling and get-ux-principle before behavior; load widget/platform guidance when required.
+4. Build with the actual kit, preserved branding and working behavior.
+5. Run get-review-rules, review-ui-code, check-comprehension and inspect-spacing using rendered DOM at 390, 1440 and 1728px. Fix critical and serious findings and exercise affected flows.
 
 ## Execution
 
-- [x] Record the approved default and scope.
-- [x] Persist local MCP team rules and workspace instructions.
-- [x] Apply editorial theme, components and layout across the Eidova website.
-- [x] Verify production build, navigation, connection formats, gallery and resource readers.
-- [x] Review source, visible copy, rendered spacing and accessibility; save a review receipt.
+- [x] Replace the rejected Editorial default with a clean modern theme.
+- [x] Remove the collage, restore the existing brand logo and add favicon/SEO assets.
+- [x] Show the complete theme catalog and enlarge/declutter previews.
+- [x] Build and verify navigation, previews, appearance, downloads and error recovery.
+- [x] Review code, visible copy, rendered spacing and accessibility.
+- [x] Save local MCP defaults and prepare reviewed fixes for publication.
 
-## Delivery record
+## Previous delivery
 
-Eidova's shared website theme now uses Georgia/Inter, the approved dark palette and accessible refinements, 1rem controls, editorial spacing and licensed artwork beside the hero copy. The installation section, gallery, resource readers, showcase and website shell share this foundation. The showcase opens on the Editorial family and its dark tokens. All catalog specimens retain their original appearance.
+The earlier Editorial deployment is retained in Git history (website commit 62b376f). Its styling and eight-card default are superseded by this plan. Original catalog specimens and the Form & Field reference site keep their own design.
 
-Default preferences were saved through `set-team-rules` and read back in the local MCP stdio workspace. Root `AGENTS.md` applies the same defaults to future website work here. No hosted account setting was changed.
+## Modern delivery review
 
-Production builds pass. The website flow review passes 62 copy panels; the showcase passes 30 states and 24 copy panels; resource readers pass 36 states and 12 copy panels at 390, 1440 and 1728, in both appearances. Nine shell views, including the website's team workspace setup screen, pass Axe with no violations. Default/saved/URL appearance choices, 320px reflow and 200% text checks pass. Source review records why existing labeled native selects remain: there is no house Select component, and their keyboard/mobile behavior is preserved. No unresolved critical or serious rendered findings remain.
-
-Review receipt: `eidova-website/docs/redesign-1311-review.json`.
-Local preview: http://127.0.0.1:5512/ and http://127.0.0.1:5512/showcase.
-The separate native Studio application and hosted deployment were not changed. Hosted service endpoints, a clean dependency install and other browser engines were not verified.
-
-Local source changes are the delivery. Public deployment and external account settings are not implied by this record.
+Build passes. The website passes 62 copy panels and catalog/preview/setup/recovery flows. Showcase passes 30 states and 24 panels; resource readers pass 36 states and 12 panels. Rendered spacing at 390, 1440 and 1728px has no unresolved critical or serious findings. Nine shell views pass Axe; reflow and 200% text checks pass. Labeled native selects remain because no house Select exists. See eidova-website/docs/clean-preview-review.json for coverage and limits.

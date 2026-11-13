@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /studio
+Disallow: /api/
+Disallow: /?specimen=
+Sitemap: https://open-design-website.vercel.app/sitemap.xml

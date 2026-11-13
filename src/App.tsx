@@ -12,7 +12,7 @@ import { ArrowDown, ArrowUpRight, Search } from 'lucide-react';
 type Theme = { id: string; title: string; description: string; primaryColor?: string; font?: string; componentCount: number; personality?: string[] };
 type CatalogState = { state: 'loading' } | { state: 'error'; message: string } | { state: 'ready'; themes: Theme[] };
 type Scheme = 'all' | 'light' | 'dark';
-const featuredIds = families.map(family=>family.representative);
+const featuredIds = ['minimal-light', ...families.map(family=>family.representative).filter(id=>id!=='minimal-light')];
 const familyFor=(id:string)=>families.find(family=>family.representative===id||family.variants.includes(id));
 function readPreview() {
   const params = new URLSearchParams(window.location.search);
@@ -47,13 +47,13 @@ function paletteStyle(id: string, mode: ThemeMode): CSSProperties {
 }
 export function SiteHeader({ theme, onToggleTheme }: { theme: ThemeMode; onToggleTheme: () => void }) {
   return <header className="site-header">
-    <a className="wordmark" href={navigationHome+'#main'} aria-label="Eidova home"><span className="brand-mark" aria-hidden="true"><i /><i /></span>Eidova</a>
+    <a className="wordmark" href={navigationHome+'#main'} aria-label="Eidova home"><img className="brand-mark" src="/logo.svg" width={40} height={40} alt="" />Eidova</a>
     <nav aria-label="Main navigation"><a href={navigationHome+'#themes'}>Themes</a><a href={navigationHome+'#resources'}>Resources</a><a href={navigationHome+'#tools'}>Tools</a><a href="/showcase" aria-current={navigationHome ? 'page' : undefined}>Showcase</a><a href="/studio">Team workspace</a><a href={navigationHome+'#connect'}>Connect</a></nav>
     <div className="header-actions"><a className="source-link" href={sourceUrl}>Source code <ArrowUpRight aria-hidden="true" /></a><Button className="theme-toggle" variant="outline" size="sm" onClick={onToggleTheme} aria-label={'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode'}>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</Button></div>
   </header>;
 }
 export function SiteFooter() {
-  return <footer className="site-footer"><a className="wordmark" href={navigationHome+'#main'}><span className="brand-mark" aria-hidden="true"><i /><i /></span>Eidova</a><p>Independent. Open source. Built for your agent. v{version}</p><nav aria-label="Footer navigation"><a href={navigationHome+'#connect'}>Connect</a><a href="/showcase">Showcase</a><a href={sourceUrl}>Source</a><a href={serviceSourceUrl + '/blob/main/docs/CLIENTS.md'}>Docs</a><a href={registryOrigin + '/health'}>Status</a><a href={sourceUrl + '/blob/main/LICENSE'}>License</a></nav></footer>;
+  return <footer className="site-footer"><a className="wordmark" href={navigationHome+'#main'}><img className="brand-mark" src="/logo.svg" width={40} height={40} alt="" />Eidova</a><p>Independent. Open source. Built for your agent. v{version}</p><nav aria-label="Footer navigation"><a href={navigationHome+'#connect'}>Connect</a><a href="/showcase">Showcase</a><a href={sourceUrl}>Source</a><a href={serviceSourceUrl + '/blob/main/docs/CLIENTS.md'}>Docs</a><a href={registryOrigin + '/health'}>Status</a><a href={sourceUrl + '/blob/main/LICENSE'}>License</a></nav></footer>;
 }
 function fontLabel(value?: string) {
   const family = value?.split(',')[0].replace(/["']/g, '').trim();
@@ -72,7 +72,7 @@ export function App() {
   const [catalog, setCatalog] = useState<CatalogState>({ state: 'loading' });
   const [query, setQuery] = useState(() => readSearch().query);
   const [scheme, setScheme] = useState<Scheme>(() => readSearch().scheme);
-  const [showAll, setShowAll] = useState(false);
+  const [showHandoff, setShowHandoff] = useState(false);
   const [retry, setRetry] = useState(0);
   const [client, setClient] = useState(0);
   const [profile,setProfile]=useState<'core'|'full'>('core');
@@ -111,6 +111,7 @@ export function App() {
     return () => window.removeEventListener('popstate', restore);
   }, []);
   useEffect(() => {
+    setShowHandoff(false);
     const url = new URL(window.location.href);
     url.searchParams.delete('theme');
     if (preview) url.searchParams.set('preview', preview); else url.searchParams.delete('preview');
@@ -133,8 +134,8 @@ export function App() {
       return (aIndex < 0 ? 99 : aIndex) - (bIndex < 0 ? 99 : bIndex) || a.title.localeCompare(b.title);
     });
   }, [catalog, query, scheme]);
-  const visible = query.trim() || scheme !== 'all' || showAll ? filtered : filtered.slice(0, featuredIds.length);
-  function resetSearch() { setQuery(''); setScheme('all'); setShowAll(false); searchInput.current?.focus(); }
+  const visible = filtered;
+  function resetSearch() { setQuery(''); setScheme('all'); searchInput.current?.focus(); }
   function tabKey(event: KeyboardEvent<HTMLButtonElement>, index: number) {
     if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
     event.preventDefault();
@@ -158,16 +159,16 @@ export function App() {
     <main id="main" tabIndex={-1}>
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="editorial-eyebrow">Eidova / Design with intention</p>
-          <h1 id="hero-title">Give your agent<br /><span>the whole toolkit.</span></h1>
-          <p className="hero-description">Build and review with Eidova MCP: real components, 920 resources, and practical guidance.</p>
+          <p className="site-eyebrow">Open-source design tools for coding agents</p>
+          <h1 id="hero-title">Better UI starts here.</h1>
+          <p className="hero-description">Give your agent real components, design resources and practical reviews through Eidova MCP.</p>
           <div className="hero-actions"><a className="text-link" href="#themes">Explore the themes <ArrowDown aria-hidden="true" /></a><a className="text-link" href="/showcase">Try the showcase <ArrowUpRight aria-hidden="true" /></a></div>
           <p className="hero-note">Free public access <span aria-hidden="true">·</span> No account required</p>
         </div>
-        <figure className="editorial-art"><img src="/art/hero.webp" alt="A paper collage of a classical stone head, olive tree and architecture against a terracotta sun" width={1024} height={1024} fetchPriority="high" /><figcaption><span>A study in form & possibility</span><a href="/licenses/artwork.txt">Illustrative studio collage / 001</a></figcaption></figure>
+        <dl className="hero-stats"><div><dt>Installable themes</dt><dd>31</dd></div><div><dt>Design resources</dt><dd>920</dd></div><div><dt>Public MCP tools</dt><dd>42</dd></div></dl>
       </section>
       <section className="connection-section" aria-label="Connect your agent">
-        <div className="connection-copy"><p className="editorial-eyebrow">01 / A place to begin</p><h2>One connection.<br /><em>Room to create.</em></h2><p>Bring considered design into the tools you already use. Choose your client and take the toolkit into your next project.</p></div>
+        <div className="connection-copy"><p className="site-eyebrow">Connect your coding agent</p><h2>Your toolkit, one connection away.</h2><p>Choose your client and copy the setup. Then ask your agent to find a theme, build with its components and review the result.</p></div>
         <section className="config-panel" id="connect" aria-labelledby="connect-title">
           <div className="installation-heading"><h2 id="connect-title">Install Eidova</h2><p>Choose your client, copy the setup, and connect.</p></div>
           <div className="client-tabs" role="tablist" aria-label="Connection format">{clientOptions.map((label, index) => <Button key={label} id={'client-tab-' + index} role="tab" variant="ghost" aria-selected={client === index} aria-controls={client === index ? 'client-panel-' + index : undefined} tabIndex={client === index ? 0 : -1} onClick={() => setClient(index)} onKeyDown={event => tabKey(event, index)}>{label}</Button>)}</div>
@@ -184,34 +185,33 @@ export function App() {
       <div className="platform-strip"><span>Built for the tools you already use.</span><div><span>Codex</span><span>Cursor</span><span>Claude Code</span><span className="platform-more">and other MCP clients</span></div></div>
 
       <section className="themes section" id="themes" aria-labelledby="themes-title">
-        <div className="section-heading"><div><h2 id="themes-title">Find your starting point.</h2><p>Compare eight families. All 31 theme IDs remain available as variants.</p></div><a className="text-link" href={serviceSourceUrl + '/tree/main/assets/registry'}>Explore the registry <span aria-hidden="true">↗</span></a></div>
+        <div className="section-heading"><div><h2 id="themes-title">Explore all 31 themes.</h2><p>Browse every theme across eight design families. Open a preview to try the real components.</p></div><a className="text-link" href={serviceSourceUrl + '/tree/main/assets/registry'}>Explore the registry <span aria-hidden="true">↗</span></a></div>
         <div className="catalog-toolbar">
-          <div className="search-field"><Search className="search-symbol" aria-hidden="true" /><Input ref={searchInput} id="theme-search" type="search" aria-label="Search themes" placeholder="Search themes, styles, or fonts…" value={query} onChange={event => { setQuery(event.target.value); setShowAll(false); }} />{query && <Button variant="ghost" className="clear-search" aria-label="Clear search" onClick={() => { setQuery(''); searchInput.current?.focus(); }}>Clear</Button>}</div>
-          <div className="scheme-filter" role="group" aria-label="Original theme appearance">{(['all', 'light', 'dark'] as const).map(value => <Button key={value} variant="ghost" aria-pressed={scheme === value} onClick={() => { setScheme(value); setShowAll(false); }}>{value === 'all' ? 'All themes' : value === 'light' ? 'Light base' : 'Dark base'}</Button>)}</div>
+          <div className="search-field"><Search className="search-symbol" aria-hidden="true" /><Input ref={searchInput} id="theme-search" type="search" aria-label="Search themes" placeholder="Search themes, styles, or fonts…" value={query} onChange={event => { setQuery(event.target.value); }} />{query && <Button variant="ghost" className="clear-search" aria-label="Clear search" onClick={() => { setQuery(''); searchInput.current?.focus(); }}>Clear</Button>}</div>
+          <div className="scheme-filter" role="group" aria-label="Original theme appearance">{(['all', 'light', 'dark'] as const).map(value => <Button key={value} variant="ghost" aria-pressed={scheme === value} onClick={() => { setScheme(value); }}>{value === 'all' ? 'All themes' : value === 'light' ? 'Light base' : 'Dark base'}</Button>)}</div>
         </div>
         <p className="result-count" role="status">{catalog.state === 'ready' ? 'Showing ' + visible.length + ' of ' + filtered.length + ' themes' : catalog.state === 'loading' ? 'Loading themes…' : 'Catalog unavailable'}</p>
         {catalog.state === 'loading' && <div className="catalog-message" role="status">Loading the theme catalog…</div>}
         {catalog.state === 'error' && <div className="catalog-message" role="alert"><h3>The catalog could not load.</h3><p>{catalog.message}</p><Button variant="outline" onClick={() => { setRetry(value => value + 1); searchInput.current?.focus(); }}>Retry loading themes</Button></div>}
         {catalog.state === 'ready' && filtered.length === 0 && <div className="catalog-message"><h3>{query ? 'No themes match “' + query + '”.' : 'No themes match this filter.'}</h3><p>Try another name, or clear the search and appearance filter.</p><Button variant="outline" onClick={resetSearch}>Clear search and filters</Button></div>}
         {catalog.state === 'ready' && visible.length > 0 && <div className="theme-grid">{visible.map(item => <article key={item.id} className={featuredIds.includes(item.id) ? 'theme-card theme-card-featured' : 'theme-card'}>
-          {featuredIds.includes(item.id) && <div className="theme-card-preview" style={paletteStyle(item.id, catalogThemes[item.id].scheme)}><img src={'/family-previews/' + item.id + '.png'} alt={'Sample workspace form in the ' + familyFor(item.id)?.title + ' style.'} width={800} height={560} loading="lazy" decoding="async" /></div>}
+          <Button variant="ghost" className="theme-card-preview" aria-label={'Open '+item.title+': '+familyFor(item.id)?.title+' family preview'} aria-haspopup="dialog" onClick={event=>{previewTrigger.current=event.currentTarget;setPreview(item.id);}} style={paletteStyle(item.id, catalogThemes[item.id].scheme)}><img src={'/family-previews/' + (familyFor(item.id)?.representative ?? item.id) + '.png'} alt={familyFor(item.id)?.title + ' family component preview' } width={800} height={560} loading="lazy" decoding="async" /><span className="preview-family-label">{familyFor(item.id)?.title} family preview</span></Button>
           <div className="palette-strip" style={paletteStyle(item.id, catalogThemes[item.id]?.scheme ?? 'dark')} aria-hidden="true"><i /><i /><i /><i /></div>
           <div className="theme-card-info">
-            <div className="theme-card-heading"><h3>{featuredIds.includes(item.id)?familyFor(item.id)?.title:item.title}</h3><span className="scheme-label">{catalogThemes[item.id]?.scheme === 'dark' ? 'Dark base' : 'Light base'}</span></div>
-            <p>{item.title} · {item.componentCount} components · {fontLabel(item.font)}</p>
+            <div className="theme-card-heading"><h3>{item.title}</h3><span className="scheme-label">{catalogThemes[item.id]?.scheme === 'dark' ? 'Dark base' : 'Light base'}</span></div>
+            <p>{item.componentCount} components · {fontLabel(item.font)}</p>
             <p className="family-description">{featuredIds.includes(item.id)?familyFor(item.id)?.description:'Part of the '+familyFor(item.id)?.title+' family.'}</p>
-            <div className="theme-card-links"><Button className="view-components" variant="outline" aria-label={(featuredIds.includes(item.id)?'View components: ':'View family: ')+(featuredIds.includes(item.id)?familyFor(item.id)?.title:item.title)} aria-haspopup="dialog" aria-expanded={preview===item.id} aria-controls="component-preview" onClick={event=>{previewTrigger.current=event.currentTarget;setPreview(item.id);}}>{featuredIds.includes(item.id)?'View components':'View family'}</Button><a className="theme-token-link" href={registryOrigin + '/registry/' + encodeURIComponent(item.id) + '/globals.json'} aria-label={'View tokens: ' + item.title}>View tokens <ArrowUpRight aria-hidden="true" /></a></div>
+            <div className="theme-card-links"><Button className="view-components" variant="outline" aria-label={'Preview theme: '+item.title} aria-haspopup="dialog" aria-expanded={preview===item.id} aria-controls="component-preview" onClick={event=>{previewTrigger.current=event.currentTarget;setPreview(item.id);}}>Preview theme</Button><a className="theme-token-link" href={registryOrigin + '/registry/' + encodeURIComponent(item.id) + '/globals.json'} aria-label={'View tokens: ' + item.title}>View tokens <ArrowUpRight aria-hidden="true" /></a></div>
           </div>
         </article>)}</div>}
-        <dialog ref={previewDialog} className="component-preview" id="component-preview" aria-labelledby="component-preview-title" onCancel={()=>setPreview(null)} onClose={()=>{setPreview(null);if(previewTrigger.current?.isConnected)previewTrigger.current.focus();else searchInput.current?.focus();}}><div className="section-heading"><div><h2 id="component-preview-title" tabIndex={-1}>{previewFamily?previewFamily.title+' components':'Component preview'}</h2><p>{preview&&previewFamily&&preview!==previewFamily.representative?catalogThemes[preview].title+' is a '+previewFamily.title+' variant. This preview shows the family components.':'Real components in their original appearance. Sample data resets when you reopen.'}</p></div><div className="preview-actions"><a className="text-link" href={'/?specimen='+encodeURIComponent(previewFamily?.representative??'linear')} target="_blank" rel="noreferrer">Open full preview</a><Button variant="outline" onClick={()=>setPreview(null)}>Close preview</Button></div></div>{previewFamily&&preview&&<div className="preview-workspace">
+        <dialog ref={previewDialog} className="component-preview" id="component-preview" aria-labelledby="component-preview-title" onCancel={()=>setPreview(null)} onClose={()=>{setPreview(null);if(previewTrigger.current?.isConnected)previewTrigger.current.focus();else searchInput.current?.focus();}}><div className="section-heading"><div><h2 id="component-preview-title" tabIndex={-1}>{preview?catalogThemes[preview].title+' preview':'Component preview'}</h2><p>{preview&&previewFamily&&preview!==previewFamily.representative?catalogThemes[preview].title+' is a '+previewFamily.title+' variant. This preview shows the family components.':'Try the real components. Changes here are sample data.'}</p></div><div className="preview-actions"><Button variant="outline" aria-expanded={showHandoff} aria-controls="theme-handoff" onClick={()=>setShowHandoff(value=>!value)}>{showHandoff?'Hide setup':'Use theme'}</Button><a className="text-link" href={'/?specimen='+encodeURIComponent(previewFamily?.representative??'linear')} target="_blank" rel="noreferrer">Open full preview</a><Button variant="outline" onClick={()=>setPreview(null)}>Close preview</Button></div></div>{previewFamily&&preview&&<div className={showHandoff?"preview-workspace with-handoff":"preview-workspace"}>
           <iframe key={preview} title={previewFamily.title+' component preview'} className="specimen-frame" src={'/?specimen='+encodeURIComponent(previewFamily.representative)} onLoad={previewLoaded} />
-          <section className="theme-handoff" aria-labelledby="theme-handoff-title">
+          <section className="theme-handoff" id="theme-handoff" aria-labelledby="theme-handoff-title" hidden={!showHandoff}>
             <h3 id="theme-handoff-title">Use {catalogThemes[preview].title}</h3>
             <dl className="theme-suitability"><div><dt>Best for</dt><dd>{previewFamily.useCases.join(', ')}.</dd></div><div><dt>Consider</dt><dd>{previewFamily.tradeoff}</dd></div></dl>
             <div className="handoff-prompt"><CopyButton value={designPrompt(preview)}>Copy agent prompt</CopyButton><details><summary>Project instructions</summary><Textarea aria-label="Agent prompt" value={designPrompt(preview)} rows={8} readOnly spellCheck={false} onFocus={event=>event.target.select()} /><div className="handoff-download"><a className="text-link" href={'/api/design-systems/'+encodeURIComponent(preview)+'/design.md'} download="DESIGN.md">Download DESIGN.md <ArrowDown aria-hidden="true" /></a><p>Save colors and rules with your project.</p></div></details></div>
           </section>
         </div>}</dialog>
-        {catalog.state === 'ready' && !query.trim() && scheme === 'all' && filtered.length > featuredIds.length && <div className="catalog-more"><Button variant="outline" onClick={() => { setShowAll(value => !value); if (showAll) document.getElementById('themes')?.scrollIntoView(); }}>{showAll ? 'Show fewer themes' : 'Show all ' + filtered.length + ' themes'}<span aria-hidden="true">{showAll ? '↑' : '↓'}</span></Button></div>}
         <p className="catalog-note">Component previews open in a separate viewer. <a href="/licenses/better-design-MIT.txt">Theme license</a>.</p>
       </section>
 
