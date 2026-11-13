@@ -149,9 +149,9 @@ function ToolDirectory() {
 
 export function Showcase() {
   const { theme, toggleTheme } = useAppearance();
-  const [familyId, setFamilyId] = useState(() => { const value = new URLSearchParams(location.search).get('family'); return families.some(family => family.representative === value) ? value! : 'editorial-dark'; });
+  const [familyId, setFamilyId] = useState(() => { const value = new URLSearchParams(location.search).get('family'); return families.some(family => family.representative === value) ? value! : 'minimal-light'; });
   const [token, setToken] = useState('--primary');
-  const [paletteMode, setPaletteMode] = useState<'light' | 'dark'>('dark');
+  const [paletteMode, setPaletteMode] = useState<'light' | 'dark'>('light');
   const family = families.find(item => item.representative === familyId)!;
   const palette = catalogThemes[familyId].modes[paletteMode];
   const exportedTokens = ':root {\n' + Object.entries(palette.tokens).map(([name, value]) => `  ${name}: ${value};`).join('\n') + '\n}';
@@ -162,7 +162,7 @@ export function Showcase() {
     <main className="showcase-main" id="showcase-main" tabIndex={-1}>
       <section className="showcase-hero">
         <div><p className="showcase-eyebrow"><Icon name="sparkles" />Eidova / The interactive showcase</p><h1>Your agent’s design toolkit.</h1><p>Build with real components. Carry your brand forward. Review the result. Explore the tools and source behind each step.</p><div className="showcase-hero-actions"><Button asChild size="lg"><a href="#components">Enter the playground<Icon name="move-right" /></a></Button><a className="text-link" href="#tool-directory">Explore the tools<Icon name="arrow-up-right" /></a></div><p className="showcase-small">Free public access. No account required.</p></div>
-        <figure className="showcase-hero-preview"><figcaption><span><Icon name="layers" />Editorial / Component specimen</span><a href="/?specimen=editorial-dark">Open preview<Icon name="arrow-up-right" /></a></figcaption><img src="/family-previews/editorial-dark.png" alt="Actual Editorial workspace form with serif headings and quiet white controls on a dark surface" fetchPriority="high" /><div className="showcase-preview-caption"><span>Source, material, and behavior.</span><span>One coherent system.</span></div></figure>
+        <figure className="showcase-hero-preview"><figcaption><span><Icon name="layers" />Neutral / Component specimen</span><a href="/?specimen=minimal-light">Open preview<Icon name="arrow-up-right" /></a></figcaption><img src="/family-previews/minimal-light.png" alt="Actual Neutral workspace form with clean sans-serif typography and light controls" fetchPriority="high" /><div className="showcase-preview-caption"><span>Source, material, and behavior.</span><span>One coherent system.</span></div></figure>
       </section>
       <dl className="showcase-stats"><div><dt>Distinct design families</dt><dd>08</dd></div><div><dt>Installable theme IDs</dt><dd>31</dd></div><div><dt>Bundled resources</dt><dd>{data.library.total}</dd></div><div><dt>Public MCP tools</dt><dd>{data.publicTools}</dd></div></dl>
       <nav className="showcase-chapter-nav" aria-label="Showcase chapters">{chapters.map(([id, name]) => <a key={id} href={'#' + id}>{name}</a>)}</nav>

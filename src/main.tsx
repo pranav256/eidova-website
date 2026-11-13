@@ -14,7 +14,7 @@ const specimen=params.get('specimen');
 const showcase=window.location.pathname.replace(/\/$/,'')==='/showcase';
 if(specimen)document.documentElement.dataset.specimen=specimen;
 else applyTheme(readTheme());
-const ready=specimen?Promise.resolve():Promise.all([import('./theme.css'),import('./styles.css')]).then(()=>import('./editorial.css'));
+const ready=specimen?Promise.resolve():Promise.all([import('./theme.css'),import('./styles.css')]).then(()=>import('./clean.css'));
 ready.then(()=>{
   if(!specimen)applyTheme(readTheme());
   if(showcase&&!specimen){import('./Showcase').then(({Showcase})=>createRoot(document.getElementById('root')!).render(<React.StrictMode><Showcase /></React.StrictMode>));return;}

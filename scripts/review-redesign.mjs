@@ -17,9 +17,9 @@ try {
       page.on('pageerror', error => errors.push(error.message));
       await page.goto(origin + route, { waitUntil: 'networkidle' });
       await page.evaluate(() => document.fonts.ready);
-      assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark');
-      assert.equal(await page.locator('html').getAttribute('data-design-system'), 'editorial-dark');
-      assert.match(await page.locator('h1').evaluate(node => getComputedStyle(node).fontFamily), /Georgia/);
+      assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
+      assert.equal(await page.locator('html').getAttribute('data-design-system'), 'minimal-light');
+      assert.match(await page.locator('h1').evaluate(node => getComputedStyle(node).fontFamily), /Inter/);
       assert.match(await page.locator('body').evaluate(node => getComputedStyle(node).fontFamily), /Inter/);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
       for (const img of await page.locator('img').all()) { await img.scrollIntoViewIfNeeded(); await img.evaluate(node => node.decode()); }
@@ -51,11 +51,11 @@ try {
     await page.evaluate(() => document.documentElement.style.fontSize = '');
   }
   await page.goto(origin, { waitUntil: 'networkidle' });
-  await page.getByRole('button', { name: 'Switch to light mode', exact: true }).click();
+  await page.getByRole('button', { name: 'Switch to dark mode', exact: true }).click();
   await page.reload({ waitUntil: 'networkidle' });
-  assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
-  await page.goto(origin + '/showcase?mode=dark', { waitUntil: 'networkidle' });
   assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark');
+  await page.goto(origin + '/showcase?mode=light', { waitUntil: 'networkidle' });
+  assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
   await context.close();
   await writeFile(`${output}/accessibility.json`, JSON.stringify({ origin, views, errors, defaults: 'pass', reflow: 'pass', textZoom: 'pass', savedAndUrlAppearance: 'pass', excluded: 'Original embedded component specimens; their themes are reviewed separately.' }, null, 2));
   console.log(JSON.stringify({ views: views.length, violations: views.flatMap(view => view.violations.map(rule => ({ route: view.route, width: view.width, id: rule.id, impact: rule.impact, nodes: rule.nodes.map(node => node.target) }))), errors }));

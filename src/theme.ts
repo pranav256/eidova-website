@@ -15,14 +15,14 @@ export function readTheme(): ThemeMode {
       const saved = localStorage.getItem(key);
       if (saved === 'dark' || saved === 'light') return saved;
     }
-  } catch { /* URL appearance and the dark default work when storage is disabled. */ }
-  return 'dark';
+  } catch { /* URL appearance and the light default work when storage is disabled. */ }
+  return 'light';
 }
 
 export function applyTheme(mode: ThemeMode, save = false): void {
   const root = document.documentElement;
   root.dataset.theme = mode;
-  root.dataset.designSystem = 'editorial-dark';
+  root.dataset.designSystem = 'minimal-light';
   root.style.colorScheme = mode;
   const background = getComputedStyle(root).getPropertyValue('--background').trim();
   if (background) document.querySelector('meta[name="theme-color"]')?.setAttribute('content', background);
