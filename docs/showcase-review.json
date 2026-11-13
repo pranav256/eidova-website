@@ -1,0 +1,129 @@
+{
+  "date": "2026-11-13",
+  "status": "complete-locally",
+  "surface": "Eidova interactive marketing showcase",
+  "previewUrl": "http://127.0.0.1:5512/showcase",
+  "matchingMcp": "http://127.0.0.1:3411/mcp",
+  "inventory": {
+    "designFamilies": 8,
+    "themeIds": 31,
+    "resources": 920,
+    "publicTools": 42
+  },
+  "verification": {
+    "productionBuild": "passed",
+    "sourceReview": "passed with the documented native-select adjudication",
+    "reviewedSourceFiles": [
+      "Showcase.tsx",
+      "showcase.css",
+      "styles.css",
+      "App.tsx",
+      "main.tsx",
+      "components/ui/button.tsx",
+      "components/ui/input.tsx",
+      "components/ui/textarea.tsx",
+      "components/CopyButton.tsx"
+    ],
+    "widths": [
+      390,
+      1440,
+      1728
+    ],
+    "appearances": [
+      "light",
+      "dark"
+    ],
+    "renderedStates": 30,
+    "comprehensionPanels": 24,
+    "copyFailures": [],
+    "criticalOrSeriousSpacing": [],
+    "textContrastFailures": [],
+    "pageErrors": [],
+    "additionalReflowWidths": [
+      320,
+      560,
+      600,
+      768,
+      1024,
+      1280
+    ],
+    "enlargedText": {
+      "fontSize": "200%",
+      "widths": [
+        390,
+        768,
+        1440
+      ],
+      "result": "passed"
+    },
+    "homepage": {
+      "normalAndEnlargedTextWidths": [
+        320,
+        390,
+        600,
+        768,
+        1440
+      ],
+      "roundTrip": "Homepage → Showcase → installation passed",
+      "appearances": [
+        "light",
+        "dark"
+      ],
+      "enlargedText": "200% passed"
+    },
+    "gitDiffWhitespace": "passed",
+    "overview": {
+      "capabilityLinks": 6,
+      "internalDestinations": "passed",
+      "keyboardNavigation": "passed",
+      "teamWorkspaceRoute": "passed"
+    }
+  },
+  "nativeSelectAdjudication": {
+    "findings": [
+      "- **serious** `element/select` line 54: Native <select> should be replaced by <Select> from @/components/ui/select.",
+      "- **serious** `element/select` line 120: Native <select> should be replaced by <Select> from @/components/ui/select.",
+      "- **serious** `element/select` line 130: Native <select> should be replaced by <Select> from @/components/ui/select.",
+      "- **serious** `element/select` line 142: Native <select> should be replaced by <Select> from @/components/ui/select.",
+      "- **serious** `element/select` line 186: Native <select> should be replaced by <Select> from @/components/ui/select.",
+      "- **serious** `element/select` line 192: Native <select> should be replaced by <Select> from @/components/ui/select.",
+      "- **serious** `element/select` line 192: Native <select> should be replaced by <Select> from @/components/ui/select."
+    ],
+    "reason": "The product has no house Select component. Labeled native selects preserve its theme, platform keyboard controls and mobile picker."
+  },
+  "visualInspection": [
+    "Desktop light capability overview",
+    "Mobile dark showcase introduction",
+    "Mobile dark capability overview"
+  ],
+  "sourceSha256": {
+    "Showcase.tsx": "9cbf8a584bf8d6d271916b8c6b31a2b5483fcc245283716bf7c5d8f0caa8bc2d",
+    "showcase.css": "c8fc7025b69cd8008471a83a5e7cc8b0e813586f84f8e9b2b64f329ac60b0e21",
+    "styles.css": "127a7e3a5e93ca5142b767741a8c4d27243b4e26973da029df3d9fd886610302",
+    "App.tsx": "0fe3cdc975a0b8e1b21ac3035e93bd12ff360726a15989e921a544b2aaf0a4f6",
+    "main.tsx": "69ac97c124293025168b4e81979f52b7e114cb231059f452a0e25e14a162f554",
+    "components/ui/button.tsx": "10e836deb659879c6b1b6a1eaf5ef611ac9cc04e60b3ce70523f4ecd70aa301f",
+    "components/ui/input.tsx": "a1bad8ee3139077d7c1b2e83eda6bc7d7707fb46f9941b99f7551d872454836d",
+    "components/ui/textarea.tsx": "2b11b34b597d708cfee601c65fddef6475d11f3a81b0c7f2fc7ee788e7be9859",
+    "components/CopyButton.tsx": "04a61c7e3f4de9fd2aefd051831dd9c1f8e4ee751d335a7a418af6519280f607"
+  },
+  "verifierSha256": "5546c52e02ed7f8760d8029bb299ad411649fcc6c04711f3aefb432e39e2bdc7",
+  "rawEvidence": "eidova-mcp/.work/showcase/full-toolkit-review",
+  "deployment": {
+    "requested": true,
+    "committed": false,
+    "pushed": false,
+    "deployed": false,
+    "status": "blocked-by-environment",
+    "reason": "Public HTTP requests fail with EACCES. Vercel CLI whoami fails with fetch failed. GitHub CLI cannot validate the stored login. The signed commit fails because GPG cannot read or create locks in the user keyring.",
+    "stagedWebsiteFiles": 39,
+    "signingConfigurationPreserved": true
+  },
+  "limits": [
+    "Microsoft Edge / Chromium browser checks; no screen-reader certification or user research.",
+    "Named MCP clients, full Native Studio and installers were not re-tested.",
+    "Existing registry directive/sourcemap and bundle-size warnings remain.",
+    "No public HTTPS deployment or dashboard receipt is claimed."
+  ],
+  "plan": "docs/MCP-SHOWCASE-PLAN.md"
+}

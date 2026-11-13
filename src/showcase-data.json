@@ -1,0 +1,1623 @@
+{
+  "version": "0.2.0",
+  "publicTools": 42,
+  "library": {
+    "total": 920,
+    "kinds": {
+      "design-systems": 152,
+      "design-templates": 115,
+      "plugins": 479,
+      "templates": 3,
+      "catalogs": 2,
+      "skills": 169
+    },
+    "readTool": "read-resource",
+    "searchTool": "search-resources"
+  },
+  "icons": [
+    {
+      "name": "search",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"m21 21l-4.34-4.34\"/><circle cx=\"11\" cy=\"11\" r=\"8\"/></g></svg>"
+    },
+    {
+      "name": "layers",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z\"/><path d=\"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12\"/><path d=\"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17\"/></g></svg>"
+    },
+    {
+      "name": "palette",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M12 22a1 1 0 0 1 0-20a10 9 0 0 1 10 9a5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z\"/><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\"/><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"/></g></svg>"
+    },
+    {
+      "name": "sparkles",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594zM20 2v4m2-2h-4\"/><circle cx=\"4\" cy=\"20\" r=\"2\"/></g></svg>"
+    },
+    {
+      "name": "check",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M20 6L9 17l-5-5\"/></svg>"
+    },
+    {
+      "name": "arrow-up-right",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M7 7h10v10M7 17L17 7\"/></svg>"
+    },
+    {
+      "name": "code",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"m16 18l6-6l-6-6M8 6l-6 6l6 6\"/></svg>"
+    },
+    {
+      "name": "accessibility",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><circle cx=\"16\" cy=\"4\" r=\"1\"/><path d=\"m18 19l1-7l-6 1M5 8l3-3l5.5 3l-2.36 3.5m-6.9 3a5 5 0 0 0 6.88 6\"/><path d=\"M13.76 17.5a5 5 0 0 0-6.88-6\"/></g></svg>"
+    },
+    {
+      "name": "book-open",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 5v16m8.001-2A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2a5 5 0 0 1 4-2z\"/></svg>"
+    },
+    {
+      "name": "zap",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M15.914 4a1.5 1.5 0 0 0-2.474-1.561l-9 9A1.5 1.5 0 0 0 5.5 14h4.002a.5.5 0 0 1 .471.666L8.086 20a1.5 1.5 0 0 0 2.475 1.56l9-9A1.5 1.5 0 0 0 18.5 10h-3.997a.5.5 0 0 1-.472-.667z\"/></svg>"
+    },
+    {
+      "name": "sliders-horizontal",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M10 5H3m9 14H3M14 3v4m2 10v4m5-9h-9m9 7h-5m5-14h-7m-6 5v4m0-2H3\"/></svg>"
+    },
+    {
+      "name": "type",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M12 4v16M4 7V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2M9 20h6\"/></svg>"
+    },
+    {
+      "name": "mouse-pointer-2",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z\"/></svg>"
+    },
+    {
+      "name": "circle-help",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3m.08 4h.01\"/></g></svg>"
+    },
+    {
+      "name": "settings",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M9.671 4.136a2.34 2.34 0 0 1 4.659 0a2.34 2.34 0 0 0 3.319 1.915a2.34 2.34 0 0 1 2.33 4.033a2.34 2.34 0 0 0 0 3.831a2.34 2.34 0 0 1-2.33 4.033a2.34 2.34 0 0 0-3.319 1.915a2.34 2.34 0 0 1-4.659 0a2.34 2.34 0 0 0-3.32-1.915a2.34 2.34 0 0 1-2.33-4.033a2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></g></svg>"
+    },
+    {
+      "name": "menu",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M4 5h16M4 12h16M4 19h16\"/></svg>"
+    },
+    {
+      "name": "x",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M18 6L6 18M6 6l12 12\"/></svg>"
+    },
+    {
+      "name": "sun",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41\"/></g></svg>"
+    },
+    {
+      "name": "moon",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401\"/></svg>"
+    },
+    {
+      "name": "layout-template",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><rect width=\"18\" height=\"7\" x=\"3\" y=\"3\" rx=\"1\"/><rect width=\"9\" height=\"7\" x=\"3\" y=\"14\" rx=\"1\"/><rect width=\"5\" height=\"7\" x=\"16\" y=\"14\" rx=\"1\"/></g></svg>"
+    },
+    {
+      "name": "eye",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M2.062 12.348a1 1 0 0 1 0-.696a10.75 10.75 0 0 1 19.876 0a1 1 0 0 1 0 .696a10.75 10.75 0 0 1-19.876 0\"/><circle cx=\"12\" cy=\"12\" r=\"3\"/></g></svg>"
+    },
+    {
+      "name": "download",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M12 15V3m9 12v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><path d=\"m7 10l5 5l5-5\"/></g></svg>"
+    },
+    {
+      "name": "file-code",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><g fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\"><path d=\"M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z\"/><path d=\"M14 2v5a1 1 0 0 0 1 1h5m-10 4.5L8 15l2 2.5m4-5l2 2.5l-2 2.5\"/></g></svg>"
+    },
+    {
+      "name": "move-right",
+      "svg": "<!--\nISC License\n\nCopyright (c) 2026 Lucide Icons and Contributors\n\nPermission to use, copy, modify, and/or distribute this software for any\npurpose with or without fee is hereby granted, provided that the above\ncopyright notice and this permission notice appear in all copies.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\" AND THE AUTHOR DISCLAIMS ALL WARRANTIES\nWITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR\nANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES\nWHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN\nACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF\nOR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.\n\n\nThe following Lucide icons are derived from the Feather project:\n\nairplay, alert-circle, alert-octagon, alert-triangle, aperture, arrow-down-circle, arrow-down-left, arrow-down-right, arrow-down, arrow-left-circle, arrow-left, arrow-right-circle, arrow-right, arrow-up-circle, arrow-up-left, arrow-up-right, arrow-up, at-sign, calendar, cast, check, chevron-down, chevron-left, chevron-right, chevron-up, chevrons-down, chevrons-left, chevrons-right, chevrons-up, circle, clipboard, clock, code, columns, command, compass, corner-down-left, corner-down-right, corner-left-down, corner-left-up, corner-right-down, corner-right-up, corner-up-left, corner-up-right, crosshair, database, divide-circle, divide-square, dollar-sign, download, external-link, feather, frown, hash, headphones, help-circle, info, italic, key, layout, life-buoy, link-2, link, loader, lock, log-in, log-out, maximize, meh, minimize, minimize-2, minus-circle, minus-square, minus, monitor, moon, more-horizontal, more-vertical, move, music, navigation-2, navigation, octagon, pause-circle, percent, plus-circle, plus-square, plus, power, radio, rss, search, server, share, shopping-bag, sidebar, smartphone, smile, square, table-2, tablet, target, terminal, trash-2, trash, triangle, tv, type, upload, x-circle, x-octagon, x-square, x, zoom-in, zoom-out\n\nThe MIT License (MIT) (for the icons listed above)\n\nCopyright (c) 2013-present Cole Bemis\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n-->\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\"><path fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"m18 8l4 4l-4 4M2 12h20\"/></svg>"
+    }
+  ],
+  "guides": [
+    {
+      "name": "get-ui-principle",
+      "title": "Visual foundations",
+      "text": "Make the current task clear\nSource: Eidova original guidance (MIT).\n\n1. Choose the information a visitor needs first, then place the task title, result or decision ahead of secondary detail. A navigation label does not replace a screen title.\n2. Use position, type size, weight and spacing to establish order. Reserve the strongest action treatment for the action that advances this task.\n3. Keep headings close to the content they name and use a larger gap between separate groups. If everything has equal emphasis, remove decoration before adding more.\n\nVerify: View the screen at reduced size and in grayscale. Explain its purpose and next action without reading every paragraph.\n\nUse readable, purposeful typography\nSource: Eidova original guidance (MIT).\n\n1. Use the product's existing font family and a limited set of sizes and weights. Include system fallbacks and verify the chosen font actually loads.\n2. Give body prose comfortable line height and line length; allow text to grow without clipping containers. Keep headings in a logical semantic order.\n3. Use tabular numerals for comparable quantities, show units beside values and avoid letter spacing that harms small text.\n4. Prefer natural wrapping. Do not hard-code a line break that becomes awkward in another language or at another viewport width.\n\nVerify: Read the interface with the fallback font, 200% text zoom, long translated labels and a narrow viewport.\n\nUse semantic color and verify contrast\nSource: Eidova original guidance (MIT).\n\n1. Map colors to roles such as foreground, surface, border, action and danger. Use the existing token names rather than scattering brand hex values through components.\n2. For WCAG AA, ordinary text needs 4.5:1 contrast; qualifying large text needs 3:1. Required graphical control boundaries and focus indications generally need 3:1 against adjacent colors.\n3. Pair color-coded status with text or a meaningful symbol. Disabled styling must remain understandable even where contrast exceptions apply.\n4. Calculate contrast for the rendered foreground and composited background in each state. A palette swatch does not establish contrast on gradients, photos or translucent surfaces.\n\nVerify: Check actual light/dark, focus, selected, hover, error and loading pairs. Record uncertain backgrounds rather than inventing a passing ratio."
+    },
+    {
+      "name": "get-ux-principle",
+      "title": "Forms and recovery",
+      "text": "Keep forms understandable and recoverable\nSource: Eidova original guidance (MIT).\n\n1. Ask for information required for the immediate task, with visible labels and useful defaults. Explain formats, units and unfamiliar requirements before submission.\n2. Validate when the user can act on feedback; avoid treating every incomplete keystroke as an error. Keep entered values after a failed submission.\n3. Place a specific message beside the field and link a submission error summary to affected inputs. Announce status changes without moving focus unpredictably.\n\nVerify: Submit missing and invalid values, recover from a server error and complete the form with a keyboard.\n\nKeep orientation and return paths predictable\nSource: Eidova original guidance (MIT).\n\n1. Use consistent destination names, a visible current location and a predictable parent or back path. Match navigation hierarchy to the user's task structure.\n2. Use links for navigation and buttons for in-place actions. Preserve meaningful filter, tab or pagination state in the URL when users may share or return to it.\n3. Ensure browser back and forward restore useful state. Do not create dead-end routes or use a click handler where a real link should support new tabs.\n\nVerify: Navigate directly to a nested URL, refresh it, go back and open a destination in a new tab.\n\nMake payment commitments explicit\nSource: Eidova original guidance (MIT).\n\n1. Show the items, quantities, currency, taxes, shipping and final total before payment. Explain recurring charges and renewal terms beside the commitment.\n2. Preserve cart and entered data through validation or payment failure. Use safe retry and reconcile uncertain payment outcomes before asking the buyer to pay again.\n3. Offer a clear way to edit the order and use appropriate address, autofill and input modes. Do not preselect an optional paid addition.\n\nVerify: Test declined payment, changed shipping cost, lost connection and duplicate submission with server-confirmed order state."
+    },
+    {
+      "name": "get-motion-guide",
+      "title": "Motion and media",
+      "text": "# Motion Guides matching \"motion accessibility captions\"\n\n## Make the film understandable without audio (88% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Caption spoken information accurately and provide an accessible transcript where useful. Keep essential product information available without relying on sound.\n2. Use readable caption contrast, line length and placement. Do not cover the control or result the viewer needs to follow.\n3. Avoid rapid flashing and consider motion-sensitive viewers. Keep optional background sound below speech and respect export requirements.\n\nVerify: Watch muted at delivery size, read the captions through each transition and check that essential visual context remains visible.\n\n---\n\n## Use one visual system across a product film (31% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Use the product's actual typography, color, control shapes and movement tokens. Keep the visual language consistent between title cards and product shots.\n2. Choose motion that explains the task narrative. Do not imply shipped interactions or results that the product does not support.\n3. Define output format, frame rate, readable type sizes and caption placement before authoring compositions.\n\nVerify: Review representative frames at delivery resolution and confirm the product depiction is truthful and text remains legible.\n\n---\n\n## Review frames and the completed encoding (44% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Inspect selected frames around cuts, interaction triggers, text reveals and endings. Check clipping, fonts, imagery and source-state accuracy.\n2. Play the full encoded file to check pacing, audio, captions and transitions. Static frames alone cannot establish smooth motion or sync.\n3. Record the exact composition, props, assets and render settings used. Changes after review require checking the affected output again.\n\nVerify: Verify both sampled frames and the final file, with muted playback and the intended delivery player.\n\n---\n\n## Compose for the delivery format (22% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Choose resolution, aspect ratio, frame rate and duration for the destination. Keep essential text and actions away from expected player or platform overlays.\n2. Recompose important content for each format rather than cropping a widescreen composition blindly into a vertical frame.\n3. Use integer frame boundaries for deterministic cuts. Verify the final encoding and audio behavior against destination requirements.\n\nVerify: Inspect the complete frame at actual delivery size for each format, including captions and platform overlay areas.\n\nNext: call `find-design-system` with the product's description. If no person is there to choose, take the top match and say which one you took. Then call `get-design-system-kit` to install it."
+    },
+    {
+      "name": "get-react-native-guide",
+      "title": "React Native",
+      "text": "# React Native Guides matching \"accessible mobile forms safe areas\"\n\n## Keep mobile chat readable under updates (46% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Keep the composer visible above the keyboard and respect safe-area insets. Preserve scroll position when messages arrive unless the user is already following the latest message.\n2. Use stable message IDs, explicit sending/failure states and safe retry to avoid duplicates. Do not replace the entire list for a small update.\n3. Announce incoming content proportionately and provide accessible timestamps and author context. Preserve drafted text across temporary interruption.\n\nVerify: Test long messages, keyboard changes, failed sends, pagination and incoming messages while reading older history.\n\n---\n\n## Keep mobile authentication state consistent (20% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Use the provider's recommended OAuth/PKCE flow and a registered redirect URI. Keep credentials out of URLs, logs and ordinary unencrypted preferences.\n2. Represent restoring, signed-out, signed-in and expired-session states explicitly. Wait for restoration before routing so users do not see an incorrect sign-in flash.\n3. Cancel or reconcile in-flight work on sign-out and clear private cached data. Refresh tokens deliberately and prevent concurrent refresh races.\n\nVerify: Test a cold start, expired token, cancelled browser sign-in, offline restoration and sign-out while requests are running.\n\n---\n\n## Build with native platform constraints (13% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Use the app's established navigation, theme and state ownership. Respect safe-area insets and use platform controls where their behavior fits.\n2. Provide accessibility labels, roles and state; test Dynamic Type or font scaling, screen readers and comfortable touch targets on devices.\n3. Model loading, empty, error and offline states. Use virtualized lists for substantial data and stable keys to preserve item identity.\n\nVerify: Run the task on both supported platforms with a virtual keyboard, large text and a slow connection.\n\n---\n\n## Evaluate native Expo UI against requirements (13% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Check the currently installed Expo SDK and the library's platform support before selecting a native UI package. Do not assume a component exists on both iOS and Android.\n2. Use native primitives where they improve interaction consistency, and keep business state outside platform-specific rendering.\n3. Provide an accessible equivalent when a component or platform capability is unavailable. Verify the library's current API in its official documentation.\n\nVerify: Build for each supported platform and test theme, accessibility and unsupported capability handling.\n\nNext: call `find-design-system` with the product's description. If no person is there to choose, take the top match and say which one you took. Then call `get-design-system-kit` to install it.\n\nCheck the screen on a device before you report it done:\n\n1. Build and run the app in a simulator or on a device. A typecheck alone is not a build.\n2. Take a screenshot of every state you built: empty, selected, disabled and dark mode.\n3. Read each screenshot. Every label shows once and reads clearly: no text drawn twice, no button whose label matches its fill, no clipped or overlapping text, no chart or card spilling over its neighbour. Fix what fails and take the screenshot again.\n4. A shadow on a view with no background colour is drawn under every child, text included. Give the view a background, or put the shadow on a background view.\n5. Measure the spacing: run `axe describe-ui --udid <simulator id>` on each screen and pass the JSON to Eidova's `inspect-spacing` as `nativeStates`. Fix what it reports, then measure again. If AXe is missing, install it with `brew install cameroncooke/axe/axe`, or say that spacing was not measured."
+    },
+    {
+      "name": "get-swiftui-guide",
+      "title": "SwiftUI",
+      "text": "# SwiftUI Guides matching \"accessible forms dynamic type\"\n\n## Use SwiftUI state and native conventions (46% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Choose state ownership deliberately: transient view state belongs near the view, while shared models have a stable owner. Preserve identity in repeated and navigated content.\n2. Use semantic text styles, native controls and platform navigation. Respect safe areas and avoid fixed heights that clip Dynamic Type content.\n3. Provide VoiceOver labels, values and traits. Keep loading, failure and empty data distinct, and cancel view-bound work when it is no longer needed.\n\nVerify: Test the smallest and largest supported text sizes, VoiceOver, rotation and interrupted asynchronous work.\n\nNext: call `find-design-system` with the product's description. If no person is there to choose, take the top match and say which one you took. Then call `get-design-system-kit` to install it.\n\nCheck the screen on a device before you report it done:\n\n1. Build the app with the iphonesimulator SDK (`xcodebuild`, or `xcrun swiftc` with an `-ios<version>-simulator` target) and run it in a simulator. A typecheck alone is not a build. If `xcrun` says the iphonesimulator SDK cannot be located, the command line tools are selected instead of Xcode: run the command with `DEVELOPER_DIR=/Applications/Xcode.app/Contents/Developer`.\n2. Take a screenshot of every state you built: empty, selected, disabled and dark mode.\n3. Read each screenshot. Every label shows once and reads clearly: no text drawn twice, no button whose label matches its fill, no clipped or overlapping text, no chart or card spilling over its neighbour. Fix what fails and take the screenshot again.\n4. A `.shadow()` on a container with no background is drawn under every child, text included. Put the shadow on the background shape instead.\n5. Measure the spacing: run `axe describe-ui --udid <simulator id>` on each screen and pass the JSON to Eidova's `inspect-spacing` as `nativeStates`. Fix what it reports, then measure again. If AXe is missing, install it with `brew install cameroncooke/axe/axe`, or say that spacing was not measured.\n6. Where `review-ui-code` is available, send it the path of every .swift file you wrote, with no content. Fix every serious finding, then send the files again."
+    },
+    {
+      "name": "get-shopify-guide",
+      "title": "Shopify",
+      "text": "Source: Eidova original guidance (MIT).\n\n1. Keep the offer, price, selected variant, availability and cart action backed by the actual product. Put required offer conditions before the commitment.\n2. Use real product imagery and supportable claims. Keep copy adjacent to imagery and preserve the store's navigation and policy links.\n3. Make the page editable through theme settings where practical. Preserve cart and analytics integration behavior used elsewhere in the theme.\n\nVerify: Check each variant, sold-out state, market currency and cart feedback on mobile and in the theme editor.\n\nSource: Eidova original guidance (MIT).\n\n1. Fit changes into the theme's existing templates, sections, blocks and assets. Use merchant-editable settings for content and design choices that must be maintained without code.\n2. Keep product, cart, localization and customer behavior tied to Shopify's actual objects. Do not replace live pricing or inventory with sample values.\n3. Support section lifecycle events and theme-editor reloads without duplicate listeners. Preserve header, footer and relevant legal links.\n\nVerify: Add, reorder and remove the section in the editor, then test the storefront with actual product and cart states.\n\nSource: Eidova original guidance (MIT).\n\n1. Move customer-facing text into locale files using the theme's translation conventions. Preserve interpolation variables and pluralization where the platform supports them.\n2. Use Shopify's money and localization objects rather than manually appending currency symbols. Check that variant prices and cart totals use the selected market.\n3. Allow longer translated labels and right-to-left layout where supported. Do not embed required copy only in product images.\n\nVerify: Render multiple languages and markets, including long labels, plural quantities and the complete checkout handoff.\n\nSource: Eidova original guidance (MIT).\n\n1. Run the version of Theme Check appropriate to the project and address syntax, schema and high-impact warnings. A clean static check does not establish working storefront behavior.\n2. Verify section editor lifecycle, localization, keyboard controls, product variants, cart updates and responsive layout with representative data.\n3. Use a preview theme for review and preserve the merchant's live theme settings. Compare the intended change against the existing page at the same width.\n\nVerify: Keep a preview URL and repeat the affected customer task, including failure and empty states, before publishing."
+    },
+    {
+      "name": "get-three-js-guide",
+      "title": "Three.js",
+      "text": "# Three.js Guides matching \"performance accessible canvas fallback\"\n\n## Build a scene with a purpose and fallback (41% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Define the information or interaction the scene must communicate, the camera framing and the target device budget before adding objects.\n2. Handle resize, device pixel ratio and unavailable WebGL. Provide useful HTML content or a static alternative for essential information.\n3. Dispose of owned geometry, material and texture resources and clean up listeners and loops. Keep shared resource lifetimes explicit.\n\nVerify: Resize the canvas, navigate away and return, and test a low-powered device and WebGL failure.\n\n---\n\n## Budget scene resources and frame work (25% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Measure frame time, draw calls, triangles, texture memory and loading costs. Set budgets for the target device rather than optimizing a desktop-only preview.\n2. Reuse geometry and materials, instance repeated objects and choose texture resolution for actual on-screen size. Avoid allocating objects inside a frequent render loop.\n3. Use demand rendering when a scene is idle and lower pixel ratio when appropriate. Balance visual quality with readable, responsive interaction.\n\nVerify: Profile representative scenes and repeated mounts, including a slow device, idle state and worst-case interaction.\n\n---\n\n## Plan capability-based WebGPU rendering (33% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Check browser, renderer and installed Three.js support before adopting WebGPU or node-based materials. Feature detection is more useful than browser-name assumptions.\n2. Separate scene behavior from renderer-specific material and compute code. Decide whether a WebGL or static fallback can meet the user's task.\n3. Measure shader compilation, memory and frame costs with the chosen renderer. Do not assume a WebGL shader can be moved unchanged into a TSL pipeline.\n\nVerify: Run supported and unsupported capability paths and compare correctness and performance with representative assets.\n\n---\n\n## Use Drei helpers within explicit lifetimes (17% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Confirm a helper's current API and requirements in the installed version. Use it to solve a specific camera, loading, staging or interaction requirement.\n2. Keep camera control ownership clear and avoid multiple controls competing for the same input. Bound resource-heavy helpers and progressive effects.\n3. Provide loading/error UI and accessible HTML equivalents for important interactions. Dispose or reuse owned assets deliberately.\n\nVerify: Test loading failure, unmount, multiple scenes and control interactions with touch and a keyboard.\n\n---\n\n## Make shader effects predictable and bounded (17% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Define the effect's uniforms, coordinate spaces and time source. Keep expensive work and branch behavior consistent with the target hardware budget.\n2. Treat shaders as part of a material and color-management pipeline. Check output color space, tone mapping and transparency with the actual renderer configuration.\n3. Use a simple material fallback when compilation or capability checks fail. Keep required labels and controls outside the effect.\n\nVerify: Check compile errors, renderer warnings, the intended color pipeline and frame time on representative devices.\n\nNext: call `find-design-system` with the product's description. If no person is there to choose, take the top match and say which one you took. Then call `get-design-system-kit` to install it."
+    },
+    {
+      "name": "get-sales-principle",
+      "title": "Sales conversations",
+      "text": "# Sales Principles matching \"clear offer truthful evidence next action\"\n\n## Connect the offer to a verified buyer problem (39% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Ask about the buyer's problem, current approach, decision constraints and cost of leaving the problem unresolved. Confirm your understanding before proposing a solution.\n2. Connect each relevant capability to a supported outcome. State limitations and avoid invented customer references, metrics or urgency.\n3. Agree on a practical next step, owner and date. Make price, scope and commitments clear before asking for a decision.\n\nVerify: Check that the proposal uses the buyer's actual requirements and that every material claim has support.\n\n---\n\n## Help a buyer explain the decision internally (44% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Understand who evaluates value, risk, procurement and implementation. Give the champion a concise statement of the problem, proposal, evidence and unresolved questions.\n2. Provide truthful comparisons, clear pricing and an implementation plan with responsibilities. Do not invent stakeholder approval or financial returns.\n3. Make supporting material easy to share and verify. Offer answers to likely concerns without asking the champion to hide limitations.\n\nVerify: Check that an uninvolved stakeholder can understand the recommendation and verify its important claims.\n\n---\n\n## Clarify an objection before responding (33% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Acknowledge the concern and ask what specifically makes the choice difficult. Distinguish price, fit, risk, timing and decision authority instead of delivering a generic rebuttal.\n2. Respond with relevant evidence or a concrete scope adjustment. Do not claim that every objection is secretly interest or pressure the buyer to ignore a valid limitation.\n3. Confirm whether the answer resolves the concern and identify a useful next step, including declining the offer when the fit is wrong.\n\nVerify: Restate the buyer's concern accurately and identify what evidence or change would actually address it.\n\n---\n\n## Translate capabilities into useful outcomes (11% match)\n\nSource: Eidova original guidance (MIT).\n\n1. Start from a task the buyer actually performs, explain the capability that changes it and identify the resulting benefit.\n2. Distinguish a product fact from a predicted effect. Quantify only when the input and calculation are known, and show the assumptions.\n3. Omit capabilities unrelated to the decision. A short proposal tied to real requirements is more useful than an undifferentiated feature list.\n\nVerify: For each proposed capability, name the buyer task it helps and the evidence supporting the claimed outcome."
+    }
+  ],
+  "tools": [
+    {
+      "name": "get-ui-principle",
+      "description": "Read original UI guidance by topic or query; omit both for an index. Full entries retain source attribution.",
+      "category": "Guidance",
+      "parameters": [
+        {
+          "name": "topic",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "query",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "maxTokens",
+          "type": "integer",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "detail",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "summary",
+            "full"
+          ]
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-ux-principle",
+      "description": "Read original UX guidance by topic or query; omit both for an index. Use before changing behavior.",
+      "category": "Guidance",
+      "parameters": [
+        {
+          "name": "topic",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "query",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "maxTokens",
+          "type": "integer",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "detail",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "summary",
+            "full"
+          ]
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-sales-principle",
+      "description": "Read original sales guidance by topic or query. This tool does not send messages or generate hosted assets.",
+      "category": "Guidance",
+      "parameters": [
+        {
+          "name": "topic",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "query",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "maxTokens",
+          "type": "number",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-react-native-guide",
+      "description": "Read original React Native guidance. Public native install kits are unavailable.",
+      "category": "Guidance",
+      "parameters": [
+        {
+          "name": "topic",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "query",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "maxTokens",
+          "type": "number",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-three-js-guide",
+      "description": "Read original Three.js guidance by topic or query.",
+      "category": "Guidance",
+      "parameters": [
+        {
+          "name": "topic",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "query",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "maxTokens",
+          "type": "number",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-motion-guide",
+      "description": "Read motion guidance or an optional scaffold; no rendering is performed.",
+      "category": "Guidance",
+      "parameters": [
+        {
+          "name": "scaffold",
+          "type": "boolean",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "component",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "topic",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "query",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "maxTokens",
+          "type": "number",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-swiftui-guide",
+      "description": "Read original SwiftUI guidance. Public native install kits are unavailable.",
+      "category": "Guidance",
+      "parameters": [
+        {
+          "name": "topic",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "query",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "maxTokens",
+          "type": "number",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-review-rules",
+      "description": "List review rule IDs, titles, severity and categories. Use detail:full or a category for complete rules. Review evidence is still required.",
+      "category": "Review",
+      "parameters": [
+        {
+          "name": "category",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "all",
+            "accessibility",
+            "visual-design",
+            "animation",
+            "content",
+            "comprehension",
+            "ai-features",
+            "coverage-gaps"
+          ]
+        },
+        {
+          "name": "maxTokens",
+          "type": "integer",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "detail",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "summary",
+            "full"
+          ]
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "plan-video",
+      "description": "Return a bounded video plan from the supplied brief; no video is rendered.",
+      "category": "Workflow",
+      "parameters": [
+        {
+          "name": "brief",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "archetype",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "product-demo",
+            "product-launch",
+            "changelog",
+            "onboarding",
+            "app-store-preview",
+            "launch-day"
+          ]
+        },
+        {
+          "name": "length",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "bumper",
+            "short",
+            "standard",
+            "long"
+          ]
+        },
+        {
+          "name": "format",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "landscape",
+            "vertical",
+            "square"
+          ]
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "cut-screen-recording",
+      "description": "Plan recording cuts from supplied measurements; without measurements return a probe script. Never reads or executes caller files.",
+      "category": "Workflow",
+      "parameters": [
+        {
+          "name": "measurements",
+          "type": "object",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "src",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "fps",
+          "type": "integer",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "maxBeats",
+          "type": "integer",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "render-video-frames",
+      "description": "Return Remotion rendering commands. Hosted execution and server filesystem access are unavailable.",
+      "category": "Workflow",
+      "parameters": [
+        {
+          "name": "composition",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "frames",
+          "type": "array",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "entry",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "scale",
+          "type": "number",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "projectDir",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "props",
+          "type": "object",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-widget-guide",
+      "description": "Return widget guidance/scaffold for the supplied goal and inputs. Use for calculators and article widgets.",
+      "category": "Guidance",
+      "parameters": [
+        {
+          "name": "format",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "widget",
+            "page-family"
+          ]
+        },
+        {
+          "name": "widgetType",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "calculator",
+            "estimator",
+            "converter",
+            "generator",
+            "quiz",
+            "checklist"
+          ]
+        },
+        {
+          "name": "userGoal",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "inputs",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "interaction",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "transformation",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "result",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "hostFramework",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "visualContext",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "dataSource",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "uniqueValue",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "urlPattern",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "maxTokens",
+          "type": "number",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "check-comprehension",
+      "description": "Check supplied copy or markup for unclear language. Use surface:reference only for documentation/data: density budgets cover title/actions; body language checks remain. Default screen/slide checks keep full-copy budgets. Text only; fix critical/serious findings.",
+      "category": "Review",
+      "parameters": [
+        {
+          "name": "screen",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "headline",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "body",
+          "type": "array",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "actions",
+          "type": "array",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "knownTerms",
+          "type": "array",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "surface",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "screen",
+            "slide",
+            "reference"
+          ]
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "review-dashboard-structure",
+      "description": "Review complete supplied dashboard source, unchanged fixture and component sources. Source-only evidence; rendered review remains required.",
+      "category": "Review",
+      "parameters": [
+        {
+          "name": "screen",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "source",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "fixture",
+          "type": "object",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "interpretation",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "componentSources",
+          "type": "object",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "finalize-dashboard-review",
+      "description": "Evaluate dashboard review evidence. This hosted service has no trusted browser capture worker and cannot issue a VALID visual receipt.",
+      "category": "Review",
+      "parameters": [
+        {
+          "name": "screen",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "previewUrl",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "source",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "visibleSource",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "fixture",
+          "type": "object",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "componentSources",
+          "type": "object",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "knownTerms",
+          "type": "array",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "find-icon-library",
+      "description": "Search the bundled Lucide icon library; no external icon service is queried.",
+      "category": "Icons",
+      "parameters": [
+        {
+          "name": "query",
+          "type": "string",
+          "required": true,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "find-icons",
+      "description": "Find bundled Lucide SVGs by concept. Use exact returned names and source.",
+      "category": "Icons",
+      "parameters": [
+        {
+          "name": "query",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "libraryId",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "install-icons",
+      "description": "Return selected bundled icon files and manifest data. targetDir is an output label; this server writes no caller files.",
+      "category": "Icons",
+      "parameters": [
+        {
+          "name": "libraryId",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "names",
+          "type": "array",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "targetDir",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "format",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "tsx",
+            "svg"
+          ]
+        },
+        {
+          "name": "variant",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "detect-icon-library",
+      "description": "Inspect supplied manifestContent; no server or caller filesystem is read.",
+      "category": "Icons",
+      "parameters": [
+        {
+          "name": "manifestContent",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "find-design-system",
+      "description": "Match distinct design families to a brief, with matched terms, suggested uses and tradeoffs. Optional requiredComponents filters out unsuitable kits. Keep an existing product design; fetch selected components with get-design-system-kit.",
+      "category": "Design systems",
+      "parameters": [
+        {
+          "name": "query",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "limit",
+          "type": "integer",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "requiredComponents",
+          "type": "array",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-design-system-kit",
+      "description": "Return React/Radix install commands or an HTML/DTCG kit, plus a portable DESIGN.md resource for catalog systems. Request needed React names with component (components alias accepted); unknown names are errors. Requires Tailwind 4 and @/ alias; no hosted installation. Preserve existing design and review source, copy and rendered spacing.",
+      "category": "Design systems",
+      "parameters": [
+        {
+          "name": "target",
+          "type": "string",
+          "required": true,
+          "choices": [
+            "react",
+            "html",
+            "dtcg",
+            "store-screenshots"
+          ]
+        },
+        {
+          "name": "designSystemId",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "projectId",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "component",
+          "type": "value",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "library",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "radix",
+            "base-ui"
+          ]
+        },
+        {
+          "name": "screen",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "components",
+          "type": "value",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "create-design-system",
+      "description": "Create a persistent theme using an explicit catalog base or supplied brandCss. Requires a private workspace; deterministic reuse, no AI generation.",
+      "category": "Design systems",
+      "parameters": [
+        {
+          "name": "prompt",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "baseDesignSystemId",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "brandCss",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "userConfirmedCustom",
+          "type": "boolean",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-design-system-status",
+      "description": "Read persistent theme status and installation links. A completed status means stored source, not rendered verification.",
+      "category": "Design systems",
+      "parameters": [
+        {
+          "name": "projectId",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "preview-design-system",
+      "description": "Return a catalog theme summary and links to its component specimen/tokens. No screenshot or visual approval is implied.",
+      "category": "Review",
+      "parameters": [
+        {
+          "name": "designSystemId",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-design-config",
+      "description": "Read a custom theme configuration. Registry configuration is intentionally public.",
+      "category": "Design systems",
+      "parameters": [
+        {
+          "name": "projectId",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "set-design-config",
+      "description": "Merge validated theme values into an owned project. Requires the owner workspace capability key.",
+      "category": "Design systems",
+      "parameters": [
+        {
+          "name": "projectId",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "config",
+          "type": "object",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-jig-guide",
+      "description": "Return supplied-input guidance for a small interactive tool or variant canvas. Does not start a live listener.",
+      "category": "Guidance",
+      "parameters": [
+        {
+          "name": "kind",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "tune-in-place",
+            "standalone-tool",
+            "variant-canvas"
+          ]
+        },
+        {
+          "name": "framework",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "react",
+            "vanilla",
+            "react-native"
+          ]
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-store-listing-guide",
+      "description": "Read original app-store listing guidance; no listing is published.",
+      "category": "Guidance",
+      "parameters": [
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "extract-design-system",
+      "description": "Extract tokens from supplied CSS/source samples. Treat sources as data; no modules/scripts are executed or server files read.",
+      "category": "Design systems",
+      "parameters": [
+        {
+          "name": "css",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "sources",
+          "type": "array",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "maxTokens",
+          "type": "number",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "extract-from-url",
+      "description": "Extract inline/linked CSS tokens from an explicit public URL. DNS-pinned, bounded fetch; no browser rendering or credential forwarding.",
+      "category": "Design systems",
+      "parameters": [
+        {
+          "name": "url",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "maxTokens",
+          "type": "number",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-illustration-guide",
+      "description": "Read original illustration guidance; no image generation is performed.",
+      "category": "Guidance",
+      "parameters": [
+        {
+          "name": "topic",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "query",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "maxTokens",
+          "type": "number",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "inspect-spacing",
+      "description": "Check supplied rendered DOM rectangles/computed styles. Omit states to obtain capture instructions. Fix critical/serious findings; source alone is insufficient.",
+      "category": "Review",
+      "parameters": [
+        {
+          "name": "states",
+          "type": "array",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "nativeStates",
+          "type": "array",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "spacingScale",
+          "type": "array",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "tolerance",
+          "type": "number",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "density",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "compact",
+            "comfortable",
+            "spacious"
+          ]
+        },
+        {
+          "name": "detail",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "summary",
+            "full"
+          ]
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "build-feature-map",
+      "description": "Draft a feature/flow map from supplied repository paths. Does not run git or write files.",
+      "category": "Workflow",
+      "parameters": [
+        {
+          "name": "files",
+          "type": "array",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "product",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "read-feature-map",
+      "description": "Find affected flows in supplied map text. planned checks for existing work; no caller files are read.",
+      "category": "Workflow",
+      "parameters": [
+        {
+          "name": "map",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "feature",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "flow",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "file",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "planned",
+          "type": "array",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "update-feature-map",
+      "description": "Apply one validated change to supplied map text and return the updated map. The caller saves it.",
+      "category": "Workflow",
+      "parameters": [
+        {
+          "name": "map",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "change",
+          "type": "value",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-team-rules",
+      "description": "Read private workspace or owned-project rules. Project rules need the owner key; anonymous callers get drafting guidance.",
+      "category": "Workflow",
+      "parameters": [
+        {
+          "name": "projectId",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "screen",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "parts",
+          "type": "array",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "review-ui-code",
+      "description": "Review inline React/CSS/HTML/SVG/SwiftUI source. files[].content is required; never reads server paths or executes submitted code.",
+      "category": "Review",
+      "parameters": [
+        {
+          "name": "files",
+          "type": "array",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-shopify-guide",
+      "description": "Read original Shopify Liquid/theme guidance. Public Shopify install kits are unavailable.",
+      "category": "Guidance",
+      "parameters": [
+        {
+          "name": "topic",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "query",
+          "type": "string",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "check-first-visit",
+      "description": "Brief, rank and recheck five supplied first-visit walk reports. Every reporting walk must rerun; receipts bind supplied evidence, not real visitor/browser research.",
+      "category": "Review",
+      "parameters": [
+        {
+          "name": "step",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "brief",
+            "rank",
+            "recheck"
+          ]
+        },
+        {
+          "name": "task",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "url",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "walks",
+          "type": "array",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "previous",
+          "type": "array",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "context",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "observations",
+          "type": "array",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "search-resources",
+      "description": "Search the complete Eidova resource library: systems, components, design templates, plugin examples, image/video presets and skills. Read returned manifests for original files, previews and licenses.",
+      "category": "Resources",
+      "parameters": [
+        {
+          "name": "query",
+          "type": "string",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "kind",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "design-systems",
+            "design-templates",
+            "plugins",
+            "templates",
+            "catalogs",
+            "skills"
+          ]
+        },
+        {
+          "name": "limit",
+          "type": "integer",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "offset",
+          "type": "integer",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "read-resource",
+      "description": "Read an Eidova resource manifest or file using a URI from search-resources. Text is paginated by Unicode characters; follow nextOffset to finish. Binary assets return typed download links. File reads never execute content.",
+      "category": "Resources",
+      "parameters": [
+        {
+          "name": "uri",
+          "type": "string",
+          "required": true,
+          "choices": []
+        },
+        {
+          "name": "offset",
+          "type": "integer",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "limit",
+          "type": "integer",
+          "required": false,
+          "choices": []
+        }
+      ]
+    },
+    {
+      "name": "get-capabilities",
+      "description": "Report exact tools, design families, transport profile, private-workspace support and remaining unavailable capabilities.",
+      "category": "Workflow",
+      "parameters": []
+    }
+  ]
+}

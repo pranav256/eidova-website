@@ -1,0 +1,263 @@
+{
+  "date": "2026-11-13",
+  "server": "Current local Eidova MCP 0.2.0",
+  "scope": "Design-tool showcase; existing Eidova theme and house components retained",
+  "toolsUsed": [
+    "build-feature-map",
+    "find-design-system",
+    "find-icons",
+    "get-capabilities",
+    "get-design-system-kit",
+    "get-jig-guide",
+    "get-motion-guide",
+    "get-react-native-guide",
+    "get-review-rules",
+    "get-sales-principle",
+    "get-shopify-guide",
+    "get-swiftui-guide",
+    "get-three-js-guide",
+    "get-ui-principle",
+    "get-ux-principle",
+    "get-widget-guide",
+    "install-icons"
+  ],
+  "calls": [
+    {
+      "tool": "get-capabilities",
+      "arguments": {},
+      "status": "returned",
+      "responseBytes": 1773
+    },
+    {
+      "tool": "find-design-system",
+      "arguments": {
+        "query": "Eidova showcase; keep existing Geist neutral theme and current product components"
+      },
+      "status": "returned",
+      "responseBytes": 5302
+    },
+    {
+      "tool": "get-design-system-kit",
+      "arguments": {
+        "designSystemId": "minimal-light",
+        "target": "react",
+        "component": [
+          "button",
+          "input"
+        ]
+      },
+      "status": "returned",
+      "responseBytes": 22032
+    },
+    {
+      "tool": "get-ui-principle",
+      "arguments": {
+        "query": "spacing typography contrast hierarchy"
+      },
+      "status": "returned",
+      "responseBytes": 2408
+    },
+    {
+      "tool": "get-ux-principle",
+      "arguments": {
+        "query": "forms validation failure keyboard navigation"
+      },
+      "status": "returned",
+      "responseBytes": 2067
+    },
+    {
+      "tool": "get-motion-guide",
+      "arguments": {
+        "query": "motion accessibility captions"
+      },
+      "status": "returned",
+      "responseBytes": 2921
+    },
+    {
+      "tool": "get-react-native-guide",
+      "arguments": {
+        "query": "accessible mobile forms safe areas"
+      },
+      "status": "returned",
+      "responseBytes": 4027
+    },
+    {
+      "tool": "get-swiftui-guide",
+      "arguments": {
+        "query": "accessible forms dynamic type"
+      },
+      "status": "returned",
+      "responseBytes": 2379
+    },
+    {
+      "tool": "get-shopify-guide",
+      "arguments": {
+        "query": "product pages sections forms accessibility"
+      },
+      "status": "returned",
+      "responseBytes": 2580
+    },
+    {
+      "tool": "get-three-js-guide",
+      "arguments": {
+        "query": "performance accessible canvas fallback"
+      },
+      "status": "returned",
+      "responseBytes": 3710
+    },
+    {
+      "tool": "get-sales-principle",
+      "arguments": {
+        "query": "clear offer truthful evidence next action"
+      },
+      "status": "returned",
+      "responseBytes": 2828
+    },
+    {
+      "tool": "get-widget-guide",
+      "arguments": {
+        "widgetType": "generator",
+        "userGoal": "Inspect design tokens and practice clearer interface copy",
+        "inputs": "Selected design family, CSS token and three draft text fields",
+        "interaction": "Select a family and token; edit and submit copy for review",
+        "transformation": "Read exact values from the installed palette; send draft text to check-comprehension and display its returned findings without inventing a score",
+        "result": "Copyable CSS tokens and an actual MCP comprehension result",
+        "hostFramework": "React",
+        "visualContext": "Existing Eidova product theme",
+        "dataSource": "Installed theme source and the connected public Eidova MCP"
+      },
+      "status": "returned",
+      "responseBytes": 1719
+    },
+    {
+      "tool": "get-jig-guide",
+      "arguments": {
+        "kind": "variant-canvas",
+        "framework": "react"
+      },
+      "status": "returned",
+      "responseBytes": 39700
+    },
+    {
+      "tool": "get-review-rules",
+      "arguments": {
+        "category": "all"
+      },
+      "status": "returned",
+      "responseBytes": 3938
+    },
+    {
+      "tool": "build-feature-map",
+      "arguments": {
+        "product": "Eidova capability showcase",
+        "files": [
+          "src/Showcase.tsx",
+          "src/showcase.css",
+          "src/showcase-data.json",
+          "src/main.tsx",
+          "src/App.tsx",
+          "src/ResourceLibrary.tsx",
+          "vite.config.ts",
+          "vercel.json"
+        ]
+      },
+      "status": "returned",
+      "responseBytes": 384
+    },
+    {
+      "tool": "find-icons",
+      "arguments": {
+        "libraryId": "lucide",
+        "query": "search"
+      },
+      "status": "returned",
+      "responseBytes": 2335
+    },
+    {
+      "tool": "find-icons",
+      "arguments": {
+        "libraryId": "lucide",
+        "query": "layers"
+      },
+      "status": "returned",
+      "responseBytes": 1294
+    },
+    {
+      "tool": "find-icons",
+      "arguments": {
+        "libraryId": "lucide",
+        "query": "palette"
+      },
+      "status": "returned",
+      "responseBytes": 554
+    },
+    {
+      "tool": "install-icons",
+      "arguments": {
+        "libraryId": "lucide",
+        "names": [
+          "search",
+          "layers",
+          "palette",
+          "sparkles",
+          "check",
+          "arrow-up-right",
+          "code",
+          "accessibility",
+          "book-open",
+          "zap",
+          "sliders-horizontal",
+          "type",
+          "mouse-pointer-2",
+          "circle-help",
+          "settings",
+          "menu",
+          "x",
+          "sun",
+          "moon",
+          "layout-template",
+          "eye",
+          "download",
+          "file-code",
+          "move-right"
+        ],
+        "format": "svg",
+        "targetDir": "public/showcase/icons"
+      },
+      "status": "returned",
+      "responseBytes": 10618
+    }
+  ],
+  "observations": [
+    {
+      "tool": "find-icon-library",
+      "problem": "Error: Cannot read properties of undefined (reading 'join')",
+      "workaround": "Exact Lucide names were confirmed through find-icons; install-icons returned the SVG source."
+    },
+    {
+      "tool": "get-widget-guide",
+      "problem": "The schema expects inputs as a string. Missing transformation details require another intake pass.",
+      "workaround": "Supplied the declared transformation and actual data source."
+    },
+    {
+      "tool": "find-icons",
+      "problem": "A long query containing unrelated icon concepts produced no matches.",
+      "workaround": "Used one concept per search, then exact returned names."
+    },
+    {
+      "tool": "install-icons",
+      "problem": "SVG output did not include the companion Lucide/Feather license text.",
+      "workaround": "Preserved the installed license notices in each exported SVG and a companion file."
+    },
+    {
+      "tool": "review-ui-code",
+      "problem": "Native selects are marked serious with a suggestion for a house Select component that does not exist in this project.",
+      "workaround": "Retained labeled native controls with the product tokens and verified accessible names and keyboard behavior."
+    }
+  ],
+  "limits": [
+    "This MCP returns guidance, source, evidence and commands. React and browser APIs implement the website; no hosted code generation or media rendering was claimed.",
+    "No MCP tools were removed or changed for this showcase.",
+    "Browser and rendered-spacing review results will be added after the final run."
+  ]
+}

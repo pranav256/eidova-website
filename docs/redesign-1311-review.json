@@ -1,0 +1,131 @@
+{
+  "project": "Eidova website",
+  "date": "2026-11-13",
+  "designSystemId": "editorial-dark",
+  "reference": "../form-and-field",
+  "preview": "http://127.0.0.1:5512",
+  "defaultRules": {
+    "saved": true,
+    "readBackVerified": true,
+    "scope": "Root AGENTS.md and local MCP stdio workspace",
+    "hostedAccountChanged": false,
+    "evidence": "default-theme-receipt.json"
+  },
+  "finalSourceSha256": {
+    "src/App.tsx": "875fa1799a2932eeb96cd5043d320e0f0f6aad0f8d8afd30be1991fc02a523be",
+    "src/Showcase.tsx": "64fa6bb517b7d201ca310850e56dcc9229a99c661bca94ef2dab301e5bf26f10",
+    "src/ResourceLibrary.tsx": "0244a339fa66a58762cfc8eeaf992b19115a940ac7828dbefb72dd90fa548c61",
+    "src/theme.ts": "38fa901e02ac60eece96c48223d8a7531863f3070d4a51fb13743da6d1aad46b",
+    "src/main.tsx": "f9d4c81f481fee86d163a1970e309ae82bcd303e0e65086a2991ef5f8d2ad553",
+    "src/theme.css": "0aa70f50b1bf45ca6340438b670a924a91c07bb5245f22633bd559a7d383b800",
+    "src/editorial.css": "98089671d175390a16ac8c3aa0b48a71e4e30ec1768fd80c67d365af935678f9",
+    "src/styles.css": "127a7e3a5e93ca5142b767741a8c4d27243b4e26973da029df3d9fd886610302",
+    "src/components/ui/button.tsx": "d0a68228122ee364b07a7ecb2199934296a0531c57f4ce07cb9dbfc2fb3b6355",
+    "src/components/ui/input.tsx": "e43e0599c34f0450907a09271cdd8bdab3a781b9dba31e3c050098f1e699df59",
+    "src/components/ui/textarea.tsx": "f00a49e9decf508422f07a5d176b4ab54180ebc449048b08348bb166115dab3e",
+    "src/components/CopyButton.tsx": "04a61c7e3f4de9fd2aefd051831dd9c1f8e4ee751d335a7a418af6519280f607"
+  },
+  "productionBuild": "pass",
+  "whitespaceCheck": "pass",
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "appearances": [
+    "dark",
+    "light"
+  ],
+  "website": {
+    "states": 30,
+    "copyPanels": 62,
+    "comprehensionFailures": 0,
+    "criticalOrSeriousSpacing": 0,
+    "checks": [
+      "exact-theme agent prompt and DESIGN.md browser download",
+      "all eight family handoff panels",
+      "installation with six client formats",
+      "separate modal preview, keyboard Escape, focus return and sample reset",
+      "source-bound gallery images",
+      "search and URL persistence",
+      "multiword search",
+      "no-match recovery",
+      "appearance filters and persistence",
+      "expand/collapse 31 themes",
+      "keyboard tabs",
+      "core/full options",
+      "clipboard success and denial",
+      "registry link",
+      "catalog failure, invalid response, retry and timeout",
+      "reduced motion",
+      "keyboard skip link"
+    ],
+    "evidence": "../eidova-mcp/.work/redesign-1311/website"
+  },
+  "showcase": {
+    "states": 30,
+    "copyPanels": 24,
+    "criticalOrSeriousSpacing": 0,
+    "contrastFailures": 0,
+    "pageErrors": 0,
+    "evidence": "../eidova-mcp/.work/redesign-1311/showcase"
+  },
+  "resources": {
+    "states": 36,
+    "copyPanels": 12,
+    "criticalOrSeriousSpacing": 0,
+    "contrastFailures": 0,
+    "pageErrors": 0,
+    "evidence": "../eidova-mcp/.work/redesign-1311/resources"
+  },
+  "accessibility": {
+    "tool": "axe-core",
+    "views": 9,
+    "violations": 0,
+    "excluded": "Original embedded component specimens; their themes are reviewed separately.",
+    "evidence": ".work/redesign-1311/accessibility.json"
+  },
+  "reflow": {
+    "widths": [
+      320,
+      600,
+      768,
+      1024
+    ],
+    "textZoom": "200% at 390, 768, 1440",
+    "defaultAndExplicitAppearance": "pass"
+  },
+  "sourceReview": {
+    "evidence": "redesign-1311-source.json",
+    "unresolvedCriticalOrSerious": 0,
+    "applicability": {
+      "rule": "element/select",
+      "count": 9,
+      "reason": "No house Select exists. Existing labeled native controls retain tested keyboard/mobile behavior and use the approved site tokens."
+    },
+    "moderateNotes": [
+      "Motion classes are defined in local CSS rather than generated Tailwind utilities.",
+      "Existing two- and three-choice selects remain platform controls."
+    ]
+  },
+  "evidenceNote": "Final source review follows a whitespace-only cleanup of kit files. Functional suites retain their original source hashes; rendered behavior is unchanged by that cleanup.",
+  "visualInspection": [
+    "1440 home hero",
+    "390 home hero",
+    "1440 connection section",
+    "1440 showcase hero",
+    "390 theme catalog"
+  ],
+  "assets": {
+    "hero": "public/art/hero.webp",
+    "bytes": 222992,
+    "sourceLicense": "Apache-2.0",
+    "license": "public/licenses/artwork.txt",
+    "originalsPreserved": true
+  },
+  "limits": [
+    "Local changes only; no deployment or hosted-account settings changed.",
+    "Hosted service endpoints, clean dependency installation and other browser engines were not verified.",
+    "Separate native Studio application was not changed or retested."
+  ]
+}

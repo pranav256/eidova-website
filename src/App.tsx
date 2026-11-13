@@ -24,6 +24,7 @@ const serviceSourceUrl = import.meta.env.VITE_MCP_REPOSITORY_URL || 'https://git
 const endpoint = import.meta.env.VITE_MCP_URL || 'https://open-design-mcp-liard.vercel.app/mcp';
 const catalogUrl = import.meta.env.VITE_CATALOG_URL || '/api/catalog';
 const registryOrigin = (import.meta.env.VITE_REGISTRY_ORIGIN || 'https://open-design-mcp-liard.vercel.app').replace(/\/$/, '');
+const navigationHome = window.location.pathname.replace(/\/$/, '') === '/showcase' ? '/' : '';
 const clientOptions = ['Codex', 'Claude Code', 'Claude Desktop', 'Cursor', 'VS Code', 'Server URL'];
 const toolGroups = [
   { number: '01', title: 'Start with a foundation.', description: 'Choose a system. Give your agent its tokens and real React component source.', tools: ['find-design-system', 'get-design-system-kit'] },
@@ -44,15 +45,15 @@ function readSearch() {
 function paletteStyle(id: string, mode: ThemeMode): CSSProperties {
   return catalogThemes[id]?.modes[mode].tokens as CSSProperties;
 }
-function SiteHeader({ theme, onToggleTheme }: { theme: ThemeMode; onToggleTheme: () => void }) {
+export function SiteHeader({ theme, onToggleTheme }: { theme: ThemeMode; onToggleTheme: () => void }) {
   return <header className="site-header">
-    <a className="wordmark" href="#main" aria-label="Eidova home"><span className="brand-mark" aria-hidden="true"><i /><i /></span>Eidova</a>
-    <nav aria-label="Main navigation"><a href="#themes">Themes</a><a href="#resources">Resources</a><a href="#tools">Tools</a><a href="/studio">Team workspace</a><a href="#connect">Connect</a></nav>
+    <a className="wordmark" href={navigationHome+'#main'} aria-label="Eidova home"><span className="brand-mark" aria-hidden="true"><i /><i /></span>Eidova</a>
+    <nav aria-label="Main navigation"><a href={navigationHome+'#themes'}>Themes</a><a href={navigationHome+'#resources'}>Resources</a><a href={navigationHome+'#tools'}>Tools</a><a href="/showcase" aria-current={navigationHome ? 'page' : undefined}>Showcase</a><a href="/studio">Team workspace</a><a href={navigationHome+'#connect'}>Connect</a></nav>
     <div className="header-actions"><a className="source-link" href={sourceUrl}>Source code <ArrowUpRight aria-hidden="true" /></a><Button className="theme-toggle" variant="outline" size="sm" onClick={onToggleTheme} aria-label={'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode'}>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</Button></div>
   </header>;
 }
-function SiteFooter() {
-  return <footer className="site-footer"><a className="wordmark" href="#main"><span className="brand-mark" aria-hidden="true"><i /><i /></span>Eidova</a><p>Independent. Open source. Built for your agent. v{version}</p><nav aria-label="Footer navigation"><a href="#connect">Connect</a><a href={sourceUrl}>Source</a><a href={serviceSourceUrl + '/blob/main/docs/CLIENTS.md'}>Docs</a><a href={registryOrigin + '/health'}>Status</a><a href={sourceUrl + '/blob/main/LICENSE'}>License</a></nav></footer>;
+export function SiteFooter() {
+  return <footer className="site-footer"><a className="wordmark" href={navigationHome+'#main'}><span className="brand-mark" aria-hidden="true"><i /><i /></span>Eidova</a><p>Independent. Open source. Built for your agent. v{version}</p><nav aria-label="Footer navigation"><a href={navigationHome+'#connect'}>Connect</a><a href="/showcase">Showcase</a><a href={sourceUrl}>Source</a><a href={serviceSourceUrl + '/blob/main/docs/CLIENTS.md'}>Docs</a><a href={registryOrigin + '/health'}>Status</a><a href={sourceUrl + '/blob/main/LICENSE'}>License</a></nav></footer>;
 }
 function fontLabel(value?: string) {
   const family = value?.split(',')[0].replace(/["']/g, '').trim();
@@ -157,11 +158,16 @@ export function App() {
     <main id="main" tabIndex={-1}>
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <h1 id="hero-title">Give your agent<br /><span>a design system.</span></h1>
-          <p className="hero-description">Choose from eight design families. Preview real components, then bring them to your coding agent.</p>
-          <div className="hero-actions"><a className="text-link" href="#themes">Explore the themes <ArrowDown aria-hidden="true" /></a></div>
+          <p className="editorial-eyebrow">Eidova / Design with intention</p>
+          <h1 id="hero-title">Give your agent<br /><span>the whole toolkit.</span></h1>
+          <p className="hero-description">Build and review with Eidova MCP: real components, 920 resources, and practical guidance.</p>
+          <div className="hero-actions"><a className="text-link" href="#themes">Explore the themes <ArrowDown aria-hidden="true" /></a><a className="text-link" href="/showcase">Try the showcase <ArrowUpRight aria-hidden="true" /></a></div>
           <p className="hero-note">Free public access <span aria-hidden="true">·</span> No account required</p>
         </div>
+        <figure className="editorial-art"><img src="/art/hero.webp" alt="A paper collage of a classical stone head, olive tree and architecture against a terracotta sun" width={1024} height={1024} fetchPriority="high" /><figcaption><span>A study in form & possibility</span><a href="/licenses/artwork.txt">Illustrative studio collage / 001</a></figcaption></figure>
+      </section>
+      <section className="connection-section" aria-label="Connect your agent">
+        <div className="connection-copy"><p className="editorial-eyebrow">01 / A place to begin</p><h2>One connection.<br /><em>Room to create.</em></h2><p>Bring considered design into the tools you already use. Choose your client and take the toolkit into your next project.</p></div>
         <section className="config-panel" id="connect" aria-labelledby="connect-title">
           <div className="installation-heading"><h2 id="connect-title">Install Eidova</h2><p>Choose your client, copy the setup, and connect.</p></div>
           <div className="client-tabs" role="tablist" aria-label="Connection format">{clientOptions.map((label, index) => <Button key={label} id={'client-tab-' + index} role="tab" variant="ghost" aria-selected={client === index} aria-controls={client === index ? 'client-panel-' + index : undefined} tabIndex={client === index ? 0 : -1} onClick={() => setClient(index)} onKeyDown={event => tabKey(event, index)}>{label}</Button>)}</div>
@@ -173,8 +179,8 @@ export function App() {
           </div>
           <details className="tool-options"><summary>Tool options</summary><div className="profile-picker" role="group" aria-label="MCP tool profile"><Button variant="ghost" aria-pressed={profile==='core'} onClick={()=>setProfile('core')}>Essentials · 13 tools</Button><Button variant="ghost" aria-pressed={profile==='full'} onClick={()=>setProfile('full')}>All tools</Button></div><p className="profile-note">Essentials uses less agent context. All tools adds private project rules and specialist guides.</p></details>
         </section>
-      </section>
 
+      </section>
       <div className="platform-strip"><span>Built for the tools you already use.</span><div><span>Codex</span><span>Cursor</span><span>Claude Code</span><span className="platform-more">and other MCP clients</span></div></div>
 
       <section className="themes section" id="themes" aria-labelledby="themes-title">
@@ -206,7 +212,7 @@ export function App() {
           </section>
         </div>}</dialog>
         {catalog.state === 'ready' && !query.trim() && scheme === 'all' && filtered.length > featuredIds.length && <div className="catalog-more"><Button variant="outline" onClick={() => { setShowAll(value => !value); if (showAll) document.getElementById('themes')?.scrollIntoView(); }}>{showAll ? 'Show fewer themes' : 'Show all ' + filtered.length + ' themes'}<span aria-hidden="true">{showAll ? '↑' : '↓'}</span></Button></div>}
-        <p className="catalog-note">Themes from the MIT-licensed Better Design registry. Component previews open in a separate viewer.</p>
+        <p className="catalog-note">Component previews open in a separate viewer. <a href="/licenses/better-design-MIT.txt">Theme license</a>.</p>
       </section>
 
       <ResourceLibrary />
