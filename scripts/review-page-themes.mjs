@@ -23,6 +23,7 @@ try {
       await button.press('Enter');
       assert.equal(await button.getAttribute('aria-pressed'), 'true');
       assert.equal(await button.textContent(), 'Applied to page');
+      await page.waitForURL(url => url.searchParams.get('page-theme') === id);
       assert.equal(new URL(page.url()).searchParams.get('page-theme'), id);
       assert.equal(await page.locator('html').getAttribute('data-design-system'), id);
       assert.equal(await page.locator('html').getAttribute('data-theme'), mode);
@@ -56,6 +57,8 @@ try {
   assert.equal(await page.locator('html').getAttribute('data-brand'), 'eidova-paper');
   assert.equal(await page.evaluate(() => localStorage.getItem('eidova-page-theme')), null);
   await page.getByRole('button', { name: 'Switch to light mode', exact: true }).click();
+  await page.setViewportSize({ width: 390, height: 1000 });
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(resolve)));
   assert.deepEqual(await page.locator('html').evaluate(node => ({ background: getComputedStyle(node).getPropertyValue('--background'), styles: node.style.cssText })), initial);
   await page.goBack({ waitUntil: 'networkidle' });
   assert.equal(await page.locator('html').getAttribute('data-page-theme'), 'linear');
@@ -135,6 +138,10 @@ try {
       assert.deepEqual((await new AxeBuilder({ page: pickerPage }).include('.page-theme-picker').analyze()).violations, []);
       assert.ok(await pickerPage.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
       await pickerSearch.press('Escape');
+      await pickerPage.locator('#connect').evaluate(node => node.scrollIntoView({ behavior: 'instant' }));
+      const headerBox = await pickerPage.locator('.site-header').boundingBox();
+      const pickerBox = await picker.boundingBox();
+      assert.ok(pickerBox.y >= headerBox.y + headerBox.height - 1, 'The header must not cover the sticky picker');
     }
   }
   await pickerPage.evaluate(() => document.documentElement.style.fontSize = '200%');

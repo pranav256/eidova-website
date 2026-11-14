@@ -32,7 +32,7 @@
 .theme-menu-heading h2 { font: 500 1rem/1.5 Inter, sans-serif; letter-spacing: 0; }
 .theme-menu-heading .od-button { padding-inline: .75rem; }
 .page-theme-menu .od-input { flex-shrink: 0; }
-.theme-menu-options { overflow: auto; overscroll-behavior: contain; min-height: 0; padding: .25rem; }
+.theme-menu-options { overflow: auto; overscroll-behavior: contain; min-height: 4rem; padding: .25rem; }
 .theme-menu-options section + section { margin-top: 1rem; }
 .theme-menu-options h3 { margin: .75rem .5rem .25rem; color: var(--muted-foreground); font: 400 .75rem/1.5 Inter, sans-serif; letter-spacing: 0; }
 .theme-choice.od-button { width: 100%; display: flex; justify-content: flex-start; gap: .75rem; padding: .625rem .5rem; font-weight: 400; text-align: left; }

@@ -15,7 +15,7 @@
 html { scroll-padding-top: 7rem; }
 :focus-visible { outline-color: var(--primary-text); }
 main, .site-footer, .header-inner { width: min(90rem, calc(100% - 5rem)); margin-inline: auto; }
-.site-header { display: block; position: sticky; top: 0; z-index: 8; width: 100%; min-height: 0; background: var(--header-background); backdrop-filter: blur(1.25rem); border-bottom: .0625rem solid var(--border); }
+.site-header { display: block; container-type: inline-size; position: sticky; top: 0; z-index: 8; width: 100%; min-height: 0; background: var(--header-background); backdrop-filter: blur(1.25rem); border-bottom: .0625rem solid var(--border); }
 .header-inner { min-height: 5.25rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; position: relative; }
 .wordmark { font-family: var(--font-serif); font-size: 2rem; font-weight: 500; letter-spacing: -.05em; gap: .75rem; }
 .brand-mark { width: 1.5rem; height: 1.5rem; }
@@ -199,3 +199,9 @@ h1 em { color: var(--primary-text); font-weight: 400; }
   .team-studio .studio-connect { padding: 1rem; }
 }
 @media (prefers-reduced-motion: reduce) { .od-button, .od-input, .od-textarea { transition: none; } }
+@container (width < 18rem) {
+  .header-inner { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .header-inner .wordmark { grid-column: 1 / -1; grid-row: 1; }
+  .header-inner .header-actions { grid-column: 1; grid-row: 2; min-width: 0; }
+  .header-inner .mobile-menu { grid-column: 2; grid-row: 2; justify-self: end; }
+}

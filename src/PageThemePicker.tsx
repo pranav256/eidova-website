@@ -27,26 +27,30 @@ export function PageThemePicker({ mode, value, onChange }: { mode: ThemeMode; va
   const visible = groups.map(group => ({ ...group, themes: group.themes.filter(id => `${catalogThemes[id].title} ${group.title}`.toLowerCase().includes(query.trim().toLowerCase())) })).filter(group => group.themes.length);
 
   useLayoutEffect(() => {
-    if (!open) return;
-    search.current?.focus({ preventScroll: true });
-    const panel = container.current?.querySelector<HTMLElement>('.page-theme-menu');
+    if (open) search.current?.focus({ preventScroll: true });
+    const header = document.querySelector<HTMLElement>('.site-header');
     const fit = () => {
+      if (header && container.current) container.current.style.top = header.getBoundingClientRect().height + 'px';
+      if (header && container.current) document.documentElement.style.scrollPaddingTop = header.getBoundingClientRect().height + container.current.getBoundingClientRect().height + parseFloat(getComputedStyle(container.current).fontSize) + 'px';
+      const panel = container.current?.querySelector<HTMLElement>('.page-theme-menu');
       if (panel) panel.style.maxHeight = Math.max(0, innerHeight - panel.getBoundingClientRect().top - parseFloat(getComputedStyle(panel).paddingBottom)) + 'px';
     };
     fit();
     const resize = new ResizeObserver(fit);
     if (container.current) resize.observe(container.current);
+    if (header) resize.observe(header);
     window.addEventListener('resize', fit);
-    window.addEventListener('scroll', fit, { passive: true });
+    if (open) window.addEventListener('scroll', fit, { passive: true });
     const dismiss = (event: PointerEvent) => {
       if (!container.current?.contains(event.target as Node)) setOpen(false);
     };
-    window.addEventListener('pointerdown', dismiss);
+    if (open) window.addEventListener('pointerdown', dismiss);
     return () => {
       window.removeEventListener('pointerdown', dismiss);
       window.removeEventListener('resize', fit);
       window.removeEventListener('scroll', fit);
       resize.disconnect();
+      document.documentElement.style.removeProperty('scroll-padding-top');
     };
   }, [open]);
 
