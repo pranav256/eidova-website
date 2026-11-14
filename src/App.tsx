@@ -48,19 +48,19 @@ function readSearch() {
 function paletteStyle(id: string, mode: ThemeMode): CSSProperties {
   return catalogThemes[id]?.modes[mode].tokens as CSSProperties;
 }
-export function SiteHeader({ theme, onToggleTheme }: { theme: ThemeMode; onToggleTheme: () => void }) {
+export function SiteHeader({ theme, onToggleTheme, pageThemePicker }: { theme: ThemeMode; onToggleTheme: () => void; pageThemePicker?: React.ReactNode }) {
   const menu = useRef<HTMLDetailsElement>(null);
-  const links = [[navigationHome+'#themes', 'Themes'], [navigationHome+'#resources', 'Resources'], [navigationHome+'#tools', 'Tools'], ['/showcase', 'Showcase'], ['/studio', 'Team workspace'], [navigationHome+'#connect', 'Connect']];
+  const links = [[navigationHome+'#themes', 'Themes'], [navigationHome+'#resources', 'Resources'], [navigationHome+'#tools', 'Tools'], ['/docs', 'Docs'], ['/showcase', 'Showcase'], ['/studio', 'Team workspace'], [navigationHome+'#connect', 'Connect']];
   const destinations = links.map(([href, label]) => <a key={label} href={href} aria-current={href === currentPath ? 'page' : undefined} onClick={() => { if (menu.current) menu.current.open = false; }}>{label}</a>);
   return <header className="site-header"><div className="header-inner">
     <a className="wordmark" href={navigationHome+'#main'} aria-label="Eidova home"><img className="brand-mark" src="/logo.svg" width={40} height={40} alt="" />Eidova</a>
     <nav className="desktop-navigation" aria-label="Main navigation">{destinations}</nav>
-    <div className="header-actions"><a className="source-link" href={sourceUrl}>Source code <ArrowUpRight aria-hidden="true" /></a><Button className="theme-toggle" variant="outline" size="sm" onClick={onToggleTheme} aria-label={'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode'}>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</Button></div>
+    <div className="header-actions">{pageThemePicker}<a className="source-link" href={sourceUrl}>Source code <ArrowUpRight aria-hidden="true" /></a><Button className="theme-toggle" variant="outline" size="sm" onClick={onToggleTheme} aria-label={'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode'}>{theme === 'dark' ? 'Light' : 'Dark'}</Button></div>
     <details ref={menu} className="mobile-menu" onKeyDown={event => { if (event.key === 'Escape' && menu.current?.open) { menu.current.open = false; menu.current.querySelector('summary')?.focus(); event.preventDefault(); } }}><summary>Menu</summary><nav aria-label="Main navigation"><div><p>Explore</p>{destinations.slice(0, 3)}</div><div><p>Get started</p>{destinations.slice(3)}</div></nav></details>
   </div></header>;
 }
 export function SiteFooter() {
-  return <footer className="site-footer"><div className="footer-grid"><div><a className="wordmark" href={navigationHome+'#main'}><img className="brand-mark" src="/logo.svg" width={40} height={40} alt="" />Eidova</a><p>Independent. Open source. Built for your agent. v{version}</p></div><nav aria-label="Footer navigation"><div><p>Get started</p><a href={navigationHome+'#connect'}>Connect</a><a href="/showcase">Showcase</a><a href={serviceSourceUrl + '/blob/main/docs/CLIENTS.md'}>Docs</a></div><div><p>Project</p><a href={sourceUrl}>Source</a><a href={registryOrigin + '/health'}>Status</a><a href={sourceUrl + '/blob/main/LICENSE'}>License</a></div></nav></div></footer>;
+  return <footer className="site-footer"><div className="footer-grid"><div><a className="wordmark" href={navigationHome+'#main'}><img className="brand-mark" src="/logo.svg" width={40} height={40} alt="" />Eidova</a><p>Independent. Open source. Built for your agent. v{version}</p></div><nav aria-label="Footer navigation"><div><p>Get started</p><a href={navigationHome+'#connect'}>Connect</a><a href="/showcase">Showcase</a><a href="/docs">Docs</a></div><div><p>Project</p><a href={sourceUrl}>Source</a><a href={registryOrigin + '/health'}>Status</a><a href={sourceUrl + '/blob/main/LICENSE'}>License</a></div></nav></div></footer>;
 }
 function fontLabel(value?: string) {
   const family = value?.split(',')[0].replace(/["']/g, '').trim();
@@ -161,8 +161,7 @@ export function App() {
 
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
-    <SiteHeader theme={theme} onToggleTheme={toggleTheme} />
-    <PageThemePicker mode={theme} value={pageTheme} onChange={selectPageTheme} />
+    <SiteHeader theme={theme} onToggleTheme={toggleTheme} pageThemePicker={<PageThemePicker mode={theme} value={pageTheme} onChange={selectPageTheme} />} />
 
     <main id="main" className="marketing-main" tabIndex={-1}>
       <section className="hero" aria-labelledby="hero-title">

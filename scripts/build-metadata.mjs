@@ -3,6 +3,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 
 const html = await readFile('dist/index.html', 'utf8');
 for (const [route, title, description] of [
+  ['docs', 'Eidova Documentation — Setup, tools and reference', 'Connect your agent to Eidova MCP. Find quick start instructions, the design workflow, all tools and project documentation.'],
   ['showcase', 'Eidova Showcase — Try the design toolkit', 'Try real React components, explore design tokens and review UI copy with Eidova MCP.'],
   ['studio', 'Eidova Team Workspace', 'Connect your team workspace to collaborate on project files with Eidova.'],
 ]) {

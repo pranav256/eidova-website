@@ -1,194 +1,141 @@
 {
   "date": "2026-11-14",
+  "changes": [
+    "Theme picker moved into the navbar, keeping all 31 themes, search, comparison and default restoration.",
+    "Docs added to desktop/mobile navigation and footer; /docs provides setup, workflow and full reference directory.",
+    "Separate local review project covers 4452 items with Better Design as proposed core and supplemental/overlap resources marked individually."
+  ],
   "verification": {
     "build": "pass",
-    "existingRouteStates": 24,
+    "routeStates": 30,
     "themeAppearanceCombinations": 62,
-    "widths": [390, 1440, 1728],
-    "picker": "Search, cycling, keyboard, dismissal, catalog outage, open-state Axe and 200% text pass.",
-    "geometry": "Header height, sticky control visibility, anchor offsets and open-panel bounds remain correct at enlarged text sizes."
+    "widths": [
+      390,
+      1440,
+      1728
+    ],
+    "browser": "Edge/Chromium",
+    "source": {
+      "critical": 0,
+      "serious": 0,
+      "moderate": 1
+    },
+    "comprehension": "pass",
+    "spacing": [
+      {
+        "name": "navbar 390",
+        "summary": {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 1,
+          "total": 1
+        }
+      },
+      {
+        "name": "docs 390",
+        "summary": {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 5,
+          "total": 5
+        }
+      },
+      {
+        "name": "review 390",
+        "summary": {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 2,
+          "total": 2
+        }
+      },
+      {
+        "name": "detail 390",
+        "summary": {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 1,
+          "total": 1
+        }
+      },
+      {
+        "name": "navbar 1440",
+        "summary": {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 1,
+          "total": 1
+        }
+      },
+      {
+        "name": "docs 1440",
+        "summary": {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 5,
+          "total": 5
+        }
+      },
+      {
+        "name": "review 1440",
+        "summary": {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 4,
+          "total": 4
+        }
+      },
+      {
+        "name": "detail 1440",
+        "summary": {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 1,
+          "total": 1
+        }
+      },
+      {
+        "name": "navbar 1728",
+        "summary": {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 1,
+          "total": 1
+        }
+      },
+      {
+        "name": "docs 1728",
+        "summary": {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 5,
+          "total": 5
+        }
+      },
+      {
+        "name": "review 1728",
+        "summary": {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 4,
+          "total": 4
+        }
+      },
+      {
+        "name": "detail 1728",
+        "summary": {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 1,
+          "total": 1
+        }
+      }
+    ],
+    "localReview": "Inventory/source-path checks and browser decisions, notes, reload, imports, exports, previews, pagination, search, Axe and 200% text pass."
   },
-  "audit": [
-    "Theme selection was buried below the opening screen.",
-    "Judging the result required scrolling between the catalog and hero.",
-    "Theme changes altered brand typography and navigation controls."
-  ],
-  "direction": {
-    "product": "A design toolkit visitors can try on the page.",
-    "character": "Quiet, precise, tactile.",
-    "world": "A working type and color specimen.",
-    "moments": "Actual page typography and palettes change while controls stay readable.",
-    "signature": "A small palette beside the selected theme."
-  },
-  "source": "# UI review\n\nNo findings. The checked files pass every deterministic rule.",
-  "copy": [
-    {
-      "verdict": "pass",
-      "findingCount": 0,
-      "findings": [],
-      "words": 16,
-      "surface": "screen",
-      "budgetWords": 16,
-      "estimatedExplainSeconds": 11,
-      "nextStep": "Continue with the interface; this text check does not verify its rendering."
-    },
-    {
-      "verdict": "pass",
-      "findingCount": 0,
-      "findings": [],
-      "words": 7,
-      "surface": "screen",
-      "budgetWords": 7,
-      "estimatedExplainSeconds": 5,
-      "nextStep": "Continue with the interface; this text check does not verify its rendering."
-    },
-    {
-      "verdict": "pass",
-      "findingCount": 0,
-      "findings": [],
-      "words": 13,
-      "surface": "screen",
-      "budgetWords": 13,
-      "estimatedExplainSeconds": 7,
-      "nextStep": "Continue with the interface; this text check does not verify its rendering."
-    }
-  ],
-  "spacing": [
-    {
-      "width": 390,
-      "mode": "light",
-      "open": false,
-      "summary": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 1,
-        "total": 1
-      }
-    },
-    {
-      "width": 390,
-      "mode": "light",
-      "open": true,
-      "summary": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 1,
-        "total": 1
-      }
-    },
-    {
-      "width": 390,
-      "mode": "dark",
-      "open": false,
-      "summary": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 1,
-        "total": 1
-      }
-    },
-    {
-      "width": 390,
-      "mode": "dark",
-      "open": true,
-      "summary": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 1,
-        "total": 1
-      }
-    },
-    {
-      "width": 1440,
-      "mode": "light",
-      "open": false,
-      "summary": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 1,
-        "total": 1
-      }
-    },
-    {
-      "width": 1440,
-      "mode": "light",
-      "open": true,
-      "summary": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 1,
-        "total": 1
-      }
-    },
-    {
-      "width": 1440,
-      "mode": "dark",
-      "open": false,
-      "summary": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 1,
-        "total": 1
-      }
-    },
-    {
-      "width": 1440,
-      "mode": "dark",
-      "open": true,
-      "summary": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 1,
-        "total": 1
-      }
-    },
-    {
-      "width": 1728,
-      "mode": "light",
-      "open": false,
-      "summary": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 1,
-        "total": 1
-      }
-    },
-    {
-      "width": 1728,
-      "mode": "light",
-      "open": true,
-      "summary": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 1,
-        "total": 1
-      }
-    },
-    {
-      "width": 1728,
-      "mode": "dark",
-      "open": false,
-      "summary": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 1,
-        "total": 1
-      }
-    },
-    {
-      "width": 1728,
-      "mode": "dark",
-      "open": true,
-      "summary": {
-        "critical": 0,
-        "serious": 0,
-        "moderate": 1,
-        "total": 1
-      }
-    }
-  ],
   "limits": [
-    "Edge/Chromium only; no human screen-reader walkthrough.",
-    "Original proprietary font stacks retain platform fallbacks."
+    "No native Studio GUI or human screen-reader walkthrough.",
+    "Visual previews depend on public hosting; family previews are labelled, exact registry source remains available.",
+    "Review choices are local preferences; production capability inclusion is awaiting user decisions."
   ]
 }

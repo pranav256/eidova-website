@@ -112,9 +112,9 @@ try {
   assert.equal(await pickerPage.locator('#page-theme-menu').count(), 0);
   assert.equal(await pickerPage.evaluate(() => scrollY), 0, 'Selecting from the picker keeps the landing page in view');
   assert.equal(new URL(pickerPage.url()).searchParams.get('q'), 'Linear');
+  await choose.click();
   await pickerPage.getByRole('button', { name: 'Previous page theme', exact: true }).click();
   assert.equal(await pickerPage.locator('html').getAttribute('data-page-theme'), 'linear');
-  await choose.click();
   await pickerSearch.press('Escape');
   assert.equal(await choose.getAttribute('aria-expanded'), 'false');
   assert.ok(await choose.evaluate(node => node === document.activeElement));
@@ -123,6 +123,7 @@ try {
   assert.equal(await choose.getAttribute('aria-expanded'), 'false', 'Outside clicks dismiss the nonmodal picker');
   await choose.click();
   await pickerPage.getByRole('button', { name: 'Eidova default', exact: true }).click();
+  await choose.click();
   const visited = new Set();
   for (let index = 0; index < 32; index++) {
     await pickerPage.getByRole('button', { name: 'Next page theme', exact: true }).click();
@@ -130,6 +131,7 @@ try {
   }
   assert.equal(visited.size, 32, 'Next cycles through every theme and the default');
   assert.equal(await pickerPage.locator('html').getAttribute('data-page-theme'), null);
+  await pickerSearch.press('Escape');
   for (const mode of ['light', 'dark']) {
     if (mode === 'dark') await pickerPage.getByRole('button', { name: 'Switch to dark mode', exact: true }).click();
     for (const width of [390, 1440, 1728]) {
@@ -141,7 +143,7 @@ try {
       await pickerPage.locator('#connect').evaluate(node => node.scrollIntoView({ behavior: 'instant' }));
       const headerBox = await pickerPage.locator('.site-header').boundingBox();
       const pickerBox = await picker.boundingBox();
-      assert.ok(pickerBox.y >= headerBox.y + headerBox.height - 1, 'The header must not cover the sticky picker');
+      assert.ok(pickerBox.y >= headerBox.y && pickerBox.y + pickerBox.height <= headerBox.y + headerBox.height + 1, 'The theme picker belongs inside the sticky navbar');
     }
   }
   await pickerPage.evaluate(() => document.documentElement.style.fontSize = '200%');
