@@ -25,7 +25,8 @@ const serviceSourceUrl = import.meta.env.VITE_MCP_REPOSITORY_URL || 'https://git
 const endpoint = import.meta.env.VITE_MCP_URL || 'https://open-design-mcp-liard.vercel.app/mcp';
 const catalogUrl = import.meta.env.VITE_CATALOG_URL || '/api/catalog';
 const registryOrigin = (import.meta.env.VITE_REGISTRY_ORIGIN || 'https://open-design-mcp-liard.vercel.app').replace(/\/$/, '');
-const navigationHome = window.location.pathname.replace(/\/$/, '') === '/showcase' ? '/' : '';
+const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
+const navigationHome = currentPath === '/' ? '' : '/';
 const clientOptions = ['Codex', 'Claude Code', 'Claude Desktop', 'Cursor', 'VS Code', 'Server URL'];
 const toolGroups = [
   { number: '01', title: 'Start with a foundation.', description: 'Choose a system. Give your agent its tokens and real React component source.', tools: ['find-design-system', 'get-design-system-kit'] },
@@ -47,10 +48,14 @@ function paletteStyle(id: string, mode: ThemeMode): CSSProperties {
   return catalogThemes[id]?.modes[mode].tokens as CSSProperties;
 }
 export function SiteHeader({ theme, onToggleTheme }: { theme: ThemeMode; onToggleTheme: () => void }) {
+  const menu = useRef<HTMLDetailsElement>(null);
+  const links = [[navigationHome+'#themes', 'Themes'], [navigationHome+'#resources', 'Resources'], [navigationHome+'#tools', 'Tools'], ['/showcase', 'Showcase'], ['/studio', 'Team workspace'], [navigationHome+'#connect', 'Connect']];
+  const destinations = links.map(([href, label]) => <a key={label} href={href} aria-current={href === currentPath ? 'page' : undefined} onClick={() => { if (menu.current) menu.current.open = false; }}>{label}</a>);
   return <header className="site-header">
     <a className="wordmark" href={navigationHome+'#main'} aria-label="Eidova home"><img className="brand-mark" src="/logo.svg" width={40} height={40} alt="" />Eidova</a>
-    <nav aria-label="Main navigation"><a href={navigationHome+'#themes'}>Themes</a><a href={navigationHome+'#resources'}>Resources</a><a href={navigationHome+'#tools'}>Tools</a><a href="/showcase" aria-current={navigationHome ? 'page' : undefined}>Showcase</a><a href="/studio">Team workspace</a><a href={navigationHome+'#connect'}>Connect</a></nav>
+    <nav className="desktop-navigation" aria-label="Main navigation">{destinations}</nav>
     <div className="header-actions"><a className="source-link" href={sourceUrl}>Source code <ArrowUpRight aria-hidden="true" /></a><Button className="theme-toggle" variant="outline" size="sm" onClick={onToggleTheme} aria-label={'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode'}>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</Button></div>
+    <details ref={menu} className="mobile-menu" onKeyDown={event => { if (event.key === 'Escape' && menu.current?.open) { menu.current.open = false; menu.current.querySelector('summary')?.focus(); event.preventDefault(); } }}><summary>Menu</summary><nav aria-label="Main navigation"><div><p>Explore</p>{destinations.slice(0, 3)}</div><div><p>Get started</p>{destinations.slice(3)}</div></nav></details>
   </header>;
 }
 export function SiteFooter() {
@@ -157,23 +162,21 @@ export function App() {
     <a className="skip-link" href="#main">Skip to content</a>
     <SiteHeader theme={theme} onToggleTheme={toggleTheme} />
 
-    <main id="main" tabIndex={-1}>
+    <main id="main" className="marketing-main" tabIndex={-1}>
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="site-eyebrow">Design tools for coding agents</p>
-          <h1 id="hero-title">Ideas made<br />tangible.</h1>
-          <p className="hero-description">Real components, design resources and practical reviews for your coding agent.</p>
-          <div className="hero-actions"><Button asChild size="lg"><a href="#themes">Explore the themes <ArrowDown aria-hidden="true" /></a></Button><a className="text-link" href="#connect">Connect your agent <ArrowUpRight aria-hidden="true" /></a></div>
-          <p className="hero-note">Free public access <span aria-hidden="true">·</span> No account required</p>
+          <p className="site-eyebrow">Eidova / Design tools for coding agents</p>
+          <h1 id="hero-title">Good design.<br />Built in.</h1>
         </div>
-        <figure className="hero-art"><img src="/art/hero.webp" width={1024} height={1024} alt="Collage of a classical sculpture, tree and concrete architecture on warm paper" fetchPriority="high" /><figcaption><span>Form study</span><span>01 / Eidova</span></figcaption></figure>
+        <div className="hero-brief"><p className="hero-description">Real components, design resources and practical reviews. One MCP connection.</p><div className="hero-actions"><Button asChild size="lg"><a href="#themes">Browse themes <ArrowDown aria-hidden="true" /></a></Button><a className="text-link" href="#connect">Connect your agent <ArrowUpRight aria-hidden="true" /></a></div><p className="hero-note">Free. No account required.</p></div>
+        <div className="hero-sheet" aria-label="Try a design direction">{['minimal-light', 'linear', 'monochrome-industrial'].map(id => <Button key={id} variant="ghost" className="hero-specimen" aria-label={'Try '+familyFor(id)?.title+' components: '+catalogThemes[id].title} aria-haspopup="dialog" onClick={event => { previewTrigger.current=event.currentTarget;setPreview(id); }}><span>{familyFor(id)?.title}<ArrowUpRight aria-hidden="true" /></span><img src={'/family-previews/'+id+'.png'} alt={familyFor(id)?.title+' component specimen'} width={800} height={560} decoding="async" /></Button>)}</div>
       </section>
-      <section className="studio-intro" aria-labelledby="intro-title">
-        <div><h2 id="intro-title">Choose a look.<br />Make it your own.</h2><p>From quiet interfaces to expressive websites, start with a complete design system. Explore the components, bring them into your project and refine every detail.</p><a className="text-link" href="/showcase">Try the toolkit <ArrowUpRight aria-hidden="true" /></a></div>
+      <section className="facts-strip" aria-label="Inside the toolkit">
         <dl className="hero-stats"><div><dt>Installable themes</dt><dd>31</dd></div><div><dt>Design resources</dt><dd>{resourceCatalog.entries.length}</dd></div><div><dt>Public MCP tools</dt><dd>42</dd></div></dl>
+        <a className="text-link" href="/showcase">Try the toolkit <ArrowUpRight aria-hidden="true" /></a>
       </section>
       <section className="themes section" id="themes" aria-labelledby="themes-title">
-        <div className="section-heading"><div><h2 id="themes-title">Explore all 31 themes.</h2><p>Browse every theme across eight design families. Open a preview to try the real components.</p></div><a className="text-link" href={serviceSourceUrl + '/tree/main/assets/registry'}>Explore the registry <span aria-hidden="true">↗</span></a></div>
+        <div className="section-heading"><div><p className="site-eyebrow">01 / Choose your foundation</p><h2 id="themes-title">Find your point of view</h2><p>All 31 themes. Eight distinct families. Real components you can try.</p></div><a className="text-link" href={serviceSourceUrl + '/tree/main/assets/registry'}>Explore the registry <span aria-hidden="true">↗</span></a></div>
         <div className="catalog-toolbar">
           <div className="search-field"><Search className="search-symbol" aria-hidden="true" /><Input ref={searchInput} id="theme-search" type="search" aria-label="Search themes" placeholder="Search themes, styles, or fonts…" value={query} onChange={event => { setQuery(event.target.value); }} />{query && <Button variant="ghost" className="clear-search" aria-label="Clear search" onClick={() => { setQuery(''); searchInput.current?.focus(); }}>Clear</Button>}</div>
           <div className="scheme-filter" role="group" aria-label="Original theme appearance">{(['all', 'light', 'dark'] as const).map(value => <Button key={value} variant="ghost" aria-pressed={scheme === value} onClick={() => { setScheme(value); }}>{value === 'all' ? 'All themes' : value === 'light' ? 'Light base' : 'Dark base'}</Button>)}</div>
@@ -189,7 +192,7 @@ export function App() {
             <div className="theme-card-heading"><h3>{item.title}</h3><span className="scheme-label">{catalogThemes[item.id]?.scheme === 'dark' ? 'Dark base' : 'Light base'}</span></div>
             <p>{item.componentCount} components · {fontLabel(item.font)}</p>
             <p className="family-description">{featuredIds.includes(item.id)?familyFor(item.id)?.description:'Part of the '+familyFor(item.id)?.title+' family.'}</p>
-            <div className="theme-card-links"><Button className="view-components" variant="outline" aria-label={'Preview theme: '+item.title} aria-haspopup="dialog" aria-expanded={preview===item.id} aria-controls="component-preview" onClick={event=>{previewTrigger.current=event.currentTarget;setPreview(item.id);}}>Preview theme</Button><a className="theme-token-link" href={registryOrigin + '/registry/' + encodeURIComponent(item.id) + '/globals.json'} aria-label={'View tokens: ' + item.title}>View tokens <ArrowUpRight aria-hidden="true" /></a></div>
+            <div className="theme-card-links"><Button className="view-components" variant="outline" aria-label={'Preview theme: '+item.title} aria-haspopup="dialog" aria-expanded={preview===item.id} aria-controls="component-preview" onClick={event=>{previewTrigger.current=event.currentTarget;setPreview(item.id);}}>Preview theme</Button><a className="theme-token-link" href={registryOrigin + '/registry/' + encodeURIComponent(item.id) + '/globals.json'} aria-label={'View values: ' + item.title}>View values <ArrowUpRight aria-hidden="true" /></a></div>
           </div>
         </article>)}</div>}
         <dialog ref={previewDialog} className="component-preview" id="component-preview" aria-labelledby="component-preview-title" onCancel={()=>setPreview(null)} onClose={()=>{setPreview(null);if(previewTrigger.current?.isConnected)previewTrigger.current.focus();else searchInput.current?.focus();}}><div className="section-heading"><div><h2 id="component-preview-title" tabIndex={-1}>{preview?catalogThemes[preview].title+' preview':'Component preview'}</h2><p>{preview&&previewFamily&&preview!==previewFamily.representative?catalogThemes[preview].title+' is a '+previewFamily.title+' variant. This preview shows the family components.':'Try the real components. Changes here are sample data.'}</p></div><div className="preview-actions"><Button variant="outline" aria-expanded={showHandoff} aria-controls="theme-handoff" onClick={()=>setShowHandoff(value=>!value)}>{showHandoff?'Hide setup':'Use theme'}</Button><a className="text-link" href={'/?specimen='+encodeURIComponent(previewFamily?.representative??'linear')} target="_blank" rel="noreferrer">Open full preview</a><Button variant="outline" onClick={()=>setPreview(null)}>Close preview</Button></div></div>{previewFamily&&preview&&<div className={showHandoff?"preview-workspace with-handoff":"preview-workspace"}>
@@ -206,12 +209,12 @@ export function App() {
       <ResourceLibrary />
 
       <section className="workflow section" id="tools" aria-labelledby="tools-title">
-        <div className="section-heading"><div><h2 id="tools-title">From a blank page to a better UI.</h2><p>A small set of tools for the decisions that matter.</p></div><span className="section-aside">Choose. Build. Review.</span></div>
+        <div className="section-heading"><div><p className="site-eyebrow">03 / The workflow</p><h2 id="tools-title">Built with intent</h2><p>Choose a foundation. Build with source. Review what ships.</p></div><span className="section-aside">Choose. Build. Review.</span></div>
         <div className="workflow-grid">{toolGroups.map(group => <article className="workflow-item" key={group.number}><span className="step-number">{group.number}<span aria-hidden="true"> /</span></span><h3>{group.title}</h3><p>{group.description}</p><div className="tool-names">{group.tools.map(tool => <code key={tool}>{tool}</code>)}</div></article>)}</div>
       </section>
 
       <section className="connection-section" aria-label="Connect your agent">
-        <div className="connection-copy"><p className="site-eyebrow">Connect your coding agent</p><h2>Your toolkit, one connection away.</h2><p>Choose your client and copy the setup. Then ask your agent to find a theme, build with its components and review the result.</p></div>
+        <div className="connection-copy"><p className="site-eyebrow">04 / Connect</p><h2>Put it to work</h2><p>Choose your client. Copy the setup. Ask your agent to build with Eidova.</p></div>
         <section className="config-panel" id="connect" aria-labelledby="connect-title">
           <div className="installation-heading"><h2 id="connect-title">Install Eidova</h2><p>Choose your client, copy the setup, and connect.</p></div>
           <div className="client-tabs" role="tablist" aria-label="Connection format">{clientOptions.map((label, index) => <Button key={label} id={'client-tab-' + index} role="tab" variant="ghost" aria-selected={client === index} aria-controls={client === index ? 'client-panel-' + index : undefined} tabIndex={client === index ? 0 : -1} onClick={() => setClient(index)} onKeyDown={event => tabKey(event, index)}>{label}</Button>)}</div>

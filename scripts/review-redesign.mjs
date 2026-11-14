@@ -10,35 +10,49 @@ const browser = await chromium.launch({ channel: process.platform === 'win32' ? 
 const errors = [], views = [];
 try {
   for (const width of [390, 1440, 1728]) {
-    for (const route of ['/', '/showcase', '/studio']) {
+    for (const mode of ['light', 'dark']) for (const route of ['/', '/showcase', '/studio', '/studio#share=invalid']) {
       const surface = route === '/' ? 'home' : route.slice(1);
       const context = await browser.newContext({ viewport: { width, height: 1000 }, colorScheme: 'light', reducedMotion: 'reduce' });
       const page = await context.newPage();
       page.on('pageerror', error => errors.push(error.message));
-      await page.goto(origin + route, { waitUntil: 'networkidle' });
+      const routeUrl = new URL(origin + route); routeUrl.searchParams.set('mode', mode);
+      await page.goto(routeUrl.href, { waitUntil: 'networkidle' });
       await page.evaluate(() => document.fonts.ready);
-      assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
-      assert.equal(await page.locator('html').getAttribute('data-design-system'), 'minimal-light');
+      assert.equal(await page.locator('html').getAttribute('data-theme'), mode);
+      assert.equal(await page.locator('html').getAttribute('data-design-system'), 'monochrome-industrial');
+      assert.equal(await page.locator('html').getAttribute('data-brand'), 'eidova-signal');
       assert.match(await page.locator('h1').evaluate(node => getComputedStyle(node).fontFamily), /Inter/);
       assert.match(await page.locator('body').evaluate(node => getComputedStyle(node).fontFamily), /Inter/);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
-      for (const img of await page.locator('img').all()) { await img.scrollIntoViewIfNeeded(); await img.evaluate(node => node.decode()); }
-      assert.ok(await page.locator('img').evaluateAll(images => images.every(image => image.complete && image.naturalWidth > 0)));
+      for (const img of await page.locator('img').all()) { if (await img.isVisible()) { await img.scrollIntoViewIfNeeded(); await img.evaluate(node => node.decode()); } }
+      assert.ok(await page.locator('img').evaluateAll(images => images.filter(image => image.checkVisibility()).every(image => image.complete && image.naturalWidth > 0)));
       if (route === '/') {
-        await page.getByRole('heading', { name: 'Ideas made tangible.', exact: true }).waitFor();
+        await page.getByRole('heading', { name: 'Good design. Built in.', exact: true }).waitFor();
         assert.equal(await page.locator('.theme-card').count(), 31);
-        assert.ok(await page.locator('.hero-art img').evaluate(node => node.naturalWidth === 1024));
+        assert.ok(await page.locator('.hero-specimen img').evaluateAll(images => images.every(image => image.naturalWidth > 0)));
         await page.locator('.hero-actions').getByRole('link', { name: 'Connect your agent' }).click();
         await page.getByRole('heading', { name: 'Install Eidova', exact: true }).waitFor();
         assert.equal(new URL(page.url()).hash, '#connect');
+        if (width === 390) {
+          const menu = page.locator('.mobile-menu');
+          await menu.locator('summary').press('Enter');
+          assert.equal(await menu.evaluate(node => node.open), true);
+          await menu.getByRole('link', { name: 'Resources', exact: true }).click();
+          assert.equal(await menu.evaluate(node => node.open), false);
+          assert.equal(new URL(page.url()).hash, '#resources');
+          await menu.locator('summary').press('Enter');
+          await menu.locator('summary').press('Escape');
+          assert.equal(await menu.evaluate(node => node.open), false);
+          assert.ok(await menu.locator('summary').evaluate(node => node === document.activeElement));
+        }
       }
       await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
       const violations = (await new AxeBuilder({ page }).exclude('iframe').analyze()).violations;
-      views.push({ width, route, violations });
-      await page.screenshot({ path: `${output}/${width}-${surface}-hero.png` });
+      views.push({ width, route, mode, violations });
+      await page.screenshot({ path: `${output}/${width}-${mode}-${surface.replace('#share=invalid','-shared')}-hero.png` });
       for (const id of route === '/' ? ['connect', 'themes', 'resources'] : route === '/showcase' ? ['components', 'interactions'] : []) {
         await page.locator('#' + id).evaluate(node => node.scrollIntoView({ behavior: 'instant', block: 'start' }));
-        await page.screenshot({ path: `${output}/${width}-${surface}-${id}.png` });
+        if (mode === 'light') await page.screenshot({ path: `${output}/${width}-${surface}-${id}.png` });
       }
       await context.close();
     }

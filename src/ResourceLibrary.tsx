@@ -114,7 +114,7 @@ export function ResourceLibrary() {
   function open(entry:ResourceEntry,button:HTMLButtonElement,preview=false) {opener.current=button;setOpenPreview(preview);setSelected(entry);}
   function reset() {setQuery('');setKind('all');setLimit(16);search.current?.focus();}
   return <section className="resource-library section" id="resources" aria-labelledby="resources-title">
-    <div className="section-heading"><div><h2 id="resources-title">Explore the Eidova library.</h2><p>Find a design, preview it, and use its files.</p></div></div>
+    <div className="section-heading"><div><p className="site-eyebrow">Library / Source you can use</p><h2 id="resources-title">Pick a starting point</h2><p>Preview a design. Read its source. Bring it into your project.</p></div></div>
     <div className="catalog-toolbar">
       <Input ref={search} type="search" aria-label="Search resources" placeholder="Search resources…" value={query} onChange={event=>{setQuery(event.target.value);setLimit(16);}} />
       <div className="resource-file-field"><label htmlFor="resource-type">Resource type</label><select id="resource-type" value={kind} onChange={event=>{setKind(event.target.value);setLimit(16);}}>{[['all','All resources'],['design-systems','Design systems'],['templates','Templates'],['plugins','Plugin designs'],['skills','Skills'],['catalogs','Catalog notes']].map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></div>
