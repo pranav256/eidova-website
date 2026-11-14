@@ -1,5 +1,7 @@
 # Redesign 1311
 
+Landing theme application: every catalog card has “Apply to page”. Colors, typography and corners change immediately, with a named active state and “Restore default”. Selection is saved locally and shareable through `page-theme`; previews, filters and light/dark stay independent. The existing reference remains the default. Checks cover all 31 themes in both appearances at 390/1440/1728, text contrast, keyboard focus, reload, history, invalid IDs, disabled storage and route isolation. Source/copy and 12 rendered spacing states have no critical/serious findings. Receipt: docs/page-theme-review.json.
+
 Updated 14 November 2026. The user supplied a concrete visual reference after rejecting the previous designs: https://news-api-live.vercel.app/.
 
 ## Direction

@@ -37,7 +37,7 @@ const toolGroups = [
 function readCatalog(value: unknown): Theme[] {
   const items = Array.isArray(value) ? value : (value as { systems?: unknown })?.systems;
   if (!Array.isArray(items)) throw new Error('The catalog response could not be read.');
-  return items.filter((item): item is Theme => item && typeof item.id === 'string' && typeof item.title === 'string' && typeof item.componentCount === 'number');
+  return items.filter((item): item is Theme => item && typeof item.id === 'string' && Object.hasOwn(catalogThemes, item.id) && typeof item.title === 'string' && typeof item.componentCount === 'number');
 }
 function readSearch() {
   const params = new URLSearchParams(window.location.search);
@@ -74,7 +74,7 @@ function designPrompt(id: string) {
 }
 
 export function App() {
-  const { theme, toggleTheme } = useAppearance();
+  const { theme, toggleTheme, pageTheme, selectPageTheme } = useAppearance();
   const [catalog, setCatalog] = useState<CatalogState>({ state: 'loading' });
   const [query, setQuery] = useState(() => readSearch().query);
   const [scheme, setScheme] = useState<Scheme>(() => readSearch().scheme);
@@ -173,7 +173,8 @@ export function App() {
         </div>
       </section>
       <section className="themes section" id="themes" aria-labelledby="themes-title">
-        <div className="section-heading"><div><h2 id="themes-title">A foundation <span>for every interface.</span></h2><p>All 31 themes. Eight distinct families. Real components you can try.</p></div><a className="text-link" href="/showcase">Try the toolkit <ArrowUpRight aria-hidden="true" /></a></div>
+        <div className="section-heading"><div><h2 id="themes-title">A foundation <span>for every interface.</span></h2><p>Apply a theme to this page, or preview its components.</p></div><a className="text-link" href="/showcase">Try the toolkit <ArrowUpRight aria-hidden="true" /></a></div>
+        <div className="page-theme-controls"><p role="status">Page theme: <strong>{pageTheme ? catalogThemes[pageTheme].title : 'Eidova default'}</strong></p><Button variant="outline" onClick={() => { selectPageTheme(null); searchInput.current?.focus(); }} disabled={!pageTheme}>Restore default</Button>{pageTheme && <a className="text-link" href="#main">See the landing page <ArrowUpRight aria-hidden="true" /></a>}</div>
         <div className="catalog-toolbar">
           <div className="search-field"><Search className="search-symbol" aria-hidden="true" /><Input ref={searchInput} id="theme-search" type="search" aria-label="Search themes" placeholder="Search themes, styles, or fonts…" value={query} onChange={event => { setQuery(event.target.value); }} />{query && <Button variant="ghost" className="clear-search" aria-label="Clear search" onClick={() => { setQuery(''); searchInput.current?.focus(); }}>Clear</Button>}</div>
           <div className="scheme-filter" role="group" aria-label="Original theme appearance">{(['all', 'light', 'dark'] as const).map(value => <Button key={value} variant="ghost" aria-pressed={scheme === value} onClick={() => { setScheme(value); }}>{value === 'all' ? 'All themes' : value === 'light' ? 'Light base' : 'Dark base'}</Button>)}</div>
@@ -189,7 +190,7 @@ export function App() {
             <div className="theme-card-heading"><h3>{item.title}</h3><span className="scheme-label">{catalogThemes[item.id]?.scheme === 'dark' ? 'Dark base' : 'Light base'}</span></div>
             <p>{item.componentCount} components · {fontLabel(item.font)}</p>
             <p className="family-description">{featuredIds.includes(item.id)?familyFor(item.id)?.description:'Part of the '+familyFor(item.id)?.title+' family.'}</p>
-            <div className="theme-card-links"><Button className="view-components" variant="outline" aria-label={'Preview theme: '+item.title} aria-haspopup="dialog" aria-expanded={preview===item.id} aria-controls="component-preview" onClick={event=>{previewTrigger.current=event.currentTarget;setPreview(item.id);}}>Preview theme</Button><a className="theme-token-link" href={registryOrigin + '/registry/' + encodeURIComponent(item.id) + '/globals.json'} aria-label={'View values: ' + item.title}>View values <ArrowUpRight aria-hidden="true" /></a></div>
+            <div className="theme-card-links"><Button className="apply-theme" aria-label={'Apply to page: '+item.title} aria-pressed={pageTheme===item.id} onClick={() => selectPageTheme(item.id)}>{pageTheme===item.id?'Applied to page':'Apply to page'}</Button><Button className="view-components" variant="outline" aria-label={'Preview theme: '+item.title} aria-haspopup="dialog" aria-expanded={preview===item.id} aria-controls="component-preview" onClick={event=>{previewTrigger.current=event.currentTarget;setPreview(item.id);}}>Preview theme</Button><a className="theme-token-link" href={registryOrigin + '/registry/' + encodeURIComponent(item.id) + '/globals.json'} aria-label={'View values: ' + item.title}>View values <ArrowUpRight aria-hidden="true" /></a></div>
           </div>
         </article>)}</div>}
         <dialog ref={previewDialog} className="component-preview" id="component-preview" aria-labelledby="component-preview-title" onCancel={()=>setPreview(null)} onClose={()=>{setPreview(null);if(previewTrigger.current?.isConnected)previewTrigger.current.focus();else searchInput.current?.focus();}}><div className="section-heading"><div><h2 id="component-preview-title" tabIndex={-1}>{preview?catalogThemes[preview].title+' preview':'Component preview'}</h2><p>{preview&&previewFamily&&preview!==previewFamily.representative?catalogThemes[preview].title+' is a '+previewFamily.title+' variant. This preview shows the family components.':'Try the real components. Changes here are sample data.'}</p></div><div className="preview-actions"><Button variant="outline" aria-expanded={showHandoff} aria-controls="theme-handoff" onClick={()=>setShowHandoff(value=>!value)}>{showHandoff?'Hide setup':'Use theme'}</Button><a className="text-link" href={'/?specimen='+encodeURIComponent(previewFamily?.representative??'linear')} target="_blank" rel="noreferrer">Open full preview</a><Button variant="outline" onClick={()=>setPreview(null)}>Close preview</Button></div></div>{previewFamily&&preview&&<div className={showHandoff?"preview-workspace with-handoff":"preview-workspace"}>
@@ -200,7 +201,7 @@ export function App() {
             <div className="handoff-prompt"><CopyButton value={designPrompt(preview)}>Copy agent prompt</CopyButton><details><summary>Project instructions</summary><Textarea aria-label="Agent prompt" value={designPrompt(preview)} rows={8} readOnly spellCheck={false} onFocus={event=>event.target.select()} /><div className="handoff-download"><a className="text-link" href={'/api/design-systems/'+encodeURIComponent(preview)+'/design.md'} download="DESIGN.md">Download DESIGN.md <ArrowDown aria-hidden="true" /></a><p>Save colors and rules with your project.</p></div></details></div>
           </section>
         </div>}</dialog>
-        <p className="catalog-note">Component previews open in a separate viewer. <a href="/licenses/better-design-MIT.txt">Theme license</a>.</p>
+        <p className="catalog-note">Page themes are saved in your browser and URL. Previews open separately. <a href="/licenses/better-design-MIT.txt">Theme license</a>.</p>
       </section>
 
       <ResourceLibrary />

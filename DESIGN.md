@@ -1,5 +1,7 @@
 # Eidova website design
 
+Visitors can apply any catalog theme to the landing page: appearance palette, readable action pairs, font stacks and corner radius. Keep the reference default when no theme is chosen. Use `page-theme` for shared URLs and `eidova-page-theme` for persistence; preserve independent previews, search and light/dark choices. An explicit `page-theme=default` overrides saved selection. Other routes and original specimens retain their own design; the dark setup workbench stays readable. Review: [docs/page-theme-review.json](docs/page-theme-review.json).
+
 The user's explicit reference is https://news-api-live.vercel.app/. Keep its warm paper, rust accents, Newsreader headings, Inter interface and JetBrains Mono code, all locally served. Use its extracted light/dark tokens and thin rules with .5rem controls and .75rem panels. Follow system appearance unless a URL or saved visitor choice overrides it. The previous yellow graphic and studio directions are superseded.
 
 The homepage uses the reference's left-aligned open hero, serif headline with italic rust emphasis, a primary exploration action and quiet counts. Actual component previews sit in the full 31-theme catalog; original specimens retain their own fonts and tokens. Setup uses a dark code workbench. Keep the logo, all navigation/footer destinations and private-route metadata.

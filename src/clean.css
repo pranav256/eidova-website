@@ -1,4 +1,17 @@
 /* Website composition; original specimens keep their isolated styles. */
+:root[data-page-theme] {
+  --font-geist-sans: "Geist"; --font-geist: "Geist"; --font-geist-mono: "Space Mono"; --font-inter-var: "Inter";
+  --font-serif: var(--font-display); --popover: var(--card); --popover-foreground: var(--card-foreground);
+  --foreground-secondary: var(--muted-foreground); --primary-text: var(--foreground);
+  --primary-hover: var(--action); --header-background: var(--background); --line-strong: var(--border);
+  --field: var(--input); --control-border: var(--foreground); --shadow-menu: none;
+  --success-text: var(--foreground); --warning-text: var(--foreground); --destructive-text: var(--foreground);
+}
+:root[data-page-theme] :is(.od-button, .od-input, .od-textarea, .theme-card, .component-preview, .resource-list > li, .resource-reader, .config-panel, .mobile-menu nav) { border-radius: var(--radius); }
+.page-theme-controls { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem 1.5rem; margin-bottom: 1.5rem; }
+.page-theme-controls p { font-size: .875rem; }
+.page-theme-controls strong { font-weight: 500; }
+.apply-theme[aria-pressed="true"] { outline: .125rem solid var(--foreground); outline-offset: .125rem; }
 html { scroll-padding-top: 7rem; }
 :focus-visible { outline-color: var(--primary-text); }
 main, .site-footer, .header-inner { width: min(90rem, calc(100% - 5rem)); margin-inline: auto; }
@@ -97,6 +110,7 @@ h1 em { color: var(--primary-text); font-weight: 400; }
 .client-tabs .od-button { min-width: 0; padding-inline: .75rem; font-size: .8125rem; }
 .config-panel .client-tabs .od-button[aria-selected="true"] { background: var(--code-foreground); color: var(--code); }
 .config-panel { --primary-text: var(--code-foreground); }
+.config-panel { --action: var(--primary); --action-foreground: var(--primary-foreground); }
 .installation-code, .installation-code pre { background: transparent; color: var(--code-foreground); }
 .config-panel .od-button[data-variant="outline"] { color: var(--code-foreground); border-color: var(--code-muted); }
 .config-panel .od-button[data-variant="outline"]:hover { background: var(--code-header); }
