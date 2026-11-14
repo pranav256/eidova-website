@@ -16,12 +16,12 @@ Use the existing website and `/showcase`. Preserve its Geist typography, monochr
 | Brand and portable design decisions | Palette/token inspection and CSS export; public CSS extraction and custom theme tools in the directory | Foundations / Tool directory |
 | Icons and interaction design | Licensed SVG downloads, validation/recovery demo, interruptible reduced-motion-aware transition | Icons / Interactions |
 | UI, code and copy review | Live comprehension check, rendered screen preview, source and spacing review tool schemas | Copy lab / Tool directory |
-| Original resources | 920 packages: 152 systems, 115 design templates, 479 plugins, 169 skills, three templates, two catalogs | Resources |
+| Original resources | 784 packages: 152 systems, 115 design templates, 343 plugins, 169 skills, three templates, two catalogs | Resources |
 | Specialist guidance | UI/UX, motion, React Native, SwiftUI, Shopify, Three.js and sales excerpts; specialist tool inputs | Guides / Tool directory |
 | Agent workflows and project context | Practical tool sequences, feature-map tools, private project-rule tools | Workflows / Tool directory |
 | Team file collaboration | Existing separate `/studio` workspace and its setup state | Team workspace |
 
-Counts come from `src/showcase-data.json`, the generated resource catalog and the matching MCP's capabilities/discovery. The 920 source packages are distinct from the 31 installable React kits.
+Counts come from `src/showcase-data.json`, the generated resource catalog and the matching MCP's capabilities/discovery. The 784 source packages are distinct from the 31 installable React kits.
 
 ## Visitor journey
 
