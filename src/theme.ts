@@ -15,15 +15,15 @@ export function readTheme(): ThemeMode {
       const saved = localStorage.getItem(key);
       if (saved === 'dark' || saved === 'light') return saved;
     }
-  } catch { /* URL appearance and the light default work when storage is disabled. */ }
-  return 'light';
+  } catch { /* URL appearance and system preferences work when storage is disabled. */ }
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
 export function applyTheme(mode: ThemeMode, save = false): void {
   const root = document.documentElement;
   root.dataset.theme = mode;
-  root.dataset.designSystem = 'monochrome-industrial';
-  root.dataset.brand = 'eidova-signal';
+  root.dataset.designSystem = 'minimal-light';
+  root.dataset.brand = 'eidova-paper';
   root.style.colorScheme = mode;
   const background = getComputedStyle(root).getPropertyValue('--background').trim();
   if (background) document.querySelector('meta[name="theme-color"]')?.setAttribute('content', background);

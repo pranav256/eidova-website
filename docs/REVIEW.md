@@ -1,6 +1,14 @@
 # Website review evidence
 
-## Bold graphic redesign — 14 November 2026
+## Reference-based rebuild — 14 November 2026
+
+The user's supplied reference defines the current website: warm paper surfaces, rust accents, locally loaded Newsreader/Inter/JetBrains Mono, a quiet sticky header, open serif hero and dark setup workbench. All 31 themes and existing website routes remain. The grouped footer preserves its destinations. System appearance is the default; explicit URL/saved choices take precedence.
+
+[paper-redesign-review.json](paper-redesign-review.json) records source/copy checks, 24 shell views, 30 showcase states, 36 resource states and 32 home/team/menu states at 390, 1440 and 1728 in both appearances. Critical and serious findings were fixed. Browser checks include 200% text, system preference changes, menus, preview/setup focus, clipboard, filters/retries, source/downloads and recovery. The production build passes. Evidence uses Edge/Chromium; no human screen-reader walkthrough, native Studio GUI or backend-suite rerun is claimed.
+
+The records below describe superseded designs.
+
+## Bold graphic redesign (rejected) — 14 November 2026
 
 The current Eidova Signal direction replaces the previous studio and Neutral compositions: Inter, electric yellow, ink, square frames and actual component sheets. Homepage, showcase, resource discovery, team connection and shared revisions now share navigation and styling. All 31 themes, setup formats, previews, recovery and saved appearance choices remain.
 

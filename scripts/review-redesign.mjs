@@ -19,17 +19,18 @@ try {
       await page.goto(routeUrl.href, { waitUntil: 'networkidle' });
       await page.evaluate(() => document.fonts.ready);
       assert.equal(await page.locator('html').getAttribute('data-theme'), mode);
-      assert.equal(await page.locator('html').getAttribute('data-design-system'), 'monochrome-industrial');
-      assert.equal(await page.locator('html').getAttribute('data-brand'), 'eidova-signal');
-      assert.match(await page.locator('h1').evaluate(node => getComputedStyle(node).fontFamily), /Inter/);
+      assert.equal(await page.locator('html').getAttribute('data-design-system'), 'minimal-light');
+      assert.equal(await page.locator('html').getAttribute('data-brand'), 'eidova-paper');
+      assert.match(await page.locator('h1').evaluate(node => getComputedStyle(node).fontFamily), route.startsWith('/studio') ? /Inter/ : /Newsreader/);
       assert.match(await page.locator('body').evaluate(node => getComputedStyle(node).fontFamily), /Inter/);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
       for (const img of await page.locator('img').all()) { if (await img.isVisible()) { await img.scrollIntoViewIfNeeded(); await img.evaluate(node => node.decode()); } }
       assert.ok(await page.locator('img').evaluateAll(images => images.filter(image => image.checkVisibility()).every(image => image.complete && image.naturalWidth > 0)));
       if (route === '/') {
-        await page.getByRole('heading', { name: 'Good design. Built in.', exact: true }).waitFor();
+        await page.getByRole('heading', { name: 'Design systems, in real code.', exact: true }).waitFor();
         assert.equal(await page.locator('.theme-card').count(), 31);
-        assert.ok(await page.locator('.hero-specimen img').evaluateAll(images => images.every(image => image.naturalWidth > 0)));
+        assert.equal(await page.locator('.theme-card-preview img').count(), 31);
+        assert.ok(await page.locator('.theme-card-preview img').evaluateAll(images => images.every(image => image.naturalWidth > 0)));
         await page.locator('.hero-actions').getByRole('link', { name: 'Connect your agent' }).click();
         await page.getByRole('heading', { name: 'Install Eidova', exact: true }).waitFor();
         assert.equal(new URL(page.url()).hash, '#connect');
@@ -79,6 +80,13 @@ try {
   await page.goto(origin + '/showcase?mode=light', { waitUntil: 'networkidle' });
   assert.equal(await page.locator('html').getAttribute('data-theme'), 'light');
   await context.close();
+  const systemContext = await browser.newContext({ colorScheme: 'dark' });
+  const systemPage = await systemContext.newPage();
+  await systemPage.goto(origin, { waitUntil: 'networkidle' });
+  assert.equal(await systemPage.locator('html').getAttribute('data-theme'), 'dark');
+  await systemPage.emulateMedia({ colorScheme: 'light' });
+  await systemPage.waitForFunction(() => document.documentElement.dataset.theme === 'light');
+  await systemContext.close();
   await writeFile(`${output}/accessibility.json`, JSON.stringify({ origin, views, errors, defaults: 'pass', reflow: 'pass', textZoom: 'pass', savedAndUrlAppearance: 'pass', excluded: 'Original embedded component specimens; their themes are reviewed separately.' }, null, 2));
   console.log(JSON.stringify({ views: views.length, violations: views.flatMap(view => view.violations.map(rule => ({ route: view.route, width: view.width, id: rule.id, impact: rule.impact, nodes: rule.nodes.map(node => node.target) }))), errors }));
   assert.deepEqual(errors, []);

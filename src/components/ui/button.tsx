@@ -1,54 +1,67 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-
 import { cn } from "@/lib/utils"
 
-// Monochrome Industrial Button — monochrome, industrial, sharp corners.
-// Eidova adaptation keeps Inter, wrapping labels and semantic error colors.
+// Luxe Button — browser-extracted from the original site (2026)
+// Light theme: #f5f5f5 bg, #4a4c52 text, black primary buttons
+// Key trait: NO box-shadows on buttons — clean minimal border-only styling
+// Primary: black fill (site uses oklab(0 0 0/0.8) ~ near-black), white text, fontWeight 600
+// Secondary: light gray bg, dark text, 1px border, no shadow
+// Radius: 12px throughout
+// Transitions smooth (200ms)
 
 const buttonVariants = cva(
   [
     "od-button relative inline-flex items-center justify-center gap-2 whitespace-normal",
-    "font-sans text-sm font-medium",
-    "rounded-none border transition-[background-color,color,border-color] duration-150 ease-out",
-    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--mono-accent)] focus-visible:ring-offset-0",
+    "text-sm font-semibold",
+    "outline-none transition-colors duration-200 ease-out",
+    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
     "disabled:pointer-events-none disabled:opacity-40",
-    "active:translate-y-[1px]",
   ].join(" "),
   {
     variants: {
       variant: {
-        // Primary — high-contrast slab. Inverted background, no shadow.
+        // Primary: black fill — no shadow (luxeui's clean signature)
         default:
-          "bg-primary text-primary-foreground border-primary " +
-          "hover:bg-primary/90 hover:border-primary/90",
-        // Secondary — surface with hairline border.
+          "rounded-xl bg-primary text-primary-foreground " +
+          "hover:bg-primary/80 active:bg-primary/70",
+
+        // Secondary: light gray, 1px border, no shadow
         secondary:
-          "bg-[var(--mono-surface-raised)] text-foreground border-[var(--mono-border-visible)] " +
-          "hover:border-foreground/60",
-        // Outline — fully transparent, border carries the weight.
+          "rounded-xl bg-secondary text-secondary-foreground border border-border " +
+          "hover:bg-accent hover:border-border/60",
+
+        // Outline: border only — luxeui's minimal style
         outline:
-          "bg-transparent text-foreground border-[var(--mono-border-visible)] " +
-          "hover:border-foreground hover:bg-[var(--mono-surface)]",
-        // Ghost — no border, no fill, label only. The minimal end of the system.
+          "rounded-xl border border-border bg-transparent text-foreground " +
+          "hover:bg-accent hover:border-border/80",
+
+        // Ghost: no border, no shadow
         ghost:
-          "bg-transparent text-[color-mix(in_oklab,var(--muted-foreground)_65%,var(--foreground))] border-transparent " +
-          "hover:text-foreground hover:bg-[var(--mono-surface)]",
-        // Destructive — the signal-light red moment.
+          "rounded-xl text-muted-foreground " +
+          "hover:bg-accent hover:text-foreground",
+
+        // Destructive
         destructive:
-          "bg-destructive text-destructive-foreground border-destructive " +
+          "rounded-xl bg-destructive text-destructive-foreground " +
           "hover:bg-destructive/90",
-        // Link — Space Mono underlined.
+
+        // Link
         link:
-          "border-transparent text-foreground underline underline-offset-[6px] decoration-[1px] " +
-          "hover:text-[var(--mono-accent)]",
+          "text-foreground underline-offset-4 hover:underline",
+
+        // Muted
+        muted:
+          "rounded-xl bg-muted text-muted-foreground " +
+          "hover:bg-accent hover:text-foreground",
       },
       size: {
-        sm:      "h-8  px-3 text-[11px]",
-        default: "h-10 px-5",
-        lg:      "h-12 px-7 text-[13px]",
-        icon:    "h-10 w-10",
+        sm:      "h-8 px-4 text-xs rounded-lg",
+        default: "h-[38px] px-4",
+        lg:      "h-[44px] px-4 text-base",
+        xl:      "h-14 px-10 text-base",
+        icon:    "h-[38px] w-[38px] rounded-xl",
       },
     },
     defaultVariants: {
