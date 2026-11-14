@@ -100,10 +100,12 @@ function ResourceReader({entry,onClose,initialPreview=false}:{entry:ResourceEntr
   </dialog>;
 }
 
-export function ResourceLibrary() {
+export function ResourceLibrary({ all = false }: { all?: boolean }) {
+  const initialLimit = all ? library.entries.length : 16;
+  const ResourceHeading = all ? 'h2' : 'h3';
   const [query, setQuery] = useState('');
   const [kind, setKind] = useState('all');
-  const [limit, setLimit] = useState(16);
+  const [limit, setLimit] = useState(initialLimit);
   const [selected,setSelected]=useState<ResourceEntry|null>(null);
   const [openPreview,setOpenPreview]=useState(false);
   const opener=useRef<HTMLButtonElement|null>(null);
@@ -112,16 +114,16 @@ export function ResourceLibrary() {
   const terms = query.toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? [];
   const entries = library.entries.filter(entry => (kind === 'all' || (kind==='templates'?['design-templates','templates'].includes(entry.kind):entry.kind===kind)) && terms.every(term => `${entry.id} ${entry.name} ${entry.category} ${entry.description}`.toLowerCase().includes(term)));
   function open(entry:ResourceEntry,button:HTMLButtonElement,preview=false) {opener.current=button;setOpenPreview(preview);setSelected(entry);}
-  function reset() {setQuery('');setKind('all');setLimit(16);search.current?.focus();}
+  function reset() {setQuery('');setKind('all');setLimit(initialLimit);search.current?.focus();}
   return <section className="resource-library section" id="resources" aria-labelledby="resources-title">
-    <div className="section-heading"><div><p className="site-eyebrow">Library / Source you can use</p><h2 id="resources-title">Pick a starting point</h2><p>Preview a design. Read its source. Bring it into your project.</p></div></div>
+    <div className="section-heading"><div><p className="site-eyebrow">Library / Source you can use</p>{all ? <h1 id="resources-title">Resources</h1> : <h2 id="resources-title">Pick a starting point</h2>}<p>{all && `${library.entries.length} resources. `}Preview a design. Read its source. Bring it into your project.</p></div>{!all && <a className="text-link" href="/resources">Browse all {library.entries.length} resources</a>}</div>
     <div className="catalog-toolbar">
-      <Input ref={search} type="search" aria-label="Search resources" placeholder="Search resources…" value={query} onChange={event=>{setQuery(event.target.value);setLimit(16);}} />
-      <div className="resource-file-field"><label htmlFor="resource-type">Resource type</label><select id="resource-type" value={kind} onChange={event=>{setKind(event.target.value);setLimit(16);}}>{[['all','All resources'],['design-systems','Design systems'],['templates','Templates'],['plugins','Plugin designs'],['skills','Skills'],['catalogs','Catalog notes']].map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></div>
+      <Input ref={search} type="search" aria-label="Search resources" placeholder="Search resources…" value={query} onChange={event=>{setQuery(event.target.value);setLimit(initialLimit);}} />
+      <div className="resource-file-field"><label htmlFor="resource-type">Resource type</label><select id="resource-type" value={kind} onChange={event=>{setKind(event.target.value);setLimit(initialLimit);}}>{[['all','All resources'],['design-systems','Design systems'],['templates','Templates'],['plugins','Plugin designs'],['skills','Skills'],['catalogs','Catalog notes']].map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></div>
     </div>
     <p className="result-count" role="status">Showing {Math.min(limit,entries.length)} of {entries.length} resources</p>
-    {entries.length===0 ? <div className="catalog-message"><h3>No matching resources.</h3><p>Try another name or clear the filters.</p><Button variant="outline" onClick={reset}>Clear resource filters</Button></div> : <ul className="resource-list">{entries.slice(0,limit).map(entry=><li key={entry.kind+'/'+entry.id}>
-      <div><h3>{entry.name}</h3><p>{kindLabels[entry.kind]} · {entry.license} · {entry.fileCount} files</p><details><summary>Details</summary><p>Start with <code>{entry.entrypoint}</code></p><p className="resource-uri">MCP resource: <code>design://open-design/{entry.kind}/{entry.id}</code></p><a href={'/api/resources/'+entry.kind+'/'+entry.id+'/file?path='+encodeURIComponent(entry.entrypoint)} download={entry.entrypoint}>Download {entry.entrypoint}</a></details></div>
+    {entries.length===0 ? <div className="catalog-message"><ResourceHeading>No matching resources.</ResourceHeading><p>Try another name or clear the filters.</p><Button variant="outline" onClick={reset}>Clear resource filters</Button></div> : <ul className="resource-list">{entries.slice(0,limit).map(entry=><li key={entry.kind+'/'+entry.id}>
+      <div><ResourceHeading>{entry.name}</ResourceHeading><p>{kindLabels[entry.kind]} · {entry.license} · {entry.fileCount} files</p><details><summary>Details</summary><p>Start with <code>{entry.entrypoint}</code></p><p className="resource-uri">MCP resource: <code>design://open-design/{entry.kind}/{entry.id}</code></p><a href={'/api/resources/'+entry.kind+'/'+entry.id+'/file?path='+encodeURIComponent(entry.entrypoint)} download={entry.entrypoint}>Download {entry.entrypoint}</a></details></div>
       <div className="resource-links">{entry.preview&&<Button variant="secondary" aria-haspopup="dialog" onClick={event=>open(entry,event.currentTarget,true)}>Preview design</Button>}<Button variant="outline" aria-haspopup="dialog" onClick={event=>open(entry,event.currentTarget)}>Read files</Button></div>
     </li>)}</ul>}
     {entries.length>limit && <div className="catalog-more"><Button variant="outline" onClick={()=>setLimit(value=>value+16)}>Show more resources</Button><Button variant="ghost" onClick={()=>setLimit(entries.length)}>Show all resources</Button></div>}
