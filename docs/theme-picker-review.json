@@ -5,7 +5,8 @@
     "existingRouteStates": 24,
     "themeAppearanceCombinations": 62,
     "widths": [390, 1440, 1728],
-    "picker": "Search, cycling, keyboard, dismissal, catalog outage, open-state Axe and 200% text pass."
+    "picker": "Search, cycling, keyboard, dismissal, catalog outage, open-state Axe and 200% text pass.",
+    "geometry": "Header height, sticky control visibility, anchor offsets and open-panel bounds remain correct at enlarged text sizes."
   },
   "audit": [
     "Theme selection was buried below the opening screen.",
