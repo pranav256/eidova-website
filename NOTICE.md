@@ -20,6 +20,4 @@ The showcase's icon SVGs are supplied through Eidova's Lucide tools. Their expor
 
 The logo in `public/logo.svg` comes from the Apache-2.0-licensed OpenDesign application's `apps/web/public/logo-mark.svg`. The complete license remains in `licenses/open-design-Apache-2.0.txt` and is served under `/licenses/`.
 
-The homepage artwork in `public/art/hero.webp` is the optimized derivative used by the Form & Field reference, from OpenDesign's `design-templates/open-design-landing/assets/hero.png`, imported revision `b4ec310921f49ae512de1f0a1f3a4e7ce3d05f2f`. Apache-2.0; the complete license above applies. It is illustrative generated collage artwork, not a photograph of a client project. The original bytes and provenance remain in the companion MCP library.
-
 Resource discovery metadata in `src/resource-catalog.json` is derived from nexu-io/open-design, commit b4ec310921f49ae512de1f0a1f3a4e7ce3d05f2f. Copyright 2026 Open Design contributors. Apache-2.0; the complete license is in `licenses/open-design-Apache-2.0.txt`. Original resources and package license overrides are distributed by the companion MCP repository.

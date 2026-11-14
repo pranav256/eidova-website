@@ -32,7 +32,7 @@ Choose **Use theme** in the viewer to reveal **Best for** and **Consider** guida
 
 The installation section follows the modern hero: choose Codex, Claude Code, Claude Desktop, Cursor, VS Code or a server URL, then copy the command/configuration. Essentials (13 tools) is the default; collapsed **Tool options** exposes the full profile. First-task examples follow the workflow. Every theme has a screenshot of its representative family, clearly labeled. Specimens retain their original design.
 
-The website uses the clean modern Neutral foundation, with a light/dark toggle in the header. Theme selection opens an isolated viewer while preserving setup, scroll and focus. All 31 existing IDs remain available; the complete catalog is visible by default. Variant viewers explicitly show their representative family's components, with exact tokens linked separately.
+The website uses Eidova's bold graphic foundation: Inter, electric yellow, ink and square frames, with a light/dark toggle in the header. Theme selection opens an isolated viewer while preserving setup, scroll and focus. All 31 existing IDs remain available; the complete catalog is visible by default. Variant viewers explicitly show their representative family's components, with exact tokens linked separately.
 
 Preview, mode, search and filters persist through URL/browser state. `?preview=<id>` opens the viewer; legacy `?theme=<id>` links migrate to it. Previously saved palette choices are ignored without deleting them. Escape works inside the preview and returns focus on close; nested dialogs close first. Copy failure has a manual recovery path. No client configuration is changed automatically.
 

@@ -1,0 +1,95 @@
+{
+  "date": "2026-11-14",
+  "design": "Eidova Signal / bold graphic",
+  "kit": "Installed Monochrome Industrial React/Radix Button, Input and Textarea; local Inter/yellow/ink adaptation.",
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "appearances": [
+    "light",
+    "dark"
+  ],
+  "shell": {
+    "views": 24,
+    "axeViolations": 0,
+    "pageErrors": 0,
+    "reflow": "pass",
+    "textZoom": "pass",
+    "appearance": "pass"
+  },
+  "showcase": {
+    "states": 30,
+    "copyPanels": 24,
+    "spacingBlockers": 0,
+    "contrastFailures": 0,
+    "pageErrors": 0
+  },
+  "resources": {
+    "states": 36,
+    "copyPanels": 12,
+    "spacingBlockers": 0,
+    "contrastFailures": 0,
+    "pageErrors": 0
+  },
+  "homeAndTeam": {
+    "states": 32,
+    "spacingBlockers": 0,
+    "pageErrors": 0,
+    "flows": [
+      "all 31 themes",
+      "hero preview and setup/focus return",
+      "empty/filter recovery",
+      "six client formats/clipboard",
+      "keyboard tabs",
+      "catalog failure/retry",
+      "team input validation",
+      "team creation failure keeps fields",
+      "invalid share link"
+    ],
+    "fixtures": "Team error requests were intercepted; no workspace was created."
+  },
+  "designReview": {
+    "tools": [
+      "get-review-rules",
+      "review-ui-code",
+      "check-comprehension",
+      "inspect-spacing"
+    ],
+    "critical": 0,
+    "serious": 0,
+    "sourceModerateFindings": 12,
+    "retained": "Existing labeled native pickers and small-option select suggestions; authored motion CSS is also flagged by a dynamic-class heuristic. Rendered tasks pass."
+  },
+  "visualReview": [
+    "Desktop light/dark homepage",
+    "Mobile homepage and open grouped menu",
+    "Catalog and mobile resources",
+    "Showcase and team opening",
+    "1200x630 social image"
+  ],
+  "build": "npm run build passed; existing directive/sourcemap and bundle-size warnings remain.",
+  "limits": [
+    "Edge/Chromium only; no human screen-reader walkthrough.",
+    "Separate native Studio GUI and backend test suite not rerun for presentation-only changes.",
+    "Local browser tasks used a local MCP backend after hosted-network errors; live smoke is recorded separately.",
+    "Persistent custom theme creation unavailable without a private workspace key; brand source and installed catalog kit are stored locally."
+  ],
+  "sourceSha256": {
+    "src/App.tsx": "d49e9b8a47f5f021b708eeee499c01a92f51805426b3a8a7b6cea1efdc7e4d66",
+    "src/Showcase.tsx": "b21a6bd5937d66b61c924449b4b64a943a4243f797df9b67b953fe1b5f209436",
+    "src/ResourceLibrary.tsx": "0d190bced29352c06b1d8b18129eb1441f2b374f8ae8c2ff965d4cf02ab3de49",
+    "src/TeamStudio.tsx": "45c0719b4f47c4c479b53a6bd2dab7283ed94c8f77adf9325d2640d3463f2a02",
+    "src/SharedStudio.tsx": "b7038fde5721cd8c18ab0fc9b4ba49e267b879215d0228155bfc641d4329941b",
+    "src/theme.ts": "06a44501bddbd48ffef437064d94ee2b541eb4f33614abde10310881d31e8bc7",
+    "src/theme.css": "77f250a388e17d0c2daaaf0a6f992143e32de02a53cf66164cb1e6db8e4d912c",
+    "src/clean.css": "34161cac04d8870cb654bd0ed63cf53d9de6dcb6d9a423f01aab8577846d44fd",
+    "src/components/ui/button.tsx": "5a025db2fa89bce665f5456635b59c4d5bdaaf68e371b02208d9bc0c3c869fcd",
+    "src/components/ui/input.tsx": "8beb7c944b83d89e8fbede6071f10c0c424a67b12bc0f9685d8dfe49724d1d8a",
+    "src/components/ui/textarea.tsx": "93a945567e8a4588fda17c830f719fa21121802fa7899e92f51ac2b701ffa2ce",
+    "src/components/ui/_shared.ts": "bcf2288f63de7c646051b739bfef7b8b10c3606519687533441f61ec7df0798e",
+    "public/social.png": "4014512cdff99e20727cef5809baacb649fb4ff1cf8a42457b36924f6cb4795b",
+    "index.html": "ec6bb1b7b048b673cc36b3768428ec861c278b3db868cb8a36b03be1cd4c0831"
+  }
+}

@@ -1,5 +1,13 @@
 # Website review evidence
 
+## Bold graphic redesign — 14 November 2026
+
+The current Eidova Signal direction replaces the previous studio and Neutral compositions: Inter, electric yellow, ink, square frames and actual component sheets. Homepage, showcase, resource discovery, team connection and shared revisions now share navigation and styling. All 31 themes, setup formats, previews, recovery and saved appearance choices remain.
+
+[graphic-redesign-review.json](graphic-redesign-review.json) records 24 shell views, 30 showcase states, 36 resource states and 32 home/team/menu states at 390, 1440 and 1728 in light/dark. No critical or serious source, copy or spacing findings remain. Shell Axe, narrow reflow, 200% text, clipboard, menu/focus, filters/retries and error recovery pass. The production build passes. Desktop/mobile/dark layouts and the social image were visually inspected.
+
+Checks used Edge/Chromium. No human screen-reader walkthrough or rerun of the native Studio GUI/backend suite was performed for these presentation changes. Team creation errors used intercepted fixtures; no real workspace was created. The dated records below describe superseded revisions.
+
 ## Resource streamlining — 14 November 2026
 
 The library now advertises 784 usable packages, with redundant wrappers omitted and old links preserved. Preview and read actions appear directly beside results. Sixteen results load initially, with more/all controls. Resource counts use the generated catalog; the headline and social image describe the product directly. Inter, the Neutral foundation, logo, appearance choices and original specimens remain.
@@ -8,7 +16,7 @@ The library now advertises 784 usable packages, with redundant wrappers omitted 
 
 These checks used Edge. Other browser engines and the separate native Studio GUI were not rerun. Automated checks do not certify accessibility or replace user research.
 
-## Current clean modern theme
+## Earlier clean modern theme (superseded)
 
 The current website uses Minimal Light components, bundled Inter and light appearance by default, retaining explicit saved and URL appearance choices. All 31 themes are visible, the existing logo is present, and wide previews reveal setup only on demand. [clean-preview-review.json](clean-preview-review.json) records the current source hashes, browser checks and limits; [default-theme-receipt.json](default-theme-receipt.json) records the local MCP default.
 

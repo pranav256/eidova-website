@@ -1,44 +1,33 @@
 # Redesign 1311
 
-Updated 13 November 2026: the user rejected the Editorial treatment and requested a clearer, cleaner preview experience. This modern foundation supersedes the earlier Form & Field default.
+Updated 14 November 2026. The user requested a complete replacement and selected **bold graphic: oversized type, strong colour, geometric layouts**. This supersedes the Neutral studio composition and the earlier Editorial direction.
 
-## Scope
+## Direction
 
-Apply to all Eidova marketing website pages and future MCP website builds in this workspace. Preserve established designs in unrelated products and original catalog specimens. The separate native Studio application is outside this redesign.
+- Product: Eidova gives coding agents design systems, usable source and practical interface reviews.
+- Character: direct, energetic, precise.
+- World: graphic design proofs, component sheets and a working developer toolkit.
+- Moments: electric-yellow typographic opening and large previews of the real components.
+- Signature: square frames and numbered section rules paired with the existing Eidova mark.
 
-## Default design settings
+## Audit
 
-- Catalog system: `minimal-light`, Neutral family, actual React/Radix Button, Input and Textarea kit.
-- Light by default, retaining visitors' explicit saved and URL appearance preferences and an accessible dark option.
-- Locally loaded Inter throughout; system sans-serif fallback, monospace for code. No editorial serif headings or decorative collage.
-- Neutral kit tokens: near-white canvas, dark gray text, black primary controls, 0.75rem radius. Retain accessible control borders and destructive text contrast.
-- Clear existing Eidova logo in header, footer and favicon. Keep header/footer destinations.
-- Preview-first catalog: all 31 themes visible, larger screenshots, labeled representative family previews for variants. Exact variant tokens and source remain available.
-- Wide component viewer with setup hidden until Use theme. Preserve Escape, nested dialogs, focus return, URL history, search and filters.
-- Content-driven responsive spacing; maximum content width 88rem, 4/8/12/16/24/32/48/64px scale. Real sample content and readable prose.
-- SEO: meaningful titles/descriptions, canonical URLs, Open Graph/Twitter image, structured data, robots and sitemap. Private team routes remain noindex.
+The collage communicated a studio portfolio rather than a useful toolkit. Muted grey type weakened the opening. Long prose sections repeated the promise. Mobile navigation occupied two rows before the content. Homepage and showcase felt like different sites. Controls and specimen frames had inconsistent geometry.
 
-## Future MCP workflow
+## Build plan
 
-1. Read AGENTS.md, this file and the product's DESIGN.md. Keep another product's own brand unless replacement is requested.
-2. Start with find-design-system and retrieve get-design-system-kit for minimal-light, target react, library radix, requesting only needed components. Use HTML kits in inline hosts.
-3. Load get-ui-principle before styling and get-ux-principle before behavior; load widget/platform guidance when required.
-4. Build with the actual kit, preserved branding and working behavior.
-5. Run get-review-rules, review-ui-code, check-comprehension and inspect-spacing using rendered DOM at 390, 1440 and 1728px. Fix critical and serious findings and exercise affected flows.
+1. Install the actual Monochrome Industrial React/Radix Button, Input and Textarea kit. Adapt the website to Inter, electric yellow, ink black, a near-white canvas and square corners. Preserve light default and saved/URL appearance choices. Store brand source in the repository; private hosted theme creation needs a workspace key.
+2. Load UI/UX principles. Apply passes in order: spacing, colour, icons, copy, type, layout, details, visuals and motion.
+3. Recompose the homepage with oversized typography, concise setup actions and real component sheets. Replace the collage and studio statement. Keep all 31 themes, filters, exact tokens, full previews and resources.
+4. Rebuild shared navigation with a compact mobile disclosure. Give homepage, showcase, team connection and shared-revision pages consistent branding, logo, controls and footer destinations.
+5. Recompose showcase sections with geometric frames and a clear chapter index. Preserve examples, validation, motion interruption, review drafts, errors and downloads. Original specimens and the separate native Studio application retain their own systems.
+6. Review source, copy and rendered DOM at 390, 1440 and 1728px in both appearances. Fix critical and serious findings. Exercise menus, previews, clipboard, filters/retries, draft recovery, shared links and text zoom; check accessibility and build.
+7. Update verification callers, save a compact receipt, push the reviewed correction and verify both public website aliases.
 
-## Execution
+## Future website defaults
 
-- [x] Replace the rejected Editorial default with a clean modern theme.
-- [x] Remove the collage, restore the existing brand logo and add favicon/SEO assets.
-- [x] Show the complete theme catalog and enlarge/declutter previews.
-- [x] Build and verify navigation, previews, appearance, downloads and error recovery.
-- [x] Review code, visible copy, rendered spacing and accessibility.
-- [x] Save local MCP defaults and prepare reviewed fixes for publication.
+Use this graphic brand in this workspace unless another brand is supplied. Keep other products' established designs. Request only needed components and preserve legal notices. Inspect the rendered result and test its task before delivery.
 
-## Previous delivery
+## Completion record
 
-The earlier Editorial deployment is retained in Git history (website commit 62b376f). Its styling and eight-card default are superseded by this plan. Original catalog specimens and the Form & Field reference site keep their own design.
-
-## Modern delivery review
-
-Build passes. The website passes 62 copy panels and catalog/preview/setup/recovery flows. Showcase passes 30 states and 24 panels; resource readers pass 36 states and 12 panels. Rendered spacing at 390, 1440 and 1728px has no unresolved critical or serious findings. Nine shell views pass Axe; reflow and 200% text checks pass. Labeled native selects remain because no house Select exists. See eidova-website/docs/clean-preview-review.json for coverage and limits.
+The installed kit, shared page redesign and verification updates are complete. The production build passes. Review covered 24 shell views, 30 showcase states, 36 resource states and 32 home/team/menu states in both appearances, with no critical or serious findings. Final layouts and the social image were visually inspected. The compact receipt is `eidova-website/docs/graphic-redesign-review.json`; publication results are recorded in CONTINUE.md.

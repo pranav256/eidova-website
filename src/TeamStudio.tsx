@@ -4,6 +4,7 @@ import { Input } from './components/ui/input';
 import { Textarea } from './components/ui/textarea';
 import { CopyButton } from './components/CopyButton';
 import { useAppearance } from './theme';
+import { SiteHeader, SiteFooter } from './App';
 import { StudioCollaboration, StudioKeyControls } from './StudioCollaboration';
 
 const api = (import.meta.env.VITE_STUDIO_API_URL || '/api/studio').replace(/\/$/, '');
@@ -121,18 +122,7 @@ export function TeamStudio() {
   }, [editor?.dirty]);
   return <>
     <a className="skip-link" href="#studio-main">Skip to workspace</a>
-    <header className="site-header">
-      <a className="wordmark" href="/" aria-label="Eidova home">
-        <span className="brand-mark" aria-hidden="true">
-          <i />
-          <i />
-        </span>Eidova</a>
-      <nav aria-label="Main navigation">
-        <a href="/#themes">Design library</a>
-        <a href="/studio" aria-current="page">Team workspace</a>
-      </nav>
-      <Button variant="outline" onClick={toggleTheme}>Switch to {theme === 'dark' ? 'light' : 'dark'} mode</Button>
-    </header>
+    <SiteHeader theme={theme} onToggleTheme={toggleTheme} />
     <main id="studio-main" className="team-studio">
       <div className="studio-title">
         <div>
@@ -239,5 +229,6 @@ export function TeamStudio() {
             </div>}<StudioKeyControls request={request} action={action} busy={busy} remember={remember} /></details>
       </>}
     </main>
+    <SiteFooter />
   </>;
 }

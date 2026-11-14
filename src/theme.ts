@@ -22,7 +22,8 @@ export function readTheme(): ThemeMode {
 export function applyTheme(mode: ThemeMode, save = false): void {
   const root = document.documentElement;
   root.dataset.theme = mode;
-  root.dataset.designSystem = 'minimal-light';
+  root.dataset.designSystem = 'monochrome-industrial';
+  root.dataset.brand = 'eidova-signal';
   root.style.colorScheme = mode;
   const background = getComputedStyle(root).getPropertyValue('--background').trim();
   if (background) document.querySelector('meta[name="theme-color"]')?.setAttribute('content', background);

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f8f9f3"/>
+  <rect x="32" y="32" width="1136" height="566" fill="#deff37"/>
+  <image href="/logo.svg" x="80" y="72" width="48" height="48"/>
+  <g fill="#181a16" font-family="Inter, Arial, sans-serif">
+    <text x="144" y="109" font-size="36" font-weight="600" letter-spacing="-2">Eidova</text>
+    <g font-size="128" font-weight="600" letter-spacing="-8">
+      <text x="76" y="282">Good design.</text>
+      <text x="76" y="408">Built in.</text>
+    </g>
+    <text x="80" y="493" font-size="28">Design tools for coding agents</text>
+    <text x="80" y="552" font-size="20">31 themes · 784 resources · 42 MCP tools</text>
+  </g>
+</svg>
