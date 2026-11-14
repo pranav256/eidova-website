@@ -29,6 +29,8 @@ try {
       if (route === '/') {
         await page.getByRole('heading', { name: 'Design systems, in real code.', exact: true }).waitFor();
         assert.equal(await page.locator('.theme-card').count(), 31);
+        const countTops = await page.locator('.hero-stats dd').evaluateAll(nodes => nodes.map(node => node.getBoundingClientRect().top));
+        assert.ok(countTops.every(top => Math.abs(top - countTops[0]) < 1), 'Toolkit counts should share a top edge');
         assert.equal(await page.locator('.theme-card-preview img').count(), 31);
         assert.ok(await page.locator('.theme-card-preview img').evaluateAll(images => images.every(image => image.naturalWidth > 0)));
         await page.locator('.hero-actions').getByRole('link', { name: 'Connect your agent' }).click();

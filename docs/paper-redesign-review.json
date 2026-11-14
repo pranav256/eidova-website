@@ -71,6 +71,11 @@
     ],
     "fixtures": "Team error requests were intercepted; no workspace was created."
   },
+  "finalShell": {
+    "states": 6,
+    "spacingBlockers": 0,
+    "countsAligned": "pass at all widths in both appearances"
+  },
   "sourceAndCopy": {
     "critical": 0,
     "serious": 0,
@@ -93,13 +98,13 @@
     "Native Studio GUI and backend-suite tests not rerun for this presentation change.",
     "Team failure requests were intercepted fixtures; no real workspace created.",
     "Full resource/showcase tasks used the local backend; live delivery checked separately.",
-    "Broader suites preceded final focus/border refinements; the final focused home/team DOM review covers those refinements."
+    "Broader suites preceded final focus/border/count refinements; final focused home/team and shell DOM reviews cover them."
   ],
   "sourceSha256": {
-    "src/App.tsx": "0cd3710ba5cb1ff42a10aed8c5bb6fbec95e8949c977c45105630b7e396f3af7",
+    "src/App.tsx": "1d4a67c04ae30779c23df4c1f2d0273c4feb5a05e4cf0af64eea9d1500274897",
     "src/Showcase.tsx": "59df49f3038a7d090b25db8a7ae436a546725f8f332a941ce68c005fe138d716",
     "src/theme.css": "5bcd8a2d3c7eb329674e71802604823640b3d6b2bac9fa50bbbdf32367476b81",
-    "src/clean.css": "5a56bec4d15308446996dd66af9a9baa41bacdd5352be45209e6da4a51cd512d",
+    "src/clean.css": "58fe6cd6e544631f5f5e7d38d411572cb14afdfacab32761682afdfd07550119",
     "src/theme.ts": "24367375b7ca60271d9f305a451675369691578d97c56399bbf2fc0d97bfc3cb",
     "src/components/ui/button.tsx": "3ee9276dfa5582da6dfba8fbfb3a99f80470b1e5c63cf8fa6e6151c290173d71",
     "src/components/ui/input.tsx": "40e984f5173c91eb8cce1372be55c7491ef0c2caadf452ef21829c1f86252fa8",
