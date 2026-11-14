@@ -1,0 +1,149 @@
+{
+  "date": "2026-11-14",
+  "reference": "Form & Field creative studio",
+  "designSystem": "minimal-light React/Radix",
+  "brand": {
+    "font": "Inter",
+    "defaultAppearance": "light",
+    "savedAppearance": "preserved"
+  },
+  "scope": [
+    "homepage composition",
+    "shared page gutters",
+    "theme preview presentation",
+    "homepage verification callers"
+  ],
+  "sourceReview": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 1,
+    "remaining": "Existing neutral dialog backdrop is intentionally a fixed black alpha."
+  },
+  "comprehension": {
+    "hero": "pass, 36 words / 2 actions",
+    "introduction": "pass, 44 words / 1 action",
+    "method": "Text heuristic; no first-time human walkthrough."
+  },
+  "spacing": {
+    "widths": [
+      390,
+      1440,
+      1728
+    ],
+    "appearances": [
+      "light",
+      "dark"
+    ],
+    "states": 12,
+    "critical": 0,
+    "serious": 0,
+    "summaries": [
+      {
+        "state": "390 light homepage",
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      },
+      {
+        "state": "390 light preview setup",
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      },
+      {
+        "state": "390 dark homepage",
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      },
+      {
+        "state": "390 dark preview setup",
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      },
+      {
+        "state": "1440 light homepage",
+        "critical": 0,
+        "serious": 0,
+        "moderate": 3,
+        "total": 3
+      },
+      {
+        "state": "1440 light preview setup",
+        "critical": 0,
+        "serious": 0,
+        "moderate": 3,
+        "total": 3
+      },
+      {
+        "state": "1440 dark homepage",
+        "critical": 0,
+        "serious": 0,
+        "moderate": 3,
+        "total": 3
+      },
+      {
+        "state": "1440 dark preview setup",
+        "critical": 0,
+        "serious": 0,
+        "moderate": 3,
+        "total": 3
+      },
+      {
+        "state": "1728 light homepage",
+        "critical": 0,
+        "serious": 0,
+        "moderate": 3,
+        "total": 3
+      },
+      {
+        "state": "1728 light preview setup",
+        "critical": 0,
+        "serious": 0,
+        "moderate": 3,
+        "total": 3
+      },
+      {
+        "state": "1728 dark homepage",
+        "critical": 0,
+        "serious": 0,
+        "moderate": 3,
+        "total": 3
+      },
+      {
+        "state": "1728 dark preview setup",
+        "critical": 0,
+        "serious": 0,
+        "moderate": 3,
+        "total": 3
+      }
+    ],
+    "remaining": "Generic density rules treat intentionally spacious marketing sections and borderless preview cards as application panels. Four-pixel spacing and automatic margins differ from the tool's default token list. Visually checked rendered mobile/desktop hero and decoded theme previews."
+  },
+  "validation": {
+    "build": "TypeScript + Vite pass",
+    "browserSuite": "9 home/showcase/studio views; zero Axe violations/page errors; 320–1728px reflow and 200% text pass; saved/URL appearance pass",
+    "homepageFlows": [
+      "all 31 themes",
+      "preview/setup/focus return",
+      "empty search/recovery",
+      "hero navigation",
+      "six client tabs and clipboard",
+      "keyboard tab switching",
+      "catalog failure/retry",
+      "no-image fallback"
+    ]
+  },
+  "assets": {
+    "hero": "Reused public/art/hero.webp, 222992 bytes; Apache-2.0 notice retained; no new dependency."
+  },
+  "limits": [
+    "Chromium/Edge only; other browser engines not checked.",
+    "Backend and separate native Studio suites not rerun for presentation changes."
+  ]
+}
