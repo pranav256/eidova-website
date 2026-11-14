@@ -1,0 +1,193 @@
+{
+  "date": "2026-11-14",
+  "verification": {
+    "build": "pass",
+    "existingRouteStates": 24,
+    "themeAppearanceCombinations": 62,
+    "widths": [390, 1440, 1728],
+    "picker": "Search, cycling, keyboard, dismissal, catalog outage, open-state Axe and 200% text pass."
+  },
+  "audit": [
+    "Theme selection was buried below the opening screen.",
+    "Judging the result required scrolling between the catalog and hero.",
+    "Theme changes altered brand typography and navigation controls."
+  ],
+  "direction": {
+    "product": "A design toolkit visitors can try on the page.",
+    "character": "Quiet, precise, tactile.",
+    "world": "A working type and color specimen.",
+    "moments": "Actual page typography and palettes change while controls stay readable.",
+    "signature": "A small palette beside the selected theme."
+  },
+  "source": "# UI review\n\nNo findings. The checked files pass every deterministic rule.",
+  "copy": [
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 16,
+      "surface": "screen",
+      "budgetWords": 16,
+      "estimatedExplainSeconds": 11,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 7,
+      "surface": "screen",
+      "budgetWords": 7,
+      "estimatedExplainSeconds": 5,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 13,
+      "surface": "screen",
+      "budgetWords": 13,
+      "estimatedExplainSeconds": 7,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    }
+  ],
+  "spacing": [
+    {
+      "width": 390,
+      "mode": "light",
+      "open": false,
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      }
+    },
+    {
+      "width": 390,
+      "mode": "light",
+      "open": true,
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      }
+    },
+    {
+      "width": 390,
+      "mode": "dark",
+      "open": false,
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      }
+    },
+    {
+      "width": 390,
+      "mode": "dark",
+      "open": true,
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      }
+    },
+    {
+      "width": 1440,
+      "mode": "light",
+      "open": false,
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      }
+    },
+    {
+      "width": 1440,
+      "mode": "light",
+      "open": true,
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      }
+    },
+    {
+      "width": 1440,
+      "mode": "dark",
+      "open": false,
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      }
+    },
+    {
+      "width": 1440,
+      "mode": "dark",
+      "open": true,
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      }
+    },
+    {
+      "width": 1728,
+      "mode": "light",
+      "open": false,
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      }
+    },
+    {
+      "width": 1728,
+      "mode": "light",
+      "open": true,
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      }
+    },
+    {
+      "width": 1728,
+      "mode": "dark",
+      "open": false,
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      }
+    },
+    {
+      "width": 1728,
+      "mode": "dark",
+      "open": true,
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 1,
+        "total": 1
+      }
+    }
+  ],
+  "limits": [
+    "Edge/Chromium only; no human screen-reader walkthrough.",
+    "Original proprietary font stacks retain platform fallbacks."
+  ]
+}

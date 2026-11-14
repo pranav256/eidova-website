@@ -7,6 +7,7 @@ import families from './design-families.json';
 import { ResourceLibrary } from './ResourceLibrary';
 import resourceCatalog from './resource-catalog.json';
 import { CopyButton } from './components/CopyButton';
+import { PageThemePicker } from './PageThemePicker';
 import { version } from '../package.json';
 import { ArrowDown, ArrowUpRight, Search } from 'lucide-react';
 
@@ -161,6 +162,7 @@ export function App() {
   return <>
     <a className="skip-link" href="#main">Skip to content</a>
     <SiteHeader theme={theme} onToggleTheme={toggleTheme} />
+    <PageThemePicker mode={theme} value={pageTheme} onChange={selectPageTheme} />
 
     <main id="main" className="marketing-main" tabIndex={-1}>
       <section className="hero" aria-labelledby="hero-title">
