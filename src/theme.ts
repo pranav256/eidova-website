@@ -88,6 +88,7 @@ export function useAppearance() {
   }
   function selectPageTheme(id: string | null) {
     if (!landingPage || (id !== null && !Object.hasOwn(catalogThemes, id))) return;
+    if (id === readPageTheme()) return;
     const url = new URL(window.location.href);
     if (!url.searchParams.has('page-theme')) {
       url.searchParams.set('page-theme', readPageTheme() ?? 'default');

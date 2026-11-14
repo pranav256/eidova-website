@@ -1,5 +1,7 @@
 # Redesign 1311
 
+Live preview refinement: move theme switching into a sticky bar beneath the header. Group all 31 choices by family, add search and previous/next controls, keep the brand and picker typography stable, and fit the panel to the actual viewport. Preserve saved/shared themes and isolated component previews. Build, existing route/accessibility checks, all theme combinations, search/cycling, keyboard/dismissal, catalog outage, open-state Axe and 200% text pass. Twelve rendered spacing states have no critical/serious findings. Receipt: docs/theme-picker-review.json.
+
 Landing theme application: every catalog card has “Apply to page”. Colors, typography and corners change immediately, with a named active state and “Restore default”. Selection is saved locally and shareable through `page-theme`; previews, filters and light/dark stay independent. The existing reference remains the default. Checks cover all 31 themes in both appearances at 390/1440/1728, text contrast, keyboard focus, reload, history, invalid IDs, disabled storage and route isolation. Source/copy and 12 rendered spacing states have no critical/serious findings. Receipt: docs/page-theme-review.json.
 
 Updated 14 November 2026. The user supplied a concrete visual reference after rejecting the previous designs: https://news-api-live.vercel.app/.

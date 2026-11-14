@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { chromium } from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
 import { measureTextContrast } from '../../eidova-mcp/scripts/browser-contrast.mjs';
 
 const origin = process.env.REVIEW_URL || 'http://127.0.0.1:5512';
@@ -29,6 +30,8 @@ try {
       const properties = await page.locator('html').evaluate((node, names) => Object.fromEntries(names.map(name => [name, node.style.getPropertyValue(name)])), Object.keys({ ...palette.tokens, ...palette.siteOverrides }));
       assert.deepEqual(properties, { ...palette.tokens, ...palette.siteOverrides });
       assert.ok(await button.evaluate(node => node === document.activeElement), 'Applying must retain keyboard focus');
+      assert.match(await page.locator('.theme-picker-trigger').evaluate(node => getComputedStyle(node).fontFamily), /Inter/, 'The picker keeps readable interface typography');
+      assert.match(await page.locator('.site-header .wordmark').evaluate(node => getComputedStyle(node).fontFamily), /Newsreader/, 'Brand typography stays consistent');
       for (const width of [390, 1440, 1728]) {
         await page.setViewportSize({ width, height: 1000 });
         assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), id + ': page must reflow');
@@ -82,6 +85,67 @@ try {
   await blockedPage.reload({ waitUntil: 'networkidle' });
   assert.equal(await blockedPage.locator('html').getAttribute('data-page-theme'), 'linear');
   await blocked.close();
+  const pickerContext = await browser.newContext({ viewport: { width: 390, height: 1000 }, colorScheme: 'light', reducedMotion: 'reduce' });
+  const pickerPage = await pickerContext.newPage();
+  pickerPage.on('pageerror', error => errors.push(error.message));
+  await pickerPage.route('**/api/catalog', route => route.abort());
+  await pickerPage.goto(origin + '/?mode=light&q=Linear', { waitUntil: 'networkidle' });
+  const picker = pickerPage.locator('.page-theme-picker');
+  const choose = pickerPage.getByRole('button', { name: /Choose page theme:/ });
+  await choose.click();
+  assert.equal(await pickerPage.locator('.theme-choice:not(.theme-default-choice)').count(), 31, 'Picker works even when the remote catalog is unavailable');
+  const pickerSearch = pickerPage.getByRole('searchbox', { name: 'Search page themes', exact: true });
+  assert.ok(await pickerSearch.evaluate(node => node === document.activeElement));
+  await pickerSearch.fill('nothing-matches');
+  await pickerPage.getByText('No matching themes. Try another name.', { exact: true }).waitFor();
+  await pickerSearch.fill('Linear');
+  assert.equal(await pickerPage.locator('.theme-choice:not(.theme-default-choice)').count(), 2);
+  await pickerSearch.press('ArrowDown');
+  assert.ok(await pickerPage.getByRole('button', { name: 'Apply page theme: Linear', exact: true }).evaluate(node => node === document.activeElement));
+  await pickerPage.keyboard.press('ArrowDown');
+  await pickerPage.keyboard.press('Enter');
+  assert.equal(await pickerPage.locator('html').getAttribute('data-page-theme'), 'linear-quality');
+  assert.ok(await choose.evaluate(node => node === document.activeElement));
+  assert.equal(await pickerPage.locator('#page-theme-menu').count(), 0);
+  assert.equal(await pickerPage.evaluate(() => scrollY), 0, 'Selecting from the picker keeps the landing page in view');
+  assert.equal(new URL(pickerPage.url()).searchParams.get('q'), 'Linear');
+  await pickerPage.getByRole('button', { name: 'Previous page theme', exact: true }).click();
+  assert.equal(await pickerPage.locator('html').getAttribute('data-page-theme'), 'linear');
+  await choose.click();
+  await pickerSearch.press('Escape');
+  assert.equal(await choose.getAttribute('aria-expanded'), 'false');
+  assert.ok(await choose.evaluate(node => node === document.activeElement));
+  await choose.click();
+  await pickerPage.locator('.site-header .wordmark').click();
+  assert.equal(await choose.getAttribute('aria-expanded'), 'false', 'Outside clicks dismiss the nonmodal picker');
+  await choose.click();
+  await pickerPage.getByRole('button', { name: 'Eidova default', exact: true }).click();
+  const visited = new Set();
+  for (let index = 0; index < 32; index++) {
+    await pickerPage.getByRole('button', { name: 'Next page theme', exact: true }).click();
+    visited.add(await pickerPage.locator('html').getAttribute('data-page-theme'));
+  }
+  assert.equal(visited.size, 32, 'Next cycles through every theme and the default');
+  assert.equal(await pickerPage.locator('html').getAttribute('data-page-theme'), null);
+  for (const mode of ['light', 'dark']) {
+    if (mode === 'dark') await pickerPage.getByRole('button', { name: 'Switch to dark mode', exact: true }).click();
+    for (const width of [390, 1440, 1728]) {
+      await pickerPage.setViewportSize({ width, height: 1000 });
+      await choose.click();
+      assert.deepEqual((await new AxeBuilder({ page: pickerPage }).include('.page-theme-picker').analyze()).violations, []);
+      assert.ok(await pickerPage.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
+      await pickerSearch.press('Escape');
+    }
+  }
+  await pickerPage.evaluate(() => document.documentElement.style.fontSize = '200%');
+  for (const width of [390, 768, 1440]) {
+    await pickerPage.setViewportSize({ width, height: 1000 });
+    await choose.click();
+    assert.ok(await pickerPage.evaluate(() => document.documentElement.scrollWidth <= innerWidth), 'The open picker reflows at 200% text');
+    assert.ok(await pickerPage.locator('#page-theme-menu').evaluate(node => node.getBoundingClientRect().bottom <= innerHeight), 'The open picker fits vertically at 200% text');
+    await pickerSearch.press('Escape');
+  }
+  await pickerContext.close();
   assert.deepEqual(errors, []);
-  console.log('All 31 page themes pass both appearances, three widths, contrast, persistence, history, previews and recovery.');
+  console.log('All 31 themes pass appearances, widths, contrast, persistence and previews. Live picker passes search, cycling, keyboard, dismissal, catalog outage, Axe and text zoom.');
 } finally { await browser.close(); }
