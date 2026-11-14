@@ -51,15 +51,15 @@ export function SiteHeader({ theme, onToggleTheme }: { theme: ThemeMode; onToggl
   const menu = useRef<HTMLDetailsElement>(null);
   const links = [[navigationHome+'#themes', 'Themes'], [navigationHome+'#resources', 'Resources'], [navigationHome+'#tools', 'Tools'], ['/showcase', 'Showcase'], ['/studio', 'Team workspace'], [navigationHome+'#connect', 'Connect']];
   const destinations = links.map(([href, label]) => <a key={label} href={href} aria-current={href === currentPath ? 'page' : undefined} onClick={() => { if (menu.current) menu.current.open = false; }}>{label}</a>);
-  return <header className="site-header">
+  return <header className="site-header"><div className="header-inner">
     <a className="wordmark" href={navigationHome+'#main'} aria-label="Eidova home"><img className="brand-mark" src="/logo.svg" width={40} height={40} alt="" />Eidova</a>
     <nav className="desktop-navigation" aria-label="Main navigation">{destinations}</nav>
     <div className="header-actions"><a className="source-link" href={sourceUrl}>Source code <ArrowUpRight aria-hidden="true" /></a><Button className="theme-toggle" variant="outline" size="sm" onClick={onToggleTheme} aria-label={'Switch to ' + (theme === 'dark' ? 'light' : 'dark') + ' mode'}>{theme === 'dark' ? 'Light mode' : 'Dark mode'}</Button></div>
     <details ref={menu} className="mobile-menu" onKeyDown={event => { if (event.key === 'Escape' && menu.current?.open) { menu.current.open = false; menu.current.querySelector('summary')?.focus(); event.preventDefault(); } }}><summary>Menu</summary><nav aria-label="Main navigation"><div><p>Explore</p>{destinations.slice(0, 3)}</div><div><p>Get started</p>{destinations.slice(3)}</div></nav></details>
-  </header>;
+  </div></header>;
 }
 export function SiteFooter() {
-  return <footer className="site-footer"><a className="wordmark" href={navigationHome+'#main'}><img className="brand-mark" src="/logo.svg" width={40} height={40} alt="" />Eidova</a><p>Independent. Open source. Built for your agent. v{version}</p><nav aria-label="Footer navigation"><a href={navigationHome+'#connect'}>Connect</a><a href="/showcase">Showcase</a><a href={sourceUrl}>Source</a><a href={serviceSourceUrl + '/blob/main/docs/CLIENTS.md'}>Docs</a><a href={registryOrigin + '/health'}>Status</a><a href={sourceUrl + '/blob/main/LICENSE'}>License</a></nav></footer>;
+  return <footer className="site-footer"><div className="footer-grid"><div><a className="wordmark" href={navigationHome+'#main'}><img className="brand-mark" src="/logo.svg" width={40} height={40} alt="" />Eidova</a><p>Independent. Open source. Built for your agent. v{version}</p></div><nav aria-label="Footer navigation"><div><p>Get started</p><a href={navigationHome+'#connect'}>Connect</a><a href="/showcase">Showcase</a><a href={serviceSourceUrl + '/blob/main/docs/CLIENTS.md'}>Docs</a></div><div><p>Project</p><a href={sourceUrl}>Source</a><a href={registryOrigin + '/health'}>Status</a><a href={sourceUrl + '/blob/main/LICENSE'}>License</a></div></nav></div></footer>;
 }
 function fontLabel(value?: string) {
   const family = value?.split(',')[0].replace(/["']/g, '').trim();
@@ -165,18 +165,15 @@ export function App() {
     <main id="main" className="marketing-main" tabIndex={-1}>
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="site-eyebrow">Eidova / Design tools for coding agents</p>
-          <h1 id="hero-title">Good design.<br />Built in.</h1>
+          <h1 id="hero-title"><span>Design systems,</span><em>in real code.</em></h1>
+          <p className="hero-description">31 installable themes, practical guidance and interface reviews. One MCP connection.</p>
+          <div className="hero-actions"><Button asChild size="lg"><a href="#themes">Explore the toolkit <ArrowDown aria-hidden="true" /></a></Button><a className="text-link" href="#connect">Connect your agent <ArrowUpRight aria-hidden="true" /></a></div>
+          <dl className="hero-stats"><div><dt>Installable themes</dt><dd>31</dd></div><div><dt>Design resources</dt><dd>{resourceCatalog.entries.length}</dd></div><div><dt>Public MCP tools</dt><dd>42</dd></div></dl>
+          <p className="hero-note">Free. No account required.</p>
         </div>
-        <div className="hero-brief"><p className="hero-description">Real components, design resources and practical reviews. One MCP connection.</p><div className="hero-actions"><Button asChild size="lg"><a href="#themes">Browse themes <ArrowDown aria-hidden="true" /></a></Button><a className="text-link" href="#connect">Connect your agent <ArrowUpRight aria-hidden="true" /></a></div><p className="hero-note">Free. No account required.</p></div>
-        <div className="hero-sheet" aria-label="Try a design direction">{['minimal-light', 'linear', 'monochrome-industrial'].map(id => <Button key={id} variant="ghost" className="hero-specimen" aria-label={'Try '+familyFor(id)?.title+' components: '+catalogThemes[id].title} aria-haspopup="dialog" onClick={event => { previewTrigger.current=event.currentTarget;setPreview(id); }}><span>{familyFor(id)?.title}<ArrowUpRight aria-hidden="true" /></span><img src={'/family-previews/'+id+'.png'} alt={familyFor(id)?.title+' component specimen'} width={800} height={560} decoding="async" /></Button>)}</div>
-      </section>
-      <section className="facts-strip" aria-label="Inside the toolkit">
-        <dl className="hero-stats"><div><dt>Installable themes</dt><dd>31</dd></div><div><dt>Design resources</dt><dd>{resourceCatalog.entries.length}</dd></div><div><dt>Public MCP tools</dt><dd>42</dd></div></dl>
-        <a className="text-link" href="/showcase">Try the toolkit <ArrowUpRight aria-hidden="true" /></a>
       </section>
       <section className="themes section" id="themes" aria-labelledby="themes-title">
-        <div className="section-heading"><div><p className="site-eyebrow">01 / Choose your foundation</p><h2 id="themes-title">Find your point of view</h2><p>All 31 themes. Eight distinct families. Real components you can try.</p></div><a className="text-link" href={serviceSourceUrl + '/tree/main/assets/registry'}>Explore the registry <span aria-hidden="true">↗</span></a></div>
+        <div className="section-heading"><div><h2 id="themes-title">A foundation <span>for every interface.</span></h2><p>All 31 themes. Eight distinct families. Real components you can try.</p></div><a className="text-link" href="/showcase">Try the toolkit <ArrowUpRight aria-hidden="true" /></a></div>
         <div className="catalog-toolbar">
           <div className="search-field"><Search className="search-symbol" aria-hidden="true" /><Input ref={searchInput} id="theme-search" type="search" aria-label="Search themes" placeholder="Search themes, styles, or fonts…" value={query} onChange={event => { setQuery(event.target.value); }} />{query && <Button variant="ghost" className="clear-search" aria-label="Clear search" onClick={() => { setQuery(''); searchInput.current?.focus(); }}>Clear</Button>}</div>
           <div className="scheme-filter" role="group" aria-label="Original theme appearance">{(['all', 'light', 'dark'] as const).map(value => <Button key={value} variant="ghost" aria-pressed={scheme === value} onClick={() => { setScheme(value); }}>{value === 'all' ? 'All themes' : value === 'light' ? 'Light base' : 'Dark base'}</Button>)}</div>

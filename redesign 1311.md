@@ -1,33 +1,28 @@
 # Redesign 1311
 
-Updated 14 November 2026. The user requested a complete replacement and selected **bold graphic: oversized type, strong colour, geometric layouts**. This supersedes the Neutral studio composition and the earlier Editorial direction.
+Updated 14 November 2026. The user supplied a concrete visual reference after rejecting the previous designs: https://news-api-live.vercel.app/.
 
 ## Direction
 
-- Product: Eidova gives coding agents design systems, usable source and practical interface reviews.
-- Character: direct, energetic, precise.
-- World: graphic design proofs, component sheets and a working developer toolkit.
-- Moments: electric-yellow typographic opening and large previews of the real components.
-- Signature: square frames and numbered section rules paired with the existing Eidova mark.
+- Product: design systems, component source and interface reviews for coding agents.
+- Character: quiet, warm, precise.
+- World: product manuals and usable developer tools.
+- Moments: an open serif headline and a dark setup workbench.
+- Signature: restrained rust emphasis on warm paper, paired with the existing Eidova mark.
 
-## Audit
+## Reference evidence
 
-The collage communicated a studio portfolio rather than a useful toolkit. Muted grey type weakened the opening. Long prose sections repeated the promise. Mobile navigation occupied two rows before the content. Homepage and showcase felt like different sites. Controls and specimen frames had inconsistent geometry.
+Measured from the source: light canvas #f7f4ee, text #262923, primary #a34e32, emphasis #98462e; dark canvas #1b1e1b and primary #d99070. Newsreader display, Inter interface, JetBrains Mono code. Header height 84px; .5/.75rem radii and thin rules. Captures confirm the left-aligned, open hero and italic accent. Adapted for Eidova's real routes, catalog and setup formats.
 
 ## Build plan
 
-1. Install the actual Monochrome Industrial React/Radix Button, Input and Textarea kit. Adapt the website to Inter, electric yellow, ink black, a near-white canvas and square corners. Preserve light default and saved/URL appearance choices. Store brand source in the repository; private hosted theme creation needs a workspace key.
-2. Load UI/UX principles. Apply passes in order: spacing, colour, icons, copy, type, layout, details, visuals and motion.
-3. Recompose the homepage with oversized typography, concise setup actions and real component sheets. Replace the collage and studio statement. Keep all 31 themes, filters, exact tokens, full previews and resources.
-4. Rebuild shared navigation with a compact mobile disclosure. Give homepage, showcase, team connection and shared-revision pages consistent branding, logo, controls and footer destinations.
-5. Recompose showcase sections with geometric frames and a clear chapter index. Preserve examples, validation, motion interruption, review drafts, errors and downloads. Original specimens and the separate native Studio application retain their own systems.
-6. Review source, copy and rendered DOM at 390, 1440 and 1728px in both appearances. Fix critical and serious findings. Exercise menus, previews, clipboard, filters/retries, draft recovery, shared links and text zoom; check accessibility and build.
-7. Update verification callers, save a compact receipt, push the reviewed correction and verify both public website aliases.
+1. Extract the reference tokens and capture its rendered appearance. Retrieve/install the actual light React/Radix controls; load UI and UX principles.
+2. Apply passes in order: spacing, colour, icons, copy, type, layout, details, visuals and motion. Replace the yellow slab and repeated hero sheets with the reference composition.
+3. Restyle homepage, showcase, resources, team connection and shared revisions. Preserve all 31 themes, routes, URL state, drafts, setup formats, overlays, downloads, errors and keyboard recovery. Keep original specimens and native Studio faithful to their own systems.
+4. Match header/footer organisation and code surfaces, update fonts/social image/metadata, retain licenses and make this the future website default.
+5. Review source/copy and rendered spacing at 390, 1440 and 1728 in both appearances. Check 200% text, system/saved/URL appearance, menus, preview focus, filters/retries and error recovery. Fix critical and serious findings and run the production build.
+6. Save a compact receipt, push the reviewed changes and verify both live aliases.
 
-## Future website defaults
+## Scope and limits
 
-Use this graphic brand in this workspace unless another brand is supplied. Keep other products' established designs. Request only needed components and preserve legal notices. Inspect the rendered result and test its task before delivery.
-
-## Completion record
-
-The installed kit, shared page redesign and verification updates are complete. The production build passes. Review covered 24 shell views, 30 showcase states, 36 resource states and 32 home/team/menu states in both appearances, with no critical or serious findings. Final layouts and the social image were visually inspected. The compact receipt is `eidova-website/docs/graphic-redesign-review.json`; publication results are recorded in CONTINUE.md.
+Source hashes and checks are recorded in eidova-website/docs/paper-redesign-review.json. Browser checks use Edge/Chromium; no human screen-reader walkthrough or native Studio/backend-suite rerun is claimed. Team error fixtures create no real workspace. Publication results are in the workspace CONTINUE.md.

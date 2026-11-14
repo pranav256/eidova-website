@@ -10,6 +10,8 @@ Font files are supplied by Fontsource under SIL Open Font License 1.1. The origi
 
 - [Geist](licenses/geist-OFL.txt)
 - [Inter](licenses/inter-OFL.txt)
+- [Newsreader](licenses/newsreader-OFL.txt)
+- [JetBrains Mono](licenses/jetbrains-mono-OFL.txt)
 - [Space Grotesk](licenses/space-grotesk-OFL.txt)
 - [Space Mono](licenses/space-mono-OFL.txt)
 - [Doto](licenses/doto-OFL.txt)

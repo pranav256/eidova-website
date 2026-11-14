@@ -16,6 +16,8 @@
     "test:redesign": "node scripts/review-redesign.mjs"
   },
   "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource-variable/newsreader": "^5.3.0",
     "@fontsource/doto": "^5.3.0",
     "@fontsource/geist": "5.3.0",
     "@fontsource/inter": "^5.3.0",

@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-14",
+  "reference": "https://news-api-live.vercel.app/",
+  "brand": "Eidova Paper",
+  "referenceEvidence": {
+    "source": "CSS extraction plus rendered page capture",
+    "colours": [
+      "#f7f4ee",
+      "#262923",
+      "#a34e32",
+      "#98462e",
+      "#1b1e1b",
+      "#d99070"
+    ],
+    "fonts": [
+      "Newsreader Variable",
+      "Inter",
+      "JetBrains Mono Variable"
+    ],
+    "composition": "Open left-aligned hero, italic rust emphasis, 84px quiet header, fine rules, grouped footer and dark workbench",
+    "adaptations": "Eidova content/routes; stronger field borders and keyboard focus; complete catalog and saved appearance retained"
+  },
+  "actualKit": "Installed Minimal Light React/Radix Button, Input and Textarea; user-reference tokens and radii override the catalog default.",
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "appearances": [
+    "light",
+    "dark"
+  ],
+  "shell": {
+    "views": 24,
+    "axeViolations": 0,
+    "pageErrors": 0,
+    "reflow": "pass",
+    "textZoom": "200% pass",
+    "appearance": "system default/change plus saved/URL pass"
+  },
+  "showcase": {
+    "states": 30,
+    "copyPanels": 24,
+    "spacingBlockers": 0,
+    "contrastFailures": 0,
+    "pageErrors": 0
+  },
+  "resources": {
+    "states": 36,
+    "copyPanels": 12,
+    "spacingBlockers": 0,
+    "spacingExceptions": null,
+    "contrastFailures": 0,
+    "pageErrors": 0
+  },
+  "homeAndTeam": {
+    "states": 32,
+    "spacingBlockers": 0,
+    "axeViolations": 0,
+    "pageErrors": 0,
+    "flows": [
+      "all 31 themes",
+      "catalog preview and setup/focus return",
+      "empty/filter recovery",
+      "six client formats/clipboard",
+      "keyboard tabs",
+      "catalog failure/retry",
+      "team input validation",
+      "team creation failure keeps fields",
+      "invalid share link"
+    ],
+    "fixtures": "Team error requests were intercepted; no workspace was created."
+  },
+  "sourceAndCopy": {
+    "critical": 0,
+    "serious": 0,
+    "sourceModerateFindings": 10,
+    "openingPanels": 5,
+    "copyVerdict": "pass",
+    "moderateContext": "Existing native pickers; suggestions for small option counts; authored motion CSS flagged by the dynamic-class heuristic. Actual behavior is exercised."
+  },
+  "build": "npm run build passed; existing directive/sourcemap and large-bundle warnings remain.",
+  "visualReview": [
+    "Reference/desktop opening comparison",
+    "Mobile homepage",
+    "Desktop dark showcase",
+    "Catalog",
+    "Mobile setup",
+    "Social image"
+  ],
+  "limits": [
+    "Edge/Chromium only; no human screen-reader walkthrough.",
+    "Native Studio GUI and backend-suite tests not rerun for this presentation change.",
+    "Team failure requests were intercepted fixtures; no real workspace created.",
+    "Full resource/showcase tasks used the local backend; live delivery checked separately.",
+    "Broader suites preceded final focus/border refinements; the final focused home/team DOM review covers those refinements."
+  ],
+  "sourceSha256": {
+    "src/App.tsx": "0cd3710ba5cb1ff42a10aed8c5bb6fbec95e8949c977c45105630b7e396f3af7",
+    "src/Showcase.tsx": "59df49f3038a7d090b25db8a7ae436a546725f8f332a941ce68c005fe138d716",
+    "src/theme.css": "5bcd8a2d3c7eb329674e71802604823640b3d6b2bac9fa50bbbdf32367476b81",
+    "src/clean.css": "5a56bec4d15308446996dd66af9a9baa41bacdd5352be45209e6da4a51cd512d",
+    "src/theme.ts": "24367375b7ca60271d9f305a451675369691578d97c56399bbf2fc0d97bfc3cb",
+    "src/components/ui/button.tsx": "3ee9276dfa5582da6dfba8fbfb3a99f80470b1e5c63cf8fa6e6151c290173d71",
+    "src/components/ui/input.tsx": "40e984f5173c91eb8cce1372be55c7491ef0c2caadf452ef21829c1f86252fa8",
+    "src/components/ui/textarea.tsx": "f092fe784f0ac9236667b0b327c308bb66c585531dc58df405dec42ff473370f",
+    "public/social.png": "4f3b4c36129ba7a45c4879a40c52eac1759f08d7d11c7a6286275bf2beae1083",
+    "public/social.svg": "b666334526e5653cd1339a161c5478ee87faa534e5da710e4fb765ea6acc74dd"
+  }
+}
