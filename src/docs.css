@@ -1,0 +1,23 @@
+.docs-main { padding-block: 4rem; }
+.docs-heading { max-width: 48rem; }
+.docs-heading h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; }
+.docs-heading p { margin-top: 1rem; color: var(--foreground-secondary); }
+.docs-navigation { display: flex; flex-wrap: wrap; gap: 1rem 2rem; padding-block: 2rem; border-bottom: 0.0625rem solid var(--border); }
+.docs-main a { color: var(--primary-text); text-decoration: underline; text-underline-offset: .25rem; }
+.docs-start { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; padding-block: 3rem; }
+.docs-main h2 { font-size: 2rem; }
+.docs-main h3 { font: 500 1rem/1.5 var(--font-sans); }
+.docs-start p, .docs-workflow p, .docs-reference p { margin-block: .75rem 1rem; max-width: 60ch; color: var(--foreground-secondary); }
+.docs-command { padding: 1.5rem; background: var(--card); border: 0.0625rem solid var(--border); border-radius: .75rem; min-width: 0; }
+.docs-command pre { white-space: pre-wrap; overflow-wrap: anywhere; margin-bottom: 1rem; font-size: .875rem; }
+.docs-main code { overflow-wrap: anywhere; }
+.docs-workflow, .docs-reference { padding-block: 3rem; border-top: 0.0625rem solid var(--border); }
+.docs-workflow ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding: 0; margin-top: 2rem; list-style-position: inside; }
+.docs-workflow h3 { margin-top: .5rem; }
+.docs-workflow p { min-height: 5rem; }
+@media (max-width: 48rem) { .docs-workflow p { min-height: 0; } }
+.docs-reference ul { display: grid; grid-template-columns: minmax(0, 1fr); list-style: none; padding: 0; margin-block: 2rem; }
+.docs-reference li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); align-items: baseline; gap: 2rem; padding-block: 1rem; border-bottom: .0625rem solid var(--border); }
+.docs-reference li p { margin: 0; }
+@media (max-width: 48rem) { .docs-reference li { grid-template-columns: minmax(0, 1fr); gap: .5rem; } }
+@media (max-width: 48rem) { .docs-main { padding-block: 2rem; } .docs-start, .docs-workflow ol, .docs-reference ul { grid-template-columns: minmax(0, 1fr); gap: 1.5rem; } }

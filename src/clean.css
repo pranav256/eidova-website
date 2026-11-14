@@ -41,7 +41,7 @@ h2 > span { color: var(--primary-text); }
 .section-heading { align-items: center; gap: 2rem; margin-bottom: 2rem; }
 .section-heading h2 { margin-top: 0; }
 .section-heading p { max-width: 52ch; font-size: .875rem; margin-top: .75rem; color: var(--muted-foreground); }
-.marketing-main .hero { display: flex; min-height: calc(100svh - 9.25rem); padding-block: clamp(3rem, 7svh, 6rem); align-items: center; }
+.marketing-main .hero { display: flex; min-height: calc(100svh - 5.25rem); padding-block: clamp(3rem, 7svh, 6rem); align-items: center; }
 .hero-copy { width: min(100%, 50rem); }
 .hero h1 { margin: 0; font-size: clamp(3.25rem, 8vw, 7.5rem); line-height: .99; letter-spacing: -.055em; }
 .hero h1 > span, .hero h1 > em, .showcase-hero h1 > span, .showcase-hero h1 > em { display: block; }
@@ -173,7 +173,7 @@ h1 em { color: var(--primary-text); font-weight: 400; }
   .site-header .wordmark { font-size: 1.75rem; gap: .5rem; }
   .header-actions { gap: 0; }
   .theme-toggle.od-button, .mobile-menu summary { font-size: .75rem; padding-inline: .75rem; }
-  .marketing-main .hero { min-height: calc(100svh - 8.5rem); padding-block: 3rem; }
+  .marketing-main .hero { min-height: calc(100svh - 4.5rem); padding-block: 3rem; }
   .hero h1 { font-size: clamp(3.25rem, 12vw, 5rem); }
   .hero-description { margin-top: 1.5rem; max-width: 36ch; font-size: 1rem; }
   .hero-actions { margin-top: 1.5rem; gap: .75rem 1rem; }
@@ -205,3 +205,5 @@ h1 em { color: var(--primary-text); font-weight: 400; }
   .header-inner .header-actions { grid-column: 1; grid-row: 2; min-width: 0; }
   .header-inner .mobile-menu { grid-column: 2; grid-row: 2; justify-self: end; }
 }
+
+@media (min-width: 75.01rem) { .header-inner { gap: 1rem; } .site-header nav a { padding-inline: .625rem; } .site-header:has(.page-theme-picker) .source-link { display: none; } }

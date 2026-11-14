@@ -20,7 +20,7 @@ function Swatches({ id, mode }: { id: string | null; mode: ThemeMode }) {
 export function PageThemePicker({ mode, value, onChange }: { mode: ThemeMode; value: string | null; onChange: (id: string | null) => void }) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState('');
-  const container = useRef<HTMLElement>(null);
+  const container = useRef<HTMLDivElement>(null);
   const trigger = useRef<HTMLButtonElement>(null);
   const search = useRef<HTMLInputElement>(null);
   const title = value ? catalogThemes[value].title : 'Eidova default';
@@ -30,8 +30,7 @@ export function PageThemePicker({ mode, value, onChange }: { mode: ThemeMode; va
     if (open) search.current?.focus({ preventScroll: true });
     const header = document.querySelector<HTMLElement>('.site-header');
     const fit = () => {
-      if (header && container.current) container.current.style.top = header.getBoundingClientRect().height + 'px';
-      if (header && container.current) document.documentElement.style.scrollPaddingTop = header.getBoundingClientRect().height + container.current.getBoundingClientRect().height + parseFloat(getComputedStyle(container.current).fontSize) + 'px';
+      if (header) document.documentElement.style.scrollPaddingTop = header.getBoundingClientRect().height + 16 + 'px';
       const panel = container.current?.querySelector<HTMLElement>('.page-theme-menu');
       if (panel) panel.style.maxHeight = Math.max(0, innerHeight - panel.getBoundingClientRect().top - parseFloat(getComputedStyle(panel).paddingBottom)) + 'px';
     };
@@ -64,20 +63,16 @@ export function PageThemePicker({ mode, value, onChange }: { mode: ThemeMode; va
     onChange(themeIds[(index + direction + themeIds.length) % themeIds.length]);
   }
 
-  return <aside ref={container} className="page-theme-picker" data-mode={mode} aria-label="Live page theme preview" onBlur={event => { if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) setOpen(false); }} onKeyDown={event => { if (event.key === 'Escape' && open) { event.preventDefault(); close(); } }}>
+  return <div ref={container} className="page-theme-picker" data-mode={mode} onBlur={event => { if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) setOpen(false); }} onKeyDown={event => { if (event.key === 'Escape' && open) { event.preventDefault(); close(); } }}>
     <div className="page-theme-picker-inner">
-      <p className="theme-preview-label">Try it on this page</p>
       <div className="theme-picker-controls">
         <Button ref={trigger} variant="outline" className="theme-picker-trigger" aria-label={'Choose page theme: ' + title} aria-haspopup="dialog" aria-expanded={open} aria-controls="page-theme-menu" onClick={() => { setQuery(''); setOpen(current => !current); }}>
-          <Swatches id={value} mode={mode} /><span>{title}</span><ChevronDown aria-hidden="true" />
+          <Swatches id={value} mode={mode} /><span>Theme</span><ChevronDown aria-hidden="true" />
         </Button>
-        <div className="theme-step-controls" role="group" aria-label="Compare page themes">
-          <Button variant="ghost" aria-label="Previous page theme" onClick={() => step(-1)}><ChevronLeft aria-hidden="true" /></Button>
-          <Button variant="ghost" aria-label="Next page theme" onClick={() => step(1)}><ChevronRight aria-hidden="true" /></Button>
-        </div>
         <p className="sr-only" role="status">Page theme: {title}</p>
         {open && <div className="page-theme-menu" id="page-theme-menu" role="dialog" aria-modal="false" aria-labelledby="page-theme-menu-title">
           <div className="theme-menu-heading"><h2 id="page-theme-menu-title">Choose a page theme</h2><Button variant="ghost" onClick={close}>Close</Button></div>
+          <div className="theme-comparison"><p>{title}</p><div className="theme-step-controls" role="group" aria-label="Compare page themes"><Button variant="ghost" aria-label="Previous page theme" onClick={() => step(-1)}><ChevronLeft aria-hidden="true" /></Button><Button variant="ghost" aria-label="Next page theme" onClick={() => step(1)}><ChevronRight aria-hidden="true" /></Button></div></div>
           <Input ref={search} type="search" aria-label="Search page themes" placeholder="Search themes or families…" value={query} onChange={event => setQuery(event.target.value)} onKeyDown={event => { if (event.key === 'ArrowDown') { event.preventDefault(); container.current?.querySelector<HTMLButtonElement>('.theme-choice:not(.theme-default-choice)')?.focus(); } }} />
           <div className="theme-menu-options" onKeyDown={event => {
             if (!['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) return;
@@ -95,5 +90,5 @@ export function PageThemePicker({ mode, value, onChange }: { mode: ThemeMode; va
         </div>}
       </div>
     </div>
-  </aside>;
+  </div>;
 }
