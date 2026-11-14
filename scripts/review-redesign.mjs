@@ -10,7 +10,7 @@ const browser = await chromium.launch({ channel: process.platform === 'win32' ? 
 const errors = [], views = [];
 try {
   for (const width of [390, 1440, 1728]) {
-    for (const mode of ['light', 'dark']) for (const route of ['/', '/docs', '/showcase', '/studio', '/studio#share=invalid']) {
+    for (const mode of ['light', 'dark']) for (const route of ['/', '/resources', '/docs', '/showcase', '/studio', '/studio#share=invalid']) {
       const surface = route === '/' ? 'home' : route.slice(1);
       const context = await browser.newContext({ viewport: { width, height: 1000 }, colorScheme: 'light', reducedMotion: 'reduce' });
       const page = await context.newPage();
@@ -42,11 +42,13 @@ try {
           assert.equal(await menu.evaluate(node => node.open), true);
           await menu.getByRole('link', { name: 'Resources', exact: true }).click();
           assert.equal(await menu.evaluate(node => node.open), false);
-          assert.equal(new URL(page.url()).hash, '#resources');
+          await page.getByRole('heading', { name: 'Resources', exact: true }).waitFor();
+          assert.equal(new URL(page.url()).pathname, '/resources');
           await menu.locator('summary').press('Enter');
           await menu.locator('summary').press('Escape');
           assert.equal(await menu.evaluate(node => node.open), false);
           assert.ok(await menu.locator('summary').evaluate(node => node === document.activeElement));
+          await page.goto(routeUrl.href, { waitUntil: 'networkidle' });
         }
       }
       await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
@@ -62,7 +64,7 @@ try {
   }
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
   const page = await context.newPage();
-  for (const route of ['/', '/docs', '/showcase', '/studio']) {
+  for (const route of ['/', '/resources', '/docs', '/showcase', '/studio']) {
     await page.goto(origin + route, { waitUntil: 'networkidle' });
     for (const width of [320, 600, 768, 1024]) {
       await page.setViewportSize({ width, height: 1000 });

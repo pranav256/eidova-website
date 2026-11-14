@@ -6,13 +6,15 @@ The [MCP showcase website plan](docs/MCP-SHOWCASE-PLAN.md) records the verified 
 
 The public family catalog and connection guide for Eidova MCP. **0.2.0 is a release candidate.** Deploy the matching API with core support before deploying this website, and verify the hosted versions separately from the local review.
 
-The Eidova resource library includes all 920 packages from the reviewed source
-snapshot: 152 systems, 115 design templates, 479 official plugin packages, 169
+The Eidova resource library includes all 784 advertised resources:
+152 systems, 115 design templates, 343 plugin designs, 169
 skills, three framework/live-artifact templates and two source catalogs. The
 resource browser filters systems, templates, plugin designs, skills and source catalogs; it previews
 original HTML/media, reads companion files and downloads exact source bytes. HTML
 previews use an opaque sandbox. Source licenses and external build or generation
 requirements are preserved. See the MCP [library guide](../eidova-mcp/docs/BUNDLED-RESOURCES.md).
+
+`/resources` lists the entire collection immediately, with search, type filters, previews, source reading and downloads. It is linked from the navbar and homepage library. All resources also have download links without JavaScript. Local keep/skip review is optional and can happen later.
 
 The matching API and website were promoted to their existing public Vercel URLs
 on 12 November 2026, and both Vercel projects are connected to their Eidova GitHub
@@ -24,7 +26,7 @@ product acceptance remain separate.
 
 Existing hosted URLs remain active. Appearance preferences use `eidova-theme` and still read the previous `open-design-theme` value when no new preference is saved.
 
-`/showcase` brings the design tools into one interactive page: eight real component specimens, exact palette exports, licensed Lucide icons, validation and motion examples, a live copy review, platform guidance, all 920 resources and the public tool directory. The homepage, header and footer link to it. The examples keep the site's existing theme; component specimens retain their own appearance. Copy review uses the same-origin `/api/showcase/mcp` proxy and preserves drafts when a request fails. Demo invitations are never sent. See the [showcase review](docs/showcase-review.json) for local production-build checks and deployment limits.
+`/showcase` brings the design tools into one interactive page: eight real component specimens, exact palette exports, licensed Lucide icons, validation and motion examples, a live copy review, platform guidance, all 784 resources and the public tool directory. The homepage, header and footer link to it. The examples keep the site's existing theme; component specimens retain their own appearance. Copy review uses the same-origin `/api/showcase/mcp` proxy and preserves drafts when a request fails. Demo invitations are never sent. See the [showcase review](docs/showcase-review.json) for local production-build checks and deployment limits.
 
 Eight curated families show actual Button, Input, Card, Dialog, Table and Sidebar source in isolated workspace-settings specimens. **Preview theme** or a screenshot opens a separate modal viewer; `/?specimen=linear` opens the full specimen separately. CSS is isolated from the website shell, fonts load by family, and sample data resets when reopened.
 
@@ -53,7 +55,7 @@ npm run preview
 
 Copy `.env.example` to a local environment file when changing the backend. For the local candidate use `MCP_PROXY_ORIGIN=http://localhost:3000`, `VITE_MCP_URL=http://localhost:3000/mcp` and `VITE_REGISTRY_ORIGIN=http://localhost:3000`. These are public build settings, not secrets.
 
-`npm run test:redesign` needs the built website preview (default `http://127.0.0.1:5512`, overridden by `REVIEW_URL`), with its catalog/MCP proxies configured. It checks the dark default, saved/URL preferences, typography, image loading, reflow, 200% text and Axe accessibility in nine website views, including the website's team workspace setup screen. Original embedded component specimens are excluded from the shell's Axe check. Broader installation, reader, download and showcase checks run from the sibling MCP scripts; [docs/redesign-1311-review.json](docs/redesign-1311-review.json) records the review scope.
+`npm run test:redesign` needs the built website preview (default `http://127.0.0.1:5512`, overridden by `REVIEW_URL`), with its catalog/MCP proxies configured. It checks system/saved/URL appearance, typography, image loading, reflow, 200% text and Axe accessibility in 36 website views, including resources and the team workspace setup screen. Original embedded component specimens are excluded from the shell's Axe check. `npm run test:resources` verifies the complete index, all filters, search/reset, metadata, no-JavaScript downloads and representative reader/preview/retry/focus behavior at three widths. See [docs/resources-review.json](docs/resources-review.json) for the current resource review scope.
 
 The development server proxies catalog/registry requests. Vite preview serves `dist`; deployment API destinations are in `vercel.json`. The connection UI derives core from the configured full endpoint. The previous hosted API cannot satisfy core until upgraded.
 
@@ -84,6 +86,6 @@ Use the Vite Vercel preset, `npm run build` and output `dist`. Coordinate `VITE_
 
 MIT. [NOTICE.md](NOTICE.md) lists the retained Better Design registry, embedded Tabler SVG and five font notices. Served copies are under `public/licenses`. This independent project is unaffiliated with Better Design; hosted generation, vendor accounts and proprietary inspiration are outside its scope.
 
-The resource library browses all 920 bundled packages. Expand **View resource**, then **Read files** to inspect the main document, companions, source and licenses in a keyboard-accessible dialog. Text stays literal, HTML previews are sandboxed, images/audio/video can be previewed, and downloads retain original bytes. **Copy agent prompt** connects the selected resource to the MCP's `read-resource` tool; **Agent instructions** offers manual copy. Failed requests preserve selection and offer retry.
+The resource library browses all 784 advertised resources. Choose **Read files** to inspect the main document, companions, source and licenses in a keyboard-accessible dialog. Text stays literal, HTML previews are sandboxed, images/audio/video can be previewed, and downloads retain original bytes. **Copy agent prompt** connects the selected resource to the MCP's `read-resource` tool; **Agent instructions** offers manual copy. Failed requests preserve selection and offer retry.
 
 The generated index is `src/resource-catalog.json`; regenerate through the MCP repository's `resources:import` command. The reader uses `/api/resources/:kind/:id`, attachment downloads and `/api/resources/license` through the same-origin proxy. Deploy the matching MCP before this website. These references are separate from the React theme registry. [Resource review evidence](docs/full-library-review.json) records the source hashes, responsive checks and documented rule adjudications.

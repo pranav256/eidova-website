@@ -19,5 +19,6 @@ ready.then(()=>{
   if(!specimen)applyTheme(readTheme());
   if(showcase&&!specimen){import('./Showcase').then(({Showcase})=>createRoot(document.getElementById('root')!).render(<React.StrictMode><Showcase /></React.StrictMode>));return;}
   if(window.location.pathname.replace(/\/$/,'')==='/docs'&&!specimen){import('./Docs').then(({Docs})=>createRoot(document.getElementById('root')!).render(<React.StrictMode><Docs /></React.StrictMode>));return;}
+  if(window.location.pathname.replace(/\/$/,'')==='/resources'&&!specimen){import('./Resources').then(({Resources})=>createRoot(document.getElementById('root')!).render(<React.StrictMode><Resources /></React.StrictMode>));return;}
   createRoot(document.getElementById('root')!).render(<React.StrictMode>{specimen?<SpecimenPage id={specimen} compact={params.get('example')==='details'} />:window.location.pathname.replace(/\/$/,'')==='/studio'?(window.location.hash.startsWith('#share=')?<SharedStudio />:<TeamStudio />):<App />}</React.StrictMode>);
 });

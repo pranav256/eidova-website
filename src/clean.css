@@ -84,11 +84,12 @@ h1 em { color: var(--primary-text); font-weight: 400; }
 .preview-workspace .specimen-frame { height: 100%; min-height: 24rem; border-radius: .5rem; }
 .theme-handoff[hidden] { display: none; }
 .resource-library .catalog-toolbar { align-items: end; }
+.resource-library h1 { font-size: clamp(2.5rem, 4vw, 3.75rem); line-height: 1.15; letter-spacing: -.035em; }
 .resource-library .resource-file-field { max-width: 24rem; }
 .resource-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
 .resource-list > li { display: flex; flex-direction: column; gap: 1rem; padding: 1.5rem; border: .0625rem solid var(--border); border-radius: .75rem; background: var(--popover); min-width: 0; }
 .resource-list > li > div:first-child { flex: 1; }
-.resource-list h3 { font-size: 1.125rem; font-weight: 500; }
+.resource-list :is(h2, h3) { font-family: var(--font-sans); font-size: 1.125rem; font-weight: 500; line-height: var(--leading-relaxed); letter-spacing: normal; }
 .resource-links { gap: .75rem; }
 .resource-reader { border-radius: .75rem; border: .0625rem solid var(--line-strong); background: var(--popover); }
 .workflow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 4rem; }
