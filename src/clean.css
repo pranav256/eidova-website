@@ -37,9 +37,9 @@ h1 em { color: var(--primary-text); font-weight: 400; }
 .hero-actions { margin-top: 2rem; gap: 1.75rem; }
 .hero-actions .od-button { min-height: 2.75rem; padding-inline: 1.25rem; font-size: 1rem; }
 .hero-stats { display: flex; gap: 3rem; margin: 2.75rem 0 0; padding-top: 1.75rem; border-top: .0625rem solid var(--line-strong); }
-.hero-stats > div { display: flex; flex-direction: column-reverse; gap: .5rem; }
+.hero-stats > div { display: flex; flex-direction: column; gap: .5rem; }
 .hero-stats dt { font-size: .75rem; color: var(--muted-foreground); }
-.hero-stats dd { margin: 0; font-family: var(--font-serif); font-size: 2.25rem; font-weight: 400; line-height: 1; font-variant-numeric: tabular-nums; }
+.hero-stats dd { order: -1; margin: 0; font-family: var(--font-serif); font-size: 2.25rem; font-weight: 400; line-height: 1; font-variant-numeric: tabular-nums; }
 .hero-note { margin-top: 1.5rem; font-size: .75rem; color: var(--muted-foreground); }
 .catalog-toolbar { gap: 1.5rem; }
 .search-field { display: flex; align-items: center; gap: .75rem; }

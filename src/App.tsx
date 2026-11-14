@@ -168,7 +168,7 @@ export function App() {
           <h1 id="hero-title"><span>Design systems,</span><em>in real code.</em></h1>
           <p className="hero-description">31 installable themes, practical guidance and interface reviews. One MCP connection.</p>
           <div className="hero-actions"><Button asChild size="lg"><a href="#themes">Explore the toolkit <ArrowDown aria-hidden="true" /></a></Button><a className="text-link" href="#connect">Connect your agent <ArrowUpRight aria-hidden="true" /></a></div>
-          <dl className="hero-stats"><div><dt>Installable themes</dt><dd>31</dd></div><div><dt>Design resources</dt><dd>{resourceCatalog.entries.length}</dd></div><div><dt>Public MCP tools</dt><dd>42</dd></div></dl>
+          <dl className="hero-stats"><div><dt>Themes</dt><dd>31</dd></div><div><dt>Resources</dt><dd>{resourceCatalog.entries.length}</dd></div><div><dt>MCP tools</dt><dd>42</dd></div></dl>
           <p className="hero-note">Free. No account required.</p>
         </div>
       </section>
