@@ -1,28 +1,39 @@
 /* Minimal Light kit, with Inter branding and an optional dark appearance. */
 :root { --font-display: var(--font-sans); }
-.site-header, main, .site-footer { width: min(88rem, calc(100% - 4rem)); }
+.site-header, main, .site-footer { width: min(88rem, calc(100% - 10rem)); }
 .site-header { gap: 1.5rem; padding-block: 1rem; }
 .site-header nav { gap: 1.25rem; }
 .wordmark { font-size: 1.5rem; font-weight: 600; letter-spacing: -.04em; }
 .brand-mark { width: 2.5rem; height: 2.5rem; }
-.hero { grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 4rem; padding-block: 4rem; }
+.hero { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem; padding-block: 4.5rem; }
 .site-eyebrow { font-size: .875rem; color: var(--muted-foreground); }
-.hero h1 { font-size: clamp(2.5rem, 5vw, 4.75rem); font-weight: 600; margin-top: 1rem; line-height: 1.1; }
-.hero-description { max-width: 44ch; margin-top: 1.5rem; color: var(--muted-foreground); }
+.hero h1 { font-size: clamp(3.5rem, 6vw, 6rem); font-weight: 500; margin-top: 1.5rem; line-height: 1.04; letter-spacing: -.065em; }
+.hero-description { max-width: 38ch; margin-top: 2rem; color: var(--muted-foreground); font-size: 1rem; line-height: 1.75; }
+.hero-actions { margin-top: 2rem; gap: 2rem; }
+.hero-actions .od-button { min-height: 3.5rem; padding-inline: 1.5rem; font-size: .875rem; }
+.hero-note { margin-top: 2rem; font-size: .75rem; }
+.hero-art { min-width: 0; }
+.hero-art img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; background: var(--secondary); }
+.hero-art figcaption { display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1rem; margin-top: 1rem; font-size: .75rem; color: var(--muted-foreground); }
+.studio-intro { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem; align-items: center; padding-block: 4rem; border-top: .0625rem solid var(--border); border-bottom: .0625rem solid var(--border); }
+.studio-intro p { max-width: 44ch; margin-top: 1.5rem; color: var(--muted-foreground); font-size: .875rem; line-height: 1.75; }
+.studio-intro .text-link { margin-top: 1rem; }
 .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin: 0; }
 .hero-stats div { display: flex; flex-direction: column-reverse; gap: .5rem; }
 .hero-stats dt { font-size: .875rem; color: var(--muted-foreground); }
 .hero-stats dd { margin: 0; font-size: clamp(2rem, 3vw, 3rem); font-weight: 500; letter-spacing: -.05em; font-variant-numeric: tabular-nums; }
-.connection-section { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 4rem; align-items: start; border-top: .0625rem solid var(--border); padding-block: 3rem; }
+.connection-section { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 4rem; align-items: start; border-top: .0625rem solid var(--border); padding-block: 4rem; }
 .connection-copy h2 { margin-top: 1rem; max-width: 17ch; }
 .connection-copy > p:last-child { margin-top: 1rem; max-width: 42ch; font-size: .875rem; color: var(--muted-foreground); line-height: 1.75; }
-.section { padding-block: 4rem; }
+.section { padding-block: 5rem; }
 .search-field { display: flex; align-items: center; gap: .75rem; }
 .search-field .od-input { min-width: 0; padding-inline: 1rem; }
 .search-symbol { position: static; transform: none; flex-shrink: 0; }
 .search-field .clear-search { position: static; flex-shrink: 0; }
-.theme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
-.theme-card-preview { position: relative; width: 100%; height: auto; aspect-ratio: 10 / 7; padding: 1rem; border-radius: 0; }
+.theme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.5rem 2rem; }
+.theme-card { border: 0; border-radius: 0; background: transparent; overflow: visible; }
+.theme-card-info { padding: 1.5rem 0 0; }
+.theme-card-preview { position: relative; width: 100%; height: auto; aspect-ratio: 10 / 7; padding: 1.5rem; border-radius: 0; }
 .theme-card-preview img { object-fit: contain; }
 .preview-family-label { position: absolute; bottom: .75rem; left: .75rem; padding: .25rem .5rem; border-radius: .375rem; background: var(--background); color: var(--foreground); font: 400 .75rem/1.5 var(--font-sans); }
 .theme-card .palette-strip { height: .5rem; }
@@ -38,12 +49,18 @@
 .component-preview .specimen-frame { border-radius: 0; }
 .theme-handoff[hidden] { display: none; }
 .site-footer { padding-block: 2rem; }
-@media (min-width: 100rem) { .theme-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-@media (max-width: 68rem) { .hero, .connection-section { gap: 2rem; } }
+@media (max-width: 68rem) {
+  .site-header, main, .site-footer { width: calc(100% - 4rem); }
+  .hero, .studio-intro, .connection-section { gap: 2rem; }
+  .hero h1 { font-size: clamp(3.5rem, 6vw, 6rem); }
+}
 @media (max-width: 54rem) {
   .site-header, main, .site-footer { width: calc(100% - 3rem); }
-  .hero, .connection-section { grid-template-columns: minmax(0, 1fr); }
+  .hero, .studio-intro, .connection-section { grid-template-columns: minmax(0, 1fr); }
   .hero { padding-block: 3rem; }
+  .hero h1 { font-size: clamp(3rem, 10vw, 5rem); }
+  .hero-art { max-width: 36rem; }
+  .studio-intro { padding-block: 3rem; }
   .hero-stats { max-width: 32rem; }
   .preview-workspace.with-handoff { grid-template-columns: minmax(0, 1fr); }
   .preview-workspace.with-handoff .specimen-frame { height: 32rem; }
@@ -53,6 +70,9 @@
   .site-header, main, .site-footer { width: calc(100% - 2rem); }
   .theme-grid { grid-template-columns: minmax(0, 1fr); }
   .section, .connection-section { padding-block: 2.5rem; }
+  .hero-actions { gap: .75rem 1.5rem; }
+  .hero-note { margin-top: 1.5rem; }
+  .theme-card-preview { padding: 1rem; }
   .hero-stats { gap: 1rem; }
   .hero-stats dt { font-size: .75rem; }
   .component-preview { width: calc(100% - 1rem); height: calc(100dvh - 1rem); padding: .75rem; }

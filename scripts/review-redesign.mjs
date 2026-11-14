@@ -24,6 +24,14 @@ try {
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
       for (const img of await page.locator('img').all()) { await img.scrollIntoViewIfNeeded(); await img.evaluate(node => node.decode()); }
       assert.ok(await page.locator('img').evaluateAll(images => images.every(image => image.complete && image.naturalWidth > 0)));
+      if (route === '/') {
+        await page.getByRole('heading', { name: 'Ideas made tangible.', exact: true }).waitFor();
+        assert.equal(await page.locator('.theme-card').count(), 31);
+        assert.ok(await page.locator('.hero-art img').evaluate(node => node.naturalWidth === 1024));
+        await page.locator('.hero-actions').getByRole('link', { name: 'Connect your agent' }).click();
+        await page.getByRole('heading', { name: 'Install Eidova', exact: true }).waitFor();
+        assert.equal(new URL(page.url()).hash, '#connect');
+      }
       await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
       const violations = (await new AxeBuilder({ page }).exclude('iframe').analyze()).violations;
       views.push({ width, route, violations });

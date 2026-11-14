@@ -160,31 +160,18 @@ export function App() {
     <main id="main" tabIndex={-1}>
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="site-eyebrow">Eidova MCP</p>
-          <h1 id="hero-title">Design tools for coding agents.</h1>
-          <p className="hero-description">Give your agent real components, design resources and practical reviews through Eidova MCP.</p>
-          <div className="hero-actions"><a className="text-link" href="#themes">Explore the themes <ArrowDown aria-hidden="true" /></a><a className="text-link" href="/showcase">Try the showcase <ArrowUpRight aria-hidden="true" /></a></div>
+          <p className="site-eyebrow">Design tools for coding agents</p>
+          <h1 id="hero-title">Ideas made<br />tangible.</h1>
+          <p className="hero-description">Real components, design resources and practical reviews for your coding agent.</p>
+          <div className="hero-actions"><Button asChild size="lg"><a href="#themes">Explore the themes <ArrowDown aria-hidden="true" /></a></Button><a className="text-link" href="#connect">Connect your agent <ArrowUpRight aria-hidden="true" /></a></div>
           <p className="hero-note">Free public access <span aria-hidden="true">·</span> No account required</p>
         </div>
+        <figure className="hero-art"><img src="/art/hero.webp" width={1024} height={1024} alt="Collage of a classical sculpture, tree and concrete architecture on warm paper" fetchPriority="high" /><figcaption><span>Form study</span><span>01 / Eidova</span></figcaption></figure>
+      </section>
+      <section className="studio-intro" aria-labelledby="intro-title">
+        <div><h2 id="intro-title">Choose a look.<br />Make it your own.</h2><p>From quiet interfaces to expressive websites, start with a complete design system. Explore the components, bring them into your project and refine every detail.</p><a className="text-link" href="/showcase">Try the toolkit <ArrowUpRight aria-hidden="true" /></a></div>
         <dl className="hero-stats"><div><dt>Installable themes</dt><dd>31</dd></div><div><dt>Design resources</dt><dd>{resourceCatalog.entries.length}</dd></div><div><dt>Public MCP tools</dt><dd>42</dd></div></dl>
       </section>
-      <section className="connection-section" aria-label="Connect your agent">
-        <div className="connection-copy"><p className="site-eyebrow">Connect your coding agent</p><h2>Your toolkit, one connection away.</h2><p>Choose your client and copy the setup. Then ask your agent to find a theme, build with its components and review the result.</p></div>
-        <section className="config-panel" id="connect" aria-labelledby="connect-title">
-          <div className="installation-heading"><h2 id="connect-title">Install Eidova</h2><p>Choose your client, copy the setup, and connect.</p></div>
-          <div className="client-tabs" role="tablist" aria-label="Connection format">{clientOptions.map((label, index) => <Button key={label} id={'client-tab-' + index} role="tab" variant="ghost" aria-selected={client === index} aria-controls={client === index ? 'client-panel-' + index : undefined} tabIndex={client === index ? 0 : -1} onClick={() => setClient(index)} onKeyDown={event => tabKey(event, index)}>{label}</Button>)}</div>
-          <div className="client-panel" id={'client-panel-' + client} role="tabpanel" aria-labelledby={'client-tab-' + client} tabIndex={0} key={client}>
-            <p className="config-description">{setupDescription}</p>
-            {client === 2||client===5 ? <Textarea id="mcp-endpoint" className="endpoint-input" aria-label="MCP server URL" value={selectedEndpoint} rows={2} readOnly spellCheck={false} onFocus={event => event.target.select()} /> : <pre><code>{setup}</code></pre>}
-            <CopyButton value={setup}>{copyLabel}</CopyButton>
-            <div className="config-footnote"><span aria-hidden="true">↳</span><p>{client<2?'Start a new client session after adding the server.':client===3||client===4?'Save the configuration and reload your client.':'Paste the URL into your client and connect.'}</p></div>
-          </div>
-          <details className="tool-options"><summary>Tool options</summary><div className="profile-picker" role="group" aria-label="MCP tool profile"><Button variant="ghost" aria-pressed={profile==='core'} onClick={()=>setProfile('core')}>Essentials · 13 tools</Button><Button variant="ghost" aria-pressed={profile==='full'} onClick={()=>setProfile('full')}>All tools</Button></div><p className="profile-note">Essentials uses less agent context. All tools adds private project rules and specialist guides.</p></details>
-        </section>
-
-      </section>
-      <div className="platform-strip"><span>Built for the tools you already use.</span><div><span>Codex</span><span>Cursor</span><span>Claude Code</span><span className="platform-more">and other MCP clients</span></div></div>
-
       <section className="themes section" id="themes" aria-labelledby="themes-title">
         <div className="section-heading"><div><h2 id="themes-title">Explore all 31 themes.</h2><p>Browse every theme across eight design families. Open a preview to try the real components.</p></div><a className="text-link" href={serviceSourceUrl + '/tree/main/assets/registry'}>Explore the registry <span aria-hidden="true">↗</span></a></div>
         <div className="catalog-toolbar">
@@ -222,6 +209,23 @@ export function App() {
         <div className="section-heading"><div><h2 id="tools-title">From a blank page to a better UI.</h2><p>A small set of tools for the decisions that matter.</p></div><span className="section-aside">Choose. Build. Review.</span></div>
         <div className="workflow-grid">{toolGroups.map(group => <article className="workflow-item" key={group.number}><span className="step-number">{group.number}<span aria-hidden="true"> /</span></span><h3>{group.title}</h3><p>{group.description}</p><div className="tool-names">{group.tools.map(tool => <code key={tool}>{tool}</code>)}</div></article>)}</div>
       </section>
+
+      <section className="connection-section" aria-label="Connect your agent">
+        <div className="connection-copy"><p className="site-eyebrow">Connect your coding agent</p><h2>Your toolkit, one connection away.</h2><p>Choose your client and copy the setup. Then ask your agent to find a theme, build with its components and review the result.</p></div>
+        <section className="config-panel" id="connect" aria-labelledby="connect-title">
+          <div className="installation-heading"><h2 id="connect-title">Install Eidova</h2><p>Choose your client, copy the setup, and connect.</p></div>
+          <div className="client-tabs" role="tablist" aria-label="Connection format">{clientOptions.map((label, index) => <Button key={label} id={'client-tab-' + index} role="tab" variant="ghost" aria-selected={client === index} aria-controls={client === index ? 'client-panel-' + index : undefined} tabIndex={client === index ? 0 : -1} onClick={() => setClient(index)} onKeyDown={event => tabKey(event, index)}>{label}</Button>)}</div>
+          <div className="client-panel" id={'client-panel-' + client} role="tabpanel" aria-labelledby={'client-tab-' + client} tabIndex={0} key={client}>
+            <p className="config-description">{setupDescription}</p>
+            {client === 2||client===5 ? <Textarea id="mcp-endpoint" className="endpoint-input" aria-label="MCP server URL" value={selectedEndpoint} rows={2} readOnly spellCheck={false} onFocus={event => event.target.select()} /> : <pre><code>{setup}</code></pre>}
+            <CopyButton value={setup}>{copyLabel}</CopyButton>
+            <div className="config-footnote"><span aria-hidden="true">↳</span><p>{client<2?'Start a new client session after adding the server.':client===3||client===4?'Save the configuration and reload your client.':'Paste the URL into your client and connect.'}</p></div>
+          </div>
+          <details className="tool-options"><summary>Tool options</summary><div className="profile-picker" role="group" aria-label="MCP tool profile"><Button variant="ghost" aria-pressed={profile==='core'} onClick={()=>setProfile('core')}>Essentials · 13 tools</Button><Button variant="ghost" aria-pressed={profile==='full'} onClick={()=>setProfile('full')}>All tools</Button></div><p className="profile-note">Essentials uses less agent context. All tools adds private project rules and specialist guides.</p></details>
+        </section>
+
+      </section>
+      <div className="platform-strip"><span>Built for the tools you already use.</span><div><span>Codex</span><span>Cursor</span><span>Claude Code</span><span className="platform-more">and other MCP clients</span></div></div>
 
       <section className="getting-started section" id="first-task" aria-labelledby="first-task-title">
         <div className="connect-copy"><h2 id="first-task-title">One connection.<br />Your next starting point.</h2><p>Add Eidova through MCP. No account required.</p><a className="text-link" href={serviceSourceUrl + '#run-locally'}>Prefer to run locally? <span aria-hidden="true">↗</span></a></div>
