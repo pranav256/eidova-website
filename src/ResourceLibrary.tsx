@@ -84,7 +84,7 @@ function ResourceReader({entry,onClose,initialPreview=false}:{entry:ResourceEntr
     {manifest.state==='error'&&<div role="alert"><p>Resource files could not load.</p><Button variant="outline" onClick={()=>setRetry(value=>value+1)}>Retry loading files</Button></div>}
     {manifest.state==='ready'&&<>
       <div className="resource-file-picker"><div className="resource-file-field"><label htmlFor="resource-file">File</label><select id="resource-file" value={filePath} onChange={event=>{setFilePath(event.target.value);setPreview(false);}}>{manifest.files.map(file=><option key={file.path} value={file.path}>{file.path}</option>)}</select></div><a className="text-link" href={endpoint+'/file?path='+encodeURIComponent(filePath)} download={filePath.split('/').at(-1)}>Download file</a></div>
-      {previewUrl&&<div className="resource-preview-controls"><Button variant="outline" aria-pressed={preview} onClick={()=>{if(!preview&&previewPath)setFilePath(previewPath);setPreview(value=>!value);}}>{preview?'Read source':'Preview design'}</Button>{preview&&<p>Original preview. Some assets load from the original publisher.</p>}</div>}
+      {previewUrl&&<div className="resource-preview-controls"><Button variant="outline" aria-pressed={preview} onClick={()=>{if(!preview&&previewPath)setFilePath(previewPath);setPreview(value=>!value);}}>{preview?'Read source':'Preview design'}</Button></div>}
       {preview&&previewUrl?<ResourcePreview url={previewUrl} type={previewPath?'html':entry.preview?.type||'image'} name={entry.name} onClose={onClose} />:<>
         {displayed.state==='loading'&&<p role="status">Loading file…</p>}
         {displayed.state==='error'&&<div role="alert"><p>This file could not load. Your selection is kept.</p><Button variant="outline" onClick={()=>setRetry(value=>value+1)}>Retry loading file</Button></div>}
@@ -96,14 +96,14 @@ function ResourceReader({entry,onClose,initialPreview=false}:{entry:ResourceEntr
           <pre className="resource-file-content" tabIndex={0} aria-label={'Contents of '+filePath}>{'text' in displayed?displayed.text:''}</pre>)}
       </>}
     </>}
-    <div className="resource-reader-links"><a href={entry.sourceUrl}>Original source</a><a href="/api/resources/license" download="LICENSE">Base license</a></div>
+    <div className="resource-reader-links"><a href={manifest.state==='ready'&&manifest.files.some(file=>file.path==='LICENSE')?endpoint+'/file?path=LICENSE':'/api/resources/license'} download="LICENSE">License</a></div>
   </dialog>;
 }
 
 export function ResourceLibrary() {
   const [query, setQuery] = useState('');
   const [kind, setKind] = useState('all');
-  const [limit, setLimit] = useState(8);
+  const [limit, setLimit] = useState(16);
   const [selected,setSelected]=useState<ResourceEntry|null>(null);
   const [openPreview,setOpenPreview]=useState(false);
   const opener=useRef<HTMLButtonElement|null>(null);
@@ -112,20 +112,20 @@ export function ResourceLibrary() {
   const terms = query.toLowerCase().match(/[\p{L}\p{N}]+/gu) ?? [];
   const entries = library.entries.filter(entry => (kind === 'all' || (kind==='templates'?['design-templates','templates'].includes(entry.kind):entry.kind===kind)) && terms.every(term => `${entry.id} ${entry.name} ${entry.category} ${entry.description}`.toLowerCase().includes(term)));
   function open(entry:ResourceEntry,button:HTMLButtonElement,preview=false) {opener.current=button;setOpenPreview(preview);setSelected(entry);}
-  function reset() {setQuery('');setKind('all');setLimit(8);search.current?.focus();}
+  function reset() {setQuery('');setKind('all');setLimit(16);search.current?.focus();}
   return <section className="resource-library section" id="resources" aria-labelledby="resources-title">
     <div className="section-heading"><div><h2 id="resources-title">Explore the Eidova library.</h2><p>Find a design, preview it, and use its files.</p></div></div>
     <div className="catalog-toolbar">
-      <Input ref={search} type="search" aria-label="Search resources" placeholder="Search resources…" value={query} onChange={event=>{setQuery(event.target.value);setLimit(8);}} />
-      <div className="resource-file-field"><label htmlFor="resource-type">Resource type</label><select id="resource-type" value={kind} onChange={event=>{setKind(event.target.value);setLimit(8);}}>{[['all','All resources'],['design-systems','Design systems'],['templates','Templates'],['plugins','Plugin designs'],['skills','Skills'],['catalogs','Source catalogs']].map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></div>
+      <Input ref={search} type="search" aria-label="Search resources" placeholder="Search resources…" value={query} onChange={event=>{setQuery(event.target.value);setLimit(16);}} />
+      <div className="resource-file-field"><label htmlFor="resource-type">Resource type</label><select id="resource-type" value={kind} onChange={event=>{setKind(event.target.value);setLimit(16);}}>{[['all','All resources'],['design-systems','Design systems'],['templates','Templates'],['plugins','Plugin designs'],['skills','Skills'],['catalogs','Catalog notes']].map(([value,label])=><option key={value} value={value}>{label}</option>)}</select></div>
     </div>
     <p className="result-count" role="status">Showing {Math.min(limit,entries.length)} of {entries.length} resources</p>
     {entries.length===0 ? <div className="catalog-message"><h3>No matching resources.</h3><p>Try another name or clear the filters.</p><Button variant="outline" onClick={reset}>Clear resource filters</Button></div> : <ul className="resource-list">{entries.slice(0,limit).map(entry=><li key={entry.kind+'/'+entry.id}>
-      <div><h3>{entry.name}</h3><p>{kindLabels[entry.kind]} · {entry.kind==='plugins'?entry.category+' · ':''}{entry.license} · {entry.fileCount} files</p></div>
-      <details><summary>View resource</summary><div className="resource-links">{entry.preview&&<Button variant="outline" aria-haspopup="dialog" onClick={event=>open(entry,event.currentTarget,true)}>Preview design</Button>}<Button variant="outline" aria-haspopup="dialog" onClick={event=>open(entry,event.currentTarget)}>Read files</Button><a href={'/api/resources/'+entry.kind+'/'+entry.id+'/file?path='+encodeURIComponent(entry.entrypoint)} download={entry.entrypoint}>Download {entry.entrypoint}</a></div><details><summary>Source details</summary><p>{entry.description}</p><p className="resource-uri">MCP resource: <code>design://open-design/{entry.kind}/{entry.id}</code></p><a href={entry.sourceUrl}>Original source</a></details></details>
+      <div><h3>{entry.name}</h3><p>{kindLabels[entry.kind]} · {entry.license} · {entry.fileCount} files</p><details><summary>Details</summary><p>Start with <code>{entry.entrypoint}</code></p><p className="resource-uri">MCP resource: <code>design://open-design/{entry.kind}/{entry.id}</code></p><a href={'/api/resources/'+entry.kind+'/'+entry.id+'/file?path='+encodeURIComponent(entry.entrypoint)} download={entry.entrypoint}>Download {entry.entrypoint}</a></details></div>
+      <div className="resource-links">{entry.preview&&<Button variant="secondary" aria-haspopup="dialog" onClick={event=>open(entry,event.currentTarget,true)}>Preview design</Button>}<Button variant="outline" aria-haspopup="dialog" onClick={event=>open(entry,event.currentTarget)}>Read files</Button></div>
     </li>)}</ul>}
-    {entries.length>limit && <div className="catalog-more"><Button variant="outline" onClick={()=>setLimit(value=>value+16)}>Show more resources</Button></div>}
-    <details className="resource-about"><summary>Source and usage</summary><p>Browse <a href={library.repository+'/tree/'+library.revision}>catalog sources</a> and their licenses. Some skills link to external workflows; Eidova does not run them.</p><p>Ask your agent to use <code>search-resources</code>, then read a result’s files and licenses.</p></details>
+    {entries.length>limit && <div className="catalog-more"><Button variant="outline" onClick={()=>setLimit(value=>value+16)}>Show more resources</Button><Button variant="ghost" onClick={()=>setLimit(entries.length)}>Show all resources</Button></div>}
+    <details className="resource-about"><summary>Use with your agent</summary><p>Use <code>search-resources</code> to find a design, then <code>read-resource</code> to load its files. Each reader includes an agent prompt and downloads. Keep the included licenses with your project.</p></details>
     {selected&&<ResourceReader key={selected.kind+'/'+selected.id} entry={selected} initialPreview={openPreview} onClose={()=>setSelected(null)} />}
   </section>;
 }

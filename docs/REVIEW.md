@@ -1,12 +1,26 @@
-# Website candidate review — 2026-11-10
+# Website review evidence
 
-## Approved editorial redesign — 2026-11-13
+## Resource streamlining — 14 November 2026
 
-The current website follows the Form & Field reference: Editorial Dark components and tokens, Georgia headings, bundled Inter, a dark default, paper collage hero, readable muted text and generous spacing. Existing routes, all installation formats, catalog specimens, resource readers and downloads, live copy review and recovery remain available. Explicit light preferences are retained.
+The library now advertises 784 usable packages, with redundant wrappers omitted and old links preserved. Preview and read actions appear directly beside results. Sixteen results load initially, with more/all controls. Resource counts use the generated catalog; the headline and social image describe the product directly. Inter, the Neutral foundation, logo, appearance choices and original specimens remain.
+
+[streamline-review.json](streamline-review.json) records 36 resource states and 30 showcase states at 390, 1440 and 1728 pixels in light/dark, with no unresolved serious/critical source, copy or spacing findings, contrast failures or browser errors. Checks cover downloads, shared assets, keyboard focus, sandbox isolation, retries, invalid responses and stale requests. Backend checks passed all 128 tests, typecheck, builds, stdio and a real packaged install. The main website JavaScript bundle fell from about 862 kB to 706 kB.
+
+These checks used Edge. Other browser engines and the separate native Studio GUI were not rerun. Automated checks do not certify accessibility or replace user research.
+
+## Current clean modern theme
+
+The current website uses Minimal Light components, bundled Inter and light appearance by default, retaining explicit saved and URL appearance choices. All 31 themes are visible, the existing logo is present, and wide previews reveal setup only on demand. [clean-preview-review.json](clean-preview-review.json) records the current source hashes, browser checks and limits; [default-theme-receipt.json](default-theme-receipt.json) records the local MCP default.
+
+Local cleanup on 14 November 2026 removed obsolete raw captures, disposable test installs and caches. Portable receipts remain. Rerun the maintained verification scripts for fresh raw evidence; the dated entries below describe earlier revisions.
+
+## Historical editorial redesign (superseded) — 2026-11-13
+
+That earlier website followed the Form & Field reference: Editorial Dark components and tokens, Georgia headings, bundled Inter, a dark default, paper collage hero, readable muted text and generous spacing. Its review covered existing routes, installation formats, catalog specimens, resource readers and downloads, live copy review and recovery, including explicit light preferences.
 
 Production build and website/reader/showcase browser checks pass at 390, 1440 and 1728 in both appearances. Comprehension checks pass; rendered spacing has no unresolved critical or serious findings. The shell passes nine Axe views, including the website's team workspace setup screen, narrow reflow, 200% text, and default/saved/URL appearance checks. Showcase link names now include all visible text. Original component specimens are isolated from shell styling and its Axe review.
 
-[redesign-1311-review.json](redesign-1311-review.json) records current source hashes, evidence and review limits. [redesign-1311-source.json](redesign-1311-source.json) retains raw source findings: native-select recommendations do not apply because no house Select exists; labeled platform controls retain tested keyboard/mobile behavior. The local MCP stdio workspace has the approved defaults, verified by read-back in [default-theme-receipt.json](default-theme-receipt.json). Workspace defaults are also in the parent AGENTS.md and `redesign 1311.md`.
+[redesign-1311-review.json](redesign-1311-review.json) records that earlier revision's source hashes, evidence and limits. [redesign-1311-source.json](redesign-1311-source.json) retains its source findings. Current workspace defaults are in AGENTS.md, `redesign 1311.md` and [default-theme-receipt.json](default-theme-receipt.json).
 
 This review covers local website changes. Hosted endpoint checks, deployment, a fresh dependency install, other browser engines and the separate native Studio application were not performed. Earlier receipts below describe their earlier revisions.
 

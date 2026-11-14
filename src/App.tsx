@@ -5,6 +5,7 @@ import { Textarea } from './components/ui/textarea';
 import { catalogThemes, useAppearance, type ThemeMode } from './theme';
 import families from './design-families.json';
 import { ResourceLibrary } from './ResourceLibrary';
+import resourceCatalog from './resource-catalog.json';
 import { CopyButton } from './components/CopyButton';
 import { version } from '../package.json';
 import { ArrowDown, ArrowUpRight, Search } from 'lucide-react';
@@ -159,13 +160,13 @@ export function App() {
     <main id="main" tabIndex={-1}>
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero-copy">
-          <p className="site-eyebrow">Open-source design tools for coding agents</p>
-          <h1 id="hero-title">Better UI starts here.</h1>
+          <p className="site-eyebrow">Eidova MCP</p>
+          <h1 id="hero-title">Design tools for coding agents.</h1>
           <p className="hero-description">Give your agent real components, design resources and practical reviews through Eidova MCP.</p>
           <div className="hero-actions"><a className="text-link" href="#themes">Explore the themes <ArrowDown aria-hidden="true" /></a><a className="text-link" href="/showcase">Try the showcase <ArrowUpRight aria-hidden="true" /></a></div>
           <p className="hero-note">Free public access <span aria-hidden="true">·</span> No account required</p>
         </div>
-        <dl className="hero-stats"><div><dt>Installable themes</dt><dd>31</dd></div><div><dt>Design resources</dt><dd>920</dd></div><div><dt>Public MCP tools</dt><dd>42</dd></div></dl>
+        <dl className="hero-stats"><div><dt>Installable themes</dt><dd>31</dd></div><div><dt>Design resources</dt><dd>{resourceCatalog.entries.length}</dd></div><div><dt>Public MCP tools</dt><dd>42</dd></div></dl>
       </section>
       <section className="connection-section" aria-label="Connect your agent">
         <div className="connection-copy"><p className="site-eyebrow">Connect your coding agent</p><h2>Your toolkit, one connection away.</h2><p>Choose your client and copy the setup. Then ask your agent to find a theme, build with its components and review the result.</p></div>

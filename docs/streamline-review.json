@@ -1,0 +1,345 @@
+{
+  "date": "2026-11-14",
+  "resources": 784,
+  "legacyLinks": 137,
+  "removedCopies": 782,
+  "savedBytes": 36967093,
+  "backend": {
+    "tests": 128,
+    "failed": 0,
+    "typecheck": "pass",
+    "build": "pass",
+    "stdio": "pass",
+    "packagedInstall": "pass"
+  },
+  "website": {
+    "typecheck": "pass",
+    "build": "pass",
+    "mainBundleBytes": 705810,
+    "previousMainBundleBytes": 861790,
+    "resources": {
+      "widths": [
+        390,
+        1440,
+        1728
+      ],
+      "modes": [
+        "dark",
+        "light"
+      ],
+      "states": 36,
+      "sourceExceptions": [],
+      "spacing": [
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 2,
+          "total": 2
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 2,
+          "total": 2
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 2,
+          "total": 2
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 2,
+          "total": 2
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 2,
+          "total": 2
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 2,
+          "total": 2
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 6,
+          "total": 6
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 6,
+          "total": 6
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 6,
+          "total": 6
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 6,
+          "total": 6
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 6,
+          "total": 6
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 6,
+          "total": 6
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 6,
+          "total": 6
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 6,
+          "total": 6
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 6,
+          "total": 6
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 6,
+          "total": 6
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 6,
+          "total": 6
+        },
+        {
+          "critical": 0,
+          "serious": 0,
+          "moderate": 6,
+          "total": 6
+        }
+      ],
+      "spacingBlockers": [],
+      "spacingException": null,
+      "comprehension": [
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        }
+      ],
+      "pageErrors": [],
+      "contrastFailures": [],
+      "sourceSha256": {
+        "App.tsx": "e0f6d4d24399ce87e61ac80aa7f6b41e7e2426720c3a62e8206da098e116da91",
+        "ResourceLibrary.tsx": "bfa637889f88a74e951a591b16be3863f1c300bae8f17186749dea76b5542c4d",
+        "components/CopyButton.tsx": "04a61c7e3f4de9fd2aefd051831dd9c1f8e4ee751d335a7a418af6519280f607",
+        "styles.css": "287ba404cdd473ca8e4e8d5675fbe0ac60c0c59b8ee1b5015b9ad8684f8b2010",
+        "theme.css": "0aa70f50b1bf45ca6340438b670a924a91c07bb5245f22633bd559a7d383b800",
+        "clean.css": "d45c7ecfffcfc780deed5e07ab6bdd451954df2c2f438167883a837557ecda6d",
+        "main.tsx": "6962bb2bfb83c16613e79824aee8663878359c1eb23d1456e13f84377c9c532a"
+      }
+    },
+    "showcase": {
+      "widths": [
+        390,
+        1440,
+        1728
+      ],
+      "appearances": [
+        "light",
+        "dark"
+      ],
+      "states": 30,
+      "panels": 24,
+      "sourceExceptions": [],
+      "spacingBlockers": [],
+      "pageErrors": [],
+      "contrastFailures": [],
+      "comprehension": [
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 1
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 1
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        },
+        {
+          "verdict": "pass",
+          "findingCount": 0
+        }
+      ],
+      "sourceSha256": {
+        "Showcase.tsx": "eedd784a5ad396131d63411957fc66bc09bac90dd022737b9590362daa6245e8",
+        "showcase.css": "c8fc7025b69cd8008471a83a5e7cc8b0e813586f84f8e9b2b64f329ac60b0e21",
+        "styles.css": "287ba404cdd473ca8e4e8d5675fbe0ac60c0c59b8ee1b5015b9ad8684f8b2010",
+        "clean.css": "d45c7ecfffcfc780deed5e07ab6bdd451954df2c2f438167883a837557ecda6d",
+        "App.tsx": "e0f6d4d24399ce87e61ac80aa7f6b41e7e2426720c3a62e8206da098e116da91",
+        "main.tsx": "6962bb2bfb83c16613e79824aee8663878359c1eb23d1456e13f84377c9c532a",
+        "components/ui/button.tsx": "38391455e8c864318525bfacae7ac503668102fecc9c521fdd39999f33760d77",
+        "components/ui/input.tsx": "8a5f547c5eeedb01c43f7c2c8d3e345bfedd1324795f9e7bc41f79c301362d42",
+        "components/ui/textarea.tsx": "f092fe784f0ac9236667b0b327c308bb66c585531dc58df405dec42ff473370f",
+        "components/CopyButton.tsx": "04a61c7e3f4de9fd2aefd051831dd9c1f8e4ee751d335a7a418af6519280f607"
+      }
+    }
+  },
+  "limits": [
+    "Browser checks used Edge; other engines and the separate native Studio GUI were not rerun.",
+    "Automated source, copy and spacing checks do not certify accessibility or replace user research."
+  ],
+  "sourceSha256": {
+    "eidova-mcp/src/bundled-resources.ts": "bb0bda48cffa0a966dcfc5090598b6130b42072c784e49015786bd87be844963",
+    "eidova-mcp/scripts/curate-resources.mjs": "88a673cb419a1df5d2abc57f744f25c737ed3e8d16800f49677401d89e7fc83e",
+    "eidova-mcp/content/library.json": "872edac3200b3f8c568d74757ded86b9544c21e2b3ea09a4d42477d0f7c305bc",
+    "eidova-mcp/content/workflow.md": "17f9a5b9358c7846bf7ed0e49d00aa4249b0c2ba1cda373d685a53cc3a6f78bc",
+    "eidova-mcp/vendor/upstream/runtime.mjs": "a02c400b8a0062444c3a2ab26ec6b539dac0d7ce866d270b80c04313c262cf97"
+  }
+}

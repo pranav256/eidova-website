@@ -8,6 +8,7 @@ import { ResourceLibrary } from './ResourceLibrary';
 import { catalogThemes, useAppearance } from './theme';
 import families from './design-families.json';
 import data from './showcase-data.json';
+import resourceCatalog from './resource-catalog.json';
 import './showcase.css';
 
 const chapters = [['components','Components'],['foundations','Foundations'],['icons','Icons'],['interactions','Interactions'],['copy-lab','Copy lab'],['guidance','Guides'],['resources','Resources'],['workflows','Workflows'],['tool-directory','Tool directory']];
@@ -174,7 +175,7 @@ export function Showcase() {
             { id: 'components', icon: 'layout-template', title: 'Build with real components', description: 'Try eight design families. Inspect the controls and take their source into your project.', href: '#components' },
             { id: 'foundations', icon: 'palette', title: 'Carry your brand forward', description: 'Inspect exact tokens, export a palette, and keep design decisions with your project.', href: '#foundations' },
             { id: 'copy-lab', icon: 'eye', title: 'Review the result', description: 'Check a draft live. Explore tools for reviewing code, copy, and rendered spacing.', href: '#copy-lab' },
-            { id: 'resources', icon: 'file-code', title: 'Find the source you need', description: 'Browse 920 packages of systems, templates, plugins, and skills with their original files.', href: '#resources' },
+            { id: 'resources', icon: 'file-code', title: 'Find the design you need', description: `Browse ${resourceCatalog.entries.length} systems, templates, plugins and skills. Preview a design, then use its files.`, href: '#resources' },
             { id: 'guidance', icon: 'book-open', title: 'Design for more platforms', description: 'Read guidance for mobile, Shopify, Three.js, and motion before building in your agent.', href: '#guidance' },
             { id: 'studio', icon: 'layers', title: 'Bring the team into the work', description: 'Open the separate team file workspace. Collaboration needs a configured Studio backend.', href: '/studio' },
           ].map(item => <li key={item.id}><a href={item.href}><Icon name={item.icon} size={24} /><h3 id={'capability-' + item.id}>{item.title}</h3><p>{item.description}</p><span className="showcase-capability-link">{item.id === 'studio' ? 'Open team workspace' : 'Explore this capability'}<Icon name="arrow-up-right" /></span></a></li>)}

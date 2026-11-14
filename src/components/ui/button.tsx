@@ -15,7 +15,7 @@ const buttonVariants = cva(
   [
     "od-button relative inline-flex items-center justify-center gap-2 whitespace-normal text-center",
     "text-sm font-semibold",
-    "outline-none transition-all duration-200 ease-out",
+    "outline-none transition-colors duration-200 ease-out",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
     "disabled:pointer-events-none disabled:opacity-40",
 
