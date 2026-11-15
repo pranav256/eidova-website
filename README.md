@@ -1,10 +1,8 @@
 # Eidova website
 
-The 13 November update replaces Editorial with the clean modern Neutral kit, bundled Inter and light appearance by default. Visitors can still choose dark mode. The existing brand logo is visible, all 31 themes appear, and the wide preview reveals setup only on demand. [DESIGN.md](DESIGN.md) and [redesign 1311.md](<redesign 1311.md>) record future MCP build defaults.
+The public design toolkit and connection guide is live at https://eidova.vercel.app/ and https://open-design-website.vercel.app/. Its warm paper/rust design, locally loaded Newsreader headings, Inter controls and JetBrains Mono code are defined in [DESIGN.md](DESIGN.md). The sticky navbar theme slider applies all 31 themes plus the default immediately and preserves saved/shared choices.
 
-The [MCP showcase website plan](docs/MCP-SHOWCASE-PLAN.md) records the verified capabilities, visitor journey, implementation scope and review criteria. The homepage introduces the full design toolkit; `/showcase` connects six capability summaries to the existing working demonstrations and team workspace.
-
-The public family catalog and connection guide for Eidova MCP. **0.2.0 is a release candidate.** Deploy the matching API with core support before deploying this website, and verify the hosted versions separately from the local review.
+The homepage introduces the toolkit; `/showcase` connects six capability summaries to real demonstrations and the team workspace. [Review evidence](docs/REVIEW.md) records completed checks. The matching **0.2.0** API defaults to the full **42-tool** profile, with optional **13-tool** core. Both are deployed; package/Registry publication and persistent Studio hosting remain separate acceptance.
 
 The Eidova resource library includes all 784 advertised resources:
 152 systems, 115 design templates, 343 plugin designs, 169

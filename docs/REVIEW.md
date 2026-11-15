@@ -1,5 +1,9 @@
 # Website review evidence
 
+Consolidated 15 November 2026. Completed plans are represented by DESIGN.md, README.md and these dated receipts. Active work is tracked only in the parent workspace TODO.md. Historical blockers below describe their original sessions; signed website 4ab5743 and MCP 9b23c02 are deployed and both CI runs passed.
+
+The 13 November showcase acceptance covers the full toolkit introduction, six capability links, nine existing chapters, real specimens, token/icon exports, validation/motion recovery, copy review, resources, workflow/tool discovery and the separate team connection. Its scoped build/review passed 30 states and 24 copy panels in both appearances at 390/1440/1728, with no unresolved critical/serious findings. Subsequent reference and theme-slider receipts supersede its earlier visual direction. The website and matching API are public; the old signing/network/staging blockers are resolved. Provider generation, native/Shopify install kits, persistent Studio hosting and demo invitations are outside those demonstrations.
+
 ## Reference-based rebuild — 14 November 2026
 
 The user's supplied reference defines the current website: warm paper surfaces, rust accents, locally loaded Newsreader/Inter/JetBrains Mono, a quiet sticky header, open serif hero and dark setup workbench. All 31 themes and existing website routes remain. The grouped footer preserves its destinations. System appearance is the default; explicit URL/saved choices take precedence.
@@ -36,7 +40,7 @@ That earlier website followed the Form & Field reference: Editorial Dark compone
 
 Production build and website/reader/showcase browser checks pass at 390, 1440 and 1728 in both appearances. Comprehension checks pass; rendered spacing has no unresolved critical or serious findings. The shell passes nine Axe views, including the website's team workspace setup screen, narrow reflow, 200% text, and default/saved/URL appearance checks. Showcase link names now include all visible text. Original component specimens are isolated from shell styling and its Axe review.
 
-[redesign-1311-review.json](redesign-1311-review.json) records that earlier revision's source hashes, evidence and limits. [redesign-1311-source.json](redesign-1311-source.json) retains its source findings. Current workspace defaults are in AGENTS.md, `redesign 1311.md` and [default-theme-receipt.json](default-theme-receipt.json).
+[redesign-1311-review.json](redesign-1311-review.json) records that earlier revision's source hashes, evidence and limits. [redesign-1311-source.json](redesign-1311-source.json) retains its source findings. Current workspace defaults are in AGENTS.md and [DESIGN.md](../DESIGN.md).
 
 This review covers local website changes. Hosted endpoint checks, deployment, a fresh dependency install, other browser engines and the separate native Studio application were not performed. Earlier receipts below describe their earlier revisions.
 
@@ -94,7 +98,7 @@ The installation-first page was compared with the preceding site at 390, 1440 an
 
 ## Evidence and reproduction
 
-[review-candidate.json](review-candidate.json), [theme-viewer-review.json](theme-viewer-review.json) and [specimen-review.json](specimen-review.json) contain the local summaries. Current screenshots, DOM measurements and tool responses are in the sibling MCP checkout's ignored `.work/installation-first/after/` and `viewers/` directories; the preceding site is in `.work/installation-first/before/`. Unchanged native evidence remains in `.work/site-elevation/specimens/`. Its [release report](https://github.com/pranav256/open-design-mcp/blob/main/docs/RELEASE-CANDIDATE.md) includes six separate CLI-installed Vite/Next consumers.
+[review-candidate.json](review-candidate.json), [theme-viewer-review.json](theme-viewer-review.json) and [specimen-review.json](specimen-review.json) contain the local summaries. Current screenshots, DOM measurements and tool responses are in the sibling MCP checkout's ignored `.work/installation-first/after/` and `viewers/` directories; the preceding site is in `.work/installation-first/before/`. Unchanged native evidence remains in `.work/site-elevation/specimens/`. Its [release report](https://github.com/pranav256/eidova-mcp/blob/main/docs/RELEASE-VERIFICATION.md) includes six separate CLI-installed Vite/Next consumers.
 
 From that MCP repository, point `WEBSITE_SOURCE_DIR` at this checkout, `WEBSITE_REVIEW_URL` at the built preview, `WEBSITE_EXPECTED_MCP_URL` at the candidate full endpoint and `MCP_REVIEW_URL` at the review endpoint. Run `verify-website.mjs`, `verify-website-themes.mjs` and `verify-specimens.mjs`. Optional `WEBSITE_BASELINE_DIR` enables the copy comparison. Sync specimens/catalog metadata after changing registry source, run `node scripts/sync-website-gallery.mjs` against the built local preview, then rebuild to copy the captures. Website review scripts submit bounded DOM batches within the existing 4 MiB HTTP request limit.
 
