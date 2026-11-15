@@ -1,0 +1,2799 @@
+{
+  "date": "2026-11-15",
+  "audit": [
+    "Homepage advertised 42 tools but setup and docs connected to the 13-tool core profile.",
+    "The picker fixed its palette so theme changes did not reach the control.",
+    "Theme comparison controls were hidden inside a large popover."
+  ],
+  "direction": {
+    "product": "Eidova supplies design systems, guidance and reviews for coding agents.",
+    "character": "Quiet, warm, precise.",
+    "world": "Product manuals and usable developer tools.",
+    "moments": "The actual page changes as visitors slide between themes.",
+    "signature": "A named theme above a compact live slider."
+  },
+  "source": "# UI review\n\nNo findings. The checked files pass every deterministic rule.",
+  "copy": [
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 12,
+      "surface": "screen",
+      "budgetWords": 12,
+      "estimatedExplainSeconds": 10,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 25,
+      "surface": "screen",
+      "budgetWords": 25,
+      "estimatedExplainSeconds": 11,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    },
+    {
+      "verdict": "pass",
+      "findingCount": 0,
+      "findings": [],
+      "words": 25,
+      "surface": "screen",
+      "budgetWords": 25,
+      "estimatedExplainSeconds": 11,
+      "nextStep": "Continue with the interface; this text check does not verify its rendering."
+    }
+  ],
+  "spacing": [
+    {
+      "name": "390 light slider visible",
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 4,
+        "total": 4
+      },
+      "findings": [
+        {
+          "ruleId": "spacing/off-scale-value",
+          "state": "390 light slider visible",
+          "severity": "moderate",
+          "message": "390 light slider visible uses 2 off-scale spacing values across 4 elements: 10px, 20px.",
+          "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+          "elementIds": [
+            "slider-1",
+            "slider-35",
+            "slider-79",
+            "slider-60"
+          ],
+          "evidence": [
+            {
+              "label": "slider-1 margin right",
+              "value": 20,
+              "unit": "px"
+            },
+            {
+              "label": "slider-1 margin left",
+              "value": 20,
+              "unit": "px"
+            },
+            {
+              "label": "Switch to dark mode padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Switch to dark mode padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "slider-79 margin right",
+              "value": 20,
+              "unit": "px"
+            },
+            {
+              "label": "slider-79 margin left",
+              "value": 20,
+              "unit": "px"
+            },
+            {
+              "label": "Explore the toolkit padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Explore the toolkit padding right",
+              "value": 20,
+              "unit": "px"
+            },
+            {
+              "label": "Explore the toolkit padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Explore the toolkit padding left",
+              "value": 20,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-1"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "390 light slider visible",
+          "severity": "moderate",
+          "message": "Choose page theme: Monochrome Industrial measures 170.88x32px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-18"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 170.88,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 32,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-2"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "390 light slider visible",
+          "severity": "moderate",
+          "message": "Previous page theme measures 35.09x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-23"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 35.09,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-3"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "390 light slider visible",
+          "severity": "moderate",
+          "message": "Next page theme measures 35.09x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-27"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 35.09,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-4"
+        }
+      ]
+    },
+    {
+      "name": "390 light chooser open",
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 4,
+        "total": 4
+      },
+      "findings": [
+        {
+          "ruleId": "spacing/off-scale-value",
+          "state": "390 light chooser open",
+          "severity": "moderate",
+          "message": "390 light chooser open uses 4 off-scale spacing values across 69 elements: 2px, 10px, 14px, 20px.",
+          "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+          "elementIds": [
+            "slider-34",
+            "slider-35",
+            "slider-37",
+            "slider-38",
+            "slider-45",
+            "slider-46",
+            "slider-51",
+            "slider-52",
+            "slider-59",
+            "slider-60",
+            "slider-65",
+            "slider-66",
+            "slider-71",
+            "slider-72",
+            "slider-77",
+            "slider-78",
+            "slider-83",
+            "slider-84",
+            "slider-89",
+            "slider-90",
+            "slider-95",
+            "slider-96",
+            "slider-101",
+            "slider-102",
+            "slider-109",
+            "slider-110",
+            "slider-115",
+            "slider-116",
+            "slider-123",
+            "slider-124",
+            "slider-129",
+            "slider-130",
+            "slider-135",
+            "slider-136",
+            "slider-143",
+            "slider-144",
+            "slider-149",
+            "slider-150",
+            "slider-155",
+            "slider-156",
+            "slider-161",
+            "slider-162",
+            "slider-167",
+            "slider-168",
+            "slider-175",
+            "slider-176",
+            "slider-182",
+            "slider-183",
+            "slider-190",
+            "slider-191",
+            "slider-196",
+            "slider-197",
+            "slider-202",
+            "slider-203",
+            "slider-208",
+            "slider-209",
+            "slider-216",
+            "slider-217",
+            "slider-222",
+            "slider-223",
+            "slider-228",
+            "slider-229",
+            "slider-234",
+            "slider-235",
+            "slider-240",
+            "slider-241",
+            "slider-250",
+            "slider-294",
+            "slider-275"
+          ],
+          "evidence": [
+            {
+              "label": "Close padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Close padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding right",
+              "value": 14,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding left",
+              "value": 14,
+              "unit": "px"
+            },
+            {
+              "label": "Eidova default padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Eidova default padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "slider-38 row gap",
+              "value": 2,
+              "unit": "px"
+            },
+            {
+              "label": "slider-38 column gap",
+              "value": 2,
+              "unit": "px"
+            },
+            {
+              "label": "Apply page theme: Minimal Light padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Apply page theme: Minimal Light padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "slider-46 row gap",
+              "value": 2,
+              "unit": "px"
+            },
+            {
+              "label": "slider-46 column gap",
+              "value": 2,
+              "unit": "px"
+            },
+            {
+              "label": "Apply page theme: Neutral Monochrome padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Apply page theme: Neutral Monochrome padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "slider-52 row gap",
+              "value": 2,
+              "unit": "px"
+            },
+            {
+              "label": "slider-52 column gap",
+              "value": 2,
+              "unit": "px"
+            },
+            {
+              "label": "Apply page theme: Linear padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Apply page theme: Linear padding bottom",
+              "value": 10,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-1"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "390 light chooser open",
+          "severity": "moderate",
+          "message": "Choose page theme: Monochrome Industrial measures 170.88x32px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-18"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 170.88,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 32,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-2"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "390 light chooser open",
+          "severity": "moderate",
+          "message": "Previous page theme measures 35.09x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-23"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 35.09,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-3"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "390 light chooser open",
+          "severity": "moderate",
+          "message": "Next page theme measures 35.09x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-27"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 35.09,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-4"
+        }
+      ]
+    },
+    {
+      "name": "390 dark slider visible",
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 4,
+        "total": 4
+      },
+      "findings": [
+        {
+          "ruleId": "spacing/off-scale-value",
+          "state": "390 dark slider visible",
+          "severity": "moderate",
+          "message": "390 dark slider visible uses 2 off-scale spacing values across 4 elements: 10px, 20px.",
+          "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+          "elementIds": [
+            "slider-1",
+            "slider-35",
+            "slider-79",
+            "slider-60"
+          ],
+          "evidence": [
+            {
+              "label": "slider-1 margin right",
+              "value": 20,
+              "unit": "px"
+            },
+            {
+              "label": "slider-1 margin left",
+              "value": 20,
+              "unit": "px"
+            },
+            {
+              "label": "Switch to light mode padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Switch to light mode padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "slider-79 margin right",
+              "value": 20,
+              "unit": "px"
+            },
+            {
+              "label": "slider-79 margin left",
+              "value": 20,
+              "unit": "px"
+            },
+            {
+              "label": "Explore the toolkit padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Explore the toolkit padding right",
+              "value": 20,
+              "unit": "px"
+            },
+            {
+              "label": "Explore the toolkit padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Explore the toolkit padding left",
+              "value": 20,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-1"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "390 dark slider visible",
+          "severity": "moderate",
+          "message": "Choose page theme: Monochrome Industrial measures 170.88x32px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-18"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 170.88,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 32,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-2"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "390 dark slider visible",
+          "severity": "moderate",
+          "message": "Previous page theme measures 34.98x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-23"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.98,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-3"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "390 dark slider visible",
+          "severity": "moderate",
+          "message": "Next page theme measures 34.98x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-27"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.98,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-4"
+        }
+      ]
+    },
+    {
+      "name": "390 dark chooser open",
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 4,
+        "total": 4
+      },
+      "findings": [
+        {
+          "ruleId": "spacing/off-scale-value",
+          "state": "390 dark chooser open",
+          "severity": "moderate",
+          "message": "390 dark chooser open uses 4 off-scale spacing values across 69 elements: 2px, 10px, 14px, 20px.",
+          "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+          "elementIds": [
+            "slider-34",
+            "slider-35",
+            "slider-37",
+            "slider-38",
+            "slider-45",
+            "slider-46",
+            "slider-51",
+            "slider-52",
+            "slider-59",
+            "slider-60",
+            "slider-65",
+            "slider-66",
+            "slider-71",
+            "slider-72",
+            "slider-77",
+            "slider-78",
+            "slider-83",
+            "slider-84",
+            "slider-89",
+            "slider-90",
+            "slider-95",
+            "slider-96",
+            "slider-101",
+            "slider-102",
+            "slider-109",
+            "slider-110",
+            "slider-115",
+            "slider-116",
+            "slider-123",
+            "slider-124",
+            "slider-129",
+            "slider-130",
+            "slider-135",
+            "slider-136",
+            "slider-143",
+            "slider-144",
+            "slider-149",
+            "slider-150",
+            "slider-155",
+            "slider-156",
+            "slider-161",
+            "slider-162",
+            "slider-167",
+            "slider-168",
+            "slider-175",
+            "slider-176",
+            "slider-182",
+            "slider-183",
+            "slider-190",
+            "slider-191",
+            "slider-196",
+            "slider-197",
+            "slider-202",
+            "slider-203",
+            "slider-208",
+            "slider-209",
+            "slider-216",
+            "slider-217",
+            "slider-222",
+            "slider-223",
+            "slider-228",
+            "slider-229",
+            "slider-234",
+            "slider-235",
+            "slider-240",
+            "slider-241",
+            "slider-250",
+            "slider-294",
+            "slider-275"
+          ],
+          "evidence": [
+            {
+              "label": "Close padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Close padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding right",
+              "value": 14,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding left",
+              "value": 14,
+              "unit": "px"
+            },
+            {
+              "label": "Eidova default padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Eidova default padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "slider-38 row gap",
+              "value": 2,
+              "unit": "px"
+            },
+            {
+              "label": "slider-38 column gap",
+              "value": 2,
+              "unit": "px"
+            },
+            {
+              "label": "Apply page theme: Minimal Light padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Apply page theme: Minimal Light padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "slider-46 row gap",
+              "value": 2,
+              "unit": "px"
+            },
+            {
+              "label": "slider-46 column gap",
+              "value": 2,
+              "unit": "px"
+            },
+            {
+              "label": "Apply page theme: Neutral Monochrome padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Apply page theme: Neutral Monochrome padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "slider-52 row gap",
+              "value": 2,
+              "unit": "px"
+            },
+            {
+              "label": "slider-52 column gap",
+              "value": 2,
+              "unit": "px"
+            },
+            {
+              "label": "Apply page theme: Linear padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Apply page theme: Linear padding bottom",
+              "value": 10,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-1"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "390 dark chooser open",
+          "severity": "moderate",
+          "message": "Choose page theme: Monochrome Industrial measures 170.88x32px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-18"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 170.88,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 32,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-2"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "390 dark chooser open",
+          "severity": "moderate",
+          "message": "Previous page theme measures 34.98x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-23"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.98,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-3"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "390 dark chooser open",
+          "severity": "moderate",
+          "message": "Next page theme measures 34.98x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-27"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.98,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-4"
+        }
+      ]
+    },
+    {
+      "name": "1440 light slider visible",
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 4,
+        "total": 4
+      },
+      "findings": [
+        {
+          "ruleId": "spacing/off-scale-value",
+          "state": "1440 light slider visible",
+          "severity": "moderate",
+          "message": "1440 light slider visible uses 6 off-scale spacing values across 14 elements: 10px, 20px, 28px, 40px, 44px, 70px.",
+          "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+          "elementIds": [
+            "slider-1",
+            "slider-5",
+            "slider-6",
+            "slider-7",
+            "slider-8",
+            "slider-9",
+            "slider-10",
+            "slider-11",
+            "slider-35",
+            "slider-79",
+            "slider-53",
+            "slider-59",
+            "slider-60",
+            "slider-68"
+          ],
+          "evidence": [
+            {
+              "label": "slider-1 margin right",
+              "value": 40,
+              "unit": "px"
+            },
+            {
+              "label": "slider-1 margin left",
+              "value": 40,
+              "unit": "px"
+            },
+            {
+              "label": "Themes padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Themes padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Switch to dark mode padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Switch to dark mode padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "slider-79 margin right",
+              "value": 40,
+              "unit": "px"
+            },
+            {
+              "label": "slider-79 margin left",
+              "value": 40,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-1"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1440 light slider visible",
+          "severity": "moderate",
+          "message": "Choose page theme: Monochrome Industrial measures 170.88x32px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-18"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 170.88,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 32,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-2"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1440 light slider visible",
+          "severity": "moderate",
+          "message": "Previous page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-23"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-3"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1440 light slider visible",
+          "severity": "moderate",
+          "message": "Next page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-27"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-4"
+        }
+      ]
+    },
+    {
+      "name": "1440 light chooser open",
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 4,
+        "total": 4
+      },
+      "findings": [
+        {
+          "ruleId": "spacing/off-scale-value",
+          "state": "1440 light chooser open",
+          "severity": "moderate",
+          "message": "1440 light chooser open uses 8 off-scale spacing values across 79 elements: 2px, 10px, 14px, 20px, 28px, 40px, 44px, 70px.",
+          "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+          "elementIds": [
+            "slider-5",
+            "slider-6",
+            "slider-7",
+            "slider-8",
+            "slider-9",
+            "slider-10",
+            "slider-11",
+            "slider-34",
+            "slider-35",
+            "slider-37",
+            "slider-38",
+            "slider-45",
+            "slider-46",
+            "slider-51",
+            "slider-52",
+            "slider-59",
+            "slider-60",
+            "slider-65",
+            "slider-66",
+            "slider-71",
+            "slider-72",
+            "slider-77",
+            "slider-78",
+            "slider-83",
+            "slider-84",
+            "slider-89",
+            "slider-90",
+            "slider-95",
+            "slider-96",
+            "slider-101",
+            "slider-102",
+            "slider-109",
+            "slider-110",
+            "slider-115",
+            "slider-116",
+            "slider-123",
+            "slider-124",
+            "slider-129",
+            "slider-130",
+            "slider-135",
+            "slider-136",
+            "slider-143",
+            "slider-144",
+            "slider-149",
+            "slider-150",
+            "slider-155",
+            "slider-156",
+            "slider-161",
+            "slider-162",
+            "slider-167",
+            "slider-168",
+            "slider-175",
+            "slider-176",
+            "slider-182",
+            "slider-183",
+            "slider-190",
+            "slider-191",
+            "slider-196",
+            "slider-197",
+            "slider-202",
+            "slider-203",
+            "slider-208",
+            "slider-209",
+            "slider-216",
+            "slider-217",
+            "slider-222",
+            "slider-223",
+            "slider-228",
+            "slider-229",
+            "slider-234",
+            "slider-235",
+            "slider-240",
+            "slider-241",
+            "slider-250",
+            "slider-294",
+            "slider-268",
+            "slider-274",
+            "slider-275",
+            "slider-283"
+          ],
+          "evidence": [
+            {
+              "label": "Themes padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Themes padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Close padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Close padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding right",
+              "value": 14,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding left",
+              "value": 14,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-1"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1440 light chooser open",
+          "severity": "moderate",
+          "message": "Choose page theme: Monochrome Industrial measures 170.88x32px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-18"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 170.88,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 32,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-2"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1440 light chooser open",
+          "severity": "moderate",
+          "message": "Previous page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-23"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-3"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1440 light chooser open",
+          "severity": "moderate",
+          "message": "Next page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-27"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-4"
+        }
+      ]
+    },
+    {
+      "name": "1440 dark slider visible",
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 4,
+        "total": 4
+      },
+      "findings": [
+        {
+          "ruleId": "spacing/off-scale-value",
+          "state": "1440 dark slider visible",
+          "severity": "moderate",
+          "message": "1440 dark slider visible uses 6 off-scale spacing values across 14 elements: 10px, 20px, 28px, 40px, 44px, 70px.",
+          "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+          "elementIds": [
+            "slider-1",
+            "slider-5",
+            "slider-6",
+            "slider-7",
+            "slider-8",
+            "slider-9",
+            "slider-10",
+            "slider-11",
+            "slider-35",
+            "slider-79",
+            "slider-53",
+            "slider-59",
+            "slider-60",
+            "slider-68"
+          ],
+          "evidence": [
+            {
+              "label": "slider-1 margin right",
+              "value": 40,
+              "unit": "px"
+            },
+            {
+              "label": "slider-1 margin left",
+              "value": 40,
+              "unit": "px"
+            },
+            {
+              "label": "Themes padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Themes padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Switch to light mode padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Switch to light mode padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "slider-79 margin right",
+              "value": 40,
+              "unit": "px"
+            },
+            {
+              "label": "slider-79 margin left",
+              "value": 40,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-1"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1440 dark slider visible",
+          "severity": "moderate",
+          "message": "Choose page theme: Monochrome Industrial measures 170.88x32px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-18"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 170.88,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 32,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-2"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1440 dark slider visible",
+          "severity": "moderate",
+          "message": "Previous page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-23"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-3"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1440 dark slider visible",
+          "severity": "moderate",
+          "message": "Next page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-27"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-4"
+        }
+      ]
+    },
+    {
+      "name": "1440 dark chooser open",
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 4,
+        "total": 4
+      },
+      "findings": [
+        {
+          "ruleId": "spacing/off-scale-value",
+          "state": "1440 dark chooser open",
+          "severity": "moderate",
+          "message": "1440 dark chooser open uses 8 off-scale spacing values across 79 elements: 2px, 10px, 14px, 20px, 28px, 40px, 44px, 70px.",
+          "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+          "elementIds": [
+            "slider-5",
+            "slider-6",
+            "slider-7",
+            "slider-8",
+            "slider-9",
+            "slider-10",
+            "slider-11",
+            "slider-34",
+            "slider-35",
+            "slider-37",
+            "slider-38",
+            "slider-45",
+            "slider-46",
+            "slider-51",
+            "slider-52",
+            "slider-59",
+            "slider-60",
+            "slider-65",
+            "slider-66",
+            "slider-71",
+            "slider-72",
+            "slider-77",
+            "slider-78",
+            "slider-83",
+            "slider-84",
+            "slider-89",
+            "slider-90",
+            "slider-95",
+            "slider-96",
+            "slider-101",
+            "slider-102",
+            "slider-109",
+            "slider-110",
+            "slider-115",
+            "slider-116",
+            "slider-123",
+            "slider-124",
+            "slider-129",
+            "slider-130",
+            "slider-135",
+            "slider-136",
+            "slider-143",
+            "slider-144",
+            "slider-149",
+            "slider-150",
+            "slider-155",
+            "slider-156",
+            "slider-161",
+            "slider-162",
+            "slider-167",
+            "slider-168",
+            "slider-175",
+            "slider-176",
+            "slider-182",
+            "slider-183",
+            "slider-190",
+            "slider-191",
+            "slider-196",
+            "slider-197",
+            "slider-202",
+            "slider-203",
+            "slider-208",
+            "slider-209",
+            "slider-216",
+            "slider-217",
+            "slider-222",
+            "slider-223",
+            "slider-228",
+            "slider-229",
+            "slider-234",
+            "slider-235",
+            "slider-240",
+            "slider-241",
+            "slider-250",
+            "slider-294",
+            "slider-268",
+            "slider-274",
+            "slider-275",
+            "slider-283"
+          ],
+          "evidence": [
+            {
+              "label": "Themes padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Themes padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Close padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Close padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding right",
+              "value": 14,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding left",
+              "value": 14,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-1"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1440 dark chooser open",
+          "severity": "moderate",
+          "message": "Choose page theme: Monochrome Industrial measures 170.88x32px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-18"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 170.88,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 32,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-2"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1440 dark chooser open",
+          "severity": "moderate",
+          "message": "Previous page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-23"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-3"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1440 dark chooser open",
+          "severity": "moderate",
+          "message": "Next page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-27"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-4"
+        }
+      ]
+    },
+    {
+      "name": "1728 light slider visible",
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 4,
+        "total": 4
+      },
+      "findings": [
+        {
+          "ruleId": "spacing/off-scale-value",
+          "state": "1728 light slider visible",
+          "severity": "moderate",
+          "message": "1728 light slider visible uses 6 off-scale spacing values across 14 elements: 10px, 20px, 28px, 44px, 70px, 136.5px.",
+          "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+          "elementIds": [
+            "slider-1",
+            "slider-5",
+            "slider-6",
+            "slider-7",
+            "slider-8",
+            "slider-9",
+            "slider-10",
+            "slider-11",
+            "slider-35",
+            "slider-79",
+            "slider-53",
+            "slider-59",
+            "slider-60",
+            "slider-68"
+          ],
+          "evidence": [
+            {
+              "label": "slider-1 margin right",
+              "value": 136.5,
+              "unit": "px"
+            },
+            {
+              "label": "slider-1 margin left",
+              "value": 136.5,
+              "unit": "px"
+            },
+            {
+              "label": "Themes padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Themes padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Switch to dark mode padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Switch to dark mode padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "slider-79 margin right",
+              "value": 136.5,
+              "unit": "px"
+            },
+            {
+              "label": "slider-79 margin left",
+              "value": 136.5,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-1"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1728 light slider visible",
+          "severity": "moderate",
+          "message": "Choose page theme: Monochrome Industrial measures 170.88x32px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-18"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 170.88,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 32,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-2"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1728 light slider visible",
+          "severity": "moderate",
+          "message": "Previous page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-23"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-3"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1728 light slider visible",
+          "severity": "moderate",
+          "message": "Next page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-27"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-4"
+        }
+      ]
+    },
+    {
+      "name": "1728 light chooser open",
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 4,
+        "total": 4
+      },
+      "findings": [
+        {
+          "ruleId": "spacing/off-scale-value",
+          "state": "1728 light chooser open",
+          "severity": "moderate",
+          "message": "1728 light chooser open uses 8 off-scale spacing values across 79 elements: 2px, 10px, 14px, 20px, 28px, 44px, 70px, 136.5px.",
+          "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+          "elementIds": [
+            "slider-5",
+            "slider-6",
+            "slider-7",
+            "slider-8",
+            "slider-9",
+            "slider-10",
+            "slider-11",
+            "slider-34",
+            "slider-35",
+            "slider-37",
+            "slider-38",
+            "slider-45",
+            "slider-46",
+            "slider-51",
+            "slider-52",
+            "slider-59",
+            "slider-60",
+            "slider-65",
+            "slider-66",
+            "slider-71",
+            "slider-72",
+            "slider-77",
+            "slider-78",
+            "slider-83",
+            "slider-84",
+            "slider-89",
+            "slider-90",
+            "slider-95",
+            "slider-96",
+            "slider-101",
+            "slider-102",
+            "slider-109",
+            "slider-110",
+            "slider-115",
+            "slider-116",
+            "slider-123",
+            "slider-124",
+            "slider-129",
+            "slider-130",
+            "slider-135",
+            "slider-136",
+            "slider-143",
+            "slider-144",
+            "slider-149",
+            "slider-150",
+            "slider-155",
+            "slider-156",
+            "slider-161",
+            "slider-162",
+            "slider-167",
+            "slider-168",
+            "slider-175",
+            "slider-176",
+            "slider-182",
+            "slider-183",
+            "slider-190",
+            "slider-191",
+            "slider-196",
+            "slider-197",
+            "slider-202",
+            "slider-203",
+            "slider-208",
+            "slider-209",
+            "slider-216",
+            "slider-217",
+            "slider-222",
+            "slider-223",
+            "slider-228",
+            "slider-229",
+            "slider-234",
+            "slider-235",
+            "slider-240",
+            "slider-241",
+            "slider-250",
+            "slider-294",
+            "slider-268",
+            "slider-274",
+            "slider-275",
+            "slider-283"
+          ],
+          "evidence": [
+            {
+              "label": "Themes padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Themes padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Close padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Close padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding right",
+              "value": 14,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding left",
+              "value": 14,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-1"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1728 light chooser open",
+          "severity": "moderate",
+          "message": "Choose page theme: Monochrome Industrial measures 170.88x32px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-18"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 170.88,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 32,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-2"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1728 light chooser open",
+          "severity": "moderate",
+          "message": "Previous page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-23"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-3"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1728 light chooser open",
+          "severity": "moderate",
+          "message": "Next page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-27"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-4"
+        }
+      ]
+    },
+    {
+      "name": "1728 dark slider visible",
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 4,
+        "total": 4
+      },
+      "findings": [
+        {
+          "ruleId": "spacing/off-scale-value",
+          "state": "1728 dark slider visible",
+          "severity": "moderate",
+          "message": "1728 dark slider visible uses 6 off-scale spacing values across 14 elements: 10px, 20px, 28px, 44px, 70px, 136.5px.",
+          "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+          "elementIds": [
+            "slider-1",
+            "slider-5",
+            "slider-6",
+            "slider-7",
+            "slider-8",
+            "slider-9",
+            "slider-10",
+            "slider-11",
+            "slider-35",
+            "slider-79",
+            "slider-53",
+            "slider-59",
+            "slider-60",
+            "slider-68"
+          ],
+          "evidence": [
+            {
+              "label": "slider-1 margin right",
+              "value": 136.5,
+              "unit": "px"
+            },
+            {
+              "label": "slider-1 margin left",
+              "value": 136.5,
+              "unit": "px"
+            },
+            {
+              "label": "Themes padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Themes padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Switch to light mode padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Switch to light mode padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "slider-79 margin right",
+              "value": 136.5,
+              "unit": "px"
+            },
+            {
+              "label": "slider-79 margin left",
+              "value": 136.5,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-1"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1728 dark slider visible",
+          "severity": "moderate",
+          "message": "Choose page theme: Monochrome Industrial measures 170.88x32px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-18"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 170.88,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 32,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-2"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1728 dark slider visible",
+          "severity": "moderate",
+          "message": "Previous page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-23"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-3"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1728 dark slider visible",
+          "severity": "moderate",
+          "message": "Next page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-27"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-4"
+        }
+      ]
+    },
+    {
+      "name": "1728 dark chooser open",
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 4,
+        "total": 4
+      },
+      "findings": [
+        {
+          "ruleId": "spacing/off-scale-value",
+          "state": "1728 dark chooser open",
+          "severity": "moderate",
+          "message": "1728 dark chooser open uses 8 off-scale spacing values across 80 elements: 2px, 10px, 14px, 20px, 28px, 44px, 70px, 136.5px.",
+          "fix": "Replace the measured values with the nearest project spacing token. Active scale: 4, 8, 12, 16, 24, 32, 48, 64, 96, 128px.",
+          "elementIds": [
+            "slider-1",
+            "slider-5",
+            "slider-6",
+            "slider-7",
+            "slider-8",
+            "slider-9",
+            "slider-10",
+            "slider-11",
+            "slider-34",
+            "slider-35",
+            "slider-37",
+            "slider-38",
+            "slider-45",
+            "slider-46",
+            "slider-51",
+            "slider-52",
+            "slider-59",
+            "slider-60",
+            "slider-65",
+            "slider-66",
+            "slider-71",
+            "slider-72",
+            "slider-77",
+            "slider-78",
+            "slider-83",
+            "slider-84",
+            "slider-89",
+            "slider-90",
+            "slider-95",
+            "slider-96",
+            "slider-101",
+            "slider-102",
+            "slider-109",
+            "slider-110",
+            "slider-115",
+            "slider-116",
+            "slider-123",
+            "slider-124",
+            "slider-129",
+            "slider-130",
+            "slider-135",
+            "slider-136",
+            "slider-143",
+            "slider-144",
+            "slider-149",
+            "slider-150",
+            "slider-155",
+            "slider-156",
+            "slider-161",
+            "slider-162",
+            "slider-167",
+            "slider-168",
+            "slider-175",
+            "slider-176",
+            "slider-182",
+            "slider-183",
+            "slider-190",
+            "slider-191",
+            "slider-196",
+            "slider-197",
+            "slider-202",
+            "slider-203",
+            "slider-208",
+            "slider-209",
+            "slider-216",
+            "slider-217",
+            "slider-222",
+            "slider-223",
+            "slider-228",
+            "slider-229",
+            "slider-234",
+            "slider-235",
+            "slider-240",
+            "slider-241",
+            "slider-250",
+            "slider-294",
+            "slider-268",
+            "slider-274",
+            "slider-275",
+            "slider-283"
+          ],
+          "evidence": [
+            {
+              "label": "slider-1 margin right",
+              "value": 136.5,
+              "unit": "px"
+            },
+            {
+              "label": "slider-1 margin left",
+              "value": 136.5,
+              "unit": "px"
+            },
+            {
+              "label": "Themes padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Themes padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Resources padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Tools padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Docs padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Showcase padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Team workspace padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding right",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Connect padding left",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Close padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Close padding bottom",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding top",
+              "value": 10,
+              "unit": "px"
+            },
+            {
+              "label": "Search page themes padding right",
+              "value": 14,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-1"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1728 dark chooser open",
+          "severity": "moderate",
+          "message": "Choose page theme: Monochrome Industrial measures 170.88x32px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-18"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 170.88,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 32,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-2"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1728 dark chooser open",
+          "severity": "moderate",
+          "message": "Previous page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-23"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-3"
+        },
+        {
+          "ruleId": "spacing/touch-target",
+          "state": "1728 dark chooser open",
+          "severity": "moderate",
+          "message": "Next page theme measures 34.67x44px, below the recommended 44x44px touch target.",
+          "fix": "Increase the interactive hit area to at least 44x44px without relying on the visible icon size.",
+          "elementIds": [
+            "slider-27"
+          ],
+          "evidence": [
+            {
+              "label": "Width",
+              "value": 34.67,
+              "unit": "px"
+            },
+            {
+              "label": "Height",
+              "value": 44,
+              "unit": "px"
+            }
+          ],
+          "id": "spacing-4"
+        }
+      ]
+    }
+  ],
+  "failures": [],
+  "errors": [],
+  "sourceSha256": {
+    "PageThemePicker.tsx": "9a7b5e4ee04556207793df5181f8200a7f16b3e80a50dcff78e676803b84c96a",
+    "page-theme-picker.css": "1387bda40a6354dece2663c77f2b35f9b32fbbeda6852a398f65afca349d7705",
+    "App.tsx": "09166d20ed6e83e695e90796d37207a142b33a39dfc9f8aa1d49502d6f7cab76",
+    "Docs.tsx": "60d328f1eb7daeac9b371936b0808ce48bd43077e26a8e93361dfb77a2db5501",
+    "theme.ts": "6d4133efa39743ad865ac5e279309716962a4822068d89812439e40d60379aae",
+    "theme.css": "edc05a03afd375589439f6109a99482ffc282d2efd8c65a2792895df3982c17c",
+    "main.tsx": "568455b176c9b9997973ae81b7657ac3b4d0cb298d1f4f8ede5c2bd41305096d",
+    "clean.css": "556b80597dd13ecbe93d72171feaf08c8b239b3c28bda2577a58efa361eb8e38",
+    "components/ui/input.tsx": "40e984f5173c91eb8cce1372be55c7491ef0c2caadf452ef21829c1f86252fa8",
+    "components/ui/button.tsx": "3ee9276dfa5582da6dfba8fbfb3a99f80470b1e5c63cf8fa6e6151c290173d71"
+  },
+  "limits": [
+    "Local Edge/Chromium review; no human screen-reader walkthrough."
+  ],
+  "verification": {
+    "productionBuild": "pass",
+    "themeChecks": "31 themes in both appearances at 390, 1440 and 1728; contrast, inheritance, pointer/keyboard slider input, search, persistence/history, isolated previews, storage failure, catalog outage, Axe and 200% text pass",
+    "routeChecks": "36 route states, zero Axe violations and zero browser errors; responsive and enlarged-text reflow, six default connection formats, profile switching, Docs URL and system/saved/URL appearance pass",
+    "clipboard": "All six clients copy the exact full endpoint; Docs copies the full Codex command",
+    "protocol": "Live tools/list returns 42 at /mcp and 13 at /mcp/core. Local Codex Eidova configuration now uses /mcp.",
+    "manifest": "Registry metadata schema and full-profile assertions pass",
+    "publication": "Reviewed source ready for production publication; deployment evidence recorded separately."
+  }
+}

@@ -32,6 +32,8 @@ try {
       assert.deepEqual(properties, { ...palette.tokens, ...palette.siteOverrides });
       assert.ok(await button.evaluate(node => node === document.activeElement), 'Applying must retain keyboard focus');
       assert.match(await page.locator('.theme-picker-trigger').evaluate(node => getComputedStyle(node).fontFamily), /Inter/, 'The picker keeps readable interface typography');
+      assert.equal(await page.getByRole('slider', { name: 'Page theme', exact: true }).getAttribute('aria-valuetext'), theme.title);
+      assert.equal(await page.locator('.page-theme-picker').evaluate(node => getComputedStyle(node).getPropertyValue('--primary').trim()), palette.tokens['--primary'], 'The theme bar inherits the applied palette');
       assert.match(await page.locator('.site-header .wordmark').evaluate(node => getComputedStyle(node).fontFamily), /Newsreader/, 'Brand typography stays consistent');
       for (const width of [390, 1440, 1728]) {
         await page.setViewportSize({ width, height: 1000 });
@@ -94,6 +96,26 @@ try {
   await pickerPage.route('**/api/catalog', route => route.abort());
   await pickerPage.goto(origin + '/?mode=light&q=Linear', { waitUntil: 'networkidle' });
   const picker = pickerPage.locator('.page-theme-picker');
+  const slider = pickerPage.getByRole('slider', { name: 'Page theme', exact: true });
+  await slider.focus();
+  await slider.press('End');
+  assert.notEqual(await pickerPage.locator('html').getAttribute('data-page-theme'), null, 'The slider applies the final theme immediately');
+  const lastTheme = await pickerPage.locator('html').getAttribute('data-page-theme');
+  await slider.press('Home');
+  assert.equal(await pickerPage.locator('html').getAttribute('data-page-theme'), null, 'Home restores the default');
+  await slider.press('ArrowRight');
+  assert.equal(await pickerPage.locator('html').getAttribute('data-page-theme'), 'minimal-light');
+  assert.equal(await slider.getAttribute('aria-valuetext'), themes['minimal-light'].title);
+  assert.ok(await slider.evaluate(node => node === document.activeElement), 'Theme changes retain slider focus');
+  await pickerPage.goBack();
+  assert.equal(await slider.inputValue(), '0', 'Back restores the slider position');
+  await pickerPage.goForward();
+  await pickerPage.reload({ waitUntil: 'networkidle' });
+  assert.equal(await pickerPage.locator('html').getAttribute('data-page-theme'), 'minimal-light', 'Slider selection survives reload');
+  const sliderRect = await slider.boundingBox();
+  await slider.click({ position: { x: sliderRect.width - 2, y: sliderRect.height / 2 } });
+  assert.equal(await pickerPage.locator('html').getAttribute('data-page-theme'), lastTheme, 'Pointer input applies the final theme');
+  await slider.press('Home');
   const choose = pickerPage.getByRole('button', { name: /Choose page theme:/ });
   await choose.click();
   assert.equal(await pickerPage.locator('.theme-choice:not(.theme-default-choice)').count(), 31, 'Picker works even when the remote catalog is unavailable');

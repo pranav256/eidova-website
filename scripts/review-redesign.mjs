@@ -78,6 +78,20 @@ try {
     await page.evaluate(() => document.documentElement.style.fontSize = '');
   }
   await page.goto(origin, { waitUntil: 'networkidle' });
+  const fullUrl = (process.env.WEBSITE_EXPECTED_MCP_URL || 'https://open-design-mcp-liard.vercel.app/mcp').replace(/\/core\/?$/, '').replace(/\/$/, '');
+  assert.equal(await page.getByRole('button', { name: 'All tools · 42 tools', exact: true }).getAttribute('aria-pressed'), 'true');
+  for (const name of ['Codex', 'Claude Code', 'Claude Desktop', 'Cursor', 'VS Code', 'Server URL']) {
+    await page.getByRole('tab', { name, exact: true }).click();
+    const setup = ['Claude Desktop', 'Server URL'].includes(name) ? await page.locator('#mcp-endpoint').inputValue() : await page.locator('.client-panel pre').textContent();
+    assert.ok(setup.includes(fullUrl) && !setup.includes(fullUrl + '/core'), name + ' defaults to all 42 tools');
+  }
+  await page.getByRole('button', { name: 'Essentials · 13 tools', exact: true }).click();
+  assert.equal(await page.locator('#mcp-endpoint').inputValue(), fullUrl + '/core');
+  await page.getByRole('button', { name: 'All tools · 42 tools', exact: true }).click();
+  assert.equal(await page.locator('#mcp-endpoint').inputValue(), fullUrl);
+  await page.goto(origin + '/docs?mode=light', { waitUntil: 'networkidle' });
+  assert.ok((await page.locator('.docs-command code').textContent()).endsWith(fullUrl), 'Docs use the full profile too');
+  await page.goto(origin, { waitUntil: 'networkidle' });
   await page.getByRole('button', { name: 'Switch to dark mode', exact: true }).click();
   await page.reload({ waitUntil: 'networkidle' });
   assert.equal(await page.locator('html').getAttribute('data-theme'), 'dark');
