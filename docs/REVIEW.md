@@ -1,6 +1,6 @@
 # Website review evidence
 
-Consolidated 15 November 2026. Completed plans are represented by DESIGN.md, README.md and these dated receipts. Active work is tracked only in the parent workspace TODO.md. Historical blockers below describe their original sessions; signed website 4ab5743 and MCP 9b23c02 are deployed and both CI runs passed.
+Consolidated 15 November 2026. Completed plans are represented by DESIGN.md, README.md and these dated receipts. npm/Registry publication is deferred, with prerequisites retained in the MCP release guide; native Studio is optional and preserved. Historical blockers below describe their original sessions; signed website 4ab5743 and MCP 9b23c02 are deployed and both CI runs passed.
 
 The 13 November showcase acceptance covers the full toolkit introduction, six capability links, nine existing chapters, real specimens, token/icon exports, validation/motion recovery, copy review, resources, workflow/tool discovery and the separate team connection. Its scoped build/review passed 30 states and 24 copy panels in both appearances at 390/1440/1728, with no unresolved critical/serious findings. Subsequent reference and theme-slider receipts supersede its earlier visual direction. The website and matching API are public; the old signing/network/staging blockers are resolved. Provider generation, native/Shopify install kits, persistent Studio hosting and demo invitations are outside those demonstrations.
 
