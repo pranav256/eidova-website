@@ -66,13 +66,19 @@ export function PageThemePicker({ mode, value, onChange }: { mode: ThemeMode; va
   return <div ref={container} className="page-theme-picker" data-mode={mode} onBlur={event => { if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget as Node)) setOpen(false); }} onKeyDown={event => { if (event.key === 'Escape' && open) { event.preventDefault(); close(); } }}>
     <div className="page-theme-picker-inner">
       <div className="theme-picker-controls">
-        <Button ref={trigger} variant="outline" className="theme-picker-trigger" aria-label={'Choose page theme: ' + title} aria-haspopup="dialog" aria-expanded={open} aria-controls="page-theme-menu" onClick={() => { setQuery(''); setOpen(current => !current); }}>
-          <Swatches id={value} mode={mode} /><span>Theme</span><ChevronDown aria-hidden="true" />
-        </Button>
+        <div className="theme-slider-heading"><span>Theme</span><Button ref={trigger} variant="ghost" className="theme-picker-trigger" aria-label={'Choose page theme: ' + title} aria-haspopup="dialog" aria-expanded={open} aria-controls="page-theme-menu" onClick={() => { setQuery(''); setOpen(current => !current); }}>
+          <span>{title}</span><ChevronDown aria-hidden="true" />
+        </Button></div>
+        <div className="theme-slider-controls" role="group" aria-label="Compare page themes">
+          <Button variant="ghost" aria-label="Previous page theme" onClick={() => step(-1)}><ChevronLeft aria-hidden="true" /></Button>
+          <Input className="theme-slider" type="range" min={0} max={themeIds.length - 1} step={1} value={themeIds.indexOf(value)} aria-label="Page theme" aria-valuetext={title} onChange={event => onChange(themeIds[event.currentTarget.valueAsNumber])} />
+          <Button variant="ghost" aria-label="Next page theme" onClick={() => step(1)}><ChevronRight aria-hidden="true" /></Button>
+        </div>
+      </div>
+    </div>
         <p className="sr-only" role="status">Page theme: {title}</p>
         {open && <div className="page-theme-menu" id="page-theme-menu" role="dialog" aria-modal="false" aria-labelledby="page-theme-menu-title">
           <div className="theme-menu-heading"><h2 id="page-theme-menu-title">Choose a page theme</h2><Button variant="ghost" onClick={close}>Close</Button></div>
-          <div className="theme-comparison"><p>{title}</p><div className="theme-step-controls" role="group" aria-label="Compare page themes"><Button variant="ghost" aria-label="Previous page theme" onClick={() => step(-1)}><ChevronLeft aria-hidden="true" /></Button><Button variant="ghost" aria-label="Next page theme" onClick={() => step(1)}><ChevronRight aria-hidden="true" /></Button></div></div>
           <Input ref={search} type="search" aria-label="Search page themes" placeholder="Search themes or families…" value={query} onChange={event => setQuery(event.target.value)} onKeyDown={event => { if (event.key === 'ArrowDown') { event.preventDefault(); container.current?.querySelector<HTMLButtonElement>('.theme-choice:not(.theme-default-choice)')?.focus(); } }} />
           <div className="theme-menu-options" onKeyDown={event => {
             if (!['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) return;
@@ -88,7 +94,5 @@ export function PageThemePicker({ mode, value, onChange }: { mode: ThemeMode; va
             {!visible.length && <p className="theme-picker-empty" role="status">No matching themes. Try another name.</p>}
           </div>
         </div>}
-      </div>
-    </div>
   </div>;
 }

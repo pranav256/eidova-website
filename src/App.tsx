@@ -82,7 +82,7 @@ export function App() {
   const [showHandoff, setShowHandoff] = useState(false);
   const [retry, setRetry] = useState(0);
   const [client, setClient] = useState(0);
-  const [profile,setProfile]=useState<'core'|'full'>('core');
+  const [profile,setProfile]=useState<'core'|'full'>('full');
   const [preview,setPreview]=useState<string|null>(readPreview);
   const previewFamily=preview?familyFor(preview):null;
   const previewDialog=useRef<HTMLDialogElement>(null);
@@ -223,7 +223,7 @@ export function App() {
             <CopyButton value={setup}>{copyLabel}</CopyButton>
             <div className="config-footnote"><span aria-hidden="true">↳</span><p>{client<2?'Start a new client session after adding the server.':client===3||client===4?'Save the configuration and reload your client.':'Paste the URL into your client and connect.'}</p></div>
           </div>
-          <details className="tool-options"><summary>Tool options</summary><div className="profile-picker" role="group" aria-label="MCP tool profile"><Button variant="ghost" aria-pressed={profile==='core'} onClick={()=>setProfile('core')}>Essentials · 13 tools</Button><Button variant="ghost" aria-pressed={profile==='full'} onClick={()=>setProfile('full')}>All tools</Button></div><p className="profile-note">Essentials uses less agent context. All tools adds private project rules and specialist guides.</p></details>
+          <div className="tool-options"><div className="profile-picker" role="group" aria-label="MCP tool profile"><Button variant="ghost" aria-pressed={profile==='full'} onClick={()=>setProfile('full')}>All tools · 42 tools</Button><Button variant="ghost" aria-pressed={profile==='core'} onClick={()=>setProfile('core')}>Essentials · 13 tools</Button></div><p className="profile-note">{profile==='full'?'42 tools at /mcp. Includes specialist guides and project rules.':'13 tools at /mcp/core. Covers themes, resources, guidance and review.'} Reconnect your client after changing profiles.</p></div>
         </section>
 
       </section>
