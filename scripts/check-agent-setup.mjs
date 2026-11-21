@@ -30,7 +30,7 @@ assert.match(instructions, /Merge these instructions/);
 assert.match(instructions, /does not configure an MCP connection/);
 const index = await text('dist/llms.txt');
 for (const match of index.matchAll(/\]\(https:\/\/eidova\.vercel\.app([^)]*)\)/g)) {
-  const route = match[1];
+  const { pathname: route } = new URL('https://eidova.vercel.app' + match[1]);
   if (rewrites.some(rule => rule.source === route)) continue;
   await text('dist' + route);
 }

@@ -21,6 +21,7 @@
 ## Product and reference
 
 - [Documentation](https://eidova.vercel.app/docs)
+- [Local commands](https://eidova.vercel.app/docs#local-commands): Browser review, component install preview and token diff.
 - [Resources](https://eidova.vercel.app/resources): 784 packages; preserve original licenses.
 - [Showcase](https://eidova.vercel.app/showcase)
 - [API reference](https://github.com/pranav256/eidova-mcp/blob/main/docs/API.md)
