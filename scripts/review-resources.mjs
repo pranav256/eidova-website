@@ -10,7 +10,7 @@ const ids = list => list.map(entry => entry.kind + '/' + entry.id).sort();
 assert.deepEqual(ids(entries), ids(upstream.entries));
 assert.equal(new Set(ids(entries)).size, 784);
 const metadata = await readFile('dist/resources/index.html', 'utf8');
-assert.ok(metadata.includes('rel="canonical" href="https://open-design-website.vercel.app/resources"'));
+assert.ok(metadata.includes('rel="canonical" href="https://eidova.vercel.app/resources"'));
 assert.equal((metadata.match(/<li><a href="\/api\/resources\//g) || []).length, entries.length);
 const output = '.work/resources';
 await mkdir(output, { recursive: true });

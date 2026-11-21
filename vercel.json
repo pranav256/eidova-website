@@ -3,20 +3,23 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
+    { "source": "/mcp", "destination": "https://eidova-mcp.vercel.app/mcp" },
+    { "source": "/mcp/core", "destination": "https://eidova-mcp.vercel.app/mcp/core" },
+    { "source": "/server.json", "destination": "https://eidova-mcp.vercel.app/server.json" },
     { "source": "/resources", "destination": "/resources/index.html" },
     { "source": "/resources/", "destination": "/resources/index.html" },
     { "source": "/docs", "destination": "/docs/index.html" },
     { "source": "/docs/", "destination": "/docs/index.html" },
     { "source": "/showcase", "destination": "/showcase/index.html" },
     { "source": "/showcase/", "destination": "/showcase/index.html" },
-    { "source": "/api/showcase/mcp", "destination": "https://open-design-mcp-liard.vercel.app/mcp" },
+    { "source": "/api/showcase/mcp", "destination": "https://eidova-mcp.vercel.app/mcp" },
     { "source": "/studio", "destination": "/studio/index.html" },
     { "source": "/studio/", "destination": "/studio/index.html" },
-    { "source": "/api/catalog", "destination": "https://open-design-mcp-liard.vercel.app/api/catalog" },
-    { "source": "/api/resources/:resourceRoute*", "destination": "https://open-design-mcp-liard.vercel.app/api/resources/:resourceRoute*" },
-    { "source": "/api/resource-previews/:previewRoute*", "destination": "https://open-design-mcp-liard.vercel.app/api/resource-previews/:previewRoute*" },
-    { "source": "/api/design-systems/:id/design.md", "destination": "https://open-design-mcp-liard.vercel.app/api/design-systems/:id/design.md" },
-    { "source": "/registry/:path*", "destination": "https://open-design-mcp-liard.vercel.app/registry/:path*" }
+    { "source": "/api/catalog", "destination": "https://eidova-mcp.vercel.app/api/catalog" },
+    { "source": "/api/resources/:resourceRoute*", "destination": "https://eidova-mcp.vercel.app/api/resources/:resourceRoute*" },
+    { "source": "/api/resource-previews/:previewRoute*", "destination": "https://eidova-mcp.vercel.app/api/resource-previews/:previewRoute*" },
+    { "source": "/api/design-systems/:id/design.md", "destination": "https://eidova-mcp.vercel.app/api/design-systems/:id/design.md" },
+    { "source": "/registry/:path*", "destination": "https://eidova-mcp.vercel.app/registry/:path*" }
   ],
   "headers": [
     { "source": "/(.*)", "headers": [

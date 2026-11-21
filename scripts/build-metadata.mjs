@@ -11,7 +11,7 @@ for (const [route, title, description] of [
   ['showcase', 'Eidova Showcase — Try the design toolkit', 'Try real React components, explore design tokens and review UI copy with Eidova MCP.'],
   ['studio', 'Eidova Team Workspace', 'Connect your team workspace to collaborate on project files with Eidova.'],
 ]) {
-  const url = `https://open-design-website.vercel.app/${route}`;
+  const url = `https://eidova.vercel.app/${route}`;
   let page = html.replace(/<title>.*?<\/title>/, `<title>${title}</title>`)
     .replace(/(<meta (?:name="(?:description|twitter:description)"|property="og:description") content=")[^"]*/g, `$1${description}`)
     .replace(/(<meta (?:name="twitter:title"|property="og:title") content=")[^"]*/g, `$1${title}`)

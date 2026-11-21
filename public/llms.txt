@@ -1,0 +1,32 @@
+# Eidova
+
+> Open-source design systems, React components, guidance and UI review tools for coding agents.
+
+## Connect
+
+- [Full MCP](https://eidova-mcp.vercel.app/mcp): Streamable HTTP; 42 public tools. Use an MCP client, not a browser GET.
+- [Core MCP](https://eidova-mcp.vercel.app/mcp/core): 13 read-only essentials. Reconnect after switching profiles.
+- [Server metadata](https://eidova.vercel.app/server.json): MCP Registry-format metadata; npm and Registry publication remain deferred.
+
+## Agent and client setup
+
+- [AGENTS.md starter](https://eidova.vercel.app/AGENTS.md): Review and merge into existing project instructions. Does not configure the connection.
+- [Codex configuration](https://eidova.vercel.app/mcp-config/codex.toml)
+- [Claude Code configuration](https://eidova.vercel.app/mcp-config/claude-code.json)
+- [Cursor configuration](https://eidova.vercel.app/mcp-config/cursor.json)
+- [VS Code configuration](https://eidova.vercel.app/mcp-config/vscode.json)
+- [Setup reference](https://github.com/pranav256/eidova-mcp/blob/main/docs/AGENT-SETUP.md)
+- [Client compatibility and stdio setup](https://github.com/pranav256/eidova-mcp/blob/main/docs/CLIENTS.md)
+
+## Product and reference
+
+- [Documentation](https://eidova.vercel.app/docs)
+- [Resources](https://eidova.vercel.app/resources): 784 packages; preserve original licenses.
+- [Showcase](https://eidova.vercel.app/showcase)
+- [API reference](https://github.com/pranav256/eidova-mcp/blob/main/docs/API.md)
+- [Runtime boundaries](https://github.com/pranav256/eidova-mcp/blob/main/docs/RUNTIME-BOUNDARIES.md)
+- [Security](https://github.com/pranav256/eidova-mcp/blob/main/SECURITY.md)
+
+Public tools return source, guidance, evidence and commands. They do not execute projects,
+perform hosted installation or supply trusted dashboard captures. Public use needs no key.
+Private capability keys must never appear in URLs or browser-exposed configuration.

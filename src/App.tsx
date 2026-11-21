@@ -23,9 +23,9 @@ function readPreview() {
 }
 const sourceUrl = import.meta.env.VITE_REPOSITORY_URL || 'https://github.com/pranav256/eidova-website';
 const serviceSourceUrl = import.meta.env.VITE_MCP_REPOSITORY_URL || 'https://github.com/pranav256/eidova-mcp';
-const endpoint = import.meta.env.VITE_MCP_URL || 'https://open-design-mcp-liard.vercel.app/mcp';
+const endpoint = import.meta.env.VITE_MCP_URL || 'https://eidova-mcp.vercel.app/mcp';
 const catalogUrl = import.meta.env.VITE_CATALOG_URL || '/api/catalog';
-const registryOrigin = (import.meta.env.VITE_REGISTRY_ORIGIN || 'https://open-design-mcp-liard.vercel.app').replace(/\/$/, '');
+const registryOrigin = (import.meta.env.VITE_REGISTRY_ORIGIN || 'https://eidova-mcp.vercel.app').replace(/\/$/, '');
 const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
 const navigationHome = currentPath === '/' ? '' : '/';
 const clientOptions = ['Codex', 'Claude Code', 'Claude Desktop', 'Cursor', 'VS Code', 'Server URL'];

@@ -5,7 +5,7 @@ import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('.', import.meta.url));
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, root, '');
-  const service = env.MCP_PROXY_ORIGIN || 'https://open-design-mcp-liard.vercel.app';
+  const service = env.MCP_PROXY_ORIGIN || 'https://eidova-mcp.vercel.app';
   return {
     root,
     resolve: { alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) } },
@@ -18,6 +18,6 @@ export default defineConfig(({ mode }) => {
       },
     },tailwindcss()],
     build: { outDir: 'dist', emptyOutDir: true },
-    server: { proxy: { '/api/showcase/mcp': { target: service, changeOrigin: true, rewrite: () => '/mcp' }, '/api/studio': { target: env.STUDIO_PROXY_ORIGIN || 'http://127.0.0.1:3210', changeOrigin: true, rewrite: url => url.replace(/^\/api\/studio/, '') }, '/api': { target: service, changeOrigin: true }, '/registry': { target: service, changeOrigin: true } } },
+    server: { proxy: { '^/mcp(?:/|$)': { target: service, changeOrigin: true }, '/server.json': { target: service, changeOrigin: true }, '/api/showcase/mcp': { target: service, changeOrigin: true, rewrite: () => '/mcp' }, '/api/studio': { target: env.STUDIO_PROXY_ORIGIN || 'http://127.0.0.1:3210', changeOrigin: true, rewrite: url => url.replace(/^\/api\/studio/, '') }, '/api': { target: service, changeOrigin: true }, '/registry': { target: service, changeOrigin: true } } },
   };
 });

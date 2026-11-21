@@ -7,7 +7,7 @@ This is the family representative shown in the component preview.
 
 1. Read the existing project instructions, theme, and components first. Preserve the product's own design unless a replacement was explicitly requested.
 2. Save this as DESIGN.md only when that file is absent. Otherwise merge the selected-system details into it; never overwrite existing rules automatically.
-3. Read [the exact globals registry item](https://open-design-mcp-liard.vercel.app/registry/minimal-light/globals.json), then request only needed components with `get-design-system-kit` using `designSystemId: "minimal-light"`, `target: "react"`, and `library: "radix"`.
+3. Read [the exact globals registry item](https://eidova-mcp.vercel.app/registry/minimal-light/globals.json), then request only needed components with `get-design-system-kit` using `designSystemId: "minimal-light"`, `target: "react"`, and `library: "radix"`.
 4. Load UI guidance before styling and UX guidance before changing behavior. Keep the installed components, token values, font loading, and embedded icons.
 
 ## Family fit
@@ -60,7 +60,7 @@ The declarations below preserve the globals registry values and scope names. A s
 ## Components and installation
 
 React kits require Tailwind 4, Radix, the @/* import alias, and components.json. Inspect the project before installing; preserve existing dependency versions and review conflicts. Initialize shadcn only if needed. HTML and DTCG exports are available through the same kit tool for their respective targets.
-Registry: [all items](https://open-design-mcp-liard.vercel.app/registry/minimal-light/all.json). Prefer a scoped kit request over installing every item.
+Registry: [all items](https://eidova-mcp.vercel.app/registry/minimal-light/all.json). Prefer a scoped kit request over installing every item.
 
 Available registry components and helpers:
 

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "eidova": {
+      "type": "http",
+      "url": "https://eidova-mcp.vercel.app/mcp"
+    }
+  }
+}

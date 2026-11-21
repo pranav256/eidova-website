@@ -4,8 +4,9 @@ import { CopyButton } from './components/CopyButton';
 import './docs.css';
 
 const source = (import.meta.env.VITE_MCP_REPOSITORY_URL || 'https://github.com/pranav256/eidova-mcp') + '/blob/main/docs/';
-const endpoint = (import.meta.env.VITE_MCP_URL || 'https://open-design-mcp-liard.vercel.app/mcp').replace(/\/core\/?$/, '').replace(/\/$/, '');
+const endpoint = (import.meta.env.VITE_MCP_URL || 'https://eidova-mcp.vercel.app/mcp').replace(/\/core\/?$/, '').replace(/\/$/, '');
 const references = [
+  ['AGENT-SETUP.md', 'Agent instructions', 'AGENTS.md starter, llms.txt index and downloadable client configurations.'],
   ['CLIENTS.md', 'Client setup', 'Configuration formats for Codex, Claude, Cursor and VS Code.'],
   ['API.md', 'API reference', 'Tool parameters, transports and runtime behavior.'],
   ['DESIGN-FAMILIES.md', 'Design families', 'The 31 themes, their uses and tradeoffs.'],

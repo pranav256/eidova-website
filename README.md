@@ -1,5 +1,9 @@
 # Eidova website
 
+Source defaults now use `https://eidova-mcp.vercel.app/mcp` (42 public tools) and `/mcp/core` (13 essentials). Vercel forwards these endpoints to the existing API project. This routing change still needs deployment and hosted verification; see the MCP [deployment guide](../eidova-mcp/docs/DEPLOYMENT.md#eidova-hosted-rename) for environment overrides and rollout order.
+
+Public setup assets are [AGENTS.md](public/AGENTS.md), [llms.txt](public/llms.txt) and client examples in `public/mcp-config`. Merge project instructions/configs rather than replacing existing files. Run `npm run build` then `npm run test:agent-setup` to verify the built assets and canonical metadata.
+
 The public design toolkit and connection guide is live at https://eidova.vercel.app/ and https://open-design-website.vercel.app/. Its warm paper/rust design, locally loaded Newsreader headings, Inter controls and JetBrains Mono code are defined in [DESIGN.md](DESIGN.md). The sticky navbar theme slider applies all 31 themes plus the default immediately and preserves saved/shared choices.
 
 The homepage introduces the toolkit; `/showcase` connects six capability summaries to real demonstrations and the team workspace. [Review evidence](docs/REVIEW.md) records completed checks. The matching **0.2.0** API defaults to the full **42-tool** profile, with optional **13-tool** core. Both are deployed; package/Registry publication and persistent Studio hosting remain separate acceptance.

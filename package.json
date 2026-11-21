@@ -13,6 +13,7 @@
     "build": "tsc --noEmit && vite build && node scripts/build-metadata.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "check": "tsc --noEmit",
+    "test:agent-setup": "node scripts/check-agent-setup.mjs",
     "test:redesign": "node scripts/review-redesign.mjs",
     "test:resources": "node scripts/review-resources.mjs",
     "test:page-themes": "node scripts/review-page-themes.mjs"

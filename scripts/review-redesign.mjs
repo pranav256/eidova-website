@@ -78,7 +78,7 @@ try {
     await page.evaluate(() => document.documentElement.style.fontSize = '');
   }
   await page.goto(origin, { waitUntil: 'networkidle' });
-  const fullUrl = (process.env.WEBSITE_EXPECTED_MCP_URL || 'https://open-design-mcp-liard.vercel.app/mcp').replace(/\/core\/?$/, '').replace(/\/$/, '');
+  const fullUrl = (process.env.WEBSITE_EXPECTED_MCP_URL || 'https://eidova-mcp.vercel.app/mcp').replace(/\/core\/?$/, '').replace(/\/$/, '');
   assert.equal(await page.getByRole('button', { name: 'All tools · 42 tools', exact: true }).getAttribute('aria-pressed'), 'true');
   for (const name of ['Codex', 'Claude Code', 'Claude Desktop', 'Cursor', 'VS Code', 'Server URL']) {
     await page.getByRole('tab', { name, exact: true }).click();
