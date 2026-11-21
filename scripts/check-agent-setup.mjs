@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, access } from 'node:fs/promises';
 import { resolveConfig } from 'vite';
 
 const text = file => readFile(file, 'utf8');
@@ -10,6 +10,8 @@ assert.ok(proxyFor('/mcp'));
 assert.equal(proxyFor('/mcp/core'), proxyFor('/mcp'));
 assert.equal(proxyFor('/mcp-config/codex.toml'), undefined, 'Client examples must be served as files, not proxied to MCP.');
 const { rewrites } = JSON.parse(await text('vercel.json'));
+assert.ok(!rewrites.some(rule => rule.source.startsWith('/studio')));
+await assert.rejects(access('dist/studio'), { code: 'ENOENT' });
 for (const route of ['/mcp', '/mcp/core', '/server.json']) {
   assert.equal(rewrites.find(rule => rule.source === route)?.destination,
     'https://eidova-mcp.vercel.app' + route);

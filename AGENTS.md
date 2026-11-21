@@ -8,7 +8,7 @@ behavior, resource IDs and original specimen fonts/tokens.
 Run `npm run check` and `npm run build`; use the affected browser scripts from
 package.json when UI behavior changes. Read their environment contracts first.
 The sibling `../eidova-mcp` is an independent repository and service.
-Keep keys out of VITE_* variables and public files. Native Studio is optional.
+Keep keys out of VITE_* variables and public files. Product scope is MCP and website only; do not reintroduce a team editor.
 
 The public [AGENTS.md starter](public/AGENTS.md), [llms.txt](public/llms.txt) and
 client examples in `public/mcp-config` are consumer setup assets. Keep their URLs

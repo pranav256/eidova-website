@@ -1,5 +1,11 @@
 # Website review evidence
 
+## Studio removal - 21 November 2026
+
+Removed the team workspace and shared-revision components, route dispatch/build metadata/rewrites, navigation and Docs links, showcase card, styles, environment/proxy examples and feature-map entry. The site now exposes MCP setup, themes, resources, Docs and the five design-tool showcase capabilities. Studio integration docs and its dedicated review receipt are removed; remaining historical evidence describes earlier source.
+
+Both builds/typechecks and agent-setup checks pass. Fresh Edge browser checks cover 24 route/appearance/width views with zero Axe violations or page errors, plus reflow/text zoom and clipboard/profile recovery. The source/copy/rendered spacing checks pass at 390, 1440 and 1728 px in both appearances; all 30 showcase states and 23 panels have no critical/serious spacing, failed copy, sampled contrast or page errors. Navigation and mobile showcase screenshots were inspected. See the sibling MCP [removal receipt](../../eidova-mcp/docs/studio-removal-2026-11-21.json) for exact source/evidence hashes. This is internal browser evidence, not accessibility certification or a dashboard receipt. Public MCP tools/resources and historical private recovery data remain separate from the removed product.
+
 ## Audit completion - 21 November 2026
 
 The remaining documentation corrections now describe actual page-palette persistence, isolated specimens, hosted full/core support and the local preview/expected-endpoint contract. Branded setup URLs were deployed and verified in the preceding release; no website component or styling source changes are part of this completion.
@@ -146,17 +152,6 @@ Named-client host traces, Docker/staging execution, final naming and package/Reg
 
 Reproduce from the sibling MCP checkout with `node scripts/verify-resource-library.mjs` and `node scripts/verify-website.mjs`, using local website/MCP URLs and the matching expected endpoint. Screenshots and raw measurements remain in `.work/resource-library-review/` and `.work/integration-website-review/`. Both final builds and TypeScript checks pass; deployed behavior and a fresh dependency installation remain unverified.
 
-## Team and native project portal — 2026-11-11
-
-[studio-review.json](studio-review.json) records 41 source-bound rendered states at
-390, 1440 and 1728 in both appearances, with sixteen passing comprehension panels.
-Native creators can change visibility; teammates read shared projects and leave
-feedback without file-edit or restore controls. Making a native project private
-removes teammate reads and revokes revision links. Conflict/recovery, immutable
-revision review, presence, invitations, rotation and clipboard fallback also pass.
-No critical/serious spacing findings, measured contrast failures or browser errors
-remain. The captures cover the website portal and real SQLite backend; the native
-Next/Electron Studio and public HTTPS deployment remain unverified.
 
 ## Production follow-up — 2026-11-12
 

@@ -13,7 +13,6 @@ const references = [
   ['BUNDLED-RESOURCES.md', 'Resource library', 'Original files, previews, downloads and licenses.'],
   ['CONTENT-LIBRARY.md', 'Guidance library', 'Read, edit and import principles and review rules.'],
   ['DTCG.md', 'Design tokens', 'Export tokens in a portable format.'],
-  ['STUDIO.md', 'Team workspace', 'Project ownership, sharing and recovery.'],
   ['DEPLOYMENT.md', 'Run and deploy', 'Self-hosting, storage and configuration.'],
   ['RUNTIME-BOUNDARIES.md', 'Capabilities and limits', 'What runs locally, what is hosted and what is unavailable.'],
 ];

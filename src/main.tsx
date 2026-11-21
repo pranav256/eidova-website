@@ -6,8 +6,6 @@ import '@fontsource/inter/latin-600.css';
 import { App } from './App';
 import { applyTheme, readTheme } from './theme';
 import { SpecimenPage } from './previews/Specimen';
-import { TeamStudio } from './TeamStudio';
-import { SharedStudio } from './SharedStudio';
 
 const params=new URLSearchParams(window.location.search);
 const specimen=params.get('specimen');
@@ -20,5 +18,5 @@ ready.then(()=>{
   if(showcase&&!specimen){import('./Showcase').then(({Showcase})=>createRoot(document.getElementById('root')!).render(<React.StrictMode><Showcase /></React.StrictMode>));return;}
   if(window.location.pathname.replace(/\/$/,'')==='/docs'&&!specimen){import('./Docs').then(({Docs})=>createRoot(document.getElementById('root')!).render(<React.StrictMode><Docs /></React.StrictMode>));return;}
   if(window.location.pathname.replace(/\/$/,'')==='/resources'&&!specimen){import('./Resources').then(({Resources})=>createRoot(document.getElementById('root')!).render(<React.StrictMode><Resources /></React.StrictMode>));return;}
-  createRoot(document.getElementById('root')!).render(<React.StrictMode>{specimen?<SpecimenPage id={specimen} compact={params.get('example')==='details'} />:window.location.pathname.replace(/\/$/,'')==='/studio'?(window.location.hash.startsWith('#share=')?<SharedStudio />:<TeamStudio />):<App />}</React.StrictMode>);
+  createRoot(document.getElementById('root')!).render(<React.StrictMode>{specimen?<SpecimenPage id={specimen} compact={params.get('example')==='details'} />:<App />}</React.StrictMode>);
 });

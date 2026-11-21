@@ -10,7 +10,7 @@ const browser = await chromium.launch({ channel: process.platform === 'win32' ? 
 const errors = [], views = [];
 try {
   for (const width of [390, 1440, 1728]) {
-    for (const mode of ['light', 'dark']) for (const route of ['/', '/resources', '/docs', '/showcase', '/studio', '/studio#share=invalid']) {
+    for (const mode of ['light', 'dark']) for (const route of ['/', '/resources', '/docs', '/showcase']) {
       const surface = route === '/' ? 'home' : route.slice(1);
       const context = await browser.newContext({ viewport: { width, height: 1000 }, colorScheme: 'light', reducedMotion: 'reduce' });
       const page = await context.newPage();
@@ -18,10 +18,11 @@ try {
       const routeUrl = new URL(origin + route); routeUrl.searchParams.set('mode', mode);
       await page.goto(routeUrl.href, { waitUntil: 'networkidle' });
       await page.evaluate(() => document.fonts.ready);
+      assert.equal(await page.locator('a[href="/studio"]').count(), 0);
       assert.equal(await page.locator('html').getAttribute('data-theme'), mode);
       assert.equal(await page.locator('html').getAttribute('data-design-system'), 'minimal-light');
       assert.equal(await page.locator('html').getAttribute('data-brand'), 'eidova-paper');
-      assert.match(await page.locator('h1').evaluate(node => getComputedStyle(node).fontFamily), route.startsWith('/studio') ? /Inter/ : /Newsreader/);
+      assert.match(await page.locator('h1').evaluate(node => getComputedStyle(node).fontFamily), /Newsreader/);
       assert.match(await page.locator('body').evaluate(node => getComputedStyle(node).fontFamily), /Inter/);
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
       for (const img of await page.locator('img').all()) { if (await img.isVisible()) { await img.scrollIntoViewIfNeeded(); await img.evaluate(node => node.decode()); } }
@@ -54,7 +55,7 @@ try {
       await page.evaluate(() => window.scrollTo({ top: 0, behavior: 'instant' }));
       const violations = (await new AxeBuilder({ page }).exclude('iframe').analyze()).violations;
       views.push({ width, route, mode, violations });
-      await page.screenshot({ path: `${output}/${width}-${mode}-${surface.replace('#share=invalid','-shared')}-hero.png` });
+      await page.screenshot({ path: `${output}/${width}-${mode}-${surface}-hero.png` });
       for (const id of route === '/' ? ['connect', 'themes', 'resources'] : route === '/showcase' ? ['components', 'interactions'] : []) {
         await page.locator('#' + id).evaluate(node => node.scrollIntoView({ behavior: 'instant', block: 'start' }));
         if (mode === 'light') await page.screenshot({ path: `${output}/${width}-${surface}-${id}.png` });
@@ -64,7 +65,7 @@ try {
   }
   const context = await browser.newContext({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'reduce' });
   const page = await context.newPage();
-  for (const route of ['/', '/resources', '/docs', '/showcase', '/studio']) {
+  for (const route of ['/', '/resources', '/docs', '/showcase']) {
     await page.goto(origin + route, { waitUntil: 'networkidle' });
     for (const width of [320, 600, 768, 1024]) {
       await page.setViewportSize({ width, height: 1000 });

@@ -146,10 +146,6 @@ h1 em { color: var(--primary-text); font-weight: 400; }
 .showcase-main .showcase-component-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); }
 .showcase-main .showcase-family-gallery { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
 .showcase-main .showcase-icon-grid .od-button { font-family: var(--font-sans); }
-.team-studio { padding-block: 3rem; }
-.team-studio h1 { font-family: var(--font-sans); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; line-height: 1.1; letter-spacing: -.035em; }
-.team-studio .studio-connect { max-width: 44rem; padding: 2rem; border: .0625rem solid var(--border); border-radius: .75rem; background: var(--popover); }
-.team-studio .studio-title { padding-bottom: 2rem; border-bottom: .0625rem solid var(--line-strong); }
 @media (max-width: 75rem) {
   .header-inner { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; }
   .header-inner > .desktop-navigation, .source-link { display: none; }
@@ -197,7 +193,6 @@ h1 em { color: var(--primary-text); font-weight: 400; }
   .showcase-main .showcase-hero h1 { font-size: clamp(3.25rem, 12vw, 5rem); }
   .showcase-main .showcase-chapter-nav { top: 4.5rem; }
   .showcase-main .showcase-section { padding-block: 3rem; }
-  .team-studio .studio-connect { padding: 1rem; }
 }
 @media (prefers-reduced-motion: reduce) { .od-button, .od-input, .od-textarea { transition: none; } }
 @container (width < 18rem) {

@@ -6,7 +6,7 @@ Public setup assets are [AGENTS.md](public/AGENTS.md), [llms.txt](public/llms.tx
 
 The public design toolkit and connection guide is live at https://eidova.vercel.app/ and https://open-design-website.vercel.app/. Its warm paper/rust design, locally loaded Newsreader headings, Inter controls and JetBrains Mono code are defined in [DESIGN.md](DESIGN.md). The sticky navbar theme slider applies all 31 themes plus the default immediately and preserves saved/shared choices.
 
-The homepage introduces the toolkit; `/showcase` connects six capability summaries to real demonstrations and the team workspace. [Review evidence](docs/REVIEW.md) records completed checks. The matching **0.2.0** API defaults to the full **42-tool** profile, with optional **13-tool** core. Both are deployed; package/Registry publication and persistent Studio hosting remain separate acceptance.
+The homepage introduces the toolkit; `/showcase` connects five capability summaries to real demonstrations. [Review evidence](docs/REVIEW.md) records completed checks. The matching **0.2.0** API defaults to the full **42-tool** profile, with optional **13-tool** core. Both are deployed; package/Registry publication remains deferred.
 
 The Eidova resource library includes all 784 advertised resources:
 152 systems, 115 design templates, 343 plugin designs, 169
@@ -21,10 +21,7 @@ requirements are preserved. See the MCP [library guide](../eidova-mcp/docs/BUNDL
 The matching API and website were promoted to their existing public Vercel URLs
 on 12 November 2026, and both Vercel projects are connected to their Eidova GitHub
 repositories. The [production review](docs/production-review.json) records the
-installation/theme checks and their limits. Persistent Studio hosting and full
-product acceptance remain separate.
-
-`/studio` adds a team file workspace using Eidova's own persistent backend: projects, literal text editing, exact downloads, revision history/restore, expiring share links, recent presence, feedback, invitations, member revocation and one-use key recovery/rotation. It is a separate file collaboration surface; full native OpenDesign runtime integration remains incomplete. Follow the MCP [Studio setup guide](../eidova-mcp/docs/STUDIO.md). Production needs `VITE_STUDIO_API_URL` and a backend allowing the site's exact origin; otherwise the page shows a setup state. Workspace keys stay in this tab's session storage and must never be put in build settings. [Local review evidence](docs/studio-review.json) records the tested scope.
+installation/theme checks and their limits. Client-host acceptance remains separate.
 
 Existing hosted URLs remain active. Appearance preferences use `eidova-theme` and still read the previous `open-design-theme` value when no new preference is saved.
 
@@ -58,7 +55,7 @@ With the preview running, run `npm run test:redesign` in another terminal. Set `
 
 Copy `.env.example` to a local environment file when changing the backend. For the local candidate use `MCP_PROXY_ORIGIN=http://localhost:3000`, `VITE_MCP_URL=http://localhost:3000/mcp` and `VITE_REGISTRY_ORIGIN=http://localhost:3000`. These are public build settings, not secrets.
 
-`npm run test:redesign` needs the built website preview (default `http://127.0.0.1:5512`, overridden by `REVIEW_URL`), with its catalog/MCP proxies configured. It checks system/saved/URL appearance, typography, image loading, reflow, 200% text and Axe accessibility in 36 website views, including resources and the team workspace setup screen. Original embedded component specimens are excluded from the shell's Axe check. `npm run test:resources` verifies the complete index, all filters, search/reset, metadata, no-JavaScript downloads and representative reader/preview/retry/focus behavior at three widths. See [docs/resources-review.json](docs/resources-review.json) for the current resource review scope.
+`npm run test:redesign` needs the built website preview (default `http://127.0.0.1:5512`, overridden by `REVIEW_URL`), with its catalog/MCP proxies configured. It checks system/saved/URL appearance, typography, image loading, reflow, 200% text and Axe accessibility in 24 website views across home, resources, Docs and showcase. Original embedded component specimens are excluded from the shell's Axe check. `npm run test:resources` verifies the complete index, all filters, search/reset, metadata, no-JavaScript downloads and representative reader/preview/retry/focus behavior at three widths. See [docs/resources-review.json](docs/resources-review.json) for the current resource review scope.
 
 The development server proxies catalog/registry requests. Vite preview serves `dist`; deployment API destinations are in `vercel.json`. The connection UI derives core from the configured full endpoint. The last verified hosted 0.2.0 API supports both full and core profiles; reconnect the client after switching profiles.
 

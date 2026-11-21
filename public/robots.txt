@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /studio
 Disallow: /api/
 Disallow: /?specimen=
 Sitemap: https://eidova.vercel.app/sitemap.xml

@@ -177,8 +177,7 @@ export function Showcase() {
             { id: 'copy-lab', icon: 'eye', title: 'Review the result', description: 'Check a draft live. Explore tools for reviewing code, copy, and rendered spacing.', href: '#copy-lab' },
             { id: 'resources', icon: 'file-code', title: 'Find the design you need', description: `Browse ${resourceCatalog.entries.length} systems, templates, plugins and skills. Preview a design, then use its files.`, href: '#resources' },
             { id: 'guidance', icon: 'book-open', title: 'Design for more platforms', description: 'Read guidance for mobile, Shopify, Three.js, and motion before building in your agent.', href: '#guidance' },
-            { id: 'studio', icon: 'layers', title: 'Bring the team into the work', description: 'Open the separate team file workspace. Collaboration needs a configured Studio backend.', href: '/studio' },
-          ].map(item => <li key={item.id}><a href={item.href}><Icon name={item.icon} size={24} /><h3 id={'capability-' + item.id}>{item.title}</h3><p>{item.description}</p><span className="showcase-capability-link">{item.id === 'studio' ? 'Open team workspace' : 'Explore this capability'}<Icon name="arrow-up-right" /></span></a></li>)}
+          ].map(item => <li key={item.id}><a href={item.href}><Icon name={item.icon} size={24} /><h3 id={'capability-' + item.id}>{item.title}</h3><p>{item.description}</p><span className="showcase-capability-link">Explore this capability<Icon name="arrow-up-right" /></span></a></li>)}
         </ul>
       </section>
 

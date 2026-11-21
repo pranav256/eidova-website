@@ -50,7 +50,7 @@ function paletteStyle(id: string, mode: ThemeMode): CSSProperties {
 }
 export function SiteHeader({ theme, onToggleTheme, pageThemePicker }: { theme: ThemeMode; onToggleTheme: () => void; pageThemePicker?: React.ReactNode }) {
   const menu = useRef<HTMLDetailsElement>(null);
-  const links = [[navigationHome+'#themes', 'Themes'], ['/resources', 'Resources'], [navigationHome+'#tools', 'Tools'], ['/docs', 'Docs'], ['/showcase', 'Showcase'], ['/studio', 'Team workspace'], [navigationHome+'#connect', 'Connect']];
+  const links = [[navigationHome+'#themes', 'Themes'], ['/resources', 'Resources'], [navigationHome+'#tools', 'Tools'], ['/docs', 'Docs'], ['/showcase', 'Showcase'], [navigationHome+'#connect', 'Connect']];
   const destinations = links.map(([href, label]) => <a key={label} href={href} aria-current={href === currentPath ? 'page' : undefined} onClick={() => { if (menu.current) menu.current.open = false; }}>{label}</a>);
   return <header className="site-header"><div className="header-inner">
     <a className="wordmark" href={navigationHome+'#main'} aria-label="Eidova home"><img className="brand-mark" src="/logo.svg" width={40} height={40} alt="" />Eidova</a>

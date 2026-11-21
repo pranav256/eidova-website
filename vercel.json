@@ -13,8 +13,6 @@
     { "source": "/showcase", "destination": "/showcase/index.html" },
     { "source": "/showcase/", "destination": "/showcase/index.html" },
     { "source": "/api/showcase/mcp", "destination": "https://eidova-mcp.vercel.app/mcp" },
-    { "source": "/studio", "destination": "/studio/index.html" },
-    { "source": "/studio/", "destination": "/studio/index.html" },
     { "source": "/api/catalog", "destination": "https://eidova-mcp.vercel.app/api/catalog" },
     { "source": "/api/resources/:resourceRoute*", "destination": "https://eidova-mcp.vercel.app/api/resources/:resourceRoute*" },
     { "source": "/api/resource-previews/:previewRoute*", "destination": "https://eidova-mcp.vercel.app/api/resource-previews/:previewRoute*" },

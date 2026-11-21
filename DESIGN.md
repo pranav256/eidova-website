@@ -8,7 +8,7 @@ The user's explicit reference is https://news-api-live.vercel.app/. Keep its war
 
 The homepage uses the reference's left-aligned open hero, serif headline with italic rust emphasis, a primary exploration action and quiet counts. Actual component previews sit in the full 31-theme catalog; original specimens retain their own fonts and tokens. Setup uses a dark code workbench. Keep the logo, all navigation/footer destinations and private-route metadata.
 
-Showcase, resources, team connection and shared revisions share the website shell. Preserve URL/history state, filters, nested dialogs, focus return, clipboard fallbacks, drafts, retries, validation and credentials. Native Studio is outside this visual rebuild. Resource discovery keeps direct read/preview actions and more/all controls.
+Showcase, resources and Docs share the website shell. Preserve URL/history state, filters, nested dialogs, focus return, clipboard fallbacks, drafts, retries, validation and credentials. Product scope is MCP and website only. Resource discovery keeps direct read/preview actions and more/all controls.
 
 Actual control kit: [docs/minimal-light-DESIGN.md](docs/minimal-light-DESIGN.md). Current review: [docs/paper-redesign-review.json](docs/paper-redesign-review.json). Load UI/UX principles and review source, copy and rendered DOM before delivery. Keep license/provenance records; public copy speaks in Eidova's own voice.
 
