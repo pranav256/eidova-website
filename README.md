@@ -1,6 +1,6 @@
 # Eidova website
 
-Source defaults now use `https://eidova-mcp.vercel.app/mcp` (42 public tools) and `/mcp/core` (13 essentials). Vercel forwards these endpoints to the existing API project. This routing change still needs deployment and hosted verification; see the MCP [deployment guide](../eidova-mcp/docs/DEPLOYMENT.md#eidova-hosted-rename) for environment overrides and rollout order.
+The deployed website uses `https://eidova-mcp.vercel.app/mcp` (42 public tools) and `/mcp/core` (13 essentials). Clients connect directly to the branded API alias. Website API/registry requests and optional `/mcp` forwarding use the same alias. Branded and compatibility hosts were verified on 21 November; see the MCP [deployment guide](../eidova-mcp/docs/DEPLOYMENT.md#eidova-hosted-rename) for environment overrides and rollout order.
 
 Public setup assets are [AGENTS.md](public/AGENTS.md), [llms.txt](public/llms.txt) and client examples in `public/mcp-config`. Merge project instructions/configs rather than replacing existing files. Run `npm run build` then `npm run test:agent-setup` to verify the built assets and canonical metadata.
 
@@ -36,9 +36,9 @@ Choose **Use theme** in the viewer to reveal **Best for** and **Consider** guida
 
 The installation section follows the hero: choose Codex, Claude Code, Claude Desktop, Cursor, VS Code or a server URL, then copy the command/configuration. The full `/mcp` profile (42 tools) is the default; visible profile controls also offer `/mcp/core` (13 essentials). Reconnect the client when switching profiles. First-task examples follow the workflow. Every theme has a screenshot of its representative family, clearly labeled. Specimens retain their original design.
 
-The website uses warm paper surfaces, rust accents, Newsreader headings, Inter controls and JetBrains Mono code. It follows system appearance while preserving saved and URL choices, with a light/dark toggle in the header. Theme selection opens an isolated viewer while preserving setup, scroll and focus. All 31 existing IDs remain available; the complete catalog is visible by default. Variant viewers explicitly show their representative family's components, with exact tokens linked separately.
+The website uses warm paper surfaces, rust accents, Newsreader headings, Inter controls and JetBrains Mono code. It follows system appearance while preserving saved and URL choices, with a light/dark toggle in the header. The navbar slider applies a page palette immediately; **Preview theme** opens an isolated viewer while preserving setup, scroll and focus. All 31 existing IDs remain available; the complete catalog is visible by default. Variant viewers explicitly show their representative family's components, with exact tokens linked separately.
 
-Preview, mode, search and filters persist through URL/browser state. `?preview=<id>` opens the viewer; legacy `?theme=<id>` links migrate to it. Previously saved palette choices are ignored without deleting them. Escape works inside the preview and returns focus on close; nested dialogs close first. Copy failure has a manual recovery path. No client configuration is changed automatically.
+Preview, mode, search and filters persist through URL/browser state. `?preview=<id>` opens the viewer; legacy `?theme=<id>` links migrate to it. The homepage palette uses `?page-theme=<id>` and saved `eidova-page-theme`; explicit `?page-theme=default` overrides a saved palette. Escape works inside the preview and returns focus on close; nested dialogs close first. Copy failure has a manual recovery path. No client configuration is changed automatically.
 
 [Review evidence](docs/REVIEW.md) records local checks and their scope. The MCP repository's [family recipes](https://github.com/pranav256/eidova-mcp/blob/main/docs/DESIGN-FAMILIES.md) and [client matrix](https://github.com/pranav256/eidova-mcp/blob/main/docs/CLIENTS.md) explain installation and verification boundaries.
 
@@ -50,16 +50,17 @@ Requires Node **22.12+**:
 npm ci
 npm run dev
 npm run check
-npm run test:redesign
 npm run build
-npm run preview
+npm run preview -- --port 5512
 ```
+
+With the preview running, run `npm run test:redesign` in another terminal. Set `REVIEW_URL` to its origin and `WEBSITE_EXPECTED_MCP_URL` to the same endpoint used for `VITE_MCP_URL`; for the local API these are `http://127.0.0.1:5512` and `http://localhost:3000/mcp`.
 
 Copy `.env.example` to a local environment file when changing the backend. For the local candidate use `MCP_PROXY_ORIGIN=http://localhost:3000`, `VITE_MCP_URL=http://localhost:3000/mcp` and `VITE_REGISTRY_ORIGIN=http://localhost:3000`. These are public build settings, not secrets.
 
 `npm run test:redesign` needs the built website preview (default `http://127.0.0.1:5512`, overridden by `REVIEW_URL`), with its catalog/MCP proxies configured. It checks system/saved/URL appearance, typography, image loading, reflow, 200% text and Axe accessibility in 36 website views, including resources and the team workspace setup screen. Original embedded component specimens are excluded from the shell's Axe check. `npm run test:resources` verifies the complete index, all filters, search/reset, metadata, no-JavaScript downloads and representative reader/preview/retry/focus behavior at three widths. See [docs/resources-review.json](docs/resources-review.json) for the current resource review scope.
 
-The development server proxies catalog/registry requests. Vite preview serves `dist`; deployment API destinations are in `vercel.json`. The connection UI derives core from the configured full endpoint. The previous hosted API cannot satisfy core until upgraded.
+The development server proxies catalog/registry requests. Vite preview serves `dist`; deployment API destinations are in `vercel.json`. The connection UI derives core from the configured full endpoint. The last verified hosted 0.2.0 API supports both full and core profiles; reconnect the client after switching profiles.
 
 ## Maintain and deploy
 
@@ -70,7 +71,7 @@ npm run sync:previews
 node scripts/sync-website-themes.mjs ../eidova-website
 ```
 
-Specimens are generated from real registry files, not maintained as a second component library. `src/previews/manifest.json` records source hashes. The small Vite font adapter replaces the Industrial Google font import with the same locally bundled licensed Doto font, retaining the registry source copy. Catalog generation preserves all IDs, source tokens and appearance metadata; theme selection does not apply those tokens to the website.
+Specimens are generated from real registry files, not maintained as a second component library. `src/previews/manifest.json` records source hashes. The small Vite font adapter replaces the Industrial Google font import with the same locally bundled licensed Doto font, retaining the registry source copy. Catalog generation preserves all IDs, source tokens and appearance metadata. The navbar applies a selected palette to the homepage; specimens stay isolated with their original tokens and fonts.
 
 After building and serving the website against the local candidate API, capture the native gallery from the MCP checkout:
 
