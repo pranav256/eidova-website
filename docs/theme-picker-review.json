@@ -3,7 +3,7 @@
   "changes": [
     "Theme picker moved into the navbar, keeping all 31 themes, search, comparison and default restoration.",
     "Docs added to desktop/mobile navigation and footer; /docs provides setup, workflow and full reference directory.",
-    "Separate local review project covers 4452 items with Better Design as proposed core and supplemental/overlap resources marked individually."
+    "Separate local review project covers 4452 items with core and supplemental/overlap resources marked individually."
   ],
   "verification": {
     "build": "pass",

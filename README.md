@@ -1,10 +1,10 @@
 # Eidova website
 
-The deployed website uses `https://eidova-mcp.vercel.app/mcp` (42 public tools) and `/mcp/core` (13 essentials). Clients connect directly to the branded API alias. Website API/registry requests and optional `/mcp` forwarding use the same alias. Branded and compatibility hosts were verified on 21 November; see the MCP [deployment guide](../eidova-mcp/docs/DEPLOYMENT.md#eidova-hosted-rename) for environment overrides and rollout order.
+The deployed website uses `https://eidova-mcp.vercel.app/mcp` (42 public tools) and `/mcp/core` (13 essentials). Clients connect directly to the branded API alias. Website API/registry requests and optional `/mcp` forwarding use the same alias. See the MCP [deployment guide](../eidova-mcp/docs/DEPLOYMENT.md) for environment overrides and rollout order.
 
 Public setup assets are [AGENTS.md](public/AGENTS.md), [llms.txt](public/llms.txt) and client examples in `public/mcp-config`. Merge project instructions/configs rather than replacing existing files. Run `npm run build` then `npm run test:agent-setup` to verify the built assets and canonical metadata.
 
-The public design toolkit and connection guide is live at https://eidova.vercel.app/ and https://open-design-website.vercel.app/. Its warm paper/rust design, locally loaded Newsreader headings, Inter controls and JetBrains Mono code are defined in [DESIGN.md](DESIGN.md). The sticky navbar theme slider applies all 31 themes plus the default immediately and preserves saved/shared choices.
+The public design toolkit and connection guide is live at https://eidova.vercel.app/. Its warm paper/rust design, locally loaded Newsreader headings, Inter controls and JetBrains Mono code are defined in [DESIGN.md](DESIGN.md). The sticky navbar theme slider applies all 31 themes plus the default immediately and preserves saved/shared choices.
 
 The homepage introduces the toolkit; `/showcase` connects five capability summaries to real demonstrations. [Review evidence](docs/REVIEW.md) records completed checks. The matching **0.2.0** API defaults to the full **42-tool** profile, with optional **13-tool** core. Both are deployed; package/Registry publication remains deferred.
 
@@ -18,12 +18,7 @@ requirements are preserved. See the MCP [library guide](../eidova-mcp/docs/BUNDL
 
 `/resources` lists the entire collection immediately, with search, type filters, previews, source reading and downloads. It is linked from the navbar and homepage library. All resources also have download links without JavaScript. Local keep/skip review is optional and can happen later.
 
-The matching API and website were promoted to their existing public Vercel URLs
-on 12 November 2026, and both Vercel projects are connected to their Eidova GitHub
-repositories. The [production review](docs/production-review.json) records the
-installation/theme checks and their limits. Client-host acceptance remains separate.
-
-Existing hosted URLs remain active. Appearance preferences use `eidova-theme` and still read the previous `open-design-theme` value when no new preference is saved.
+The matching API and website are connected to their Eidova GitHub repositories. The [production review](docs/production-review.json) records the installation/theme checks and their limits. Appearance preferences use `eidova-theme` and persist across sessions.
 
 `/showcase` brings the design tools into one interactive page: eight real component specimens, exact palette exports, licensed Lucide icons, validation and motion examples, a live copy review, platform guidance, all 784 resources and the public tool directory. The homepage, header and footer link to it. The examples keep the site's existing theme; component specimens retain their own appearance. Copy review uses the same-origin `/api/showcase/mcp` proxy and preserves drafts when a request fails. Demo invitations are never sent. See the [showcase review](docs/showcase-review.json) for local production-build checks and deployment limits.
 
@@ -84,7 +79,7 @@ Use the Vite Vercel preset, `npm run build` and output `dist`. Coordinate `VITE_
 
 ## License
 
-MIT. [NOTICE.md](NOTICE.md) lists the retained Better Design registry, embedded Tabler SVG and five font notices. Served copies are under `public/licenses`. This independent project is unaffiliated with Better Design; hosted generation, vendor accounts and proprietary inspiration are outside its scope.
+MIT. [NOTICE.md](NOTICE.md) lists the component registry, embedded Tabler SVG and font notices. Served copies are under `public/licenses`.
 
 The resource library browses all 784 advertised resources. Choose **Read files** to inspect the main document, companions, source and licenses in a keyboard-accessible dialog. Text stays literal, HTML previews are sandboxed, images/audio/video can be previewed, and downloads retain original bytes. **Copy agent prompt** connects the selected resource to the MCP's `read-resource` tool; **Agent instructions** offers manual copy. Failed requests preserve selection and offer retry.
 

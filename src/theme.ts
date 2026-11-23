@@ -24,7 +24,7 @@ export function readTheme(): ThemeMode {
   const mode = new URLSearchParams(window.location.search).get('mode');
   if (mode === 'dark' || mode === 'light') return mode;
   try {
-    for (const key of [modeKey, 'open-design-theme']) {
+    for (const key of [modeKey]) {
       const saved = localStorage.getItem(key);
       if (saved === 'dark' || saved === 'light') return saved;
     }
@@ -69,7 +69,7 @@ export function useAppearance() {
     const preference = window.matchMedia('(prefers-color-scheme: dark)');
     preference.addEventListener('change', restore);
     const syncStorage = (event: StorageEvent) => {
-      if (event.key === null || event.key === modeKey || event.key === 'open-design-theme' || event.key === pageThemeKey) restore();
+      if (event.key === null || event.key === modeKey || event.key === pageThemeKey) restore();
     };
     window.addEventListener('storage', syncStorage);
     return () => {

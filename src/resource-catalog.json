@@ -5732,7 +5732,7 @@
       "kind": "plugins",
       "id": "examples-motion-showreel",
       "name": "Motion Designer Showreel",
-      "description": "A 15-second motion designer showreel at 128 BPM, rebuilt from the viral original: an Open Design mark opener, a stretching wordmark, six easing curves, a morphing shape, a truchet field, a 3D point cloud, kinetic type and an end card.",
+      "description": "A 15-second motion designer showreel at 128 BPM, rebuilt from the viral original: a geometric mark opener, a stretching wordmark, six easing curves, a morphing shape, a truchet field, a 3D point cloud, kinetic type and an end card.",
       "category": "examples",
       "license": "Apache-2.0",
       "entrypoint": "open-design.json",

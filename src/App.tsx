@@ -202,7 +202,7 @@ export function App() {
             <div className="handoff-prompt"><CopyButton value={designPrompt(preview)}>Copy agent prompt</CopyButton><details><summary>Project instructions</summary><Textarea aria-label="Agent prompt" value={designPrompt(preview)} rows={8} readOnly spellCheck={false} onFocus={event=>event.target.select()} /><div className="handoff-download"><a className="text-link" href={'/api/design-systems/'+encodeURIComponent(preview)+'/design.md'} download="DESIGN.md">Download DESIGN.md <ArrowDown aria-hidden="true" /></a><p>Save colors and rules with your project.</p></div></details></div>
           </section>
         </div>}</dialog>
-        <p className="catalog-note">Page themes are saved in your browser and URL. Previews open separately. <a href="/licenses/better-design-MIT.txt">Theme license</a>.</p>
+        <p className="catalog-note">Page themes are saved in your browser and URL. Previews open separately. <a href="/licenses/registry-MIT.txt">Theme license</a>.</p>
       </section>
 
       <ResourceLibrary />

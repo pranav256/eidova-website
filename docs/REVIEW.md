@@ -92,11 +92,11 @@ The local production build passed 30 rendered states and 18 comprehension panels
 
 ## Earlier: portable design handoff
 
-The OpenDesign reference study added family suitability, a selected-theme agent prompt, and a DESIGN.md download to the existing component viewer. The site retains its Geist theme, original header/footer links and actual registry specimens. The download preserves the exact variant ID; family guidance is editorial advice, not user research.
+The design reference study added family suitability, a selected-theme agent prompt, and a DESIGN.md download to the existing component viewer. The site retains its Geist theme, original header/footer links and actual registry specimens. The download preserves the exact variant ID; family guidance is editorial advice, not user research.
 
 The Vite development build at `http://127.0.0.1:5173` was checked against the local matching MCP: 61 comprehension panels passed, with zero critical/serious source or spacing findings and no page errors. Rendered DOM and screenshots cover 390, 1440 and 1728px in light/dark modes, including the collapsed and expanded handoff. All eight family handoffs were checked; a browser download of Metal Fx Silver preserved its exact variant identity. Existing installation, search/filter, copy-denial, keyboard, nested-dialog Escape and focus-return checks also passed. Before/after viewer screenshots use matching 390/1440px widths. The handoff's text contrast met the applicable threshold in the sampled solid-background checks.
 
-[design-handoff-review.json](design-handoff-review.json) records source hashes and the latest scoped results. Raw evidence is in the MCP checkout's `.work/open-design-study/website/`. Whole-page handoff capture batches retain 28 moderate spacing findings, including pre-existing page geometry and centered dialog margins; the isolated dialog review reports two moderate centered-margin findings and no blocking findings. No native specimen source changed. Production builds, the 94 backend tests, context-size benchmark, stdio smoke and packed-install smoke passed separately. No deployment or claim of being the best MCP is implied; the reference application was studied from source, not executed.
+[design-handoff-review.json](design-handoff-review.json) records source hashes and the latest scoped results. Raw evidence is in the MCP checkout's `.work/design-study/website/`. Whole-page handoff capture batches retain 28 moderate spacing findings, including pre-existing page geometry and centered dialog margins; the isolated dialog review reports two moderate centered-margin findings and no blocking findings. No native specimen source changed. Production builds, the 94 backend tests, context-size benchmark, stdio smoke and packed-install smoke passed separately. No deployment or claim of being the best MCP is implied; the reference application was studied from source, not executed.
 
 Deploy the matching API before this website. The new `/api/design-systems/:id/design.md` Vercel rewrite must reach that API. Hosted versions and custom-domain behavior were not checked in this change.
 
@@ -108,7 +108,7 @@ The Eidova rename was rechecked locally: production builds and TypeScript passed
 
 The installation guide now sits in the hero, with six client-specific formats and clipboard recovery. Essentials is the default; full tools are available in collapsed Tool options. The website keeps its own Geist design and header light/dark toggle. All 31 compatible theme IDs open a separate modal viewer of actual family components. Variants explicitly identify the representative family preview. Eight native-component images, larger typography, numbered workflow rows and the existing header/footer links remain.
 
-The Better Design/Eidova workflow covered discovery, retained kits, UI/UX principles, feature-map reads/updates, source review, comprehension and rendered spacing. Specimens are workspace settings forms and a member list; no dashboard or trusted dashboard receipt was built.
+The Eidova workflow covered discovery, retained kits, UI/UX principles, feature-map reads/updates, source review, comprehension and rendered spacing. Specimens are workspace settings forms and a member list; no dashboard or trusted dashboard receipt was built.
 
 ## Current local results
 
