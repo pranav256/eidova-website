@@ -5,7 +5,7 @@ import AxeBuilder from '@axe-core/playwright';
 
 const origin = process.env.REVIEW_URL || 'http://127.0.0.1:5512';
 const { entries } = JSON.parse(await readFile('src/resource-catalog.json', 'utf8'));
-const upstream = JSON.parse(await readFile('../eidova-mcp/content/open-design/index.json', 'utf8'));
+const upstream = JSON.parse(await readFile('../eidova-mcp/content/eidova/index.json', 'utf8'));
 const ids = list => list.map(entry => entry.kind + '/' + entry.id).sort();
 assert.deepEqual(ids(entries), ids(upstream.entries));
 assert.equal(new Set(ids(entries)).size, 784);

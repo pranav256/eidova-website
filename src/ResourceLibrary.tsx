@@ -45,7 +45,7 @@ function ResourceReader({entry,onClose,initialPreview=false}:{entry:ResourceEntr
   const [content,setContent]=useState<{path:string;state:'loading'|'error'|'ready';text?:string;asset?:string;mimeType?:string}>({path:filePath,state:'loading'});
   const [preview,setPreview]=useState(initialPreview);
   const [retry,setRetry]=useState(0);
-  const resourceUri=`design://open-design/${entry.kind}/${entry.id}`;
+  const resourceUri=`design://eidova/${entry.kind}/${entry.id}`;
   const endpoint=`/api/resources/${entry.kind}/${entry.id}`;
   const file=manifest.state==='ready'?manifest.files.find(file=>file.path===filePath):undefined;
   const previewPath=file?.mimeType==='text/html'?file.path:entry.preview?.type==='html'?entry.preview.path:undefined;
@@ -123,7 +123,7 @@ export function ResourceLibrary({ all = false }: { all?: boolean }) {
     </div>
     <p className="result-count" role="status">Showing {Math.min(limit,entries.length)} of {entries.length} resources</p>
     {entries.length===0 ? <div className="catalog-message"><ResourceHeading>No matching resources.</ResourceHeading><p>Try another name or clear the filters.</p><Button variant="outline" onClick={reset}>Clear resource filters</Button></div> : <ul className="resource-list">{entries.slice(0,limit).map(entry=><li key={entry.kind+'/'+entry.id}>
-      <div><ResourceHeading>{entry.name}</ResourceHeading><p>{kindLabels[entry.kind]} · {entry.license} · {entry.fileCount} files</p><details><summary>Details</summary><p>Start with <code>{entry.entrypoint}</code></p><p className="resource-uri">MCP resource: <code>design://open-design/{entry.kind}/{entry.id}</code></p><a href={'/api/resources/'+entry.kind+'/'+entry.id+'/file?path='+encodeURIComponent(entry.entrypoint)} download={entry.entrypoint}>Download {entry.entrypoint}</a></details></div>
+      <div><ResourceHeading>{entry.name}</ResourceHeading><p>{kindLabels[entry.kind]} · {entry.license} · {entry.fileCount} files</p><details><summary>Details</summary><p>Start with <code>{entry.entrypoint}</code></p><p className="resource-uri">MCP resource: <code>design://eidova/{entry.kind}/{entry.id}</code></p><a href={'/api/resources/'+entry.kind+'/'+entry.id+'/file?path='+encodeURIComponent(entry.entrypoint)} download={entry.entrypoint}>Download {entry.entrypoint}</a></details></div>
       <div className="resource-links">{entry.preview&&<Button variant="secondary" aria-haspopup="dialog" onClick={event=>open(entry,event.currentTarget,true)}>Preview design</Button>}<Button variant="outline" aria-haspopup="dialog" onClick={event=>open(entry,event.currentTarget)}>Read files</Button></div>
     </li>)}</ul>}
     {entries.length>limit && <div className="catalog-more"><Button variant="outline" onClick={()=>setLimit(value=>value+16)}>Show more resources</Button><Button variant="ghost" onClick={()=>setLimit(entries.length)}>Show all resources</Button></div>}
