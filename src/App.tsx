@@ -18,7 +18,7 @@ const featuredIds = ['minimal-light', ...families.map(family=>family.representat
 const familyFor=(id:string)=>families.find(family=>family.representative===id||family.variants.includes(id));
 function readPreview() {
   const params = new URLSearchParams(window.location.search);
-  const id = params.get('preview') ?? params.get('theme');
+  const id = params.get('preview');
   return id && familyFor(id) ? id : null;
 }
 const sourceUrl = import.meta.env.VITE_REPOSITORY_URL || 'https://github.com/pranav256/eidova-website';
@@ -82,14 +82,14 @@ export function App() {
   const [showHandoff, setShowHandoff] = useState(false);
   const [retry, setRetry] = useState(0);
   const [client, setClient] = useState(0);
-  const [profile,setProfile]=useState<'core'|'full'>('full');
+  const [profile,setProfile]=useState<'core'|'full'>('core');
   const [preview,setPreview]=useState<string|null>(readPreview);
   const previewFamily=preview?familyFor(preview):null;
   const previewDialog=useRef<HTMLDialogElement>(null);
   const previewTrigger=useRef<HTMLButtonElement|null>(null);
   const searchInput = useRef<HTMLInputElement>(null);
-  const fullEndpoint=endpoint.replace(/\/core\/?$/,'').replace(/\/$/,'');
-  const selectedEndpoint=profile==='core'?fullEndpoint+'/core':fullEndpoint;
+  const coreEndpoint=endpoint.replace(/\/full\/?$/,'').replace(/\/$/,'');
+  const selectedEndpoint=profile==='full'?coreEndpoint+'/full':coreEndpoint;
   const setup=client===0?'codex mcp add eidova --url '+selectedEndpoint:client===1?'claude mcp add --transport http eidova '+selectedEndpoint:client===3?JSON.stringify({mcpServers:{'eidova':{url:selectedEndpoint}}},null,2):client===4?JSON.stringify({servers:{'eidova':{type:'http',url:selectedEndpoint}}},null,2):selectedEndpoint;
   const setupDescription=client<2?'Run this command in your terminal.':client===3?'Save this in .cursor/mcp.json.':client===4?'Save this in .vscode/mcp.json.':client===2?'In Settings → Connectors, add a custom connector with this URL.':'Choose Streamable HTTP in your MCP client.';
   const copyLabel=client<2?'Copy '+clientOptions[client]+' command':client===3||client===4?'Copy configuration':'Copy server URL';
@@ -120,7 +120,6 @@ export function App() {
   useEffect(() => {
     setShowHandoff(false);
     const url = new URL(window.location.href);
-    url.searchParams.delete('theme');
     if (preview) url.searchParams.set('preview', preview); else url.searchParams.delete('preview');
     window.history.replaceState(null, '', url);
     const dialog = previewDialog.current;
@@ -169,7 +168,7 @@ export function App() {
           <h1 id="hero-title"><span>Design systems,</span><em>in real code.</em></h1>
           <p className="hero-description">31 installable themes, practical guidance and interface reviews. One MCP connection.</p>
           <div className="hero-actions"><Button asChild size="lg"><a href="#themes">Explore the toolkit <ArrowDown aria-hidden="true" /></a></Button><a className="text-link" href="#connect">Connect your agent <ArrowUpRight aria-hidden="true" /></a></div>
-          <dl className="hero-stats"><div><dt>Themes</dt><dd>31</dd></div><div><dt>Resources</dt><dd>{resourceCatalog.entries.length}</dd></div><div><dt>MCP tools</dt><dd>42</dd></div></dl>
+          <dl className="hero-stats"><div><dt>Themes</dt><dd>31</dd></div><div><dt>Resources</dt><dd>{resourceCatalog.entries.length}</dd></div><div><dt>MCP tools</dt><dd>41</dd></div></dl>
           <p className="hero-note">Free. No account required.</p>
         </div>
       </section>
@@ -223,7 +222,7 @@ export function App() {
             <CopyButton value={setup}>{copyLabel}</CopyButton>
             <div className="config-footnote"><span aria-hidden="true">↳</span><p>{client<2?'Start a new client session after adding the server.':client===3||client===4?'Save the configuration and reload your client.':'Paste the URL into your client and connect.'}</p></div>
           </div>
-          <div className="tool-options"><div className="profile-picker" role="group" aria-label="MCP tool profile"><Button variant="ghost" aria-pressed={profile==='full'} onClick={()=>setProfile('full')}>All tools · 42 tools</Button><Button variant="ghost" aria-pressed={profile==='core'} onClick={()=>setProfile('core')}>Essentials · 13 tools</Button></div><p className="profile-note">{profile==='full'?'42 tools at /mcp. Includes specialist guides and project rules.':'13 tools at /mcp/core. Covers themes, resources, guidance and review.'} Reconnect your client after changing profiles.</p></div>
+          <div className="tool-options"><div className="profile-picker" role="group" aria-label="MCP tool profile"><Button variant="ghost" aria-pressed={profile==='core'} onClick={()=>setProfile('core')}>Essentials · 13 tools</Button><Button variant="ghost" aria-pressed={profile==='full'} onClick={()=>setProfile('full')}>All tools · 41 tools</Button></div><p className="profile-note">{profile==='full'?'41 tools at /mcp/full. Includes specialist guides and project rules.':'13 tools at /mcp. Covers themes, resources, guidance and review.'} Reconnect your client after changing profiles.</p></div>
         </section>
 
       </section>

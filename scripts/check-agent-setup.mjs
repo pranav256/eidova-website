@@ -7,12 +7,12 @@ const endpoint = 'https://eidova-mcp.vercel.app/mcp';
 const config = await resolveConfig({}, 'serve');
 const proxyFor = pathname => Object.keys(config.server.proxy).find(key => key.startsWith('^') ? new RegExp(key).test(pathname) : pathname.startsWith(key));
 assert.ok(proxyFor('/mcp'));
-assert.equal(proxyFor('/mcp/core'), proxyFor('/mcp'));
+assert.equal(proxyFor('/mcp/full'), proxyFor('/mcp'));
 assert.equal(proxyFor('/mcp-config/codex.toml'), undefined, 'Client examples must be served as files, not proxied to MCP.');
 const { rewrites } = JSON.parse(await text('vercel.json'));
 assert.ok(!rewrites.some(rule => rule.source.startsWith('/studio')));
 await assert.rejects(access('dist/studio'), { code: 'ENOENT' });
-for (const route of ['/mcp', '/mcp/core', '/server.json']) {
+for (const route of ['/mcp', '/mcp/full', '/server.json']) {
   assert.equal(rewrites.find(rule => rule.source === route)?.destination,
     'https://eidova-mcp.vercel.app' + route);
 }

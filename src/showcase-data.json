@@ -1,6 +1,6 @@
 {
   "version": "0.2.0",
-  "publicTools": 42,
+  "publicTools": 41,
   "library": {
     "total": 784,
     "kinds": {
@@ -536,8 +536,8 @@
       ]
     },
     {
-      "name": "render-video-frames",
-      "description": "Return Remotion rendering commands. Hosted execution and server filesystem access are unavailable.",
+      "name": "get-video-render-commands",
+      "description": "Return Remotion commands for rendering selected frames. The caller runs them in its own project.",
       "category": "Workflow",
       "parameters": [
         {
@@ -788,61 +788,6 @@
       ]
     },
     {
-      "name": "finalize-dashboard-review",
-      "description": "Evaluate dashboard review evidence. This hosted service has no trusted browser capture worker and cannot issue a VALID visual receipt.",
-      "category": "Review",
-      "parameters": [
-        {
-          "name": "screen",
-          "type": "string",
-          "required": true,
-          "choices": []
-        },
-        {
-          "name": "previewUrl",
-          "type": "string",
-          "required": true,
-          "choices": []
-        },
-        {
-          "name": "source",
-          "type": "string",
-          "required": true,
-          "choices": []
-        },
-        {
-          "name": "visibleSource",
-          "type": "string",
-          "required": true,
-          "choices": []
-        },
-        {
-          "name": "fixture",
-          "type": "object",
-          "required": true,
-          "choices": []
-        },
-        {
-          "name": "componentSources",
-          "type": "object",
-          "required": true,
-          "choices": []
-        },
-        {
-          "name": "knownTerms",
-          "type": "array",
-          "required": false,
-          "choices": []
-        },
-        {
-          "name": "context",
-          "type": "string",
-          "required": false,
-          "choices": []
-        }
-      ]
-    },
-    {
       "name": "find-icon-library",
       "description": "Search the bundled Lucide icon library; no external icon service is queried.",
       "category": "Icons",
@@ -881,8 +826,8 @@
       ]
     },
     {
-      "name": "install-icons",
-      "description": "Return selected bundled icon files and manifest data. targetDir is an output label; this server writes no caller files.",
+      "name": "get-icon-files",
+      "description": "Return selected bundled icon files and manifest data for the caller to save. targetDir labels the intended output folder.",
       "category": "Icons",
       "parameters": [
         {
@@ -972,7 +917,7 @@
     },
     {
       "name": "get-design-system-kit",
-      "description": "Return React/Radix install commands or an HTML/DTCG kit, plus a portable DESIGN.md resource for catalog systems. Request needed React names with component (components alias accepted); unknown names are errors. Requires Tailwind 4 and @/ alias; no hosted installation. Preserve existing design and review source, copy and rendered spacing.",
+      "description": "Return React/Radix install commands or an HTML/DTCG kit, plus a portable DESIGN.md resource for catalog systems. Request needed React names with component; unknown names are errors. Requires Tailwind 4 and @/ alias; no hosted installation. Preserve existing design and review source, copy and rendered spacing.",
       "category": "Design systems",
       "parameters": [
         {
@@ -1000,7 +945,7 @@
         },
         {
           "name": "component",
-          "type": "value",
+          "type": "string | array",
           "required": false,
           "choices": []
         },
@@ -1022,12 +967,6 @@
         {
           "name": "context",
           "type": "string",
-          "required": false,
-          "choices": []
-        },
-        {
-          "name": "components",
-          "type": "value",
           "required": false,
           "choices": []
         }
@@ -1416,7 +1355,7 @@
         },
         {
           "name": "change",
-          "type": "value",
+          "type": "object | object | object | object | object | object | object | object | object | object | object",
           "required": true,
           "choices": []
         },
@@ -1505,7 +1444,7 @@
         {
           "name": "step",
           "type": "string",
-          "required": false,
+          "required": true,
           "choices": [
             "brief",
             "rank",
@@ -1539,12 +1478,6 @@
         {
           "name": "context",
           "type": "string",
-          "required": false,
-          "choices": []
-        },
-        {
-          "name": "observations",
-          "type": "array",
           "required": false,
           "choices": []
         }

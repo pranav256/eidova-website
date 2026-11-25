@@ -4,8 +4,8 @@
 
 ## Connect
 
-- [Full MCP](https://eidova-mcp.vercel.app/mcp): Streamable HTTP; 42 public tools. Use an MCP client, not a browser GET.
-- [Core MCP](https://eidova-mcp.vercel.app/mcp/core): 13 read-only essentials. Reconnect after switching profiles.
+- [Core MCP](https://eidova-mcp.vercel.app/mcp): Default; 13 read-only essentials. Use an MCP client, not a browser GET.
+- [Full MCP](https://eidova-mcp.vercel.app/mcp/full): 41 public tools. Reconnect after switching profiles.
 - [Server metadata](https://eidova.vercel.app/server.json): MCP Registry-format metadata; npm and Registry publication remain deferred.
 
 ## Agent and client setup

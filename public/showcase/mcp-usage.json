@@ -1,13 +1,14 @@
 {
-  "date": "2026-11-13",
-  "server": "Current local Eidova MCP 0.2.0",
-  "scope": "Design-tool showcase; existing Eidova theme and house components retained",
+  "date": "2026-11-25",
+  "server": "Local Eidova MCP 0.2.0, full profile",
+  "scope": "Revalidated the showcase guidance, kit and icon requests against the current local service",
   "toolsUsed": [
     "build-feature-map",
     "find-design-system",
     "find-icons",
     "get-capabilities",
     "get-design-system-kit",
+    "get-icon-files",
     "get-jig-guide",
     "get-motion-guide",
     "get-react-native-guide",
@@ -18,23 +19,22 @@
     "get-three-js-guide",
     "get-ui-principle",
     "get-ux-principle",
-    "get-widget-guide",
-    "install-icons"
+    "get-widget-guide"
   ],
   "calls": [
     {
       "tool": "get-capabilities",
       "arguments": {},
       "status": "returned",
-      "responseBytes": 1773
+      "responseBytes": 1780
     },
     {
       "tool": "find-design-system",
       "arguments": {
-        "query": "Eidova showcase; keep existing Geist neutral theme and current product components"
+        "query": "Eidova showcase; keep the existing warm paper theme and current product components"
       },
       "status": "returned",
-      "responseBytes": 5302
+      "responseBytes": 2570
     },
     {
       "tool": "get-design-system-kit",
@@ -47,7 +47,7 @@
         ]
       },
       "status": "returned",
-      "responseBytes": 22032
+      "responseBytes": 21980
     },
     {
       "tool": "get-ui-principle",
@@ -55,7 +55,7 @@
         "query": "spacing typography contrast hierarchy"
       },
       "status": "returned",
-      "responseBytes": 2408
+      "responseBytes": 2279
     },
     {
       "tool": "get-ux-principle",
@@ -63,7 +63,7 @@
         "query": "forms validation failure keyboard navigation"
       },
       "status": "returned",
-      "responseBytes": 2067
+      "responseBytes": 1938
     },
     {
       "tool": "get-motion-guide",
@@ -71,7 +71,7 @@
         "query": "motion accessibility captions"
       },
       "status": "returned",
-      "responseBytes": 2921
+      "responseBytes": 2765
     },
     {
       "tool": "get-react-native-guide",
@@ -79,7 +79,7 @@
         "query": "accessible mobile forms safe areas"
       },
       "status": "returned",
-      "responseBytes": 4027
+      "responseBytes": 3871
     },
     {
       "tool": "get-swiftui-guide",
@@ -87,7 +87,7 @@
         "query": "accessible forms dynamic type"
       },
       "status": "returned",
-      "responseBytes": 2379
+      "responseBytes": 2347
     },
     {
       "tool": "get-shopify-guide",
@@ -95,7 +95,7 @@
         "query": "product pages sections forms accessibility"
       },
       "status": "returned",
-      "responseBytes": 2580
+      "responseBytes": 2408
     },
     {
       "tool": "get-three-js-guide",
@@ -103,7 +103,7 @@
         "query": "performance accessible canvas fallback"
       },
       "status": "returned",
-      "responseBytes": 3710
+      "responseBytes": 3511
     },
     {
       "tool": "get-sales-principle",
@@ -111,7 +111,7 @@
         "query": "clear offer truthful evidence next action"
       },
       "status": "returned",
-      "responseBytes": 2828
+      "responseBytes": 2672
     },
     {
       "tool": "get-widget-guide",
@@ -127,7 +127,7 @@
         "dataSource": "Installed theme source and the connected public Eidova MCP"
       },
       "status": "returned",
-      "responseBytes": 1719
+      "responseBytes": 1676
     },
     {
       "tool": "get-jig-guide",
@@ -144,7 +144,7 @@
         "category": "all"
       },
       "status": "returned",
-      "responseBytes": 3938
+      "responseBytes": 4082
     },
     {
       "tool": "build-feature-map",
@@ -171,7 +171,7 @@
         "query": "search"
       },
       "status": "returned",
-      "responseBytes": 2335
+      "responseBytes": 2337
     },
     {
       "tool": "find-icons",
@@ -180,7 +180,7 @@
         "query": "layers"
       },
       "status": "returned",
-      "responseBytes": 1294
+      "responseBytes": 1296
     },
     {
       "tool": "find-icons",
@@ -189,10 +189,10 @@
         "query": "palette"
       },
       "status": "returned",
-      "responseBytes": 554
+      "responseBytes": 556
     },
     {
-      "tool": "install-icons",
+      "tool": "get-icon-files",
       "arguments": {
         "libraryId": "lucide",
         "names": [
@@ -225,39 +225,13 @@
         "targetDir": "public/showcase/icons"
       },
       "status": "returned",
-      "responseBytes": 10618
+      "responseBytes": 10634
     }
   ],
-  "observations": [
-    {
-      "tool": "find-icon-library",
-      "problem": "Error: Cannot read properties of undefined (reading 'join')",
-      "workaround": "Exact Lucide names were confirmed through find-icons; install-icons returned the SVG source."
-    },
-    {
-      "tool": "get-widget-guide",
-      "problem": "The schema expects inputs as a string. Missing transformation details require another intake pass.",
-      "workaround": "Supplied the declared transformation and actual data source."
-    },
-    {
-      "tool": "find-icons",
-      "problem": "A long query containing unrelated icon concepts produced no matches.",
-      "workaround": "Used one concept per search, then exact returned names."
-    },
-    {
-      "tool": "install-icons",
-      "problem": "SVG output did not include the companion Lucide/Feather license text.",
-      "workaround": "Preserved the installed license notices in each exported SVG and a companion file."
-    },
-    {
-      "tool": "review-ui-code",
-      "problem": "Native selects are marked serious with a suggestion for a house Select component that does not exist in this project.",
-      "workaround": "Retained labeled native controls with the product tokens and verified accessible names and keyboard behavior."
-    }
-  ],
+  "observations": [],
   "limits": [
-    "This MCP returns guidance, source, evidence and commands. React and browser APIs implement the website; no hosted code generation or media rendering was claimed.",
-    "No MCP tools were removed or changed for this showcase.",
-    "Browser and rendered-spacing review results will be added after the final run."
+    "This record confirms local tool calls; it does not establish a hosted deployment.",
+    "Eidova returns guidance, source and commands. The website implements interactions with React and browser APIs.",
+    "Rendered browser verification is recorded separately."
   ]
 }

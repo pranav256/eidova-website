@@ -4,7 +4,7 @@
   "outputDirectory": "dist",
   "rewrites": [
     { "source": "/mcp", "destination": "https://eidova-mcp.vercel.app/mcp" },
-    { "source": "/mcp/core", "destination": "https://eidova-mcp.vercel.app/mcp/core" },
+    { "source": "/mcp/full", "destination": "https://eidova-mcp.vercel.app/mcp/full" },
     { "source": "/server.json", "destination": "https://eidova-mcp.vercel.app/server.json" },
     { "source": "/resources", "destination": "/resources/index.html" },
     { "source": "/resources/", "destination": "/resources/index.html" },
