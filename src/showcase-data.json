@@ -879,7 +879,7 @@
     },
     {
       "name": "get-icon-files",
-      "description": "Return selected bundled icon files and manifest data for the caller to save. targetDir labels the intended output folder.",
+      "description": "Full profile only. Return selected bundled icon files and manifest data for the caller to save. targetDir labels the intended output folder.",
       "category": "Icons",
       "profiles": [
         "full"
@@ -979,7 +979,7 @@
     },
     {
       "name": "get-design-system-kit",
-      "description": "Return React/Radix install commands or an HTML/DTCG kit, plus a portable DESIGN.md resource for catalog systems. Request needed React names with component; unknown names are errors. Requires Tailwind 4 and @/ alias; no hosted installation. Preserve existing design and review source, copy and rendered spacing.",
+      "description": "Return React/Radix install commands or an HTML/DTCG kit, plus a portable DESIGN.md resource for catalog systems. Request needed React names with component; unknown names are errors. React requires Tailwind 4 and @/ alias; no hosted installation. HTML leads with setup; detail:full includes complete prose. Preserve existing design and review source, copy and rendered spacing.",
       "category": "Design systems",
       "profiles": [
         "core",
