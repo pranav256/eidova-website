@@ -14,6 +14,14 @@ Local release checks on 25 November 2026 passed both build/type checks, setup as
 
 ## Design evidence
 
+The reviewer-evidence update adds source/geometry/human-review guidance, named browser
+capture steps and profile labels from actual discovery. The 25 November local gate
+passed 24 route views and 48 named geometry captures at 390/1440/1728px in both
+appearances. All declared geometry groups were complete; source, copy, contrast and
+rendered checks had no critical or serious findings after correcting a heading/description
+spacing false positive. See [the review receipt](review-evidence-review.json) for
+measured findings and remaining human checks. Geometry scores are not visual approval.
+
 The retained paper, page-theme and slider records document earlier reference measurements and design decisions. They do not approve later source changes. The full-library record preserves the catalog review and its stated limits. Original specimen fonts, tokens and licenses remain with their source files.
 
 ## Release boundary
