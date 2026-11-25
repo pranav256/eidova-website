@@ -27,6 +27,19 @@ try {
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth));
       for (const img of await page.locator('img').all()) { if (await img.isVisible()) { await img.scrollIntoViewIfNeeded(); await img.evaluate(node => node.decode()); } }
       assert.ok(await page.locator('img').evaluateAll(images => images.filter(image => image.checkVisibility()).every(image => image.complete && image.naturalWidth > 0)));
+      if (route === '/docs') {
+        await page.getByRole('link', { name: 'Review evidence', exact: true }).click();
+        await page.getByRole('heading', { name: 'Know what was checked', exact: true }).waitFor();
+        assert.match(await page.locator('#review-evidence').textContent(), /partial report/);
+        const kit=page.getByText('Kit handoff and icon tools', {exact:true});
+        await kit.focus();await page.keyboard.press('Enter');
+        assert.equal(await kit.evaluate(node=>node.parentElement.open),true);
+        assert.match(await page.locator('#review-evidence details').textContent(),/Full at/);
+        await page.getByText('Example: default, menu open and keyboard focus',{exact:true}).click();
+        assert.ok(await page.getByText('node dist/stdio.js review-browser http://127.0.0.1:5173 --states review-states.json',{exact:true}).isVisible());
+        assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));
+        await page.locator('#review-evidence').screenshot({path:`${output}/${width}-${mode}-review-evidence.png`});
+      }
       if (route === '/') {
         await page.getByRole('heading', { name: 'Design systems, in real code.', exact: true }).waitFor();
         assert.equal(await page.locator('.theme-card').count(), 31);

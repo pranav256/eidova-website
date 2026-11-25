@@ -1,0 +1,611 @@
+{
+  "date": "2026-11-25",
+  "scope": "Docs and Showcase reviewer evidence guidance; existing website design preserved",
+  "environment": "Node 24.20.0 / Windows / Edge / local API and built website",
+  "websiteViews": 24,
+  "widths": [
+    390,
+    1440,
+    1728
+  ],
+  "appearances": [
+    "light",
+    "dark"
+  ],
+  "renderedStates": 48,
+  "copyPanels": 32,
+  "sourceSummary": {
+    "critical": 0,
+    "serious": 0,
+    "moderate": 30,
+    "total": 30
+  },
+  "sourceExceptions": [],
+  "copyFindings": [
+    {
+      "test": "mom",
+      "severity": "minor",
+      "problem": "The copy uses words that only make sense inside the team.",
+      "evidence": "session",
+      "fix": "Say what the thing does in everyday words, or explain the term on the screen the first time it appears."
+    }
+  ],
+  "geometry": [
+    {
+      "states": [
+        "light showcase base"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "light showcase base"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 5,
+        "total": 5
+      },
+      "score": 75
+    },
+    {
+      "states": [
+        "light selected family and tokens"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "light selected family and tokens"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 5,
+        "total": 5
+      },
+      "score": 75
+    },
+    {
+      "states": [
+        "light form recovery and selected icon"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "light form recovery and selected icon"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 5,
+        "total": 5
+      },
+      "score": 75
+    },
+    {
+      "states": [
+        "light live copy review"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "light live copy review"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 5,
+        "total": 5
+      },
+      "score": 75
+    },
+    {
+      "states": [
+        "light complete tool directory"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "light complete tool directory"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 5,
+        "total": 5
+      },
+      "score": 75
+    },
+    {
+      "states": [
+        "dark showcase base"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "dark showcase base"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 5,
+        "total": 5
+      },
+      "score": 75
+    },
+    {
+      "states": [
+        "dark selected family and tokens"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "dark selected family and tokens"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 5,
+        "total": 5
+      },
+      "score": 75
+    },
+    {
+      "states": [
+        "dark form recovery and selected icon"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "dark form recovery and selected icon"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 5,
+        "total": 5
+      },
+      "score": 75
+    },
+    {
+      "states": [
+        "dark live copy review"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "dark live copy review"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 5,
+        "total": 5
+      },
+      "score": 75
+    },
+    {
+      "states": [
+        "dark complete tool directory"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "dark complete tool directory"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 5,
+        "total": 5
+      },
+      "score": 75
+    },
+    {
+      "states": [
+        "light docs default"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "light docs default"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 21,
+        "total": 21
+      },
+      "score": 0
+    },
+    {
+      "states": [
+        "light docs kit-open"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "light docs kit-open"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 21,
+        "total": 21
+      },
+      "score": 0
+    },
+    {
+      "states": [
+        "light docs capture-open"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "light docs capture-open"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 21,
+        "total": 21
+      },
+      "score": 0
+    },
+    {
+      "states": [
+        "dark docs default"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "dark docs default"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 21,
+        "total": 21
+      },
+      "score": 0
+    },
+    {
+      "states": [
+        "dark docs kit-open"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "dark docs kit-open"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 21,
+        "total": 21
+      },
+      "score": 0
+    },
+    {
+      "states": [
+        "dark docs capture-open"
+      ],
+      "coverage": {
+        "complete": true,
+        "scope": "Recommended widths and explicitly declared states only; interaction completeness and visual quality are unverified.",
+        "requiredWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "capturedWidths": [
+          390,
+          1440,
+          1728
+        ],
+        "missingWidths": [],
+        "capturedStates": 3,
+        "requiredStates": [
+          "dark docs capture-open"
+        ],
+        "missingStates": [],
+        "emptyStates": [],
+        "truncatedStates": []
+      },
+      "summary": {
+        "critical": 0,
+        "serious": 0,
+        "moderate": 21,
+        "total": 21
+      },
+      "score": 0
+    }
+  ],
+  "spacingBlockers": [],
+  "contrastFailures": [],
+  "pageErrors": [],
+  "sourceSha256": {
+    "Docs.tsx": "737fefb31202c69494c1fd2b0b74fe49da4783bf1d1589a1791691c833e33b8e",
+    "docs.css": "b33db3cef51abbc1712f7653f8abb8b1222143d6f014838cc14c4a196aaa6d4e",
+    "Showcase.tsx": "dfb85d398b5157c4f0f3978bd2eb9751e92c0399084cbcb95f8dbc875284e18b",
+    "showcase.css": "c8fc7025b69cd8008471a83a5e7cc8b0e813586f84f8e9b2b64f329ac60b0e21",
+    "styles.css": "054080f9fb30dd3689b4345b46dd21cec3e7e72897bdb9cdd09643b7e483c3e5",
+    "clean.css": "b776935261d417cf0dfe24ed0c5b6e8fea46b47b8da04b0655b9ecd4b5fbef78",
+    "App.tsx": "0573d7952bb3d3938a7ba6ca206ff6d2a839f7d23b9efbedc157792c85cd8b6a",
+    "main.tsx": "fac37559e12ecad7d2212acf8f052bf07fcda98c4881dd1e54fe40566c3330f8",
+    "components/ui/button.tsx": "3ee9276dfa5582da6dfba8fbfb3a99f80470b1e5c63cf8fa6e6151c290173d71",
+    "components/ui/input.tsx": "40e984f5173c91eb8cce1372be55c7491ef0c2caadf452ef21829c1f86252fa8",
+    "components/ui/textarea.tsx": "f092fe784f0ac9236667b0b327c308bb66c585531dc58df405dec42ff473370f",
+    "components/CopyButton.tsx": "04a61c7e3f4de9fd2aefd051831dd9c1f8e4ee751d335a7a418af6519280f607"
+  },
+  "checks": [
+    "TypeScript and production build",
+    "Agent setup assets",
+    "24 route/width/appearance views and automated accessibility",
+    "Mobile navigation, disclosure keyboard activation and capture instructions",
+    "Source review, reference-copy review and computed text contrast",
+    "48 named captures with complete geometry evidence",
+    "Visual inspection of mobile and desktop Docs screenshots"
+  ],
+  "unverified": [
+    "Screen-reader walkthrough and human usability study",
+    "States outside the declared capture plan",
+    "Geometry score is not visual approval"
+  ],
+  "copyNote": "HTML recognized as a known developer term; paragraphs submitted individually without code blocks."
+}

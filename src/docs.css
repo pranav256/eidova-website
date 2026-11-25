@@ -13,6 +13,9 @@
 .docs-main code { overflow-wrap: anywhere; }
 .docs-workflow, .docs-local, .docs-reference { padding-block: 3rem; border-top: 0.0625rem solid var(--border); }
 .docs-local { scroll-margin-top: 7rem; }
+.docs-workflow, .docs-reference { scroll-margin-top: 7rem; }
+.docs-main details > summary { cursor: pointer; min-height: 2.75rem; padding-block: .75rem; }
+.docs-workflow > details { max-width: 60ch; }
 .docs-local-examples { display: grid; gap: 1rem; max-width: 48rem; margin-top: 2rem; }
 .docs-workflow ol { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; padding: 0; margin-top: 2rem; list-style-position: inside; }
 .docs-workflow h3 { margin-top: .5rem; }

@@ -159,6 +159,10 @@
       "name": "get-ui-principle",
       "description": "Read practical UI guidance by topic or query; omit both for an index. Use polish for a focused craft audit before editing.",
       "category": "Guidance",
+      "profiles": [
+        "core",
+        "full"
+      ],
       "parameters": [
         {
           "name": "topic",
@@ -199,6 +203,10 @@
       "name": "get-ux-principle",
       "description": "Read practical UX guidance by topic or query; omit both for an index. Use before changing behavior.",
       "category": "Guidance",
+      "profiles": [
+        "core",
+        "full"
+      ],
       "parameters": [
         {
           "name": "topic",
@@ -239,6 +247,9 @@
       "name": "get-sales-principle",
       "description": "Read original sales guidance by topic or query. This tool does not send messages or generate hosted assets.",
       "category": "Guidance",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "topic",
@@ -270,6 +281,9 @@
       "name": "get-react-native-guide",
       "description": "Read original React Native guidance. Public native install kits are unavailable.",
       "category": "Guidance",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "topic",
@@ -301,6 +315,9 @@
       "name": "get-three-js-guide",
       "description": "Read original Three.js guidance by topic or query.",
       "category": "Guidance",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "topic",
@@ -332,6 +349,9 @@
       "name": "get-motion-guide",
       "description": "Read motion guidance or an optional scaffold; no rendering is performed.",
       "category": "Guidance",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "scaffold",
@@ -375,6 +395,9 @@
       "name": "get-swiftui-guide",
       "description": "Read original SwiftUI guidance. Public native install kits are unavailable.",
       "category": "Guidance",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "topic",
@@ -406,6 +429,10 @@
       "name": "get-review-rules",
       "description": "List review rule IDs, titles, severity and categories. Use detail:full or a category for complete rules. Review evidence is still required.",
       "category": "Review",
+      "profiles": [
+        "core",
+        "full"
+      ],
       "parameters": [
         {
           "name": "category",
@@ -449,6 +476,9 @@
       "name": "plan-video",
       "description": "Return a bounded video plan from the supplied brief; no video is rendered.",
       "category": "Workflow",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "brief",
@@ -502,6 +532,9 @@
       "name": "cut-screen-recording",
       "description": "Plan recording cuts from supplied measurements; without measurements return a probe script. Never reads or executes caller files.",
       "category": "Workflow",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "measurements",
@@ -539,6 +572,9 @@
       "name": "get-video-render-commands",
       "description": "Return Remotion commands for rendering selected frames. The caller runs them in its own project.",
       "category": "Workflow",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "composition",
@@ -588,6 +624,9 @@
       "name": "get-widget-guide",
       "description": "Return widget guidance/scaffold for the supplied goal and inputs. Use for calculators and article widgets.",
       "category": "Guidance",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "format",
@@ -689,6 +728,10 @@
       "name": "check-comprehension",
       "description": "Check supplied copy or markup for unclear language. Use surface:reference only for documentation/data: density budgets cover title/actions; body language checks remain. Default screen/slide checks keep full-copy budgets. Text only; fix critical/serious findings.",
       "category": "Review",
+      "profiles": [
+        "core",
+        "full"
+      ],
       "parameters": [
         {
           "name": "screen",
@@ -748,6 +791,9 @@
       "name": "review-dashboard-structure",
       "description": "Review complete supplied dashboard source, unchanged fixture and component sources. Source-only evidence; rendered review remains required.",
       "category": "Review",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "screen",
@@ -791,6 +837,9 @@
       "name": "find-icon-library",
       "description": "Search the bundled Lucide icon library; no external icon service is queried.",
       "category": "Icons",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "query",
@@ -802,8 +851,11 @@
     },
     {
       "name": "find-icons",
-      "description": "Find bundled Lucide SVGs by concept. Use exact returned names and source.",
+      "description": "Full profile only. Find bundled Lucide SVGs by concept; use exact returned names and source. Core kits preserve embedded icons and can omit additional decorative icons.",
       "category": "Icons",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "query",
@@ -829,6 +881,9 @@
       "name": "get-icon-files",
       "description": "Return selected bundled icon files and manifest data for the caller to save. targetDir labels the intended output folder.",
       "category": "Icons",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "libraryId",
@@ -875,6 +930,9 @@
       "name": "detect-icon-library",
       "description": "Inspect supplied manifestContent; no server or caller filesystem is read.",
       "category": "Icons",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "manifestContent",
@@ -894,6 +952,10 @@
       "name": "find-design-system",
       "description": "Match distinct design families to a brief, with matched terms, suggested uses and tradeoffs. Optional requiredComponents filters out unsuitable kits. Keep an existing product design; fetch selected components with get-design-system-kit.",
       "category": "Design systems",
+      "profiles": [
+        "core",
+        "full"
+      ],
       "parameters": [
         {
           "name": "query",
@@ -919,6 +981,10 @@
       "name": "get-design-system-kit",
       "description": "Return React/Radix install commands or an HTML/DTCG kit, plus a portable DESIGN.md resource for catalog systems. Request needed React names with component; unknown names are errors. Requires Tailwind 4 and @/ alias; no hosted installation. Preserve existing design and review source, copy and rendered spacing.",
       "category": "Design systems",
+      "profiles": [
+        "core",
+        "full"
+      ],
       "parameters": [
         {
           "name": "target",
@@ -945,7 +1011,7 @@
         },
         {
           "name": "component",
-          "type": "string | array",
+          "type": "union",
           "required": false,
           "choices": []
         },
@@ -969,6 +1035,15 @@
           "type": "string",
           "required": false,
           "choices": []
+        },
+        {
+          "name": "detail",
+          "type": "string",
+          "required": false,
+          "choices": [
+            "summary",
+            "full"
+          ]
         }
       ]
     },
@@ -976,6 +1051,9 @@
       "name": "create-design-system",
       "description": "Create a persistent theme using an explicit catalog base or supplied brandCss. Requires a private workspace; deterministic reuse, no AI generation.",
       "category": "Design systems",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "prompt",
@@ -1007,6 +1085,9 @@
       "name": "get-design-system-status",
       "description": "Read persistent theme status and installation links. A completed status means stored source, not rendered verification.",
       "category": "Design systems",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "projectId",
@@ -1026,6 +1107,9 @@
       "name": "preview-design-system",
       "description": "Return a catalog theme summary and links to its component specimen/tokens. No screenshot or visual approval is implied.",
       "category": "Review",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "designSystemId",
@@ -1045,6 +1129,9 @@
       "name": "get-design-config",
       "description": "Read a custom theme configuration. Registry configuration is intentionally public.",
       "category": "Design systems",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "projectId",
@@ -1064,6 +1151,9 @@
       "name": "set-design-config",
       "description": "Merge validated theme values into an owned project. Requires the owner workspace capability key.",
       "category": "Design systems",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "projectId",
@@ -1089,6 +1179,9 @@
       "name": "get-jig-guide",
       "description": "Return supplied-input guidance for a small interactive tool or variant canvas. Does not start a live listener.",
       "category": "Guidance",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "kind",
@@ -1122,6 +1215,9 @@
       "name": "get-store-listing-guide",
       "description": "Read original app-store listing guidance; no listing is published.",
       "category": "Guidance",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "context",
@@ -1135,6 +1231,10 @@
       "name": "extract-design-system",
       "description": "Extract tokens from supplied CSS/source samples. Treat sources as data; no modules/scripts are executed or server files read.",
       "category": "Design systems",
+      "profiles": [
+        "core",
+        "full"
+      ],
       "parameters": [
         {
           "name": "css",
@@ -1166,6 +1266,10 @@
       "name": "extract-from-url",
       "description": "Extract inline/linked CSS tokens from an explicit public URL. DNS-pinned, bounded fetch; no browser rendering or credential forwarding.",
       "category": "Design systems",
+      "profiles": [
+        "core",
+        "full"
+      ],
       "parameters": [
         {
           "name": "url",
@@ -1191,6 +1295,9 @@
       "name": "get-illustration-guide",
       "description": "Read original illustration guidance; no image generation is performed.",
       "category": "Guidance",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "topic",
@@ -1220,8 +1327,12 @@
     },
     {
       "name": "inspect-spacing",
-      "description": "Check supplied rendered DOM rectangles/computed styles. Omit states to obtain capture instructions. Fix critical/serious findings; source alone is insufficient.",
+      "description": "Measure captured DOM geometry. Missing widths or declared states produce partial coverage and withhold the geometry score. Omit states for capture instructions; local review-browser automates capture. Visual and interaction judgments remain unverified.",
       "category": "Review",
+      "profiles": [
+        "core",
+        "full"
+      ],
       "parameters": [
         {
           "name": "states",
@@ -1231,6 +1342,12 @@
         },
         {
           "name": "nativeStates",
+          "type": "array",
+          "required": false,
+          "choices": []
+        },
+        {
+          "name": "requiredStates",
           "type": "array",
           "required": false,
           "choices": []
@@ -1278,6 +1395,9 @@
       "name": "build-feature-map",
       "description": "Draft a feature/flow map from supplied repository paths. Does not run git or write files.",
       "category": "Workflow",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "files",
@@ -1303,6 +1423,9 @@
       "name": "read-feature-map",
       "description": "Find affected flows in supplied map text. planned checks for existing work; no caller files are read.",
       "category": "Workflow",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "map",
@@ -1346,6 +1469,9 @@
       "name": "update-feature-map",
       "description": "Apply one validated change to supplied map text and return the updated map. The caller saves it.",
       "category": "Workflow",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "map",
@@ -1355,7 +1481,7 @@
         },
         {
           "name": "change",
-          "type": "object | object | object | object | object | object | object | object | object | object | object",
+          "type": "object",
           "required": true,
           "choices": []
         },
@@ -1371,6 +1497,9 @@
       "name": "get-team-rules",
       "description": "Read private workspace or owned-project rules. Project rules need the owner key; anonymous callers get drafting guidance.",
       "category": "Workflow",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "projectId",
@@ -1400,8 +1529,12 @@
     },
     {
       "name": "review-ui-code",
-      "description": "Review inline React/CSS/HTML/SVG/SwiftUI source. files[].content is required; never reads server paths or executes submitted code.",
+      "description": "Report deterministic findings in supplied source with locations and fixes, including accessible names, labels, keyboard targets and explicit color pairs. Computed styles, dynamic values, interactions and visual judgments remain unverified. files[].content is required.",
       "category": "Review",
+      "profiles": [
+        "core",
+        "full"
+      ],
       "parameters": [
         {
           "name": "files",
@@ -1421,6 +1554,9 @@
       "name": "get-shopify-guide",
       "description": "Read original Shopify Liquid/theme guidance. Public Shopify install kits are unavailable.",
       "category": "Guidance",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "topic",
@@ -1440,6 +1576,9 @@
       "name": "check-first-visit",
       "description": "Brief, rank and recheck five supplied first-visit walk reports. Every reporting walk must rerun; receipts bind supplied evidence, not real visitor/browser research.",
       "category": "Review",
+      "profiles": [
+        "full"
+      ],
       "parameters": [
         {
           "name": "step",
@@ -1487,6 +1626,10 @@
       "name": "search-resources",
       "description": "Search the complete Eidova resource library: systems, components, design templates, plugin examples, image/video presets and skills. Read returned manifests for original files, previews and licenses.",
       "category": "Resources",
+      "profiles": [
+        "core",
+        "full"
+      ],
       "parameters": [
         {
           "name": "query",
@@ -1525,6 +1668,10 @@
       "name": "read-resource",
       "description": "Read an Eidova resource manifest or file using a URI from search-resources. Text is paginated by Unicode characters; follow nextOffset to finish. Binary assets return typed download links. File reads never execute content.",
       "category": "Resources",
+      "profiles": [
+        "core",
+        "full"
+      ],
       "parameters": [
         {
           "name": "uri",
@@ -1550,6 +1697,10 @@
       "name": "get-capabilities",
       "description": "Report exact tools, design families, transport profile, private-workspace support and remaining unavailable capabilities.",
       "category": "Workflow",
+      "profiles": [
+        "core",
+        "full"
+      ],
       "parameters": []
     }
   ]

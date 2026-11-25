@@ -22,6 +22,8 @@
 
 - [Documentation](https://eidova.vercel.app/docs)
 - [Local commands](https://eidova.vercel.app/docs#local-commands): Browser review, component install preview and token diff.
+- [Review evidence](https://eidova.vercel.app/docs#review-evidence): Source findings, partial geometry reports and human review.
+- [Review quality gate](https://github.com/pranav256/eidova-mcp/blob/main/docs/REVIEW-QUALITY.md): Negative/clean fixtures, Core/Full coverage and known limits.
 - [Resources](https://eidova.vercel.app/resources): 784 packages; preserve original licenses.
 - [Showcase](https://eidova.vercel.app/showcase)
 - [API reference](https://github.com/pranav256/eidova-mcp/blob/main/docs/API.md)
@@ -31,3 +33,9 @@
 Public tools return source, guidance, evidence and commands. They do not execute projects,
 perform hosted installation or supply trusted dashboard captures. Public use needs no key.
 Private capability keys must never appear in URLs or browser-exposed configuration.
+
+Source review reports deterministic findings and unverified checks. A clean result does
+not establish computed contrast, dynamic accessible names, keyboard behavior or visual quality.
+Spacing reports with missing widths or declared states are partial and withhold the geometry
+score. Local review-browser captures widths and named states; hosted capture is unavailable.
+Icon discovery is Full-only; Core can keep embedded kit icons and use text labels.
