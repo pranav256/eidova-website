@@ -6,7 +6,7 @@ Public setup assets are [AGENTS.md](public/AGENTS.md), [llms.txt](public/llms.tx
 
 The public design toolkit and connection guide targets https://eidova.vercel.app/. Its warm paper/rust design, locally loaded Newsreader headings, Inter controls and JetBrains Mono code are defined in [DESIGN.md](DESIGN.md). The sticky navbar theme slider applies all 31 themes plus the default immediately and preserves saved/shared choices.
 
-The homepage introduces the toolkit; `/showcase` connects five capability summaries to real demonstrations. [Review evidence](docs/REVIEW.md) records completed checks. The matching **0.2.0** API defaults to the **13-tool** core profile, with an explicit **41-tool** full profile. This revision is local and has not been deployed or published.
+The homepage introduces the toolkit; `/showcase` connects five capability summaries to real demonstrations. [Review evidence](docs/REVIEW.md) records completed checks. The matching **0.2.0** API defaults to the **13-tool** core profile, with an explicit **41-tool** full profile.
 
 The Eidova resource library includes all 784 advertised resources:
 152 systems, 115 design templates, 343 plugin designs, 169
