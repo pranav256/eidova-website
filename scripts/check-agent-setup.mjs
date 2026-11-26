@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile, access } from 'node:fs/promises';
 import { resolveConfig } from 'vite';
+import { normalizeLineEndings } from './verification-config.mjs';
 
 const text = file => readFile(file, 'utf8');
 const endpoint = 'https://eidova-mcp.vercel.app/mcp';
@@ -24,7 +25,7 @@ for (const [file, key, type] of [
   const config = JSON.parse(await text('dist/mcp-config/' + file));
   assert.deepEqual(config[key].eidova, type ? { type, url: endpoint } : { url: endpoint });
 }
-assert.equal(await text('dist/mcp-config/codex.toml'), `[mcp_servers.eidova]\nurl = "${endpoint}"\n`);
+assert.equal(normalizeLineEndings(await text('dist/mcp-config/codex.toml')), `[mcp_servers.eidova]\nurl = "${endpoint}"\n`);
 const instructions = await text('dist/AGENTS.md');
 assert.match(instructions, /Merge these instructions/);
 assert.match(instructions, /does not configure an MCP connection/);

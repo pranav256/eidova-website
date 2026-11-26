@@ -1,12 +1,13 @@
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { chromium } from '@playwright/test';
+import { browserLaunchOptions } from './verification-config.mjs';
 import AxeBuilder from '@axe-core/playwright';
 
 const origin = process.env.REVIEW_URL || 'http://127.0.0.1:5512';
 const output = '.work/redesign-1311';
 await mkdir(output, { recursive: true });
-const browser = await chromium.launch({ channel: process.platform === 'win32' ? 'msedge' : undefined, headless: true });
+const browser = await chromium.launch(browserLaunchOptions());
 const errors = [], views = [];
 try {
   for (const width of [390, 1440, 1728]) {
