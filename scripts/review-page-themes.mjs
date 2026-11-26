@@ -1,12 +1,13 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { chromium } from '@playwright/test';
+import { browserLaunchOptions, mcpFile } from './verification-config.mjs';
 import AxeBuilder from '@axe-core/playwright';
-import { measureTextContrast } from '../../eidova-mcp/scripts/browser-contrast.mjs';
+const { measureTextContrast } = await import(mcpFile('scripts/browser-contrast.mjs').href);
 
 const origin = process.env.REVIEW_URL || 'http://127.0.0.1:5512';
 const themes = JSON.parse(await readFile('src/catalog-themes.json', 'utf8'));
-const browser = await chromium.launch({ channel: process.platform === 'win32' ? 'msedge' : undefined, headless: true });
+const browser = await chromium.launch(browserLaunchOptions());
 const errors = [];
 try {
   const context = await browser.newContext({ viewport: { width: 390, height: 1000 }, colorScheme: 'light', reducedMotion: 'reduce' });

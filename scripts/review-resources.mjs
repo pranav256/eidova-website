@@ -1,11 +1,12 @@
 import assert from 'node:assert/strict';
 import { readFile, mkdir } from 'node:fs/promises';
 import { chromium } from '@playwright/test';
+import { browserLaunchOptions, mcpFile } from './verification-config.mjs';
 import AxeBuilder from '@axe-core/playwright';
 
 const origin = process.env.REVIEW_URL || 'http://127.0.0.1:5512';
 const { entries } = JSON.parse(await readFile('src/resource-catalog.json', 'utf8'));
-const upstream = JSON.parse(await readFile('../eidova-mcp/content/eidova/index.json', 'utf8'));
+const upstream = JSON.parse(await readFile(mcpFile('content/eidova/index.json'), 'utf8'));
 const ids = list => list.map(entry => entry.kind + '/' + entry.id).sort();
 assert.deepEqual(ids(entries), ids(upstream.entries));
 assert.equal(new Set(ids(entries)).size, 784);
@@ -14,7 +15,7 @@ assert.ok(metadata.includes('rel="canonical" href="https://eidova.vercel.app/res
 assert.equal((metadata.match(/<li><a href="\/api\/resources\//g) || []).length, entries.length);
 const output = '.work/resources';
 await mkdir(output, { recursive: true });
-const browser = await chromium.launch({ channel: process.platform === 'win32' ? 'msedge' : undefined, headless: true });
+const browser = await chromium.launch(browserLaunchOptions());
 const errors = [];
 try {
   for (const width of [390, 1440, 1728]) {
